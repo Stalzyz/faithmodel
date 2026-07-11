@@ -1,26 +1,235 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================
+   DESIGN TOKENS — THE LIVING SKETCHBOOK
+   Faith Model School
+   ============================================ */
+
+@theme {
+  /* Brand Colors */
+  --color-ink:        #1a1a2e;       /* Deep Navy / Graphite */
+  --color-paper:      #fefcf3;       /* Warm Ivory / Paper White */
+  --color-sketch:     #4a4a5e;       /* Graphite Pencil */
+  --color-gold:       #d4a017;       /* Golden Hour Yellow */
+  --color-sky:        #b8d4e8;       /* Soft Sky Blue */
+  --color-sage:       #8faa8b;       /* Muted Sage */
+  --color-terra:      #c17b5a;       /* Muted Terracotta */
+  --color-forest:     #2d5a27;       /* Forest Green */
+  --color-beige:      #e8e0d0;       /* Soft Beige */
+  --color-accent:     #d4a017;       /* Gold accent alias */
+
+  /* Legacy compatibility */
+  --color-primary:    #1a1a2e;
+  --color-secondary:  #b8d4e8;
+  --color-surface:    #fefcf3;
+
+  /* Typography */
+  --font-inter:       var(--font-inter);
+  --font-cormorant:   var(--font-cormorant);
+  --font-poppins:     var(--font-poppins);
+  --font-caveat:      var(--font-caveat);
+  --font-manrope:     var(--font-manrope);
+
+  /* Animations */
+  --animate-drift:    drift 8s ease-in-out infinite;
+  --animate-ink-dry:  ink-dry 1.2s ease-out forwards;
+  --animate-write:    write 2s ease-out forwards;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33%       { transform: translateY(-12px) translateX(6px); }
+  66%       { transform: translateY(6px) translateX(-4px); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes ink-dry {
+  0%   { opacity: 0; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0); }
+}
+
+@keyframes write {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes pencil-draw {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes watercolor-spread {
+  0%   { opacity: 0; transform: scale(0.96); filter: saturate(0) brightness(1.3); }
+  60%  { opacity: 1; filter: saturate(0.4) brightness(1.1); }
+  100% { opacity: 1; transform: scale(1); filter: saturate(1) brightness(1); }
+}
+
+@keyframes leaf-fall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes page-curl {
+  0%   { transform: perspective(1200px) rotateY(0deg); }
+  100% { transform: perspective(1200px) rotateY(-180deg); }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-sketch);
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(212, 160, 23, 0.2);
+    color: var(--color-ink);
+  }
+
+  h1 { font-family: var(--font-cormorant), Georgia, serif; }
+  h2 { font-family: var(--font-cormorant), Georgia, serif; }
+  h3 { font-family: var(--font-poppins), sans-serif; }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+@layer utilities {
+  /* Font utilities */
+  .font-cormorant { font-family: var(--font-cormorant), Georgia, serif; }
+  .font-poppins   { font-family: var(--font-poppins), sans-serif; }
+  .font-caveat    { font-family: var(--font-caveat), cursive; }
+  .font-manrope   { font-family: var(--font-manrope), sans-serif; }
+
+  /* Sketchbook specific */
+  .sketch-border {
+    border: 2px solid var(--color-sketch);
+    border-radius: 2px;
+    position: relative;
+  }
+  .sketch-border::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid rgba(74, 74, 94, 0.2);
+    border-radius: 3px;
+    transform: rotate(0.5deg);
+  }
+
+  /* Paper texture overlay */
+  .paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.015' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  /* Graph paper grid */
+  .graph-paper {
+    background-image:
+      linear-gradient(rgba(74, 74, 94, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 74, 94, 0.06) 1px, transparent 1px),
+      linear-gradient(rgba(74, 74, 94, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 74, 94, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px, 32px 32px, 8px 8px, 8px 8px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  }
+
+  /* Watercolor effect */
+  .watercolor-reveal {
+    animation: watercolor-spread 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  /* SVG Pencil draw path */
+  .pencil-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: pencil-draw 2s ease-out forwards;
+  }
+
+  /* Handwritten annotation style */
+  .annotation {
+    font-family: var(--font-caveat), cursive;
+    color: var(--color-terra);
+    font-size: 1.1rem;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .annotation::before {
+    content: '← ';
+    opacity: 0.6;
+  }
+
+  /* Chapter number style */
+  .chapter-number {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: clamp(6rem, 15vw, 14rem);
+    font-weight: 800;
+    color: rgba(74, 74, 94, 0.05);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+  }
+
+  /* GPU acceleration for animated elements */
+  .gpu {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Admin Panel Specific Styles */
+  .admin-card {
+    @apply bg-white border border-gray-200 shadow-sm rounded-md p-6;
+  }
+
+  .admin-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a1a2e] focus:border-transparent text-sm;
+  }
+
+  .admin-btn-primary {
+    @apply bg-[#1a1a2e] text-white px-4 py-2 rounded-md hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-colors text-sm font-medium disabled:opacity-50;
+  }
+
+  .admin-btn-secondary {
+    @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors text-sm font-medium disabled:opacity-50;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================
+   SCROLLBAR — Sketchbook Ruler Style
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 0;
+}
+
+/* ============================================
+   CURSOR OVERRIDE
+   ============================================ */
+
+* {
+  box-sizing: border-box;
 }
