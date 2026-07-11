@@ -101,7 +101,7 @@ export default function SketchNav({ navCategories = DEFAULT_NAV_CATEGORIES }: { 
               <div className="absolute top-full left-0 w-full h-2"></div>
               
               <div className="absolute top-[calc(100%+0.5rem)] left-0 min-w-[200px] bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 border border-gray-100">
-                {category.items.map((item) => (
+                {category.items.map((item: any) => (
                   <Link 
                     key={item.href} 
                     href={item.href} 
