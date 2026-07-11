@@ -22,6 +22,7 @@ import PostsBlock from "@/components/cms-blocks/PostsBlock";
 import GalleryBlock from "@/components/cms-blocks/GalleryBlock";
 import MoodboardHero from "@/components/cms-blocks/MoodboardHero";
 import GoldenHero from "@/components/cms-blocks/GoldenHero";
+import SketchbookHeroBlock from "@/components/cms-blocks/SketchbookHeroBlock";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await prisma.page.findUnique({ where: { slug: "" } });
@@ -75,6 +76,8 @@ export default async function HomePage() {
                );
             case "MOODBOARD_HERO":
                return <MoodboardHero key={block.id} block={block} />;
+            case "SKETCHBOOK_HERO":
+               return <SketchbookHeroBlock key={block.id} block={block} />;
             case "GOLDEN_HERO":
                return <GoldenHero key={block.id} block={block} />;
             case "TEXT_BLOCK":

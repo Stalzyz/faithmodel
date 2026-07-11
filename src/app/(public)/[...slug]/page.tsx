@@ -21,6 +21,7 @@ import PostsBlock from "@/components/cms-blocks/PostsBlock";
 import GalleryBlock from "@/components/cms-blocks/GalleryBlock";
 import MoodboardHero from "@/components/cms-blocks/MoodboardHero";
 import GoldenHero from "@/components/cms-blocks/GoldenHero";
+import SketchbookHeroBlock from "@/components/cms-blocks/SketchbookHeroBlock";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -84,6 +85,8 @@ export default async function CustomDynamicPage({ params }: { params: Promise<{ 
                );
             case "MOODBOARD_HERO":
                return <MoodboardHero key={block.id} block={block} />;
+            case "SKETCHBOOK_HERO":
+               return <SketchbookHeroBlock key={block.id} block={block} />;
             case "GOLDEN_HERO":
                return <GoldenHero key={block.id} block={block} />;
             case "TEXT_BLOCK":

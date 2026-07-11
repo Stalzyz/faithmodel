@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save } from "lucide-react";
 import ImageUploader from "./ImageUploader";
 
-export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "MOODBOARD_HERO" | "GOLDEN_HERO";
+export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO";
 
 export interface PageBlock {
   id: string;
@@ -38,6 +38,7 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
   CONTACT_BLOCK: { annotation: "Reach Out", title: "Get in Touch", subtitle: "", details: [], mapIframe: "" },
   ACCORDION_BLOCK: { annotation: "FAQs", title: "Frequently Asked Questions", subtitle: "", items: [] },
   POSTS_BLOCK: { annotation: "Latest", title: "News & Announcements", subtitle: "", limit: 6 },
+  SKETCHBOOK_HERO: { type: "SKETCHBOOK_HERO", data: {} },
   GALLERY_BLOCK: { annotation: "Gallery", title: "Our Media", subtitle: "Glimpses of life on campus" },
   MOODBOARD_HERO: { headline: "Empowering the Next Generation", subheadline: "A legacy of excellence since 1989", primaryCtaLabel: "Apply Now", primaryCtaHref: "/admissions", images: ["", "", "", ""] },
   GOLDEN_HERO: { headline: "Faith Model School", subheadline: "Empowering minds, shaping futures since 1989.", quote: "Education is the most powerful weapon which you can use to change the world.", primaryCtaLabel: "Admissions", primaryCtaHref: "/admissions", mediaUrl: "", secondaryImageUrl: "" }
