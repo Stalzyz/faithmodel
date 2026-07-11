@@ -49,7 +49,7 @@ export default function AlbumManager({
 
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this image?")) {
-      await deleteMedia(id, category);
+      await deleteMedia(id);
       router.refresh();
     }
   };
