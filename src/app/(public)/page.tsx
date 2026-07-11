@@ -7,9 +7,6 @@ import SketchReveal from "@/components/SketchReveal";
 import Link from "next/link";
 
 // Dynamic block components
-import TextBlock from "@/components/cms-blocks/TextBlock";
-import ImageGrid from "@/components/cms-blocks/ImageGrid";
-import CtaSection from "@/components/cms-blocks/CtaSection";
 import PhilosophySplit from "@/components/cms-blocks/PhilosophySplit";
 import CurriculumOverview from "@/components/cms-blocks/CurriculumOverview";
 import SignaturePrograms from "@/components/cms-blocks/SignaturePrograms";
