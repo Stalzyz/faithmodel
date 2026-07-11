@@ -17,6 +17,7 @@ interface PageBuilderProps {
   initialSlug?: string;
   initialBlocks?: PageBlock[];
   initialSeo?: { title?: string; description?: string; image?: string };
+  isPublished?: boolean;
   onSave: (data: { title: string; slug: string; blocks: PageBlock[]; seo: any; isPublished: boolean }) => Promise<void>;
 }
 
