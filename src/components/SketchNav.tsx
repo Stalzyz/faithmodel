@@ -150,7 +150,7 @@ export default function SketchNav({ navCategories = DEFAULT_NAV_CATEGORIES }: { 
             <div key={category.title} className="px-3">
               <div className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2 mt-2">{category.title}</div>
               <div className="space-y-1 pl-2 border-l-2 border-gray-100">
-                {category.items.map((item) => (
+                {category.items.map((item: any) => (
                   <Link 
                     key={item.href} 
                     href={item.href} 
