@@ -41,7 +41,7 @@ cd $APP_DIR
 
 # 6. Create .env file for production
 cat > .env << EOL
-DATABASE_URL="postgresql://faithmodel:Photoshop09@.@localhost:5432/faithmodel?schema=public"
+DATABASE_URL="postgresql://faithmodel:Photoshop09%40.@localhost:5432/faithmodel?schema=public"
 NEXTAUTH_SECRET="faithmodel_super_secret_production_key_123_456"
 NEXTAUTH_URL="https://faithmodel.grekam.in"
 EOL
