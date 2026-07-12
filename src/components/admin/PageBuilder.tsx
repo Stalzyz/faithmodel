@@ -193,7 +193,7 @@ export default function PageBuilder({
             </div>
          ) : (
             blocks.map((block, index) => (
-               <div key={block.id} className="admin-card relative group border-l-4 border-l-[#d4a017]">
+               <div key={block.id} className="admin-card relative group border-l-4 border-l-[#FB7F05]">
                   {/* Block Controls */}
                   <div className="absolute -left-12 top-1/2 -translate-y-1/2 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                      <button onClick={() => moveBlock(index, 'up')} className="p-1.5 bg-white border border-gray-200 rounded shadow-sm text-gray-500 hover:text-blue-600"><ChevronUp className="w-4 h-4" /></button>
@@ -246,7 +246,7 @@ export default function PageBuilder({
                            ))}
                            <button 
                               onClick={() => updateBlockData(block.id, { images: [...(block.data.images || []), ""] })}
-                              className="text-xs font-semibold text-[#d4a017] hover:text-[#c17b5a] transition-colors"
+                              className="text-xs font-semibold text-[#FB7F05] hover:text-[#c17b5a] transition-colors"
                            >
                               + Add another image
                            </button>
@@ -288,7 +288,7 @@ export default function PageBuilder({
                                     <input type="text" value={lvl.subjects?.join(", ")} onChange={e => { const newL = [...block.data.levels]; newL[i].subjects = e.target.value.split(",").map(s => s.trim()); updateBlockData(block.id, { levels: newL }); }} className="admin-input text-xs" placeholder="Subjects (comma separated)" />
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { levels: [...(block.data.levels || []), { level: "New Level", grades: "Grades X-Y", subjects: [], img: "" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Level</button>
+                              <button onClick={() => updateBlockData(block.id, { levels: [...(block.data.levels || []), { level: "New Level", grades: "Grades X-Y", subjects: [], img: "" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Level</button>
                            </div>
                         </div>
                      )}
@@ -311,7 +311,7 @@ export default function PageBuilder({
                                     <button onClick={() => updateBlockData(block.id, { programs: block.data.programs.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 p-2 mt-1">✕</button>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { programs: [...(block.data.programs || []), { title: "New Program", tag: "Grades X-Y", desc: "Desc" }] })} className="text-xs font-semibold text-[#d4a017] text-left mt-2">+ Add Program</button>
+                              <button onClick={() => updateBlockData(block.id, { programs: [...(block.data.programs || []), { title: "New Program", tag: "Grades X-Y", desc: "Desc" }] })} className="text-xs font-semibold text-[#FB7F05] text-left mt-2">+ Add Program</button>
                            </div>
                         </div>
                      )}
@@ -334,7 +334,7 @@ export default function PageBuilder({
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { assessments: [...(block.data.assessments || []), { label: "New Assessment", pct: "20%", desc: "Desc" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Assessment</button>
+                           <button onClick={() => updateBlockData(block.id, { assessments: [...(block.data.assessments || []), { label: "New Assessment", pct: "20%", desc: "Desc" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Assessment</button>
                         </div>
                      )}
                      {block.type === 'TIMELINE_BLOCK' && (
@@ -352,7 +352,7 @@ export default function PageBuilder({
                                     <button onClick={() => updateBlockData(block.id, { events: block.data.events.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 p-2">✕</button>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { events: [...(block.data.events || []), { year: "2026", event: "New Event" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Event</button>
+                              <button onClick={() => updateBlockData(block.id, { events: [...(block.data.events || []), { year: "2026", event: "New Event" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Event</button>
                            </div>
                         </div>
                      )}
@@ -375,7 +375,7 @@ export default function PageBuilder({
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { icon: "★", title: "New Item", desc: "Description" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Item</button>
+                           <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { icon: "★", title: "New Item", desc: "Description" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Item</button>
                         </div>
                      )}
                      {block.type === 'STEPS_BLOCK' && (
@@ -397,7 +397,7 @@ export default function PageBuilder({
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { steps: [...(block.data.steps || []), { num: "01", title: "New Step", desc: "Description" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Step</button>
+                           <button onClick={() => updateBlockData(block.id, { steps: [...(block.data.steps || []), { num: "01", title: "New Step", desc: "Description" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Step</button>
                         </div>
                      )}
                      {block.type === 'TABLE_BLOCK' && (
@@ -420,7 +420,7 @@ export default function PageBuilder({
                                     <button onClick={() => updateBlockData(block.id, { rows: block.data.rows.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-2">✕</button>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { rows: [...(block.data.rows || []), new Array(block.data.headers?.length || 2).fill("New Data")] })} className="text-xs font-semibold text-[#d4a017]">+ Add Row</button>
+                              <button onClick={() => updateBlockData(block.id, { rows: [...(block.data.rows || []), new Array(block.data.headers?.length || 2).fill("New Data")] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Row</button>
                            </div>
                         </div>
                      )}
@@ -444,7 +444,7 @@ export default function PageBuilder({
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { profiles: [...(block.data.profiles || []), { name: "New Person", role: "Role", image: "", desc: "Bio" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Profile</button>
+                           <button onClick={() => updateBlockData(block.id, { profiles: [...(block.data.profiles || []), { name: "New Person", role: "Role", image: "", desc: "Bio" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Profile</button>
                         </div>
                      )}
                      {block.type === 'CONTACT_BLOCK' && (
@@ -463,7 +463,7 @@ export default function PageBuilder({
                                     <button onClick={() => updateBlockData(block.id, { details: block.data.details.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-2">✕</button>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { details: [...(block.data.details || []), { label: "New Detail", value: "Information" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Detail</button>
+                              <button onClick={() => updateBlockData(block.id, { details: [...(block.data.details || []), { label: "New Detail", value: "Information" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Detail</button>
                            </div>
                            <textarea value={block.data.mapIframe} onChange={e => updateBlockData(block.id, { mapIframe: e.target.value })} className="admin-input font-mono text-xs h-24" placeholder='<iframe src="https://maps.google.com/..." />' />
                         </div>
@@ -485,7 +485,7 @@ export default function PageBuilder({
                                     <textarea value={item.answer} onChange={e => { const newI = [...block.data.items]; newI[i].answer = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-sm h-24" placeholder="Answer / Content" />
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { question: "New Question", answer: "Answer text" }] })} className="text-xs font-semibold text-[#d4a017]">+ Add Item</button>
+                              <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { question: "New Question", answer: "Answer text" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Item</button>
                            </div>
                         </div>
                      )}

@@ -15,7 +15,7 @@ export default function TeachersPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Our Educators</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            The Heart of<br /><em className="text-[#d4a017] not-italic">Faith Model</em>
+            The Heart of<br /><em className="text-[#FB7F05] not-italic">Faith Model</em>
           </h1>
         </SketchReveal>
       </div>

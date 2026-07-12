@@ -49,7 +49,7 @@ export default function GalleryLightbox({ albums }: { albums: any[] }) {
             >
               {loading && activeAlbum === album.title && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/50 backdrop-blur-sm">
-                  <Loader2 className="w-8 h-8 animate-spin text-[#d4a017]" />
+                  <Loader2 className="w-8 h-8 animate-spin text-[#FB7F05]" />
                 </div>
               )}
               

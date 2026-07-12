@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Sparkles, BookOpen, Microscope, Lightbulb, Globe, Palette, Monitor, Trophy, Medal, Theater, Leaf, Bot, Music } from "lucide-react";
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -50,12 +51,12 @@ function HeroSection() {
       <div className="relative z-20 bg-[#FB7F05] py-2.5 text-center overflow-hidden">
         <div className="absolute inset-0 graph-paper opacity-10" />
         <p className="font-caveat text-base text-[#fefcf3] relative z-10">
-          ✦ Admissions for 2026–27 are{" "}
-          <span className="text-[#d4a017] font-semibold">now open</span> —{" "}
-          <Link href="/admissions" className="underline underline-offset-2 hover:text-[#d4a017] transition-colors">
+          <Sparkles className="w-4 h-4 inline-block text-[#FB7F05] mr-2" /> Admissions for 2026–27 are{" "}
+          <span className="text-[#FB7F05] font-semibold">now open</span> —{" "}
+          <Link href="/admissions" className="underline underline-offset-2 hover:text-[#FB7F05] transition-colors">
             Apply Today
           </Link>{" "}
-          ✦
+          <Sparkles className="w-4 h-4 inline-block text-[#FB7F05] ml-2" />
         </p>
       </div>
 
@@ -71,7 +72,7 @@ function HeroSection() {
                 <br />
                 {["Begins", "With", "A"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
                 <br />
-                <em className="w inline-block opacity-0 text-[#d4a017] not-italic">Single Sketch.</em>
+                <em className="w inline-block opacity-0 text-[#FB7F05] not-italic">Single Sketch.</em>
               </h1>
             </div>
             <p ref={subRef} className="font-inter text-lg text-[#4a4a5e] font-light mt-7 mb-10 leading-relaxed max-w-md opacity-0">
@@ -81,7 +82,7 @@ function HeroSection() {
               <Link href="/admissions" className="font-poppins text-sm font-semibold text-[#FB7F05] px-8 py-4 border border-[#FB7F05] hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400 sketch-border">
                 Begin the Story
               </Link>
-              <Link href="/campus" className="font-poppins text-sm font-medium text-[#4a4a5e] px-8 py-4 hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/40">
+              <Link href="/campus" className="font-poppins text-sm font-medium text-[#4a4a5e] px-8 py-4 hover:text-[#FB7F05] transition-colors underline underline-offset-4 decoration-[#FB7F05]/40">
                 Virtual Tour ↗
               </Link>
             </div>
@@ -118,7 +119,7 @@ function HeroSection() {
               <line x1="304" y1="220" x2="338" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
               <rect x="225" y="252" width="50" height="48" rx="2" stroke="#1a1a2e" strokeWidth="1.4"/>
               <line x1="250" y1="105" x2="250" y2="78" stroke="#1a1a2e" strokeWidth="1.2"/>
-              <polyline points="250,78 282,88 250,99" stroke="#d4a017" strokeWidth="1.2" fill="none"/>
+              <polyline points="250,78 282,88 250,99" stroke="#FB7F05" strokeWidth="1.2" fill="none"/>
               <line x1="97" y1="300" x2="97" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
               <line x1="147" y1="300" x2="147" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
               <line x1="97" y1="262" x2="147" y2="262" stroke="#1a1a2e" strokeWidth="1.1"/>
@@ -169,7 +170,7 @@ function WelcomeSection() {
           <blockquote className="font-cormorant text-[clamp(1.8rem,3.5vw,3rem)] font-light text-[#1a1a2e] italic leading-relaxed mb-8">
             "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Every child who walks through our gate carries within them the seeds of something extraordinary."
           </blockquote>
-          <div className="w-12 h-px bg-[#d4a017] mx-auto mb-6" />
+          <div className="w-12 h-px bg-[#FB7F05] mx-auto mb-6" />
           <div className="font-poppins text-sm font-medium text-[#1a1a2e]">Prof. Michael Chang</div>
           <div className="font-caveat text-[#c17b5a] text-base mt-1">Principal, Faith Model School</div>
         </SketchReveal>
@@ -213,7 +214,7 @@ function StatsSection() {
    ========================================================= */
 function WhyChooseUs() {
   const pillars = [
-    { icon: "✦", title: "Academic Excellence", desc: "Rigorous CBSE curriculum enhanced with global standards, project-based learning, and critical thinking programs." },
+    { icon: <Sparkles className="w-6 h-6 text-[#FB7F05]" />, title: "Academic Excellence", desc: "Rigorous CBSE curriculum enhanced with global standards, project-based learning, and critical thinking programs." },
     { icon: "◉", title: "Holistic Development", desc: "Sport, Arts, Music, Drama, Coding, Robotics — every child discovers their unique genius." },
     { icon: "◈", title: "Expert Faculty", desc: "180+ qualified educators with an industry-leading 1:15 student-teacher ratio for personalised attention." },
     { icon: "❋", title: "Safe & Nurturing", desc: "CCTV-monitored, RFID-secured, GPS-tracked transport — your child's safety is our first promise." },
@@ -227,7 +228,7 @@ function WhyChooseUs() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 mt-16 border border-[rgba(74,74,94,0.1)]">
           {pillars.map((p, i) => (
             <SketchReveal key={p.title} delay={i * 0.07} className="p-10 border-b border-r border-[rgba(74,74,94,0.08)] group hover:bg-[#1a1a2e] transition-colors duration-500">
-              <div className="font-manrope text-3xl text-[#d4a017] mb-4 group-hover:scale-110 transition-transform duration-300">{p.icon}</div>
+              <div className="font-manrope text-3xl text-[#FB7F05] mb-4 group-hover:scale-110 transition-transform duration-300">{p.icon}</div>
               <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-3">{p.title}</h3>
               <p className="font-inter text-sm text-[#4a4a5e] group-hover:text-[#fefcf3]/70 transition-colors leading-relaxed">{p.desc}</p>
             </SketchReveal>
@@ -254,7 +255,7 @@ function PhilosophySection() {
             <ul className="mt-8 space-y-4">
               {["Inquiry-Based Learning", "Value Education at Every Level", "Experiential & Project-Based Pedagogy", "Social-Emotional Learning Framework", "Global Mindset with Indian Values"].map((item) => (
                 <li key={item} className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e]">
-                  <span className="text-[#d4a017] mt-0.5">—</span>
+                  <span className="text-[#FB7F05] mt-0.5">—</span>
                   {item}
                 </li>
               ))}
@@ -299,7 +300,7 @@ function AcademicExcellence() {
                   </div>
                   <p className="font-inter text-[#4a4a5e] text-sm leading-relaxed max-w-xl">{p.desc}</p>
                 </div>
-                <Link href="/school-levels" className="font-poppins text-xs font-medium text-[#4a4a5e] hover:text-[#d4a017] transition-colors mt-1 shrink-0">
+                <Link href="/school-levels" className="font-poppins text-xs font-medium text-[#4a4a5e] hover:text-[#FB7F05] transition-colors mt-1 shrink-0">
                   Learn more →
                 </Link>
               </div>
@@ -317,11 +318,11 @@ function AcademicExcellence() {
 function StudentJourney() {
   const stages = [
     { year: "Age 3", label: "Pre-KG", icon: "🌱" },
-    { year: "Age 5", label: "Primary", icon: "📚" },
-    { year: "Age 11", label: "Middle School", icon: "🔬" },
-    { year: "Age 14", label: "Secondary", icon: "💡" },
+    { year: "Age 5", label: "Primary", icon: <BookOpen className="w-6 h-6 text-[#FB7F05]" /> },
+    { year: "Age 11", label: "Middle School", icon: <Microscope className="w-6 h-6 text-[#FB7F05]" /> },
+    { year: "Age 14", label: "Secondary", icon: <Lightbulb className="w-6 h-6 text-[#FB7F05]" /> },
     { year: "Age 16", label: "Senior Secondary", icon: "🎓" },
-    { year: "Age 18", label: "University", icon: "🌍" },
+    { year: "Age 18", label: "University", icon: <Globe className="w-6 h-6 text-[#FB7F05]" /> },
   ];
   return (
     <section className="py-28 overflow-hidden border-t border-[rgba(74,74,94,0.08)]">
@@ -332,7 +333,7 @@ function StudentJourney() {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
             {stages.map((s, i) => (
               <SketchReveal key={s.label} delay={i * 0.1} className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full border-2 border-[rgba(74,74,94,0.15)] flex items-center justify-center text-2xl mb-4 bg-[#fefcf3] relative z-10 hover:border-[#d4a017] transition-colors">
+                <div className="w-16 h-16 rounded-full border-2 border-[rgba(74,74,94,0.15)] flex items-center justify-center text-2xl mb-4 bg-[#fefcf3] relative z-10 hover:border-[#FB7F05] transition-colors">
                   {s.icon}
                 </div>
                 <div className="font-caveat text-[#c17b5a] text-base mb-1">{s.year}</div>
@@ -367,11 +368,11 @@ function CampusExperience() {
             <ul className="mt-8 space-y-3">
               {["Smart Classrooms with interactive technology", "Olympic-standard swimming pool & sports grounds", "Dedicated AI, Robotics & Innovation labs", "Performing arts theatre and music studios", "Cafeteria serving healthy, nutritious meals", "Medical centre with on-campus counsellor"].map((f) => (
                 <li key={f} className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e]">
-                  <span className="text-[#d4a017] shrink-0 mt-0.5">✦</span>{f}
+                  <span className="text-[#FB7F05] shrink-0 mt-0.5">✦</span>{f}
                 </li>
               ))}
             </ul>
-            <Link href="/campus" className="inline-block mt-8 font-poppins text-sm font-medium text-[#FB7F05] border-b border-[#FB7F05] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
+            <Link href="/campus" className="inline-block mt-8 font-poppins text-sm font-medium text-[#FB7F05] border-b border-[#FB7F05] hover:text-[#FB7F05] hover:border-[#FB7F05] transition-colors pb-0.5">
               Explore the Campus →
             </Link>
           </SketchReveal>
@@ -386,14 +387,14 @@ function CampusExperience() {
    ========================================================= */
 function FacilitiesOverview() {
   const facs = [
-    { icon: "🔬", label: "Science Labs", sub: "Physics · Chemistry · Biology" },
+    { icon: <Microscope className="w-6 h-6 text-[#FB7F05]" />, label: "Science Labs", sub: "Physics · Chemistry · Biology" },
     { icon: "🤖", label: "Robotics & AI Lab", sub: "Microsoft Showcase" },
-    { icon: "📚", label: "Digital Library", sub: "12,000+ volumes" },
+    { icon: <BookOpen className="w-6 h-6 text-[#FB7F05]" />, label: "Digital Library", sub: "12,000+ volumes" },
     { icon: "🎭", label: "Auditorium", sub: "800-seat capacity" },
     { icon: "🏊", label: "Swimming Pool", sub: "Olympic standard" },
-    { icon: "🎨", label: "Art Studios", sub: "Fine Arts & Craft" },
+    { icon: <Palette className="w-6 h-6 text-[#FB7F05]" />, label: "Art Studios", sub: "Fine Arts & Craft" },
     { icon: "🎵", label: "Music Room", sub: "Vocal & Instrumental" },
-    { icon: "💻", label: "Computer Lab", sub: "100+ workstations" },
+    { icon: <Monitor className="w-6 h-6 text-[#FB7F05]" />, label: "Computer Lab", sub: "100+ workstations" },
   ];
   return (
     <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
@@ -405,13 +406,13 @@ function FacilitiesOverview() {
               <div className="bg-[#fefcf3] p-8 group hover:bg-[#1a1a2e] transition-colors duration-500 text-center">
                 <div className="text-3xl mb-4 group-hover:scale-125 transition-transform duration-300">{f.icon}</div>
                 <div className="font-poppins text-sm font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-1">{f.label}</div>
-                <div className="font-caveat text-[#c17b5a] text-sm group-hover:text-[#d4a017] transition-colors">{f.sub}</div>
+                <div className="font-caveat text-[#c17b5a] text-sm group-hover:text-[#FB7F05] transition-colors">{f.sub}</div>
               </div>
             </SketchReveal>
           ))}
         </div>
         <SketchReveal className="text-center mt-10">
-          <Link href="/facilities" className="font-poppins text-sm font-medium text-[#4a4a5e] hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/40">
+          <Link href="/facilities" className="font-poppins text-sm font-medium text-[#4a4a5e] hover:text-[#FB7F05] transition-colors underline underline-offset-4 decoration-[#FB7F05]/40">
             View All 28 Facilities →
           </Link>
         </SketchReveal>
@@ -439,11 +440,11 @@ function FeaturedPrograms() {
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((p, i) => (
             <SketchReveal key={p.title} delay={i * 0.07}>
-              <Link href={p.href} className="block group h-full border border-[rgba(74,74,94,0.1)] p-8 hover:border-[#d4a017] transition-all duration-400 hover:shadow-[0_8px_32px_rgba(212,160,23,0.08)]">
+              <Link href={p.href} className="block group h-full border border-[rgba(74,74,94,0.1)] p-8 hover:border-[#FB7F05] transition-all duration-400 hover:shadow-[0_8px_32px_rgba(212,160,23,0.08)]">
                 <span className="font-caveat text-[#c17b5a] text-base">{p.tag}</span>
-                <h3 className="font-cormorant text-2xl font-light text-[#1a1a2e] mt-2 mb-4 group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
+                <h3 className="font-cormorant text-2xl font-light text-[#1a1a2e] mt-2 mb-4 group-hover:text-[#FB7F05] transition-colors leading-tight">{p.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>
-                <div className="mt-6 font-poppins text-xs font-medium text-[#4a4a5e] group-hover:text-[#d4a017] transition-colors">Learn more →</div>
+                <div className="mt-6 font-poppins text-xs font-medium text-[#4a4a5e] group-hover:text-[#FB7F05] transition-colors">Learn more →</div>
               </Link>
             </SketchReveal>
           ))}
@@ -457,12 +458,21 @@ function FeaturedPrograms() {
    SECTION 12: Achievements Ticker
    ========================================================= */
 function AchievementsTicker() {
-  const items = ["🏆 National Science Olympiad Champions 2025", "🥇 CBSE Cluster Athletics Gold Medal", "🎭 State Drama Festival Best Production", "💻 NASSCOM Young Coder Award", "🌿 Green School National Award", "📚 100% Board Pass Rate — 10 consecutive years", "🤖 FIRST Robotics Qualifier 2025", "🎵 National Music Talent Award"];
+  const items = [
+    { icon: <Trophy className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "National Science Olympiad Champions 2025" },
+    { icon: <Medal className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "CBSE Cluster Athletics Gold Medal" },
+    { icon: <Theater className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "State Drama Festival Best Production" },
+    { icon: <Monitor className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "NASSCOM Young Coder Award" },
+    { icon: <Leaf className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "Green School National Award" },
+    { icon: <BookOpen className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "100% Board Pass Rate — 10 consecutive years" },
+    { icon: <Bot className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "FIRST Robotics Qualifier 2025" },
+    { icon: <Music className="w-5 h-5 text-[#FB7F05] inline-block mr-2 -mt-1" />, text: "National Music Talent Award" }
+  ];
   return (
     <section className="py-6 border-y border-[rgba(74,74,94,0.1)] overflow-hidden bg-[#1a1a2e]/3">
       <div className="flex gap-12 animate-[drift_30s_linear_infinite] whitespace-nowrap">
         {[...items, ...items].map((item, i) => (
-          <span key={i} className="font-caveat text-lg text-[#4a4a5e] shrink-0">{item}</span>
+          <span key={i} className="font-caveat text-lg text-[#4a4a5e] shrink-0">{item.icon}{item.text}</span>
         ))}
       </div>
     </section>
@@ -484,21 +494,21 @@ function UpcomingEvents() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-end justify-between mb-16">
           <SectionHeading annotation="Mark the Calendar" title="Upcoming Events" />
-          <Link href="/news#events" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors hidden md:block">
+          <Link href="/news#events" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors hidden md:block">
             View Full Calendar →
           </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {events.map((e, i) => (
             <SketchReveal key={e.title} delay={i * 0.08}>
-              <div className="flex gap-6 p-6 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors group">
+              <div className="flex gap-6 p-6 border border-[rgba(74,74,94,0.1)] hover:border-[#FB7F05] transition-colors group">
                 <div className="text-center shrink-0 w-14">
                   <div className="font-manrope text-xl font-extrabold text-[#1a1a2e] leading-tight">{e.date.split(" ")[1]}</div>
                   <div className="font-caveat text-[#c17b5a] text-sm">{e.date.split(" ")[0]}</div>
                 </div>
                 <div className="border-l border-[rgba(74,74,94,0.1)] pl-6 flex-1">
                   <span className="font-caveat text-[#c17b5a] text-sm">{e.type}</span>
-                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors">{e.title}</h3>
+                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#FB7F05] transition-colors">{e.title}</h3>
                   <p className="font-inter text-sm text-[#4a4a5e]">{e.desc}</p>
                 </div>
               </div>
@@ -529,19 +539,19 @@ function Testimonials() {
     <section className="py-28 border-t border-[rgba(74,74,94,0.08)] bg-[#1a1a2e] relative overflow-hidden">
       <div className="absolute inset-0 graph-paper opacity-5" />
       <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
-        <div className="font-caveat text-[#d4a017] text-xl mb-6">What Our Parents Say</div>
+        <div className="font-caveat text-[#FB7F05] text-xl mb-6">What Our Parents Say</div>
         <AnimatePresence mode="wait">
           <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5 }}>
             <blockquote className="font-cormorant text-[clamp(1.4rem,3vw,2.2rem)] font-light text-[#fefcf3] italic leading-relaxed mb-8">
               "{testimonials[active].quote}"
             </blockquote>
             <div className="font-poppins text-sm font-semibold text-[#fefcf3]">{testimonials[active].name}</div>
-            <div className="font-caveat text-[#d4a017] text-base mt-1">{testimonials[active].child}</div>
+            <div className="font-caveat text-[#FB7F05] text-base mt-1">{testimonials[active].child}</div>
           </motion.div>
         </AnimatePresence>
         <div className="flex justify-center gap-2 mt-10">
           {testimonials.map((_, i) => (
-            <button key={i} onClick={() => setActive(i)} className={`w-8 h-px transition-all duration-300 ${i === active ? "bg-[#d4a017] w-12" : "bg-[#fefcf3]/30"}`} />
+            <button key={i} onClick={() => setActive(i)} className={`w-8 h-px transition-all duration-300 ${i === active ? "bg-[#FB7F05] w-12" : "bg-[#fefcf3]/30"}`} />
           ))}
         </div>
       </div>
@@ -566,7 +576,7 @@ function GallerySection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-end justify-between mb-12">
           <SectionHeading annotation="Campus Gallery" title="Life at Faith Model" />
-          <Link href="/gallery" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors hidden md:block">View Full Gallery →</Link>
+          <Link href="/gallery" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors hidden md:block">View Full Gallery →</Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {imgs.map((src, i) => (
@@ -596,7 +606,7 @@ function NewsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-end justify-between mb-12">
           <SectionHeading annotation="Stay Informed" title="News & Updates" />
-          <Link href="/news" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors hidden md:block">All News →</Link>
+          <Link href="/news" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors hidden md:block">All News →</Link>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {news.map((n, i) => (
@@ -606,7 +616,7 @@ function NewsSection() {
                   <img src={n.img} alt={n.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </div>
                 <span className="font-caveat text-[#c17b5a] text-base">{n.tag}</span>
-                <h3 className="font-cormorant text-xl font-light text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors leading-snug">{n.title}</h3>
+                <h3 className="font-cormorant text-xl font-light text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#FB7F05] transition-colors leading-snug">{n.title}</h3>
                 <div className="font-inter text-xs text-[#4a4a5e]">{n.date}</div>
               </Link>
             </SketchReveal>
@@ -648,14 +658,14 @@ function BookVisitSection() {
           <h2 className="font-cormorant text-[clamp(2.4rem,5vw,4rem)] font-light text-[#1a1a2e] leading-tight mb-6">
             Book a Campus Tour
           </h2>
-          <div className="w-12 h-px bg-[#d4a017] mb-6" />
+          <div className="w-12 h-px bg-[#FB7F05] mb-6" />
           <p className="font-inter text-lg text-[#4a4a5e] font-light leading-relaxed mb-8">
             Experience Faith Model School in person. Meet our faculty, explore the facilities, and see exactly why thousands of families have chosen us as the place where their child's story begins.
           </p>
           <ul className="space-y-3 mb-8">
             {["Guided campus walk with a faculty member", "One-on-one session with our Admissions Counsellor", "Meet current parents and students", "Overview of curriculum and assessment approach"].map(f => (
               <li key={f} className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e]">
-                <span className="text-[#d4a017] shrink-0 mt-0.5">—</span>{f}
+                <span className="text-[#FB7F05] shrink-0 mt-0.5">—</span>{f}
               </li>
             ))}
           </ul>
@@ -665,14 +675,14 @@ function BookVisitSection() {
             <div className="font-caveat text-[#c17b5a] text-lg mb-6">Fill in Your Details</div>
             {[["Parent's Full Name", "text"], ["Child's Name & Grade", "text"], ["Mobile Number", "tel"], ["Email Address", "email"]].map(([placeholder, type]) => (
               <input key={placeholder} type={type} placeholder={placeholder}
-                className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#1a1a2e] placeholder-[#4a4a5e]/50 focus:outline-none focus:border-[#d4a017] transition-colors" />
+                className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#1a1a2e] placeholder-[#4a4a5e]/50 focus:outline-none focus:border-[#FB7F05] transition-colors" />
             ))}
-            <select className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#4a4a5e] focus:outline-none focus:border-[#d4a017] transition-colors">
+            <select className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#4a4a5e] focus:outline-none focus:border-[#FB7F05] transition-colors">
               <option>Preferred Visit Date</option>
               <option>Monday – Friday (Weekday)</option>
               <option>Saturday (Weekend)</option>
             </select>
-            <button type="submit" className="w-full mt-4 bg-[#1a1a2e] text-[#fefcf3] font-poppins text-sm font-semibold py-4 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-all duration-400">
+            <button type="submit" className="w-full mt-4 bg-[#1a1a2e] text-[#fefcf3] font-poppins text-sm font-semibold py-4 hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-all duration-400">
               Request Campus Visit
             </button>
           </form>
@@ -691,7 +701,7 @@ function DownloadSection() {
       <div className="absolute inset-0 graph-paper opacity-5" />
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <SketchReveal>
-          <div className="font-caveat text-[#d4a017] text-xl mb-4">Take It With You</div>
+          <div className="font-caveat text-[#FB7F05] text-xl mb-4">Take It With You</div>
           <h2 className="font-cormorant text-[clamp(2rem,4vw,3.5rem)] font-light text-[#fefcf3] mb-6">
             Download Our School Prospectus
           </h2>
@@ -699,7 +709,7 @@ function DownloadSection() {
             Everything you need to know about Faith Model School — curriculum, faculty, fees, programs, and admissions — in one beautifully crafted document.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/downloads/prospectus-2026.pdf" className="font-poppins text-sm font-semibold bg-[#d4a017] text-[#1a1a2e] px-10 py-4 hover:bg-[#fefcf3] transition-colors">
+            <a href="/downloads/prospectus-2026.pdf" className="font-poppins text-sm font-semibold bg-[#FB7F05] text-[#1a1a2e] px-10 py-4 hover:bg-[#fefcf3] transition-colors">
               Download Prospectus (PDF)
             </a>
             <Link href="/downloads" className="font-poppins text-sm font-medium text-[#fefcf3] border border-[#fefcf3]/30 px-10 py-4 hover:bg-[#fefcf3]/10 transition-colors">
@@ -734,8 +744,8 @@ function FAQSection() {
             <SketchReveal key={i} delay={i * 0.04}>
               <div className="border-b border-[rgba(74,74,94,0.1)]">
                 <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-start justify-between py-6 text-left gap-6 group">
-                  <span className="font-poppins text-base font-medium text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors leading-snug">{f.q}</span>
-                  <span className="font-manrope text-[#d4a017] text-xl shrink-0 mt-0.5 transition-transform duration-300" style={{ transform: open === i ? "rotate(45deg)" : "none" }}>+</span>
+                  <span className="font-poppins text-base font-medium text-[#1a1a2e] group-hover:text-[#FB7F05] transition-colors leading-snug">{f.q}</span>
+                  <span className="font-manrope text-[#FB7F05] text-xl shrink-0 mt-0.5 transition-transform duration-300" style={{ transform: open === i ? "rotate(45deg)" : "none" }}>+</span>
                 </button>
                 <AnimatePresence>
                   {open === i && (
@@ -749,7 +759,7 @@ function FAQSection() {
           ))}
         </div>
         <SketchReveal className="text-center mt-10">
-          <Link href="/admissions#faq" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/40">
+          <Link href="/admissions#faq" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors underline underline-offset-4 decoration-[#FB7F05]/40">
             View All FAQs →
           </Link>
         </SketchReveal>
@@ -774,14 +784,14 @@ function ContactSection() {
             </div>
             <div>
               <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Phone</div>
-              <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors">+91 44 1234 5678</a>
+              <a href="tel:+914412345678" className="hover:text-[#FB7F05] transition-colors">+91 44 1234 5678</a>
               <span className="mx-3 opacity-40">|</span>
-              <a href="tel:+914498765432" className="hover:text-[#d4a017] transition-colors">+91 44 9876 5432</a>
+              <a href="tel:+914498765432" className="hover:text-[#FB7F05] transition-colors">+91 44 9876 5432</a>
             </div>
             <div>
               <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Email</div>
-              <a href="mailto:admissions@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block">admissions@faithmodelschool.edu.in</a>
-              <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block">info@faithmodelschool.edu.in</a>
+              <a href="mailto:admissions@faithmodelschool.edu.in" className="hover:text-[#FB7F05] transition-colors block">admissions@faithmodelschool.edu.in</a>
+              <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#FB7F05] transition-colors block">info@faithmodelschool.edu.in</a>
             </div>
             <div>
               <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Office Hours</div>
@@ -789,7 +799,7 @@ function ContactSection() {
               <p>Saturday: 9:00 AM – 1:00 PM</p>
             </div>
           </div>
-          <Link href="/contact" className="inline-block mt-8 font-poppins text-sm font-medium text-[#FB7F05] border-b border-[#FB7F05] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
+          <Link href="/contact" className="inline-block mt-8 font-poppins text-sm font-medium text-[#FB7F05] border-b border-[#FB7F05] hover:text-[#FB7F05] hover:border-[#FB7F05] transition-colors pb-0.5">
             Full Contact Page →
           </Link>
         </SketchReveal>
@@ -816,14 +826,14 @@ function SketchFooter() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid grid-cols-2 md:grid-cols-4 gap-12">
         <div>
           <div className="font-cormorant text-2xl font-semibold text-[#1a1a2e] mb-1">Faith Model</div>
-          <div className="font-caveat text-[#d4a017] text-sm mb-4">— School —</div>
+          <div className="font-caveat text-[#FB7F05] text-sm mb-4">— School —</div>
           <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">Empowering minds, shaping futures since 1989. CBSE Affiliated.</p>
         </div>
         <div>
           <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Explore</h4>
           <ul className="space-y-2">
             {[["About Us", "/about"], ["Academics", "/academics"], ["Facilities", "/facilities"], ["Student Life", "/student-life"], ["Admissions", "/admissions"]].map(([l, h]) => (
-              <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{l}</Link></li>
+              <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{l}</Link></li>
             ))}
           </ul>
         </div>
@@ -831,7 +841,7 @@ function SketchFooter() {
           <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Community</h4>
           <ul className="space-y-2">
             {[["Parents", "/parents"], ["Students", "/students"], ["Alumni", "/alumni"], ["Careers", "/careers"], ["News", "/news"]].map(([l, h]) => (
-              <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{l}</Link></li>
+              <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{l}</Link></li>
             ))}
           </ul>
         </div>
@@ -839,17 +849,17 @@ function SketchFooter() {
           <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Contact</h4>
           <address className="not-italic font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-1">
             <p>Chennai, Tamil Nadu 600 034</p>
-            <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors block mt-2">+91 44 1234 5678</a>
-            <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block text-xs">info@faithmodelschool.edu.in</a>
+            <a href="tel:+914412345678" className="hover:text-[#FB7F05] transition-colors block mt-2">+91 44 1234 5678</a>
+            <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#FB7F05] transition-colors block text-xs">info@faithmodelschool.edu.in</a>
           </address>
         </div>
       </div>
       <div className="border-t border-[rgba(74,74,94,0.08)] py-6 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#4a4a5e]/50 font-inter">
         <span>© 2026 Faith Model School. All rights reserved.</span>
         <div className="flex gap-6">
-          <Link href="/mandatory-disclosure" className="hover:text-[#d4a017] transition-colors">CBSE Disclosure</Link>
-          <Link href="/safety#policies" className="hover:text-[#d4a017] transition-colors">Child Protection</Link>
-          <Link href="/contact#grievance" className="hover:text-[#d4a017] transition-colors">Grievance</Link>
+          <Link href="/mandatory-disclosure" className="hover:text-[#FB7F05] transition-colors">CBSE Disclosure</Link>
+          <Link href="/safety#policies" className="hover:text-[#FB7F05] transition-colors">Child Protection</Link>
+          <Link href="/contact#grievance" className="hover:text-[#FB7F05] transition-colors">Grievance</Link>
         </div>
       </div>
     </footer>

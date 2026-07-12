@@ -23,7 +23,7 @@ export default function AcademicsPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">CBSE Affiliated</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            Academics at<br /><em className="text-[#d4a017] not-italic">Faith Model</em>
+            Academics at<br /><em className="text-[#FB7F05] not-italic">Faith Model</em>
           </h1>
         </SketchReveal>
       </div>
@@ -59,7 +59,7 @@ export default function AcademicsPage() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {level.subjects.map(s => (
-                      <span key={s} className="font-inter text-xs text-[#4a4a5e] border border-[rgba(74,74,94,0.15)] px-3 py-1.5 hover:border-[#d4a017] transition-colors">{s}</span>
+                      <span key={s} className="font-inter text-xs text-[#4a4a5e] border border-[rgba(74,74,94,0.15)] px-3 py-1.5 hover:border-[#FB7F05] transition-colors">{s}</span>
                     ))}
                   </div>
                 </div>
@@ -85,9 +85,9 @@ export default function AcademicsPage() {
             { title: "Research & Innovation Projects", desc: "Annual student research fair where students develop original projects, work with mentors, and present findings to an external panel.", tag: "Grades 8–12" },
           ].map((p, i) => (
             <SketchReveal key={p.title} delay={i * 0.07}>
-              <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full group hover:border-[#d4a017] transition-colors">
+              <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full group hover:border-[#FB7F05] transition-colors">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
+                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#FB7F05] transition-colors leading-tight">{p.title}</h3>
                   <span className="font-caveat text-[#c17b5a] text-sm shrink-0 ml-4">{p.tag}</span>
                 </div>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>
@@ -109,7 +109,7 @@ export default function AcademicsPage() {
           ].map((a, i) => (
             <SketchReveal key={a.label} delay={i * 0.08}>
               <div className="text-center">
-                <div className="font-manrope text-4xl font-extrabold text-[#d4a017] mb-3">{a.pct}</div>
+                <div className="font-manrope text-4xl font-extrabold text-[#FB7F05] mb-3">{a.pct}</div>
                 <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-3">{a.label}</div>
                 <p className="font-inter text-xs text-[#4a4a5e] leading-relaxed">{a.desc}</p>
               </div>
@@ -125,7 +125,7 @@ export default function AcademicsPage() {
           <p className="font-inter text-sm text-[#4a4a5e] mt-3">Term dates, examination schedules, holidays, and annual events.</p>
         </SketchReveal>
         <SketchReveal delay={0.2}>
-          <a href="/downloads/academic-calendar-2026.pdf" className="shrink-0 font-poppins text-sm font-semibold bg-[#1a1a2e] text-[#fefcf3] px-8 py-4 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-all duration-300">
+          <a href="/downloads/academic-calendar-2026.pdf" className="shrink-0 font-poppins text-sm font-semibold bg-[#1a1a2e] text-[#fefcf3] px-8 py-4 hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-all duration-300">
             Download Calendar (PDF)
           </a>
         </SketchReveal>

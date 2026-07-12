@@ -30,7 +30,7 @@ export default function SectionHeading({
         {title}
       </h2>
       <div
-        className={`h-px bg-[#d4a017] w-12 mb-6 ${center ? "mx-auto" : ""}`}
+        className={`h-px bg-[#FB7F05] w-12 mb-6 ${center ? "mx-auto" : ""}`}
       />
       {subtitle && (
         <p className="font-inter text-lg text-[#4a4a5e] font-light leading-relaxed max-w-2xl">

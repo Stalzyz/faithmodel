@@ -15,7 +15,7 @@ export default function StudentsPage() {
          <div className="absolute inset-0 graph-paper opacity-5" />
          <div className="relative z-10 text-center py-12">
             <SketchReveal>
-               <div className="font-caveat text-[#d4a017] text-xl mb-4">Your Dashboard</div>
+               <div className="font-caveat text-[#FB7F05] text-xl mb-4">Your Dashboard</div>
                <h1 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-light text-[#fefcf3] leading-[1.08] tracking-tight">
                   Student Portal
                </h1>
@@ -34,7 +34,7 @@ export default function StudentsPage() {
                { title: "Help Desk", icon: "💬", desc: "Reach out to the IT team or the student counsellor." },
             ].map((item, i) => (
                <SketchReveal key={item.title} delay={i * 0.05}>
-                  <a href="#" className="block p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors group h-full">
+                  <a href="#" className="block p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#FB7F05] transition-colors group h-full">
                      <div className="text-3xl mb-4 grayscale group-hover:grayscale-0">{item.icon}</div>
                      <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{item.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e]">{item.desc}</p>

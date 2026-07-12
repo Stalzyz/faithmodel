@@ -76,9 +76,9 @@ export default async function GalleryPage() {
 
       <section className="bg-[#1a1a2e] py-24 text-center px-6">
         <SketchReveal delay={0.2}>
-          <div className="font-caveat text-[#d4a017] text-xl mb-4">See It Yourself</div>
+          <div className="font-caveat text-[#FB7F05] text-xl mb-4">See It Yourself</div>
           <h2 className="font-cormorant text-4xl font-light text-[#fefcf3] mb-8">Experience Faith Model School</h2>
-          <a href="/admissions" className="inline-block font-poppins text-sm font-semibold bg-[#d4a017] text-[#1a1a2e] px-8 py-4 hover:bg-[#fefcf3] transition-colors">
+          <a href="/admissions" className="inline-block font-poppins text-sm font-semibold bg-[#FB7F05] text-[#1a1a2e] px-8 py-4 hover:bg-[#fefcf3] transition-colors">
             Book a Campus Tour
           </a>
         </SketchReveal>

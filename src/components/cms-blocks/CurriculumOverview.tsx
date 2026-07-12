@@ -16,7 +16,7 @@ export default function CurriculumOverview({ data }: { data: any }) {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {level.subjects?.map((s: string) => (
-                    <span key={s} className="font-inter text-xs text-[#4a4a5e] border border-[rgba(74,74,94,0.15)] px-3 py-1.5 hover:border-[#d4a017] transition-colors">{s}</span>
+                    <span key={s} className="font-inter text-xs text-[#4a4a5e] border border-[rgba(74,74,94,0.15)] px-3 py-1.5 hover:border-[#FB7F05] transition-colors">{s}</span>
                   ))}
                 </div>
               </div>

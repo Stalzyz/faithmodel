@@ -15,7 +15,7 @@ export default function AlumniPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Once a Student, Always Family</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            Alumni<br /><em className="text-[#d4a017] not-italic">Network</em>
+            Alumni<br /><em className="text-[#FB7F05] not-italic">Network</em>
           </h1>
         </SketchReveal>
       </div>
@@ -41,7 +41,7 @@ export default function AlumniPage() {
                { title: "Events & Reunions", icon: "🎉", desc: "Stay updated on the annual Alumni Meet and regional chapter gatherings." },
             ].map((item, i) => (
                <SketchReveal key={item.title} delay={i * 0.1}>
-                  <div className="text-center p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors h-full">
+                  <div className="text-center p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#FB7F05] transition-colors h-full">
                      <div className="text-4xl mb-4 grayscale opacity-80">{item.icon}</div>
                      <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{item.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{item.desc}</p>

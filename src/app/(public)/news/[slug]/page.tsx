@@ -19,7 +19,7 @@ export default async function NewsReaderPage({ params }: { params: Promise<{ slu
   return (
     <PageLayout>
       <article className="max-w-4xl mx-auto px-6 lg:px-12 pt-12 pb-24">
-        <Link href="/news" className="inline-flex items-center gap-2 font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors mb-12">
+        <Link href="/news" className="inline-flex items-center gap-2 font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors mb-12">
           <ArrowLeft className="w-4 h-4" /> Back to News
         </Link>
         
@@ -45,7 +45,7 @@ export default async function NewsReaderPage({ params }: { params: Promise<{ slu
             </div>
           )}
           
-          <div className="font-inter text-[#4a4a5e] leading-relaxed prose prose-lg prose-p:mb-6 prose-headings:font-poppins prose-headings:text-[#1a1a2e] prose-a:text-[#d4a017] prose-img:rounded-sm">
+          <div className="font-inter text-[#4a4a5e] leading-relaxed prose prose-lg prose-p:mb-6 prose-headings:font-poppins prose-headings:text-[#1a1a2e] prose-a:text-[#FB7F05] prose-img:rounded-sm">
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </SketchReveal>

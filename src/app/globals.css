@@ -10,13 +10,13 @@
   --color-ink:        #1a1a2e;       /* Deep Navy / Graphite */
   --color-paper:      #fefcf3;       /* Warm Ivory / Paper White */
   --color-sketch:     #4a4a5e;       /* Graphite Pencil */
-  --color-gold:       #d4a017;       /* Golden Hour Yellow */
+  --color-gold:       #FB7F05;       /* Golden Hour Yellow */
   --color-sky:        #b8d4e8;       /* Soft Sky Blue */
   --color-sage:       #8faa8b;       /* Muted Sage */
   --color-terra:      #c17b5a;       /* Muted Terracotta */
   --color-forest:     #2d5a27;       /* Forest Green */
   --color-beige:      #e8e0d0;       /* Soft Beige */
-  --color-accent:     #d4a017;       /* Gold accent alias */
+  --color-accent:     #FB7F05;       /* Gold accent alias */
 
   /* Legacy compatibility */
   --color-primary:    #1a1a2e;
@@ -203,7 +203,7 @@
   }
 
   .admin-btn-primary {
-    @apply bg-[#1a1a2e] text-white px-4 py-2 rounded-md hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-colors text-sm font-medium disabled:opacity-50;
+    @apply bg-[#1a1a2e] text-white px-4 py-2 rounded-md hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-colors text-sm font-medium disabled:opacity-50;
   }
 
   .admin-btn-secondary {

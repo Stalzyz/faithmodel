@@ -16,7 +16,7 @@ export default function ContactPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Get in Touch</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            We'd Love to<br /><em className="text-[#d4a017] not-italic">Hear from You</em>
+            We'd Love to<br /><em className="text-[#FB7F05] not-italic">Hear from You</em>
           </h1>
         </SketchReveal>
       </div>
@@ -39,13 +39,13 @@ export default function ContactPage() {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">General Enquiries</div>
-                  <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors block text-base">+91 44 1234 5678</a>
-                  <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block mt-1 text-base break-words">info@faithmodelschool.edu.in</a>
+                  <a href="tel:+914412345678" className="hover:text-[#FB7F05] transition-colors block text-base">+91 44 1234 5678</a>
+                  <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#FB7F05] transition-colors block mt-1 text-base break-words">info@faithmodelschool.edu.in</a>
                 </div>
                 <div>
                   <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Admissions Office</div>
-                  <a href="tel:+914498765432" className="hover:text-[#d4a017] transition-colors block text-base">+91 44 9876 5432</a>
-                  <a href="mailto:admissions@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block mt-1 text-base break-words">admissions@faithmodelschool.edu.in</a>
+                  <a href="tel:+914498765432" className="hover:text-[#FB7F05] transition-colors block text-base">+91 44 9876 5432</a>
+                  <a href="mailto:admissions@faithmodelschool.edu.in" className="hover:text-[#FB7F05] transition-colors block mt-1 text-base break-words">admissions@faithmodelschool.edu.in</a>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function ContactPage() {
             <div className="p-6 border border-[rgba(74,74,94,0.1)] bg-[rgba(74,74,94,0.02)]">
               <div className="font-poppins text-sm font-semibold text-[#1a1a2e] mb-1">Dr. Sarah Thomas</div>
               <div className="font-inter text-sm text-[#4a4a5e] mb-2">Vice Principal (Administration)</div>
-              <a href="mailto:grievance@faithmodelschool.edu.in" className="font-inter text-sm text-[#d4a017] hover:underline">grievance@faithmodelschool.edu.in</a>
+              <a href="mailto:grievance@faithmodelschool.edu.in" className="font-inter text-sm text-[#FB7F05] hover:underline">grievance@faithmodelschool.edu.in</a>
             </div>
           </SketchReveal>
         </div>

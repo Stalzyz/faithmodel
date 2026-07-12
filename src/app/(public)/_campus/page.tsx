@@ -24,7 +24,7 @@ export default function CampusPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">15 Acres of Possibility</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            A Campus Designed for<br /><em className="text-[#d4a017] not-italic">Discovery</em>
+            A Campus Designed for<br /><em className="text-[#FB7F05] not-italic">Discovery</em>
           </h1>
         </SketchReveal>
       </div>
@@ -51,7 +51,7 @@ export default function CampusPage() {
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {areas.map((a, i) => (
             <SketchReveal key={a.name} delay={i * 0.08}>
-              <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#d4a017] transition-colors group bg-[#fefcf3]">
+              <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#FB7F05] transition-colors group bg-[#fefcf3]">
                 <div className="font-manrope text-3xl font-extrabold text-[rgba(74,74,94,0.07)] mb-4 group-hover:text-[rgba(212,160,23,0.2)] transition-colors">{String(i + 1).padStart(2, "0")}</div>
                 <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{a.name}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{a.desc}</p>
@@ -65,9 +65,9 @@ export default function CampusPage() {
         <div className="absolute inset-0 graph-paper opacity-5" />
         <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <SketchReveal>
-              <div className="font-caveat text-[#d4a017] text-xl mb-4 -rotate-1">Sustainability</div>
+              <div className="font-caveat text-[#FB7F05] text-xl mb-4 -rotate-1">Sustainability</div>
               <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-light text-[#fefcf3] leading-tight mb-6">A Green Campus</h2>
-              <div className="w-12 h-px bg-[#d4a017] mb-6" />
+              <div className="w-12 h-px bg-[#FB7F05] mb-6" />
               <p className="font-inter text-sm text-[#fefcf3]/70 leading-relaxed mb-8">We don't just teach environmental science; we live it. Our campus is a certified Green School, demonstrating sustainable practices to our students every day.</p>
               <ul className="space-y-4">
                 {[
@@ -78,7 +78,7 @@ export default function CampusPage() {
                   "Comprehensive waste segregation and composting"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 font-inter text-sm text-[#fefcf3]/80">
-                     <span className="text-[#d4a017] shrink-0 mt-0.5">✦</span>{item}
+                     <span className="text-[#FB7F05] shrink-0 mt-0.5">✦</span>{item}
                   </li>
                 ))}
               </ul>

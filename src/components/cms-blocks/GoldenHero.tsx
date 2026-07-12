@@ -13,7 +13,7 @@ export default function GoldenHero({ block }: { block: any }) {
   const smallImg = secondaryImageUrl || "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1470&auto=format&fit=crop";
 
   return (
-    <section className="relative w-full h-auto md:h-[90vh] min-h-[700px] bg-[#fefcf3] overflow-hidden border-b border-[#d4a017]/30">
+    <section className="relative w-full h-auto md:h-[90vh] min-h-[700px] bg-[#fefcf3] overflow-hidden border-b border-[#FB7F05]/30">
       
       {/* Background Subtle Grid Texture */}
       <div className="absolute inset-0 graph-paper opacity-50 z-0" />
@@ -22,7 +22,7 @@ export default function GoldenHero({ block }: { block: any }) {
       <div className="relative z-10 w-full h-full flex flex-col md:flex-row">
         
         {/* LEFT COLUMN: 61.8% (Golden Ratio Large) */}
-        <div className="w-full md:w-[61.8%] h-[50vh] md:h-full relative border-b md:border-b-0 md:border-r border-[#d4a017]/30 overflow-hidden group">
+        <div className="w-full md:w-[61.8%] h-[50vh] md:h-full relative border-b md:border-b-0 md:border-r border-[#FB7F05]/30 overflow-hidden group">
           <motion.div 
             initial={{ scale: 1.1, filter: "blur(10px)", opacity: 0 }}
             animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
@@ -38,13 +38,13 @@ export default function GoldenHero({ block }: { block: any }) {
         <div className="w-full md:w-[38.2%] h-full flex flex-col">
           
           {/* Box 1: Text & CTA (50% of the right column) */}
-          <div className="flex-1 border-b border-[#d4a017]/30 p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative overflow-hidden bg-[#fefcf3]">
+          <div className="flex-1 border-b border-[#FB7F05]/30 p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative overflow-hidden bg-[#fefcf3]">
             {/* Animated Draw Line */}
             <motion.div 
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-              className="absolute top-0 left-0 h-[1px] bg-[#d4a017]"
+              className="absolute top-0 left-0 h-[1px] bg-[#FB7F05]"
             />
 
             <SketchReveal delay={0.4}>
@@ -63,9 +63,9 @@ export default function GoldenHero({ block }: { block: any }) {
               {primaryCtaLabel && primaryCtaHref && (
                 <Link 
                   href={primaryCtaHref}
-                  className="group inline-flex items-center gap-4 font-poppins text-xs font-bold uppercase tracking-[0.2em] text-[#1a1a2e] hover:text-[#d4a017] transition-colors"
+                  className="group inline-flex items-center gap-4 font-poppins text-xs font-bold uppercase tracking-[0.2em] text-[#1a1a2e] hover:text-[#FB7F05] transition-colors"
                 >
-                  <span className="pb-1 border-b border-[#1a1a2e] group-hover:border-[#d4a017] transition-colors">{primaryCtaLabel}</span>
+                  <span className="pb-1 border-b border-[#1a1a2e] group-hover:border-[#FB7F05] transition-colors">{primaryCtaLabel}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               )}
@@ -76,20 +76,20 @@ export default function GoldenHero({ block }: { block: any }) {
           <div className="flex-1 flex flex-col sm:flex-row">
             
             {/* Box 2: Quote (Left side of the bottom split) */}
-            <div className="flex-1 border-b sm:border-b-0 sm:border-r border-[#d4a017]/30 p-8 flex items-center justify-center relative bg-[#1a1a2e] text-[#fefcf3]">
+            <div className="flex-1 border-b sm:border-b-0 sm:border-r border-[#FB7F05]/30 p-8 flex items-center justify-center relative bg-[#1a1a2e] text-[#fefcf3]">
                <motion.div 
                 initial={{ height: 0 }}
                 animate={{ height: "100%" }}
                 transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-                className="absolute top-0 right-0 w-[1px] bg-[#d4a017]/50 hidden sm:block"
+                className="absolute top-0 right-0 w-[1px] bg-[#FB7F05]/50 hidden sm:block"
               />
               <SketchReveal delay={1.0}>
                 <div className="text-center">
-                  <span className="text-[#d4a017] text-4xl leading-none font-cormorant absolute -mt-4 -ml-4">"</span>
+                  <span className="text-[#FB7F05] text-4xl leading-none font-cormorant absolute -mt-4 -ml-4">"</span>
                   <p className="font-caveat text-2xl lg:text-3xl text-white/90 leading-tight px-4 drop-shadow-sm">
                     {quote}
                   </p>
-                  <span className="text-[#d4a017] text-4xl leading-none font-cormorant absolute ml-1 mt-2">"</span>
+                  <span className="text-[#FB7F05] text-4xl leading-none font-cormorant absolute ml-1 mt-2">"</span>
                 </div>
               </SketchReveal>
             </div>

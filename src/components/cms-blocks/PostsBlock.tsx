@@ -25,7 +25,7 @@ export default async function PostsBlock({ data }: { data: any }) {
           posts.map((post, i) => (
             <SketchReveal key={post.id} delay={i * 0.1}>
               <Link href={`/news/${post.slug}`} className="block group h-full">
-                <article className="bg-white p-6 border border-[rgba(74,74,94,0.06)] rounded-sm h-full hover:border-[#d4a017]/30 transition-colors shadow-sm flex flex-col">
+                <article className="bg-white p-6 border border-[rgba(74,74,94,0.06)] rounded-sm h-full hover:border-[#FB7F05]/30 transition-colors shadow-sm flex flex-col">
                   {post.coverImage && (
                     <div className="h-48 mb-6 -mx-6 -mt-6 overflow-hidden rounded-t-sm">
                       <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -42,7 +42,7 @@ export default async function PostsBlock({ data }: { data: any }) {
                         {new Date(post.createdAt).toLocaleDateString()}
                       </span>
                     </div>
-                    <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3 group-hover:text-[#d4a017] transition-colors line-clamp-2">
+                    <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3 group-hover:text-[#FB7F05] transition-colors line-clamp-2">
                       {post.title}
                     </h3>
                     {post.excerpt && (
@@ -51,7 +51,7 @@ export default async function PostsBlock({ data }: { data: any }) {
                       </p>
                     )}
                   </div>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors">
+                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#1a1a2e] group-hover:text-[#FB7F05] transition-colors">
                     Read Article <ArrowRight className="w-4 h-4" />
                   </div>
                 </article>

@@ -33,11 +33,11 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
             {siteDesc}
           </p>
           <div className="flex gap-4 mt-6">
-            {socials?.facebook && <a href={socials.facebook} target="_blank" className="text-[#4a4a5e] hover:text-[#d4a017] transition-colors"><Facebook className="w-5 h-5" /></a>}
-            {socials?.twitter && <a href={socials.twitter} target="_blank" className="text-[#4a4a5e] hover:text-[#d4a017] transition-colors"><Twitter className="w-5 h-5" /></a>}
-            {socials?.instagram && <a href={socials.instagram} target="_blank" className="text-[#4a4a5e] hover:text-[#d4a017] transition-colors"><Instagram className="w-5 h-5" /></a>}
-            {socials?.linkedin && <a href={socials.linkedin} target="_blank" className="text-[#4a4a5e] hover:text-[#d4a017] transition-colors"><Linkedin className="w-5 h-5" /></a>}
-            {socials?.youtube && <a href={socials.youtube} target="_blank" className="text-[#4a4a5e] hover:text-[#d4a017] transition-colors"><Youtube className="w-5 h-5" /></a>}
+            {socials?.facebook && <a href={socials.facebook} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Facebook className="w-5 h-5" /></a>}
+            {socials?.twitter && <a href={socials.twitter} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Twitter className="w-5 h-5" /></a>}
+            {socials?.instagram && <a href={socials.instagram} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Instagram className="w-5 h-5" /></a>}
+            {socials?.linkedin && <a href={socials.linkedin} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Linkedin className="w-5 h-5" /></a>}
+            {socials?.youtube && <a href={socials.youtube} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Youtube className="w-5 h-5" /></a>}
           </div>
         </div>
         <div>
@@ -45,7 +45,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
           <ul className="space-y-2">
             {col1.items?.map((item: any) => (
               <li key={item.href}>
-                <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{item.label}</Link>
+                <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{item.label}</Link>
               </li>
             ))}
           </ul>
@@ -55,7 +55,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
           <ul className="space-y-2">
             {col2.items?.map((item: any) => (
               <li key={item.href}>
-                <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{item.label}</Link>
+                <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{item.label}</Link>
               </li>
             ))}
           </ul>
@@ -64,16 +64,16 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
           <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Contact</h4>
           <address className="not-italic font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-3">
             <div className="flex gap-3">
-              <MapPin className="w-5 h-5 text-[#d4a017] shrink-0" />
+              <MapPin className="w-5 h-5 text-[#FB7F05] shrink-0" />
               <p className="whitespace-pre-line">{address}</p>
             </div>
             <div className="flex gap-3">
-              <Phone className="w-5 h-5 text-[#d4a017] shrink-0" />
-              <a href={`tel:${phone.replace(/\s+/g, '')}`} className="hover:text-[#d4a017] transition-colors">{phone}</a>
+              <Phone className="w-5 h-5 text-[#FB7F05] shrink-0" />
+              <a href={`tel:${phone.replace(/\s+/g, '')}`} className="hover:text-[#FB7F05] transition-colors">{phone}</a>
             </div>
             <div className="flex gap-3">
-              <Mail className="w-5 h-5 text-[#d4a017] shrink-0" />
-              <a href={`mailto:${email}`} className="hover:text-[#d4a017] transition-colors">{email}</a>
+              <Mail className="w-5 h-5 text-[#FB7F05] shrink-0" />
+              <a href={`mailto:${email}`} className="hover:text-[#FB7F05] transition-colors">{email}</a>
             </div>
           </address>
         </div>
@@ -81,9 +81,9 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-[rgba(74,74,94,0.08)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#4a4a5e]/60 font-inter">
         <span>© {new Date().getFullYear()} {siteName}. All rights reserved.</span>
         <div className="flex gap-6">
-          <Link href="/mandatory-disclosure" className="hover:text-[#d4a017] transition-colors">CBSE Disclosure</Link>
-          <Link href="/safety#child-protection" className="hover:text-[#d4a017] transition-colors">Child Protection Policy</Link>
-          <Link href="/contact" className="hover:text-[#d4a017] transition-colors">Grievance</Link>
+          <Link href="/mandatory-disclosure" className="hover:text-[#FB7F05] transition-colors">CBSE Disclosure</Link>
+          <Link href="/safety#child-protection" className="hover:text-[#FB7F05] transition-colors">Child Protection Policy</Link>
+          <Link href="/contact" className="hover:text-[#FB7F05] transition-colors">Grievance</Link>
         </div>
       </div>
     </footer>

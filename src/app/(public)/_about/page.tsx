@@ -38,7 +38,7 @@ export default function AboutPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Our Story</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            Thirty-Five Years of<br /><em className="text-[#d4a017] not-italic">Shaping Futures</em>
+            Thirty-Five Years of<br /><em className="text-[#FB7F05] not-italic">Shaping Futures</em>
           </h1>
         </SketchReveal>
       </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
           ].map((item, i) => (
             <SketchReveal key={item.label} delay={i * 0.1}>
               <div className="bg-[#fefcf3] p-12 h-full">
-                <div className="font-manrope text-3xl text-[#d4a017] mb-4">{item.icon}</div>
+                <div className="font-manrope text-3xl text-[#FB7F05] mb-4">{item.icon}</div>
                 <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">{item.label}</div>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{item.text}</p>
               </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
           {values.map((v, i) => (
             <SketchReveal key={v.title} delay={i * 0.08}>
               <div className="group">
-                <div className="font-manrope text-4xl text-[rgba(74,74,94,0.15)] mb-3 group-hover:text-[#d4a017] transition-colors duration-300">{v.icon}</div>
+                <div className="font-manrope text-4xl text-[rgba(74,74,94,0.15)] mb-3 group-hover:text-[#FB7F05] transition-colors duration-300">{v.icon}</div>
                 <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mb-2">{v.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{v.desc}</p>
               </div>
@@ -101,9 +101,9 @@ export default function AboutPage() {
           <div className="space-y-10">
             {timeline.map((item, i) => (
               <SketchReveal key={item.year} delay={i * 0.06} className="flex gap-8 items-start">
-                <div className="font-manrope text-sm font-extrabold text-[#d4a017] w-16 shrink-0 pt-1 text-right">{item.year}</div>
+                <div className="font-manrope text-sm font-extrabold text-[#FB7F05] w-16 shrink-0 pt-1 text-right">{item.year}</div>
                 <div className="relative">
-                  <div className="absolute -left-[calc(0.5rem+1px)] top-2 w-2 h-2 rounded-full bg-[#d4a017] hidden md:block" />
+                  <div className="absolute -left-[calc(0.5rem+1px)] top-2 w-2 h-2 rounded-full bg-[#FB7F05] hidden md:block" />
                   <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed pl-4">{item.event}</p>
                 </div>
               </SketchReveal>
@@ -118,7 +118,7 @@ export default function AboutPage() {
         <div className="mt-12 flex flex-wrap gap-4">
           {["#1 CBSE School — District 2025", "Microsoft Showcase School", "British Council ISA", "STEM.org Accredited", "Green School India", "ISO 9001:2015", "Best Infrastructure Award — TN Govt 2022", "NASSCOM Young Coders Partner", "National Sports Promotion Award"].map((award) => (
             <SketchReveal key={award}>
-              <div className="border border-[rgba(74,74,94,0.15)] px-6 py-3 font-poppins text-xs font-medium text-[#4a4a5e] hover:border-[#d4a017] hover:text-[#1a1a2e] transition-colors">{award}</div>
+              <div className="border border-[rgba(74,74,94,0.15)] px-6 py-3 font-poppins text-xs font-medium text-[#4a4a5e] hover:border-[#FB7F05] hover:text-[#1a1a2e] transition-colors">{award}</div>
             </SketchReveal>
           ))}
         </div>

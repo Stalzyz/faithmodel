@@ -45,7 +45,7 @@ export default async function NewsPage() {
                         )}
                         <div className="p-8 flex flex-col flex-grow">
                            <div className="flex items-center gap-3 mb-4">
-                              <span className="font-poppins text-xs font-semibold tracking-wider text-[#d4a017] uppercase">
+                              <span className="font-poppins text-xs font-semibold tracking-wider text-[#FB7F05] uppercase">
                                  {post.tag || "Announcement"}
                               </span>
                               <span className="w-1 h-1 bg-[#4a4a5e]/20 rounded-full" />
@@ -53,7 +53,7 @@ export default async function NewsPage() {
                                  {new Date(post.createdAt).toLocaleDateString()}
                               </span>
                            </div>
-                           <h2 className="font-cormorant text-2xl font-medium text-[#1a1a2e] mb-4 group-hover:text-[#d4a017] transition-colors leading-snug">
+                           <h2 className="font-cormorant text-2xl font-medium text-[#1a1a2e] mb-4 group-hover:text-[#FB7F05] transition-colors leading-snug">
                               {post.title}
                            </h2>
                            <p className="font-inter text-[#4a4a5e] mb-8 text-sm leading-relaxed line-clamp-3">

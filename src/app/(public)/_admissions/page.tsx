@@ -38,7 +38,7 @@ export default function AdmissionsPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Admissions 2026–27</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            Begin Your Child's<br /><em className="text-[#d4a017] not-italic">Greatest Story</em>
+            Begin Your Child's<br /><em className="text-[#FB7F05] not-italic">Greatest Story</em>
           </h1>
           <p className="font-inter text-lg text-[#4a4a5e] font-light mt-6 max-w-2xl leading-relaxed">
             Seats for 2026–27 are limited and filling fast. We invite you to be part of a community where every child is celebrated, every talent is nurtured, and every future is possible.
@@ -52,7 +52,7 @@ export default function AdmissionsPage() {
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((s, i) => (
             <SketchReveal key={s.num} delay={i * 0.08}>
-              <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#d4a017] transition-colors group">
+              <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#FB7F05] transition-colors group">
                 <div className="font-manrope text-4xl font-extrabold text-[rgba(74,74,94,0.07)] mb-4 group-hover:text-[rgba(212,160,23,0.2)] transition-colors">{s.num}</div>
                 <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{s.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{s.desc}</p>
@@ -95,7 +95,7 @@ export default function AdmissionsPage() {
             {docs.map((d, i) => (
               <SketchReveal key={d} delay={i * 0.04}>
                 <li className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e] py-3 border-b border-[rgba(74,74,94,0.06)]">
-                  <span className="text-[#d4a017] shrink-0 mt-0.5 font-manrope font-bold">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[#FB7F05] shrink-0 mt-0.5 font-manrope font-bold">{String(i + 1).padStart(2, "0")}</span>
                   {d}
                 </li>
               </SketchReveal>
@@ -147,7 +147,7 @@ export default function AdmissionsPage() {
           ].map((s, i) => (
             <SketchReveal key={s.title} delay={i * 0.1}>
               <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full">
-                <div className="font-manrope text-xl font-extrabold text-[#d4a017] mb-3">{s.value}</div>
+                <div className="font-manrope text-xl font-extrabold text-[#FB7F05] mb-3">{s.value}</div>
                 <h3 className="font-poppins text-sm font-semibold text-[#1a1a2e] mb-3">{s.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{s.desc}</p>
               </div>

@@ -24,7 +24,7 @@ export default function SafetyPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Our First Priority</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            Campus Safety &<br /><em className="text-[#d4a017] not-italic">Security</em>
+            Campus Safety &<br /><em className="text-[#FB7F05] not-italic">Security</em>
           </h1>
         </SketchReveal>
       </div>
@@ -35,7 +35,7 @@ export default function SafetyPage() {
          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {safetyMeasures.map((s, i) => (
                <SketchReveal key={s.title} delay={i * 0.08}>
-                  <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#d4a017] transition-colors">
+                  <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#FB7F05] transition-colors">
                      <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{s.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{s.desc}</p>
                   </div>
@@ -49,7 +49,7 @@ export default function SafetyPage() {
             <SectionHeading annotation="Guidelines" title="Child Protection Policy" />
             <div className="mt-8 max-w-4xl font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-6">
                <p>Faith Model School has a zero-tolerance policy towards bullying, harassment, or abuse of any kind. We are fully compliant with the POCSO Act (Protection of Children from Sexual Offences).</p>
-               <ul className="space-y-4 pl-4 border-l-2 border-[#d4a017]">
+               <ul className="space-y-4 pl-4 border-l-2 border-[#FB7F05]">
                   <li>All staff, including teaching, administrative, and support staff, undergo rigorous background checks and police verification before employment.</li>
                   <li>Regular sensitization workshops are conducted for both staff and students to recognize and report inappropriate behaviour.</li>
                   <li>A dedicated Child Protection Committee meets monthly to review policies and address any concerns raised by the school community.</li>

@@ -54,7 +54,7 @@ export default function SchoolLevelsPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Educational Stages</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            A Continuum of<br /><em className="text-[#d4a017] not-italic">Learning</em>
+            A Continuum of<br /><em className="text-[#FB7F05] not-italic">Learning</em>
           </h1>
         </SketchReveal>
       </div>
@@ -73,7 +73,7 @@ export default function SchoolLevelsPage() {
                            <span className="font-caveat text-[#c17b5a] text-base mt-0.5">{level.age}</span>
                         </div>
                         <p className="font-inter text-[#4a4a5e] leading-relaxed mb-6">{level.desc}</p>
-                        <Link href={`/admissions`} className="font-poppins text-sm font-medium text-[#1a1a2e] border-b border-[#1a1a2e] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
+                        <Link href={`/admissions`} className="font-poppins text-sm font-medium text-[#1a1a2e] border-b border-[#1a1a2e] hover:text-[#FB7F05] hover:border-[#FB7F05] transition-colors pb-0.5">
                            Apply for {level.title} →
                         </Link>
                      </div>

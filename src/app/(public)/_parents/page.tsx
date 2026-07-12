@@ -15,7 +15,7 @@ export default function ParentsPage() {
          <div className="absolute inset-0 graph-paper opacity-5" />
          <div className="relative z-10 text-center py-12">
             <SketchReveal>
-               <div className="font-caveat text-[#d4a017] text-xl mb-4">Community</div>
+               <div className="font-caveat text-[#FB7F05] text-xl mb-4">Community</div>
                <h1 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-light text-[#fefcf3] leading-[1.08] tracking-tight">
                   Parent Portal
                </h1>
@@ -36,7 +36,7 @@ export default function ParentsPage() {
                   { title: "Leave Application", icon: "📝" },
                ].map((item, i) => (
                   <SketchReveal key={item.title} delay={i * 0.05}>
-                     <a href="#" className="flex items-center gap-4 p-4 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] hover:bg-[#fefcf3] transition-colors group">
+                     <a href="#" className="flex items-center gap-4 p-4 border border-[rgba(74,74,94,0.1)] hover:border-[#FB7F05] hover:bg-[#fefcf3] transition-colors group">
                         <span className="text-2xl grayscale group-hover:grayscale-0">{item.icon}</span>
                         <span className="font-poppins text-sm font-medium text-[#1a1a2e]">{item.title}</span>
                      </a>
@@ -51,8 +51,8 @@ export default function ParentsPage() {
                   Get instant notifications for attendance, view daily homework, track the school bus in real-time, and communicate directly with teachers through our secure mobile application.
                </p>
                <div className="flex flex-wrap gap-4">
-                  <a href="#" className="font-poppins text-xs font-semibold text-[#fefcf3] bg-[#1a1a2e] px-6 py-3 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-colors">App Store (iOS)</a>
-                  <a href="#" className="font-poppins text-xs font-semibold text-[#fefcf3] bg-[#1a1a2e] px-6 py-3 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-colors">Google Play (Android)</a>
+                  <a href="#" className="font-poppins text-xs font-semibold text-[#fefcf3] bg-[#1a1a2e] px-6 py-3 hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-colors">App Store (iOS)</a>
+                  <a href="#" className="font-poppins text-xs font-semibold text-[#fefcf3] bg-[#1a1a2e] px-6 py-3 hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-colors">Google Play (Android)</a>
                </div>
             </div>
          </SketchReveal>

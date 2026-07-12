@@ -24,7 +24,7 @@ export default function StudentLifePage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Beyond the Classroom</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            A Vibrant<br /><em className="text-[#d4a017] not-italic">Student Life</em>
+            A Vibrant<br /><em className="text-[#FB7F05] not-italic">Student Life</em>
           </h1>
         </SketchReveal>
       </div>

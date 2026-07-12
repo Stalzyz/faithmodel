@@ -15,7 +15,7 @@ export default function ArtsPage() {
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Creative Expression</div>
           <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
-            Arts &<br /><em className="text-[#d4a017] not-italic">Culture</em>
+            Arts &<br /><em className="text-[#FB7F05] not-italic">Culture</em>
           </h1>
         </SketchReveal>
       </div>
@@ -38,7 +38,7 @@ export default function ArtsPage() {
                { icon: "🎭", title: "Performing Arts", desc: "Drama, theatre production, and classical/modern dance housed in our 800-seat auditorium and dedicated studios." },
             ].map((p, i) => (
                <SketchReveal key={p.title} delay={i * 0.1}>
-                  <div className="text-center p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors h-full">
+                  <div className="text-center p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#FB7F05] transition-colors h-full">
                      <div className="text-4xl mb-4">{p.icon}</div>
                      <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{p.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>

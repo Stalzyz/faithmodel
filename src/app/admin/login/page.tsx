@@ -44,9 +44,9 @@ export default function AdminLogin() {
       <div className="relative max-w-md w-full bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden border border-[rgba(74,74,94,0.1)] z-10">
         <div className="bg-[#1a1a2e] p-10 text-center relative overflow-hidden">
           {/* Subtle glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#d4a017] rounded-full blur-[80px] opacity-20" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#FB7F05] rounded-full blur-[80px] opacity-20" />
           
-          <h1 className="font-cormorant text-5xl font-semibold text-[#d4a017] mb-2 tracking-tight">Faith Model</h1>
+          <h1 className="font-cormorant text-5xl font-semibold text-[#FB7F05] mb-2 tracking-tight">Faith Model</h1>
           <p className="font-manrope text-[13px] tracking-widest text-[#fefcf3]/60 uppercase">Digital Campus</p>
         </div>
         
@@ -86,7 +86,7 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#1a1a2e] hover:bg-[#d4a017] text-white py-3.5 rounded-lg font-manrope text-sm font-bold tracking-wide uppercase transition-colors duration-300 shadow-md flex items-center justify-center gap-2"
+              className="w-full bg-[#1a1a2e] hover:bg-[#FB7F05] text-white py-3.5 rounded-lg font-manrope text-sm font-bold tracking-wide uppercase transition-colors duration-300 shadow-md flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>
