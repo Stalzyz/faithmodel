@@ -26,7 +26,7 @@ export default function AdminSidebar() {
   const { data: session } = useSession();
 
   return (
-    <div className="w-64 bg-[#1a1a2e] text-[#fefcf3] flex flex-col h-full border-r border-[#1a1a2e]">
+    <div className="w-64 bg-[#FB7F05] text-[#fefcf3] flex flex-col h-full border-r border-[#FB7F05]">
       <div className="p-6 border-b border-[rgba(254,252,243,0.1)]">
         <Link href="/admin" className="block w-full">
           <img src="/Faith_model_logo.svg" alt="Faith Model" className="h-10 w-auto filter brightness-0 invert opacity-90" />
@@ -43,7 +43,7 @@ export default function AdminSidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-sm transition-colors text-sm font-medium ${
                 isActive 
-                  ? "bg-[#d4a017] text-[#1a1a2e]" 
+                  ? "bg-[#d4a017] text-[#FB7F05]" 
                   : "text-[#fefcf3]/70 hover:bg-[rgba(254,252,243,0.05)] hover:text-[#fefcf3]"
               }`}
             >

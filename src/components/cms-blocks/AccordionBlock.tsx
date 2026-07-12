@@ -18,7 +18,7 @@ export default function AccordionBlock({ data }: { data: any }) {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full text-left p-6 flex justify-between items-center hover:bg-[rgba(210,195,160,0.05)] transition-colors"
               >
-                <span className="font-poppins font-semibold text-[#1a1a2e]">{item.question}</span>
+                <span className="font-poppins font-semibold text-[#FB7F05]">{item.question}</span>
                 <ChevronDown className={`w-5 h-5 text-[#c17b5a] transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
               </button>
               <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>

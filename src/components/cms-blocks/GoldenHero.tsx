@@ -30,7 +30,7 @@ export default function GoldenHero({ block }: { block: any }) {
             className="absolute inset-0 w-full h-full"
           >
             <img src={mainImg} alt="Hero Media" className="w-full h-full object-cover origin-center group-hover:scale-105 transition-transform duration-[10s] ease-out" />
-            <div className="absolute inset-0 bg-[#1a1a2e]/20 group-hover:bg-[#1a1a2e]/10 transition-colors duration-1000" />
+            <div className="absolute inset-0 bg-[#FB7F05]/20 group-hover:bg-[#FB7F05]/10 transition-colors duration-1000" />
           </motion.div>
         </div>
 
@@ -48,7 +48,7 @@ export default function GoldenHero({ block }: { block: any }) {
             />
 
             <SketchReveal delay={0.4}>
-              <h1 className="font-cormorant text-5xl lg:text-6xl xl:text-7xl font-bold text-[#1a1a2e] leading-[1.05] tracking-tight mb-4">
+              <h1 className="font-cormorant text-5xl lg:text-6xl xl:text-7xl font-bold text-[#FB7F05] leading-[1.05] tracking-tight mb-4">
                 {headline}
               </h1>
             </SketchReveal>
@@ -63,9 +63,9 @@ export default function GoldenHero({ block }: { block: any }) {
               {primaryCtaLabel && primaryCtaHref && (
                 <Link 
                   href={primaryCtaHref}
-                  className="group inline-flex items-center gap-4 font-poppins text-xs font-bold uppercase tracking-[0.2em] text-[#1a1a2e] hover:text-[#d4a017] transition-colors"
+                  className="group inline-flex items-center gap-4 font-poppins text-xs font-bold uppercase tracking-[0.2em] text-[#FB7F05] hover:text-[#d4a017] transition-colors"
                 >
-                  <span className="pb-1 border-b border-[#1a1a2e] group-hover:border-[#d4a017] transition-colors">{primaryCtaLabel}</span>
+                  <span className="pb-1 border-b border-[#FB7F05] group-hover:border-[#d4a017] transition-colors">{primaryCtaLabel}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               )}
@@ -76,7 +76,7 @@ export default function GoldenHero({ block }: { block: any }) {
           <div className="flex-1 flex flex-col sm:flex-row">
             
             {/* Box 2: Quote (Left side of the bottom split) */}
-            <div className="flex-1 border-b sm:border-b-0 sm:border-r border-[#d4a017]/30 p-8 flex items-center justify-center relative bg-[#1a1a2e] text-[#fefcf3]">
+            <div className="flex-1 border-b sm:border-b-0 sm:border-r border-[#d4a017]/30 p-8 flex items-center justify-center relative bg-[#FB7F05] text-[#fefcf3]">
                <motion.div 
                 initial={{ height: 0 }}
                 animate={{ height: "100%" }}

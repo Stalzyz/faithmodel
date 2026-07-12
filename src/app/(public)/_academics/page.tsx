@@ -22,7 +22,7 @@ export default function AcademicsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">CBSE Affiliated</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             Academics at<br /><em className="text-[#d4a017] not-italic">Faith Model</em>
           </h1>
         </SketchReveal>
@@ -32,7 +32,7 @@ export default function AcademicsPage() {
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)] grid lg:grid-cols-2 gap-16 items-center">
         <SketchReveal>
           <SectionHeading annotation="Our Philosophy" title="Beyond the Textbook" subtitle="We follow the CBSE curriculum enriched with our own pedagogy framework that champions inquiry, project-based learning, and the development of essential life skills alongside academic mastery." />
-          <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed mt-4">Our approach is guided by three principles: <strong className="text-[#1a1a2e]">Conceptual Understanding</strong> (not rote memorisation), <strong className="text-[#1a1a2e]">Application Thinking</strong> (connecting learning to real life), and <strong className="text-[#1a1a2e]">Reflective Growth</strong> (continuous self-assessment and improvement).</p>
+          <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed mt-4">Our approach is guided by three principles: <strong className="text-[#FB7F05]">Conceptual Understanding</strong> (not rote memorisation), <strong className="text-[#FB7F05]">Application Thinking</strong> (connecting learning to real life), and <strong className="text-[#FB7F05]">Reflective Growth</strong> (continuous self-assessment and improvement).</p>
         </SketchReveal>
         <SketchReveal delay={0.2}>
           <div className="relative h-[45vh] overflow-hidden rounded-sm">
@@ -54,7 +54,7 @@ export default function AcademicsPage() {
               <div className="grid md:grid-cols-3 gap-8 py-10 border-b border-[rgba(74,74,94,0.06)]">
                 <div className="md:col-span-2">
                   <div className="flex items-center gap-4 mb-4">
-                    <h3 className="font-poppins text-xl font-semibold text-[#1a1a2e]">{level.level}</h3>
+                    <h3 className="font-poppins text-xl font-semibold text-[#FB7F05]">{level.level}</h3>
                     <span className="font-caveat text-[#c17b5a] text-base">{level.grades}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -87,7 +87,7 @@ export default function AcademicsPage() {
             <SketchReveal key={p.title} delay={i * 0.07}>
               <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full group hover:border-[#d4a017] transition-colors">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
+                  <h3 className="font-poppins text-base font-semibold text-[#FB7F05] group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
                   <span className="font-caveat text-[#c17b5a] text-sm shrink-0 ml-4">{p.tag}</span>
                 </div>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>
@@ -110,7 +110,7 @@ export default function AcademicsPage() {
             <SketchReveal key={a.label} delay={i * 0.08}>
               <div className="text-center">
                 <div className="font-manrope text-4xl font-extrabold text-[#d4a017] mb-3">{a.pct}</div>
-                <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-3">{a.label}</div>
+                <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-3">{a.label}</div>
                 <p className="font-inter text-xs text-[#4a4a5e] leading-relaxed">{a.desc}</p>
               </div>
             </SketchReveal>
@@ -121,11 +121,11 @@ export default function AcademicsPage() {
       {/* Academic Calendar CTA */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 flex flex-col md:flex-row items-center gap-8 justify-between">
         <SketchReveal>
-          <h2 className="font-cormorant text-3xl font-light text-[#1a1a2e]">Download the 2026–27 Academic Calendar</h2>
+          <h2 className="font-cormorant text-3xl font-light text-[#FB7F05]">Download the 2026–27 Academic Calendar</h2>
           <p className="font-inter text-sm text-[#4a4a5e] mt-3">Term dates, examination schedules, holidays, and annual events.</p>
         </SketchReveal>
         <SketchReveal delay={0.2}>
-          <a href="/downloads/academic-calendar-2026.pdf" className="shrink-0 font-poppins text-sm font-semibold bg-[#1a1a2e] text-[#fefcf3] px-8 py-4 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-all duration-300">
+          <a href="/downloads/academic-calendar-2026.pdf" className="shrink-0 font-poppins text-sm font-semibold bg-[#FB7F05] text-[#fefcf3] px-8 py-4 hover:bg-[#d4a017] hover:text-[#FB7F05] transition-all duration-300">
             Download Calendar (PDF)
           </a>
         </SketchReveal>

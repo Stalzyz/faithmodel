@@ -97,7 +97,7 @@ export default function MoodboardHero({ block }: { block: any }) {
         </SketchReveal>
 
         <SketchReveal delay={0.3}>
-          <h1 className="font-cormorant text-6xl md:text-8xl lg:text-[7rem] leading-none font-bold text-[#1a1a2e] tracking-tight mb-8 drop-shadow-xl">
+          <h1 className="font-cormorant text-6xl md:text-8xl lg:text-[7rem] leading-none font-bold text-[#FB7F05] tracking-tight mb-8 drop-shadow-xl">
             {headline}
           </h1>
         </SketchReveal>
@@ -113,7 +113,7 @@ export default function MoodboardHero({ block }: { block: any }) {
             <div className="pointer-events-auto">
               <Link 
                 href={primaryCtaHref}
-                className="inline-flex items-center justify-center h-14 px-8 font-poppins text-sm font-semibold tracking-wider uppercase text-white bg-[#1a1a2e] hover:bg-[#d4a017] rounded-sm transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-black/20 hover:-translate-y-1"
+                className="inline-flex items-center justify-center h-14 px-8 font-poppins text-sm font-semibold tracking-wider uppercase text-white bg-[#FB7F05] hover:bg-[#d4a017] rounded-sm transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-black/20 hover:-translate-y-1"
               >
                 {primaryCtaLabel}
               </Link>

@@ -23,7 +23,7 @@ export default function SafetyPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Our First Priority</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             Campus Safety &<br /><em className="text-[#d4a017] not-italic">Security</em>
           </h1>
         </SketchReveal>
@@ -36,7 +36,7 @@ export default function SafetyPage() {
             {safetyMeasures.map((s, i) => (
                <SketchReveal key={s.title} delay={i * 0.08}>
                   <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#d4a017] transition-colors">
-                     <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{s.title}</h3>
+                     <h3 className="font-poppins text-base font-semibold text-[#FB7F05] mb-3">{s.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{s.desc}</p>
                   </div>
                </SketchReveal>

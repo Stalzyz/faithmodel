@@ -51,7 +51,7 @@ export default async function GalleryPage() {
       {categories.map((category, catIndex) => (
         <section key={category.id} className="max-w-7xl mx-auto px-6 lg:px-12 py-16 border-b border-[rgba(74,74,94,0.08)] last:border-0">
           <SketchReveal delay={0.1}>
-            <h2 className="font-cormorant text-3xl font-light text-[#1a1a2e] mb-10">{category.name}</h2>
+            <h2 className="font-cormorant text-3xl font-light text-[#FB7F05] mb-10">{category.name}</h2>
           </SketchReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -74,11 +74,11 @@ export default async function GalleryPage() {
         </section>
       ))}
 
-      <section className="bg-[#1a1a2e] py-24 text-center px-6">
+      <section className="bg-[#FB7F05] py-24 text-center px-6">
         <SketchReveal delay={0.2}>
           <div className="font-caveat text-[#d4a017] text-xl mb-4">See It Yourself</div>
           <h2 className="font-cormorant text-4xl font-light text-[#fefcf3] mb-8">Experience Faith Model School</h2>
-          <a href="/admissions" className="inline-block font-poppins text-sm font-semibold bg-[#d4a017] text-[#1a1a2e] px-8 py-4 hover:bg-[#fefcf3] transition-colors">
+          <a href="/admissions" className="inline-block font-poppins text-sm font-semibold bg-[#d4a017] text-[#FB7F05] px-8 py-4 hover:bg-[#fefcf3] transition-colors">
             Book a Campus Tour
           </a>
         </SketchReveal>

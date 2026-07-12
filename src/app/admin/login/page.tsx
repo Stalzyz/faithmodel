@@ -42,7 +42,7 @@ export default function AdminLogin() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#fefcf3] via-transparent to-[#fefcf3] pointer-events-none" />
 
       <div className="relative max-w-md w-full bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden border border-[rgba(74,74,94,0.1)] z-10">
-        <div className="bg-[#1a1a2e] p-10 text-center relative overflow-hidden">
+        <div className="bg-[#FB7F05] p-10 text-center relative overflow-hidden">
           {/* Subtle glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#d4a017] rounded-full blur-[80px] opacity-20" />
           
@@ -86,7 +86,7 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#1a1a2e] hover:bg-[#d4a017] text-white py-3.5 rounded-lg font-manrope text-sm font-bold tracking-wide uppercase transition-colors duration-300 shadow-md flex items-center justify-center gap-2"
+              className="w-full bg-[#FB7F05] hover:bg-[#d4a017] text-white py-3.5 rounded-lg font-manrope text-sm font-bold tracking-wide uppercase transition-colors duration-300 shadow-md flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>

@@ -46,7 +46,7 @@ export default function PostForm({ initialData }: { initialData?: any }) {
                   id="published" 
                   checked={published} 
                   onChange={e => setPublished(e.target.checked)}
-                  className="rounded border-gray-300 text-[#1a1a2e] focus:ring-[#1a1a2e]"
+                  className="rounded border-gray-300 text-[#FB7F05] focus:ring-[#FB7F05]"
                />
                <label htmlFor="published">Publish immediately</label>
             </div>

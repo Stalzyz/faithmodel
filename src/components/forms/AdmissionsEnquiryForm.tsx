@@ -37,7 +37,7 @@ export default function AdmissionsEnquiryForm() {
 
   return (
     <SketchReveal delay={0.2}>
-      <div className="bg-[#1a1a2e] p-10 relative overflow-hidden">
+      <div className="bg-[#FB7F05] p-10 relative overflow-hidden">
         <div className="absolute inset-0 graph-paper opacity-5" />
         <div className="relative z-10">
           <div className="font-caveat text-[#d4a017] text-xl mb-2">Quick Enquiry</div>
@@ -64,7 +64,7 @@ export default function AdmissionsEnquiryForm() {
               <input name="grade" required type="text" placeholder="Grade Applying For" className="w-full border-b border-[rgba(254,252,243,0.2)] bg-transparent py-3 font-inter text-sm text-[#fefcf3] placeholder-[#fefcf3]/40 focus:outline-none focus:border-[#d4a017] transition-colors" />
               <input name="phone" required type="tel" placeholder="Mobile Number" className="w-full border-b border-[rgba(254,252,243,0.2)] bg-transparent py-3 font-inter text-sm text-[#fefcf3] placeholder-[#fefcf3]/40 focus:outline-none focus:border-[#d4a017] transition-colors" />
               
-              <button disabled={loading} type="submit" className="w-full mt-2 bg-[#d4a017] text-[#1a1a2e] font-poppins text-sm font-semibold py-4 hover:bg-[#fefcf3] transition-colors disabled:opacity-70">
+              <button disabled={loading} type="submit" className="w-full mt-2 bg-[#d4a017] text-[#FB7F05] font-poppins text-sm font-semibold py-4 hover:bg-[#fefcf3] transition-colors disabled:opacity-70">
                 {loading ? "Submitting..." : "Request a Callback"}
               </button>
             </form>

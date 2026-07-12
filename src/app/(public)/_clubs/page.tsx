@@ -29,7 +29,7 @@ export default function ClubsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Discover Your Passion</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             Clubs &<br /><em className="text-[#d4a017] not-italic">Societies</em>
           </h1>
         </SketchReveal>
@@ -40,7 +40,7 @@ export default function ClubsPage() {
             {clubs.map((club, i) => (
                <SketchReveal key={club} delay={i * 0.05}>
                   <div className="border border-[rgba(74,74,94,0.1)] p-6 h-full text-center hover:border-[#d4a017] hover:bg-[#fefcf3] transition-colors group flex items-center justify-center min-h-[120px]">
-                     <h3 className="font-poppins text-sm font-semibold text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors">{club}</h3>
+                     <h3 className="font-poppins text-sm font-semibold text-[#FB7F05] group-hover:text-[#d4a017] transition-colors">{club}</h3>
                   </div>
                </SketchReveal>
             ))}

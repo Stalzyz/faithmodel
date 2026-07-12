@@ -21,7 +21,7 @@ export default function LeadershipPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Our Guiding Light</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             School<br /><em className="text-[#d4a017] not-italic">Leadership</em>
           </h1>
         </SketchReveal>
@@ -36,7 +36,7 @@ export default function LeadershipPage() {
                         <span className="text-4xl opacity-20">👤</span>
                      </div>
                      <div>
-                        <h3 className="font-cormorant text-2xl font-semibold text-[#1a1a2e] mb-1">{leader.name}</h3>
+                        <h3 className="font-cormorant text-2xl font-semibold text-[#FB7F05] mb-1">{leader.name}</h3>
                         <div className="font-caveat text-[#c17b5a] text-base mb-4">{leader.role}</div>
                         <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{leader.desc}</p>
                      </div>

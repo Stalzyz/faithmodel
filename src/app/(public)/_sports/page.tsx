@@ -25,7 +25,7 @@ export default function SportsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Athletics</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             Strength, Skill &<br /><em className="text-[#d4a017] not-italic">Sportsmanship</em>
           </h1>
         </SketchReveal>
@@ -48,7 +48,7 @@ export default function SportsPage() {
                <SketchReveal key={s.name} delay={i * 0.05}>
                   <div className="border border-[rgba(74,74,94,0.1)] p-6 text-center hover:border-[#d4a017] transition-colors group">
                      <div className="text-4xl mb-3 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">{s.icon}</div>
-                     <div className="font-poppins text-sm font-semibold text-[#1a1a2e]">{s.name}</div>
+                     <div className="font-poppins text-sm font-semibold text-[#FB7F05]">{s.name}</div>
                      <div className="font-caveat text-[#c17b5a] text-sm mt-1">{s.type}</div>
                   </div>
                </SketchReveal>

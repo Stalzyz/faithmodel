@@ -14,7 +14,7 @@ export default function ArtsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Creative Expression</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             Arts &<br /><em className="text-[#d4a017] not-italic">Culture</em>
           </h1>
         </SketchReveal>
@@ -40,7 +40,7 @@ export default function ArtsPage() {
                <SketchReveal key={p.title} delay={i * 0.1}>
                   <div className="text-center p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors h-full">
                      <div className="text-4xl mb-4">{p.icon}</div>
-                     <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{p.title}</h3>
+                     <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mb-3">{p.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>
                   </div>
                </SketchReveal>

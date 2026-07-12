@@ -8,9 +8,9 @@ export default function TableBlock({ data }: { data: any }) {
       <div className="mt-12 overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="border-b-2 border-[#1a1a2e]">
+            <tr className="border-b-2 border-[#FB7F05]">
               {data.headers?.map((h: string, i: number) => (
-                <th key={i} className="py-4 px-4 font-poppins text-sm font-semibold text-[#1a1a2e] uppercase tracking-wider">{h}</th>
+                <th key={i} className="py-4 px-4 font-poppins text-sm font-semibold text-[#FB7F05] uppercase tracking-wider">{h}</th>
               ))}
             </tr>
           </thead>

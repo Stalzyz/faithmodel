@@ -42,7 +42,7 @@ export default async function PostsBlock({ data }: { data: any }) {
                         {new Date(post.createdAt).toLocaleDateString()}
                       </span>
                     </div>
-                    <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3 group-hover:text-[#d4a017] transition-colors line-clamp-2">
+                    <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mb-3 group-hover:text-[#d4a017] transition-colors line-clamp-2">
                       {post.title}
                     </h3>
                     {post.excerpt && (
@@ -51,7 +51,7 @@ export default async function PostsBlock({ data }: { data: any }) {
                       </p>
                     )}
                   </div>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors">
+                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#FB7F05] group-hover:text-[#d4a017] transition-colors">
                     Read Article <ArrowRight className="w-4 h-4" />
                   </div>
                 </article>

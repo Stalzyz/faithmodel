@@ -23,7 +23,7 @@ export default function CampusPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">15 Acres of Possibility</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             A Campus Designed for<br /><em className="text-[#d4a017] not-italic">Discovery</em>
           </h1>
         </SketchReveal>
@@ -53,7 +53,7 @@ export default function CampusPage() {
             <SketchReveal key={a.name} delay={i * 0.08}>
               <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#d4a017] transition-colors group bg-[#fefcf3]">
                 <div className="font-manrope text-3xl font-extrabold text-[rgba(74,74,94,0.07)] mb-4 group-hover:text-[rgba(212,160,23,0.2)] transition-colors">{String(i + 1).padStart(2, "0")}</div>
-                <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{a.name}</h3>
+                <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mb-3">{a.name}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{a.desc}</p>
               </div>
             </SketchReveal>
@@ -61,7 +61,7 @@ export default function CampusPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)] bg-[#1a1a2e] relative overflow-hidden -mx-6 lg:-mx-12 px-12 lg:px-24">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)] bg-[#FB7F05] relative overflow-hidden -mx-6 lg:-mx-12 px-12 lg:px-24">
         <div className="absolute inset-0 graph-paper opacity-5" />
         <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <SketchReveal>
@@ -91,9 +91,9 @@ export default function CampusPage() {
 
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 text-center">
          <SketchReveal>
-            <h2 className="font-cormorant text-4xl font-light text-[#1a1a2e] mb-6">Experience It Yourself</h2>
+            <h2 className="font-cormorant text-4xl font-light text-[#FB7F05] mb-6">Experience It Yourself</h2>
             <p className="font-inter text-[#4a4a5e] mb-10">The best way to understand the Faith Model difference is to walk our halls.</p>
-            <a href="/contact" className="inline-block font-poppins text-sm font-semibold text-[#1a1a2e] border border-[#1a1a2e] px-8 py-4 hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400">
+            <a href="/contact" className="inline-block font-poppins text-sm font-semibold text-[#FB7F05] border border-[#FB7F05] px-8 py-4 hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400">
                Book a Campus Tour
             </a>
          </SketchReveal>

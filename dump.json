@@ -1,0 +1,264 @@
+{
+  "pages": [
+    {
+      "id": "cmrgv7axo0002bihym65f2upw",
+      "title": "About",
+      "slug": "about",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"A Legacy of Excellence\",\"subheadline\":\"Our Story\",\"bgImage\":\"\"}},{\"id\":\"timeline\",\"type\":\"TIMELINE_BLOCK\",\"data\":{\"annotation\":\"Milestones\",\"title\":\"The Journey So Far\",\"subtitle\":\"\",\"events\":[{\"year\":\"1989\",\"event\":\"Faith Model School founded with 50 students and 5 teachers in a small rented building.\"},{\"year\":\"2001\",\"event\":\"Senior Secondary wing inaugurated; Science and Commerce streams launched.\"},{\"year\":\"2008\",\"event\":\"New 15-acre campus opened with Olympic-standard sports complex.\"},{\"year\":\"2016\",\"event\":\"Microsoft Showcase School designation awarded.\"},{\"year\":\"2025\",\"event\":\"Ranked #1 CBSE school in the district; 100% board results for 10th consecutive year.\"}]}},{\"id\":\"values\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Core Values\",\"title\":\"Our Principles\",\"subtitle\":\"\",\"items\":[{\"icon\":\"Shield\",\"title\":\"Integrity\",\"desc\":\"We act with honesty and transparency in all that we do.\"},{\"icon\":\"Award\",\"title\":\"Excellence\",\"desc\":\"We set high standards and strive to exceed them, always.\"},{\"icon\":\"Heart\",\"title\":\"Compassion\",\"desc\":\"We nurture empathy, kindness, and respect for all.\"},{\"icon\":\"Lightbulb\",\"title\":\"Innovation\",\"desc\":\"We encourage bold thinking, creativity, and the courage to be different.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.861Z",
+      "updatedAt": "2026-07-11T21:16:40.861Z"
+    },
+    {
+      "id": "cmrgv7axr0003bihys4mtc28s",
+      "title": "Leadership",
+      "slug": "leadership",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"School Leadership\",\"subheadline\":\"Our Guiding Light\",\"bgImage\":\"\"}},{\"id\":\"profiles\",\"type\":\"PROFILE_GRID\",\"data\":{\"annotation\":\"Leadership\",\"title\":\"Meet the Team\",\"subtitle\":\"\",\"profiles\":[{\"name\":\"Dr. Thomas Abraham\",\"role\":\"Founder & Chairman\",\"desc\":\"With over 40 years in education, Dr. Abraham's vision of holistic, value-based learning continues to be the guiding light for Faith Model School.\",\"image\":\"https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80\"},{\"name\":\"Prof. Michael Chang\",\"role\":\"Principal\",\"desc\":\"An advocate for inquiry-based learning and technological integration, Prof. Chang ensures our curriculum remains globally competitive.\",\"image\":\"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80\"},{\"name\":\"Dr. Sarah Thomas\",\"role\":\"Vice Principal\",\"desc\":\"Overseeing campus operations, safety, and community outreach, Dr. Thomas ensures a seamless experience for students and parents.\",\"image\":\"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80\"},{\"name\":\"Mrs. Latha Krishnan\",\"role\":\"Academic Director\",\"desc\":\"A subject matter expert in pedagogy, Mrs. Krishnan designs our curriculum framework and leads teacher professional development.\",\"image\":\"https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.864Z",
+      "updatedAt": "2026-07-11T21:16:40.864Z"
+    },
+    {
+      "id": "cmrgv7axs0004bihycwql3c5s",
+      "title": "Careers",
+      "slug": "careers",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Careers\",\"subheadline\":\"Join Our Team\",\"bgImage\":\"\"}},{\"id\":\"jobs\",\"type\":\"TABLE_BLOCK\",\"data\":{\"annotation\":\"Openings\",\"title\":\"Current Opportunities\",\"subtitle\":\"We are always looking for passionate educators.\",\"headers\":[\"Job Title\",\"Type\",\"Category\"],\"rows\":[[\"PGT - Physics\",\"Full Time\",\"Academic\"],[\"TGT - English\",\"Full Time\",\"Academic\"],[\"Student Counsellor\",\"Full Time\",\"Support\"],[\"Robotics Instructor\",\"Part Time\",\"Innovation\"],[\"Admissions Officer\",\"Full Time\",\"Administration\"]]}},{\"id\":\"cta\",\"type\":\"CTA_SECTION\",\"data\":{\"title\":\"Don't see a fit?\",\"buttonText\":\"Submit Resume\",\"buttonLink\":\"mailto:hr@faithmodelschool.edu.in\"}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.864Z",
+      "updatedAt": "2026-07-11T21:16:40.864Z"
+    },
+    {
+      "id": "cmrgv7axs0005bihyk2y1mqay",
+      "title": "Mandatory Disclosure",
+      "slug": "mandatory-disclosure",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Mandatory Disclosure\",\"subheadline\":\"CBSE Compliance\",\"bgImage\":\"\"}},{\"id\":\"docs\",\"type\":\"ACCORDION_BLOCK\",\"data\":{\"annotation\":\"Documents\",\"title\":\"Public Information\",\"subtitle\":\"As mandated by the CBSE.\",\"items\":[{\"question\":\"Copies of Affiliation/Upgradation Letter\",\"answer\":\"Available at the school administration office.\"},{\"question\":\"Copies of Societies/Trust Registration\",\"answer\":\"Available at the school administration office.\"},{\"question\":\"Copy of No Objection Certificate (NOC)\",\"answer\":\"Available at the school administration office.\"},{\"question\":\"Copies of Recognition Certificate\",\"answer\":\"Available at the school administration office.\"},{\"question\":\"Copy of Valid Building Safety Certificate\",\"answer\":\"Available at the school administration office.\"},{\"question\":\"Copy of Valid Fire Safety Certificate\",\"answer\":\"Available at the school administration office.\"},{\"question\":\"Copy of Valid Water & Health Certificates\",\"answer\":\"Available at the school administration office.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.865Z",
+      "updatedAt": "2026-07-11T21:16:40.865Z"
+    },
+    {
+      "id": "cmrgv7axv0006bihypbgmrv65",
+      "title": "Academics",
+      "slug": "academics",
+      "content": "[{\"id\":\"hero-1\",\"type\":\"HERO\",\"data\":{\"headline\":\"Academics at Faith Model\",\"subheadline\":\"CBSE Affiliated\",\"bgImage\":\"\"}},{\"id\":\"phil-1\",\"type\":\"PHILOSOPHY_SPLIT\",\"data\":{\"annotation\":\"Our Philosophy\",\"title\":\"Beyond the Textbook\",\"subtitle\":\"We follow the CBSE curriculum enriched with our own pedagogy framework that champions inquiry, project-based learning, and the development of essential life skills alongside academic mastery.\",\"contentHtml\":\"Our approach is guided by three principles: <strong>Conceptual Understanding</strong> (not rote memorisation), <strong>Application Thinking</strong> (connecting learning to real life), and <strong>Reflective Growth</strong> (continuous self-assessment and improvement).\",\"imageUrl\":\"https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80\"}},{\"id\":\"curr-1\",\"type\":\"CURRICULUM_OVERVIEW\",\"data\":{\"annotation\":\"Grade-Wise\",\"title\":\"Curriculum Overview\",\"levels\":[{\"level\":\"Primary School\",\"grades\":\"Grades 1–5\",\"subjects\":[\"English Language & Literature\",\"Mathematics\",\"Environmental Studies\",\"Hindi / Tamil\",\"Art & Craft\",\"Physical Education\",\"Computer Fundamentals\"],\"img\":\"https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=70\"},{\"level\":\"Middle School\",\"grades\":\"Grades 6–8\",\"subjects\":[\"English\",\"Mathematics\",\"Science\",\"Social Science\",\"Hindi / Tamil\",\"Computer Science\"],\"img\":\"https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=70\"},{\"level\":\"Secondary School\",\"grades\":\"Grades 9–10\",\"subjects\":[\"English Core\",\"Mathematics\",\"Science\",\"Social Science\",\"Hindi / Tamil / French\"],\"img\":\"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=70\"}]}},{\"id\":\"prog-1\",\"type\":\"SIGNATURE_PROGRAMS\",\"data\":{\"annotation\":\"Beyond the Syllabus\",\"title\":\"Signature Academic Programs\",\"programs\":[{\"title\":\"STEM Excellence Program\",\"desc\":\"Integrated Science, Technology, Engineering, and Mathematics curriculum with dedicated project hours.\",\"tag\":\"Grades 6–12\"},{\"title\":\"AI & Future Skills\",\"desc\":\"Structured introduction to Artificial Intelligence, Machine Learning concepts, and Python programming.\",\"tag\":\"Grades 7–12\"},{\"title\":\"Language Enrichment Program\",\"desc\":\"English communication, Tamil literary studies, and optional French or German.\",\"tag\":\"All Grades\"},{\"title\":\"Value Education & Life Skills\",\"desc\":\"Weekly structured sessions on empathy, mindfulness, financial literacy, and social-emotional learning.\",\"tag\":\"All Grades\"}]}},{\"id\":\"assess-1\",\"type\":\"ASSESSMENT_SYSTEM\",\"data\":{\"annotation\":\"Evaluation\",\"title\":\"Assessment System\",\"subtitle\":\"Our assessment philosophy is continuous, holistic, and growth-focused — not a single-exam ranking system.\",\"assessments\":[{\"label\":\"Formative Assessments\",\"pct\":\"40%\",\"desc\":\"Class tests, projects, assignments, and participation.\"},{\"label\":\"Term Examinations\",\"pct\":\"30%\",\"desc\":\"Mid-term and end-of-term written examinations.\"},{\"label\":\"Projects & Portfolios\",\"pct\":\"20%\",\"desc\":\"Individual and group projects, lab records.\"},{\"label\":\"Co-curricular\",\"pct\":\"10%\",\"desc\":\"Sports, arts, community service.\"}]}},{\"id\":\"cta-1\",\"type\":\"CTA_SECTION\",\"data\":{\"title\":\"Download the 2026–27 Academic Calendar\",\"buttonText\":\"Download Calendar (PDF)\",\"buttonLink\":\"/downloads/academic-calendar-2026.pdf\"}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.867Z",
+      "updatedAt": "2026-07-11T21:16:40.867Z"
+    },
+    {
+      "id": "cmrgv7axw0007bihy64f34d3y",
+      "title": "School Levels",
+      "slug": "school-levels",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"School Levels\",\"subheadline\":\"A Journey of Growth\",\"bgImage\":\"\"}},{\"id\":\"levels\",\"type\":\"CURRICULUM_OVERVIEW\",\"data\":{\"annotation\":\"Stages\",\"title\":\"Academic Stages\",\"levels\":[{\"level\":\"Pre-Primary\",\"grades\":\"Pre-KG, LKG, UKG\",\"subjects\":[\"Phonics\",\"Numeracy\",\"Sensory Play\"],\"img\":\"https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80\"},{\"level\":\"Primary School\",\"grades\":\"Grades 1–5\",\"subjects\":[\"Math\",\"Literacy\",\"EVS\",\"Art\",\"PE\"],\"img\":\"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80\"},{\"level\":\"Middle School\",\"grades\":\"Grades 6–8\",\"subjects\":[\"Sciences\",\"Social Studies\",\"Third Language\",\"Robotics\"],\"img\":\"https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.868Z",
+      "updatedAt": "2026-07-11T21:16:40.868Z"
+    },
+    {
+      "id": "cmrgv7axy0008bihyi7amwgqo",
+      "title": "Teachers",
+      "slug": "teachers",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Our Faculty\",\"subheadline\":\"The Pillars of Faith Model\",\"bgImage\":\"\"}},{\"id\":\"profiles\",\"type\":\"PROFILE_GRID\",\"data\":{\"annotation\":\"Teachers\",\"title\":\"Department Heads\",\"subtitle\":\"\",\"profiles\":[{\"name\":\"Mr. Rajan Nair\",\"role\":\"HOD - Science\",\"desc\":\"Over 15 years teaching Physics.\",\"image\":\"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80\"},{\"name\":\"Ms. Sunita Sharma\",\"role\":\"HOD - Mathematics\",\"desc\":\"Makes complex concepts incredibly simple.\",\"image\":\"https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80\"},{\"name\":\"Mr. David Lee\",\"role\":\"HOD - English\",\"desc\":\"Published author and literature enthusiast.\",\"image\":\"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.871Z",
+      "updatedAt": "2026-07-11T21:16:40.871Z"
+    },
+    {
+      "id": "cmrgv7ay10009bihydh123xd7",
+      "title": "Innovation",
+      "slug": "innovation",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Innovation & Technology\",\"subheadline\":\"Future Ready\",\"bgImage\":\"\"}},{\"id\":\"grid\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Tech\",\"title\":\"Tools of the Future\",\"subtitle\":\"\",\"items\":[{\"icon\":\"Cpu\",\"title\":\"AI Labs\",\"desc\":\"Students learn the basics of machine learning.\"},{\"icon\":\"Code\",\"title\":\"Coding Bootcamp\",\"desc\":\"Python and Java from grade 6.\"},{\"icon\":\"Printer\",\"title\":\"3D Printing\",\"desc\":\"Prototyping tools in our Maker Space.\"}]}},{\"id\":\"img\",\"type\":\"IMAGE_GRID\",\"data\":{\"images\":[\"https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80\"]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.874Z",
+      "updatedAt": "2026-07-11T21:16:40.874Z"
+    },
+    {
+      "id": "cmrgv7ay2000abihye020x0ea",
+      "title": "Campus",
+      "slug": "campus",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"A Campus Designed for Discovery\",\"subheadline\":\"15 Acres of Possibility\",\"bgImage\":\"\"}},{\"id\":\"phil\",\"type\":\"PHILOSOPHY_SPLIT\",\"data\":{\"annotation\":\"Overview\",\"title\":\"More Than Just Classrooms\",\"subtitle\":\"Our campus is purposefully designed to be an active participant in your child's education.\",\"contentHtml\":\"We believe that a well-designed environment reduces stress, increases focus, and inspires creativity. That's why our campus features extensive natural lighting, open green spaces, and specialised zones for different types of learning and play.\",\"imageUrl\":\"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80\"}},{\"id\":\"grid\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Facilities\",\"title\":\"State-of-the-Art Spaces\",\"subtitle\":\"\",\"items\":[{\"icon\":\"Library\",\"title\":\"Academic Blocks\",\"desc\":\"Houses Primary, Middle, and Senior Secondary classrooms with smart boards.\"},{\"icon\":\"Microscope\",\"title\":\"Innovation Hub\",\"desc\":\"A standalone facility for the AI Lab, Robotics Centre, Maker Space, and Computer Labs.\"},{\"icon\":\"Trophy\",\"title\":\"Sports Complex\",\"desc\":\"Includes an indoor stadium, Olympic-size swimming pool, and a football field.\"},{\"icon\":\"Music\",\"title\":\"Performing Arts Centre\",\"desc\":\"Features an 800-seat auditorium and acoustic music rooms.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.874Z",
+      "updatedAt": "2026-07-11T21:16:40.874Z"
+    },
+    {
+      "id": "cmrgv7ay4000bbihyn69xgqn0",
+      "title": "Facilities",
+      "slug": "facilities",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Facilities\",\"subheadline\":\"State of the art campus\",\"bgImage\":\"\"}},{\"id\":\"fac1\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Academic Spaces\",\"title\":\"Designed for Focus\",\"subtitle\":\"\",\"items\":[{\"title\":\"Smart Classrooms\",\"icon\":\"Monitor\",\"desc\":\"Equipped with interactive flat panels, high-speed internet, and ergonomic furniture.\"},{\"title\":\"The Grand Library\",\"icon\":\"BookOpen\",\"desc\":\"A two-story facility housing over 12,000 volumes, digital archives, and quiet reading zones.\"},{\"title\":\"Language Lab\",\"icon\":\"Headphones\",\"desc\":\"Advanced audio-visual equipment for immersive phonetic training in English, French, and German.\"}]}},{\"id\":\"fac2\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Science & Innovation\",\"title\":\"Future Ready\",\"subtitle\":\"\",\"items\":[{\"title\":\"Physics & Chemistry Labs\",\"icon\":\"Microscope\",\"desc\":\"University-grade equipment complying with CBSE standards for hands-on experimental learning.\"},{\"title\":\"Biology & EVS Lab\",\"icon\":\"Leaf\",\"desc\":\"Features high-resolution microscopes, specimen collections, and an adjoining botanical garden.\"},{\"title\":\"Robotics & AI Centre\",\"icon\":\"Cpu\",\"desc\":\"Microsoft Showcase facility with 3D printers, IoT kits, and programmable drones.\"},{\"title\":\"Mathematics Lab\",\"icon\":\"Calculator\",\"desc\":\"Manipulatives and visual aids that make abstract mathematical concepts concrete.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.876Z",
+      "updatedAt": "2026-07-11T21:16:40.876Z"
+    },
+    {
+      "id": "cmrgv7ay4000cbihyh900fbon",
+      "title": "Sports",
+      "slug": "sports",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Sports & Athletics\",\"subheadline\":\"Physical Excellence\",\"bgImage\":\"\"}},{\"id\":\"sportsList\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Disciplines\",\"title\":\"Our Sports Programs\",\"subtitle\":\"\",\"items\":[{\"title\":\"Football\",\"icon\":\"Trophy\",\"desc\":\"Outdoor\"},{\"title\":\"Cricket\",\"icon\":\"Target\",\"desc\":\"Outdoor\"},{\"title\":\"Basketball\",\"icon\":\"Circle\",\"desc\":\"Outdoor\"},{\"title\":\"Athletics\",\"icon\":\"Activity\",\"desc\":\"Track\"},{\"title\":\"Swimming\",\"icon\":\"Waves\",\"desc\":\"Aquatics\"},{\"title\":\"Badminton\",\"icon\":\"Dribbble\",\"desc\":\"Indoor\"},{\"title\":\"Chess\",\"icon\":\"Crosshair\",\"desc\":\"Mind Sports\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.877Z",
+      "updatedAt": "2026-07-11T21:16:40.877Z"
+    },
+    {
+      "id": "cmrgv7ay5000dbihyj7n9c6tg",
+      "title": "Arts",
+      "slug": "arts",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Arts & Culture\",\"subheadline\":\"Creative Expression\",\"bgImage\":\"\"}},{\"id\":\"arts\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Disciplines\",\"title\":\"Our Programs\",\"subtitle\":\"\",\"items\":[{\"icon\":\"Palette\",\"title\":\"Visual Arts\",\"desc\":\"Painting, sketching, and digital art studios.\"},{\"icon\":\"Music\",\"title\":\"Music\",\"desc\":\"Vocal and instrumental training in Indian Classical and Western styles.\"},{\"icon\":\"Smile\",\"title\":\"Theatre\",\"desc\":\"Drama clubs and annual stage productions.\"}]}},{\"id\":\"grid\",\"type\":\"IMAGE_GRID\",\"data\":{\"images\":[\"https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1510519138101-570d1dca3d66?auto=format&fit=crop&w=800&q=80\"]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.878Z",
+      "updatedAt": "2026-07-11T21:16:40.878Z"
+    },
+    {
+      "id": "cmrgv7ay5000ebihyzwfbz6fm",
+      "title": "Student Life",
+      "slug": "student-life",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Student Life\",\"subheadline\":\"Vibrant Campus Culture\",\"bgImage\":\"\"}},{\"id\":\"grid\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Activities\",\"title\":\"Beyond the Classroom\",\"subtitle\":\"\",\"items\":[{\"icon\":\"Globe\",\"title\":\"Model UN\",\"desc\":\"Debating global issues.\"},{\"icon\":\"Heart\",\"title\":\"Community Service\",\"desc\":\"Giving back to society.\"},{\"icon\":\"Users\",\"title\":\"Student Council\",\"desc\":\"Leadership opportunities.\"}]}},{\"id\":\"images\",\"type\":\"IMAGE_GRID\",\"data\":{\"images\":[\"https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80\"]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.878Z",
+      "updatedAt": "2026-07-11T21:16:40.878Z"
+    },
+    {
+      "id": "cmrgv7ay6000fbihybt3t7wju",
+      "title": "Safety",
+      "slug": "safety",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Campus Safety\",\"subheadline\":\"Our Utmost Priority\",\"bgImage\":\"\"}},{\"id\":\"grid\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Security\",\"title\":\"Protective Measures\",\"subtitle\":\"\",\"items\":[{\"icon\":\"Video\",\"title\":\"CCTV Surveillance\",\"desc\":\"24/7 monitoring.\"},{\"icon\":\"Shield\",\"title\":\"Access Control\",\"desc\":\"Strict visitor protocols.\"},{\"icon\":\"HeartPulse\",\"title\":\"Infirmary\",\"desc\":\"Full-time nurse on campus.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.878Z",
+      "updatedAt": "2026-07-11T21:16:40.878Z"
+    },
+    {
+      "id": "cmrgv7ay6000gbihykwleysxt",
+      "title": "News",
+      "slug": "news",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"News & Events\",\"subheadline\":\"Campus Updates\",\"bgImage\":\"\"}},{\"id\":\"timeline\",\"type\":\"TIMELINE_BLOCK\",\"data\":{\"annotation\":\"Latest\",\"title\":\"Recent Announcements\",\"subtitle\":\"\",\"events\":[{\"year\":\"Oct 2026\",\"event\":\"Annual Science Exhibition 'Nova' scheduled for the 25th. All parents are invited to witness student innovations.\"},{\"year\":\"Sep 2026\",\"event\":\"Faith Model School wins the Inter-School Debate Championship at the regional level.\"},{\"year\":\"Aug 2026\",\"event\":\"Independence Day celebrations held in the main courtyard with patriotic fervor.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.879Z",
+      "updatedAt": "2026-07-11T21:16:40.879Z"
+    },
+    {
+      "id": "cmrgv7ay7000hbihyctlqx1n2",
+      "title": "Gallery",
+      "slug": "gallery",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Photo Gallery\",\"subheadline\":\"Moments Captured\",\"bgImage\":\"\"}},{\"id\":\"grid1\",\"type\":\"IMAGE_GRID\",\"data\":{\"images\":[\"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80\"]}},{\"id\":\"grid2\",\"type\":\"IMAGE_GRID\",\"data\":{\"images\":[\"https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=800&q=80\",\"https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80\"]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.879Z",
+      "updatedAt": "2026-07-11T21:16:40.879Z"
+    },
+    {
+      "id": "cmrgv7ay7000ibihyu7kgvfuh",
+      "title": "Students",
+      "slug": "students",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Student Portal\",\"subheadline\":\"Academic Resources\",\"bgImage\":\"\"}},{\"id\":\"table\",\"type\":\"TABLE_BLOCK\",\"data\":{\"annotation\":\"Links\",\"title\":\"Quick Access\",\"subtitle\":\"\",\"headers\":[\"Resource\",\"Description\",\"Link\"],\"rows\":[[\"LMS Login\",\"Submit assignments and view grades\",\"Click Here\"],[\"Library Catalog\",\"Search for books online\",\"Click Here\"],[\"Help Desk\",\"IT support for student accounts\",\"Click Here\"]]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.880Z",
+      "updatedAt": "2026-07-11T21:16:40.880Z"
+    },
+    {
+      "id": "cmrgv7ay7000jbihy5ih6qel0",
+      "title": "Parents",
+      "slug": "parents",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Parent Portal\",\"subheadline\":\"Partnering in Education\",\"bgImage\":\"\"}},{\"id\":\"steps\",\"type\":\"STEPS_BLOCK\",\"data\":{\"annotation\":\"Engagement\",\"title\":\"How to stay involved\",\"subtitle\":\"\",\"steps\":[{\"num\":\"01\",\"title\":\"Download App\",\"desc\":\"Get the school app for real-time updates.\"},{\"num\":\"02\",\"title\":\"Attend PTA\",\"desc\":\"Join our termly Parent-Teacher Association meetings.\"},{\"num\":\"03\",\"title\":\"Volunteer\",\"desc\":\"Participate in school events and trips.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.880Z",
+      "updatedAt": "2026-07-11T21:16:40.880Z"
+    },
+    {
+      "id": "cmrgv7ay8000kbihyqq3eim19",
+      "title": "Alumni",
+      "slug": "alumni",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Alumni Network\",\"subheadline\":\"A Lifelong Bond\",\"bgImage\":\"\"}},{\"id\":\"profiles\",\"type\":\"PROFILE_GRID\",\"data\":{\"annotation\":\"Stars\",\"title\":\"Notable Alumni\",\"subtitle\":\"\",\"profiles\":[{\"name\":\"Rahul Verma\",\"role\":\"Software Engineer at Google\",\"desc\":\"Batch of 2015. Rahul attributes his logical foundation to our Robotics Club.\",\"image\":\"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80\"},{\"name\":\"Anita Desai\",\"role\":\"Medical Researcher\",\"desc\":\"Batch of 2012. Anita is currently leading groundbreaking research in oncology.\",\"image\":\"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80\"}]}},{\"id\":\"cta\",\"type\":\"CTA_SECTION\",\"data\":{\"title\":\"Are you an alumnus?\",\"buttonText\":\"Join Network\",\"buttonLink\":\"#\"}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.880Z",
+      "updatedAt": "2026-07-11T21:16:40.880Z"
+    },
+    {
+      "id": "cmrgv7ay8000lbihyjcgvwi0s",
+      "title": "Admissions",
+      "slug": "admissions",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Join the Faith Model Family\",\"subheadline\":\"Admissions 2026–27\",\"bgImage\":\"\"}},{\"id\":\"steps\",\"type\":\"STEPS_BLOCK\",\"data\":{\"annotation\":\"Process\",\"title\":\"How to Apply\",\"subtitle\":\"\",\"steps\":[{\"num\":\"01\",\"title\":\"Submit Online Enquiry\",\"desc\":\"Fill the enquiry form or call our admissions helpline.\"},{\"num\":\"02\",\"title\":\"Campus Visit & Interaction\",\"desc\":\"Visit our campus for a guided tour and meet the faculty.\"},{\"num\":\"03\",\"title\":\"Application Form\",\"desc\":\"Submit the application form along with all required documents.\"},{\"num\":\"04\",\"title\":\"Assessment\",\"desc\":\"Children appear for a friendly, age-appropriate interaction.\"}]}},{\"id\":\"fees\",\"type\":\"TABLE_BLOCK\",\"data\":{\"annotation\":\"Financials\",\"title\":\"Fee Structure\",\"subtitle\":\"\",\"headers\":[\"Grade\",\"Annual Fee\",\"Monthly Installment\",\"Note\"],\"rows\":[[\"Pre-KG & LKG\",\"₹65,000\",\"₹5,417\",\"Includes books, uniform & activity fee\"],[\"UKG – Grade 2\",\"₹75,000\",\"₹6,250\",\"\"],[\"Grades 3 – 5\",\"₹85,000\",\"₹7,083\",\"\"],[\"Grades 9 – 10\",\"₹1,05,000\",\"₹8,750\",\"\"],[\"Grades 11 – 12\",\"₹1,20,000\",\"₹10,000\",\"Science / Commerce streams\"]]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.881Z",
+      "updatedAt": "2026-07-11T21:16:40.881Z"
+    },
+    {
+      "id": "cmrgv7ay9000mbihyoc2chflf",
+      "title": "Portals",
+      "slug": "portals",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Login Portals\",\"subheadline\":\"Secure Access\",\"bgImage\":\"\"}},{\"id\":\"portals\",\"type\":\"ICON_GRID_BLOCK\",\"data\":{\"annotation\":\"Access\",\"title\":\"Select your portal\",\"subtitle\":\"\",\"items\":[{\"icon\":\"User\",\"title\":\"Student Portal\",\"desc\":\"Access your assignments, grades, and resources.\"},{\"icon\":\"Users\",\"title\":\"Parent Portal\",\"desc\":\"View your child's progress, pay fees, and communicate.\"},{\"icon\":\"Briefcase\",\"title\":\"Staff Portal\",\"desc\":\"Internal resources, payroll, and curriculum planning.\"}]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.881Z",
+      "updatedAt": "2026-07-11T21:16:40.881Z"
+    },
+    {
+      "id": "cmrgv7ay9000nbihyng82q6ft",
+      "title": "Downloads",
+      "slug": "downloads",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"Downloads\",\"subheadline\":\"Resources & Forms\",\"bgImage\":\"\"}},{\"id\":\"table\",\"type\":\"TABLE_BLOCK\",\"data\":{\"annotation\":\"Documents\",\"title\":\"Available Downloads\",\"subtitle\":\"\",\"headers\":[\"Document Name\",\"Category\",\"Size\"],\"rows\":[[\"School Prospectus 2026-27\",\"Information\",\"2.4 MB\"],[\"Academic Calendar 2026-27\",\"Academic\",\"1.1 MB\"],[\"Leave Application Form\",\"Forms\",\"0.5 MB\"],[\"Medical History Form\",\"Forms\",\"0.6 MB\"]]}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.882Z",
+      "updatedAt": "2026-07-11T21:16:40.882Z"
+    },
+    {
+      "id": "cmrgv7aya000obihyuwfj7bfn",
+      "title": "Contact",
+      "slug": "contact",
+      "content": "[{\"id\":\"hero\",\"type\":\"HERO\",\"data\":{\"headline\":\"We'd Love to Hear From You\",\"subheadline\":\"Get In Touch\",\"bgImage\":\"\"}},{\"id\":\"contact\",\"type\":\"CONTACT_BLOCK\",\"data\":{\"annotation\":\"Reach Out\",\"title\":\"Contact Information\",\"subtitle\":\"Our admissions office is open Monday to Saturday, 9:00 AM to 4:00 PM.\",\"details\":[{\"label\":\"Address\",\"value\":\"123 Education Lane,\\nChennai, Tamil Nadu 600001\"},{\"label\":\"Phone\",\"value\":\"+91 44 1234 5678\"},{\"label\":\"Email\",\"value\":\"info@faithmodelschool.edu.in\"}],\"mapIframe\":\"<iframe src=\\\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5!2d80.2!3d13.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin\\\" width=\\\"600\\\" height=\\\"450\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" loading=\\\"lazy\\\" referrerpolicy=\\\"no-referrer-when-downgrade\\\"></iframe>\"}}]",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.882Z",
+      "updatedAt": "2026-07-11T21:16:40.882Z"
+    },
+    {
+      "id": "cmrgv7ayb000pbihy0dsm7gfy",
+      "title": "test ",
+      "slug": "test",
+      "content": "[{\"id\":\"15dv6hahi\",\"type\":\"IMAGE_GRID\",\"data\":{\"images\":[\"\",\"\",\"\"]}},{\"id\":\"ouztw80wb\",\"type\":\"CTA_SECTION\",\"data\":{\"title\":\"Ready to join?\",\"buttonText\":\"Apply Now\",\"buttonLink\":\"/admissions\"}}]",
+      "isPublished": false,
+      "createdAt": "2026-07-11T21:16:40.883Z",
+      "updatedAt": "2026-07-11T21:16:40.883Z"
+    },
+    {
+      "id": "cmrgv7ayc000qbihybkthf9vy",
+      "title": "Moodboard Preview",
+      "slug": "moodboard",
+      "content": "{\"blocks\":[{\"id\":\"moodboard-hero-seed\",\"type\":\"MOODBOARD_HERO\",\"data\":{\"headline\":\"Empowering the Next Generation\",\"subheadline\":\"A legacy of excellence since 1989\",\"primaryCtaLabel\":\"Apply Now\",\"primaryCtaHref\":\"/admissions\",\"images\":[\"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop\",\"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1422&auto=format&fit=crop\",\"https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1470&auto=format&fit=crop\",\"https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1470&auto=format&fit=crop\"]}}]}",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.884Z",
+      "updatedAt": "2026-07-11T21:16:40.884Z"
+    },
+    {
+      "id": "cmrgv7ayc000rbihyujy7kf53",
+      "title": "Golden Ratio Preview",
+      "slug": "golden",
+      "content": "{\"blocks\":[{\"id\":\"golden-hero-seed\",\"type\":\"GOLDEN_HERO\",\"data\":{\"headline\":\"Faith Model School\",\"subheadline\":\"Empowering minds, shaping futures since 1989.\",\"quote\":\"Education is the most powerful weapon which you can use to change the world.\",\"primaryCtaLabel\":\"Admissions\",\"primaryCtaHref\":\"/admissions\",\"mediaUrl\":\"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop\",\"secondaryImageUrl\":\"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1470&auto=format&fit=crop\"}}]}",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.884Z",
+      "updatedAt": "2026-07-11T21:16:40.884Z"
+    },
+    {
+      "id": "cmrgv7ayc000sbihyis2xs0gu",
+      "title": "Home",
+      "slug": "",
+      "content": "{\"blocks\":[{\"id\":\"golden-hero-home\",\"type\":\"GOLDEN_HERO\",\"data\":{\"headline\":\"Faith Model School\",\"subheadline\":\"Empowering minds, shaping futures since 1989.\",\"quote\":\"Education is the most powerful weapon which you can use to change the world.\",\"primaryCtaLabel\":\"Admissions\",\"primaryCtaHref\":\"/admissions\",\"mediaUrl\":\"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop\",\"secondaryImageUrl\":\"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1470&auto=format&fit=crop\"}},{\"id\":\"text-block-home\",\"type\":\"TEXT_BLOCK\",\"data\":{\"content\":\"<h2>Welcome to Faith Model School</h2><p>We are dedicated to providing a world-class education that empowers students to reach their full potential. Our state-of-the-art facilities and dedicated faculty ensure that every child receives the attention and support they need to succeed.</p>\"}}]}",
+      "isPublished": true,
+      "createdAt": "2026-07-11T21:16:40.885Z",
+      "updatedAt": "2026-07-11T21:16:40.885Z"
+    }
+  ],
+  "posts": [],
+  "media": [],
+  "settings": [
+    {
+      "id": "cmrgv7awy0000bihy15wnbbn5",
+      "key": "SITE_CONTACT",
+      "value": "{\"address\":\"Faith Model School, Ambedkar Nagar, Podanur Chettipalayam Road, Coimbatore – 641201\",\"phone\":\"99432 58199, 99432 48199\",\"email\":\"Admissions@faithmodelschool.com\",\"mapIframe\":\"\"}",
+      "updatedAt": "2026-07-11T21:16:40.834Z"
+    },
+    {
+      "id": "cmrgv7axn0001bihyewgf53fo",
+      "key": "SITE_SOCIALS",
+      "value": "{\"facebook\":\"\",\"twitter\":\"\",\"instagram\":\"\",\"linkedin\":\"\",\"youtube\":\"\"}",
+      "updatedAt": "2026-07-11T21:16:40.860Z"
+    }
+  ],
+  "users": []
+}

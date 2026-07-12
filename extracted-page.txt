@@ -1,0 +1,2211 @@
+---- FOUND MATCH ----
+import Link from 'next/link';
+import { ArrowRight, BookOpen, Users, Trophy, ChevronRight, GraduationCap } from 'lucide-react';
+
+export default function Home() {
+  return (
+    <div className="flex flex-col w-full">
+      
+      {/* 1. Hero Section (Dynamic Storyboard) */}
+      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-12 md:pt-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-100 via-white to-white -z-10"></div>
+        <div className="container mx-auto px-4 w-full">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            
+            {/* Left Side: Typography */}
+            <div className="lg:w-1/2 z-10">
+              <div className="animate-fade-in-up" style={{ animationDelay: '0.1s', opacity: 0 }}>
+                <span className="inline-flex items-center py-1.5 px-4 rounded-full bg-slate-50 text-slate-700 font-semibold text-xs mb-8 border border-slate-200 tracking-widest uppercase shadow-sm hover:shadow-md transition-shadow cursor-default">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+                  Admissions Open 2026-27
+                </span>
+              </div>
+              <h1 className="text-6xl md:text-8xl font-playfair font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.3s', opacity: 0 }}>Empowering</div>
+                <div className="animate-fade-in-up text-primary" style={{ animationDelay: '0.5s', opacity: 0 }}>Minds.</div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.7s', opacity: 0 }}>
+                  Shaping the <span className="relative inline-block text-accent">
+                    <span className="relative z-10">Future.</span>
+                    <span className="absolute bottom-2 left-0 w-full h-3 bg-accent/20 -z-10 transform -rotate-2"></span>
+                  </span>
+                </div>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-500 mb-10 max-w-lg font-light animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.9s', opacity: 0 }}>
+                Join a dynamic community dedicated to academic excellence, innovation, and holistic development.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '1.1s', opacity: 0 }}>
+                <Link href="/admissions" className="group relative bg-primary text-white font-bold px-8 py-4 rounded-full overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(15,23,42,0.3)] transition-all duration-300 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                  <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-slate-900 transition-colors duration-300">
+                    Apply Now <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+                <Link href="/contact" className="group flex items-center justify-center bg-white text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  Book a Campus Tour
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side: Floating Masonry Grid */}
+            <div className="lg:w-1/2 relative h-[600px] w-full hidden lg:block">
+              <div className="absolute top-0 right-0 w-[280px] h-[360px] rounded-[2rem] overflow-hidden shadow-2xl animate-float group" style={{ animationDelay: '0s' }}>
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Students" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              </div>
+              <div className="absolute bottom-10 left-10 w-[300px] h-[240px] rounded-[2rem] overflow-hidden shadow-2xl animate-float group" style={{ animationDelay: '-2s' }}>
+                <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=600&q=80" alt="Science Lab" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              </div>
+              <div className="absolute top-32 left-0 w-[180px] h-[180px] rounded-full overflow-hidden shadow-xl animate-float border-8 border-white group" style={{ animationDelay: '-4s' }}>
+                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=400&q=80" alt="Library" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute top-10 left-20 w-32 h-32 rounded-full bg-accent/10 blur-2xl animate-pulse"></div>
+              <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-primary/5 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Quick Links Bar */}
+      <section className="bg-primary text-white py-8 relative z-20 shadow-2xl">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center divide-x divide-white/10">
+            <Link href="/portals/parents" className="group hover:text-accent transition-colors py-2 flex flex-col items-center gap-3">
+              <div className="p-3 bg-white/5 rounded-2xl group-hover:bg-accent/20 transition-colors duration-300 group-hover:-translate-y-1 transform">
+                <Users className="w-6 h-6" />
+              </div>
+              <span className="text-sm font-semibold tracking-wide">Parent Portal</span>
+            </Link>
+            <Link href="/portals/students" className="group hover:text-accent transition-colors py-2 flex flex-col items-center gap-3">
+              <div className="p-3 bg-white/5 rounded-2xl group-hover:bg-accent/20 transition-colors duration-300 group-hover:-translate-y-1 transform">
+                <GraduationCap className="w-6 h-6" />
+              </div>
+              <span className="text-sm font-semibold tracking-wide">Student Portal</span>
+            </Link>
+            <Link href="/academics/calendar" className="group hover:text-accent transition-colors py-2 flex flex-col items-center gap-3">
+              <div className="p-3 bg-white/5 rounded-2xl group-hover:bg-accent/20 transition-colors duration-300 group-hover:-translate-y-1 transform">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <span className="text-sm font-semibold tracking-wide">Academic Calendar</span>
+            </Link>
+            <Link href="/portals/fees" className="group hover:text-accent transition-colors py-2 flex flex-col items-center gap-3">
+              <div className="p-3 bg-white/5 rounded-2xl group-hover:bg-accent/20 transition-colors duration-300 group-hover:-translate-y-1 transform">
+                <Trophy className="w-6 h-6" />
+              </div>
+              <span className="text-sm font-semibold tracking-wide">Pay Fees</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. At a Glance (Stats) */}
+      <section className="py-24 bg-surface">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: "35+", label: "Years of Excellence" },
+              { number: "2500+", label: "Happy Students" },
+              { number: "100%", label: "CBSE Results" },
+              { number: "15", label: "Acre Green Campus" }
+            ].map((stat, i) => (
+              <div key={i} className="group text-center p-8 bg-white rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div className="text-4xl md:text-6xl font-playfair font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300">{stat.number}</div>
+                <div className="text-slate-500 font-semibold tracking-wide text-sm uppercase">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Educational Pillars */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Our Educational Pillars</h2>
+            <p className="text-slate-500 text-xl font-light leading-relaxed">We provide a seamless educational journey from early childhood through senior secondary, tailored to every developmental stage.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Early Years", desc: "Fostering curiosity and foundational skills in a nurturing environment.", img: "https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=600&q=80" },
+              { title: "Primary & Middle", desc: "Building core competencies, critical thinking, and character.", img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" },
+              { title: "Senior Secondary", desc: "Preparing students for global universities and future careers.", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" }
+            ].map((pillar, i) => (
+              <div key={i} className="group rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-white flex flex-col">
+                <div className="h-56 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  <img src={pillar.img} alt={pillar.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <div className="p-10 flex-grow flex flex-col">
+                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">{pillar.title}</h3>
+                  <p className="text-slate-600 mb-8 leading-relaxed flex-grow">{pillar.desc}</p>
+                  <Link href={`/academics`} className="inline-flex items-center text-primary font-bold group-hover:text-accent transition-colors uppercase tracking-widest text-sm">
+                    Learn More <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Campus Life Split Screen */}
+      <section className="py-32 bg-slate-50 border-t border-slate-200 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-8">Experience Campus Life</h2>
+              <p className="text-slate-600 text-xl font-light mb-10 leading-relaxed">
+                Our 15-acre campus is designed to be a second home. With state-of-the-art smart classrooms, advanced robotics and science labs, and extensive sports facilities, we provide an environment where students can discover their passions and excel outside the classroom.
+              </p>
+              <ul className="space-y-5 mb-12">
+                {['Innovation & STEM Labs', 'Olympic-sized Swimming Pool', 'Comprehensive Arts Studios', 'Green, Eco-Friendly Campus'].map((item, i) => (
+                  <li key={i} className="group flex items-center gap-4 text-slate-700 font-medium text-lg">
+                    <div className="w-3 h-3 rounded-full bg-slate-300 group-hover:bg-accent group-hover:scale-150 transition-all duration-300"></div>
+                    <span className="group-hover:text-primary transition-colors">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/facilities" className="group inline-flex items-center justify-center px-10 py-4 rounded-full bg-primary text-white font-semibold hover:bg-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                Explore Facilities <ArrowRight className="w-5 h-5 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+              </Link>
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-2 gap-6 relative">
+              <div className="absolute inset-0 bg-accent/5 rounded-[3rem] -rotate-6 scale-105 -z-10"></div>
+              <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=400&q=80" alt="Campus 1" className="rounded-[2rem] w-full h-80 object-cover shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 hover:z-10 relative" />
+              <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80" alt="Campus 2" className="rounded-[2rem] w-full h-80 object-cover mt-12 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 hover:z-10 relative" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Message from the Principal */}
+      <section className="py-32 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-16 max-w-6xl mx-auto group">
+            <div className="md:w-1/3 shrink-0 relative">
+              <div className="absolute inset-0 bg-accent rounded-[2rem] translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500 -z-10"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" 
+                alt="Principal" 
+                className="w-full h-[450px] object-cover rounded-[2rem] shadow-xl border-4 border-white group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+            <div className="md:w-2/3">
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-8 group-hover:text-accent transition-colors duration-500">A Welcome from Our Principal</h2>
+              <p className="text-slate-600 text-2xl italic mb-8 leading-relaxed font-playfair font-light">
+                "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Our goal is to nurture well-rounded individuals who are not only academically proficient but also emotionally intelligent, ethical, and prepared to lead in a rapidly changing world."
+              </p>
+              <h4 className="text-2xl font-bold text-slate-800">Prof. Michael Chang</h4>
+              <p className="text-accent font-semibold tracking-wide uppercase text-sm mt-1">Principal, Faith Model School</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Latest News & Events */}
+      <section className="py-32 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">News & Updates</h2>
+              <p className="text-slate-500 text-xl font-light">Stay informed about the latest happenings on campus.</p>
+            </div>
+            <Link href="/news" className="group inline-flex items-center text-primary font-bold uppercase tracking-widest text-sm hover:text-accent transition-colors">
+              View All News <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              { title: "Annual Science Exhibition 2026 Announced", date: "Oct 15, 2026", category: "Event", img: "https://images.unsplash.com/photo-1564410267841-915d8e4d71ea?auto=format&fit=crop&w=600&q=80" },
+              { title: "Faith Model Wins National Debate Championship", date: "Oct 10, 2026", category: "Achievement", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" },
+              { title: "Parent-Teacher Meeting Scheduled for Term 1", date: "Oct 05, 2026", category: "Announcement", img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" }
+            ].map((news, i) => (
+              <div key={i} className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                <div className="h-60 overflow-hidden relative">
+                  <span className="absolute top-6 left-6 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full z-10 shadow-lg group-hover:bg-accent group-hover:text-slate-900 transition-colors">{news.category}</span>
+                  <img src={news.img} alt={news.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <div className="p-8">
+                  <p className="text-sm text-slate-400 font-medium mb-3">{news.date}</p>
+                  <h3 className="text-2xl font-bold text-primary mb-4 line-clamp-2 leading-snug group-hover:text-accent transition-colors">{news.title}</h3>
+                  <Link href={`/news`} className="inline-flex items-center text-slate-500 font-semibold group-hover:text-primary transition-colors text-sm uppercase tracking-wide">
+                    Read Full Story <ArrowRight className="w-4 h-4 ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Parent Testimonials */}
+      <section className="py-32 bg-primary text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-20">What Our Parents Say</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto text-left">
+            {[
+              { name: "Sarah & David Connor", quote: "The holistic approach to education here is phenomenal. Our daughter hasn't just improved academically; she's grown into a confident, articulate young leader." },
+              { name: "Dr. Rajiv Menon", quote: "As educators ourselves, we were very particular about choosing a school. Faith Model's faculty and state-of-the-art labs exceeded our expectations." },
+              { name: "Emily Wong", quote: "The communication between the school and parents is seamless. The Parent Portal keeps us updated daily on our son's progress and activities." }
+            ].map((testimonial, i) => (
+              <div key={i} className="group bg-slate-800/40 backdrop-blur-sm p-10 rounded-[2rem] border border-white/10 relative hover:bg-slate-800/60 hover:-translate-y-2 hover:border-accent/30 transition-all duration-500 shadow-xl">
+                <div className="text-8xl text-accent/20 absolute -top-4 -left-2 font-playfair leading-none group-hover:text-accent/40 group-hover:-translate-y-2 transition-all duration-500">"</div>
+                <p className="text-slate-300 italic mb-10 relative z-10 text-lg font-light leading-relaxed group-hover:text-white transition-colors duration-300">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-xl border border-accent/30 group-hover:bg-accent group-hover:text-slate-900 transition-colors duration-300">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-white tracking-wide">{testimonial.name}</p>
+                    <p className="text-sm text-slate-400 mt-1">Parent of Grade {8 + i} Student</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Why Choose Us (USPs) */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Why Choose Faith Model?</h2>
+            <p className="text-slate-500 text-xl font-light">We go beyond traditional education to ensure your child receives the best foundation for a successful future.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {[
+              { title: "Global Curriculum", desc: "Internationally benchmarked curriculum ensuring global competitiveness." },
+              { title: "1:15 Ratio", desc: "Low student-to-teacher ratio for highly personalized attention." },
+              { title: "Future-Ready Skills", desc: "Dedicated programs for AI, Coding, Robotics, and Financial Literacy." },
+              { title: "Eco-Campus", desc: "15 acres of green, sustainable campus fostering a love for nature." }
+            ].map((usp, i) => (
+              <div key={i} className="group text-center p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
+                <div className="w-20 h-20 rounded-[1.5rem] bg-slate-50 border border-slate-100 flex items-center justify-center mx-auto mb-8 shadow-sm text-3xl font-black text-slate-200 group-hover:bg-accent group-hover:text-white group-hover:-rotate-6 group-hover:scale-110 transition-all duration-500">
+                  0{i + 1}
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">{usp.title}</h3>
+                <p className="text-slate-500 leading-relaxed font-light">{usp.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Accreditations & Partners */}
+      <section className="py-16 bg-slate-50 border-y border-slate-200 overflow-hidden">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Recognized By & Partnered With</p>
+          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+            <div className="font-playfair text-3xl font-bold text-slate-800 hover:scale-110 transition-transform">CBSE <span className="text-sm font-sans font-normal block text-slate-500 mt-1 tracking-widest">Affiliated</span></div>
+            <div className="font-bold text-2xl text-slate-800 tracking-tighter hover:scale-110 transition-transform">Microsoft <span className="font-light text-slate-500">Showcase School</span></div>
+            <div className="font-serif text-3xl italic text-slate-800 hover:scale-110 transition-transform">British Council <span className="text-sm font-sans not-italic block text-slate-500 mt-1 tracking-widest">ISA Award</span></div>
+            <div className="font-sans font-black text-3xl text-slate-800 tracking-tight hover:scale-110 transition-transform">STEM<span className="font-light">.org</span> <span className="text-sm block text-slate-500 font-normal tracking-normal mt-1 tracking-widest uppercase">Accredited</span></div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. Final Call to Action */}
+      <section className="py-32 bg-primary relative overflow-hidden group">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80')] opacity-20 bg-cover bg-center group-hover:scale-105 group-hover:opacity-30 transition-all duration-1000"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <h2 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-8 drop-shadow-lg">Ready to Shape the Future?</h2>
+          <p className="text-2xl text-slate-200 mb-12 max-w-3xl mx-auto font-light drop-shadow-md">
+            Admissions for the 2026-27 academic year are now open. Secure your child's place at Faith Model School today.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link href="/admissions" className="bg-accent text-slate-900 font-bold px-12 py-5 rounded-full hover:bg-yellow-400 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-all duration-300 text-lg uppercase tracking-wider">
+              Start Application
+            </Link>
+            <Link href="/contact" className="backdrop-blur-md bg-white/10 text-white border border-white/30 font-semibold px-12 py-5 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 text-lg uppercase tracking-wider">
+              Contact Admissions
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
+---- FOUND MATCH ----
+"use client";
+
+import { useEffect, useState } from 'react';
+import StoryLayout from '@/components/StoryLayout';
+import Chapter from '@/components/Chapter';
+import { PenTool, School, BookOpen, Library, Microscope, Cpu, Trophy, Palette, Users, Star, GraduationCap } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
+
+export default function Home() {
+  const [stage, setStage] = useState(0);
+
+  useEffect(() => {
+    // Opening Scene Animation Sequence
+    const t1 = setTimeout(() => setStage(1), 3000); // Pencil lifts and starts drawing
+    const t2 = setTimeout(() => setStage(2), 5000); // Text appears
+    const t3 = setTimeout(() => setStage(3), 7000); // Image fades in
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+  }, []);
+
+  return (
+    <StoryLayout>
+      
+      {/* OPENING SCENE (HERO) */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden border-b border-slate-200/50 pt-20 pb-32">
+        <div className="container mx-auto px-4 w-full max-w-7xl relative z-10 flex flex-col lg:flex-row items-center gap-16">
+          
+          <div className="lg:w-1/2 p-8 md:p-12 relative z-10">
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold text-slate-800 mb-8 leading-[1.1] tracking-tight relative">
+              <span className={`inline-block transition-opacity duration-[2000ms] ${stage >= 2 ? 'opacity-100' : 'opacity-0'}`}>Every Great Future</span><br/>
+              <span className={`inline-block transition-opacity duration-[2000ms] delay-500 ${stage >= 2 ? 'opacity-100' : 'opacity-0'}`}>Begins With A</span><br/>
+              <span className={`inline-block transition-opacity duration-[2000ms] delay-1000 text-slate-500 ${stage >= 2 ? 'opacity-100' : 'opacity-0'}`}>Single Sketch.</span>
+              
+              {/* Animated Pencil for Hero */}
+              <PenTool className={`absolute -right-4 bottom-0 w-8 h-8 text-slate-400 transition-all duration-[3000ms] ease-in-out ${stage === 0 ? 'opacity-0 translate-y-20 rotate-0' : stage === 1 ? 'opacity-100 translate-x-10 translate-y-[-20vh] rotate-[45deg]' : 'opacity-0 translate-x-32 translate-y-32 rotate-90'}`} />
+            </h1>
+            
+            <p className={`text-xl md:text-2xl text-slate-600 font-playfair italic leading-relaxed mb-12 transition-opacity duration-[2000ms] delay-[1500ms] ${stage >= 2 ? 'opacity-100' : 'opacity-0'}`}>
+              "Every child begins with a blank page. Through curiosity, creativity, and confidence, those pages become a story worth telling."
+            </p>
+
+            <div className={`flex flex-col sm:flex-row gap-6 transition-opacity duration-[2000ms] delay-[2500ms] ${stage >= 2 ? 'opacity-100' : 'opacity-0'}`}>
+              <Link href="/admissions" className="bg-slate-800 text-[#FFFCF2] font-poppins font-medium px-8 py-4 rounded-full hover:bg-slate-700 transition-colors cursor-none border border-slate-700">
+                Begin the Story
+              </Link>
+              <button className="text-slate-600 font-poppins font-medium px-8 py-4 rounded-full border border-slate-300 hover:bg-slate-100 transition-colors cursor-none">
+                Watch Campus Film
+              </button>
+            </div>
+          </div>
+
+          <div className="lg:w-1/2 relative h-[50vh] md:h-[60vh] w-full flex items-center justify-center">
+            {/* The SVG Sketch that transforms into reality */}
+            <div className={`absolute inset-0 flex items-center justify-center transition-all duration-[3000ms] ease-in-out ${stage === 1 ? 'opacity-100 blur-0' : stage >= 2 ? 'opacity-0 blur-md scale-110' : 'opacity-0'}`}>
+              <School strokeWidth={1} className="w-64 h-64 text-slate-400" />
+            </div>
+            
+            {/* The Drone Campus Image */}
+            <div className={`absolute inset-0 transition-all duration-[3000ms] ease-in-out origin-center rounded-sm overflow-hidden shadow-2xl border-8 border-white ${stage >= 3 ? 'opacity-100 scale-100 grayscale-0 sepia-0' : 'opacity-0 scale-95 grayscale sepia'}`}>
+              <img 
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80" 
+                alt="Campus Drone View" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* CHAPTER 1: Welcome */}
+      <Chapter 
+        title="Chapter One"
+        heading="Welcome"
+        subheading="The sketch becomes real. We welcome families into a community built on strong values, mutual respect, and a shared vision for excellence."
+        icon={School}
+        imageSrc="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80"
+        reverse={true}
+      />
+
+      {/* CHAPTER 2: Learning Begins */}
+      <Chapter 
+        title="Chapter Two"
+        heading="Learning Begins"
+        subheading="Classrooms where equations come to life and paper textures hold the weight of new discoveries. Handwriting shapes the future."
+        icon={BookOpen}
+        imageSrc="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1000&q=80"
+        reverse={false}
+      />
+
+      {/* CHAPTER 3: The Library */}
+      <Chapter 
+        title="Chapter Three"
+        heading="The Library"
+        subheading="Books slowly open, and knowledge flows from the pages. Reading becomes alive, and quiet moments turn into vast adventures."
+        icon={Library}
+        imageSrc="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1000&q=80"
+        reverse={true}
+      />
+
+      {/* CHAPTER 4: Science */}
+      <Chapter 
+        title="Chapter Four"
+        heading="Science"
+        subheading="Chemical reactions animate. Planets rotate. The microscope zooms. The sketch becomes a real laboratory of endless inquiry."
+        icon={Microscope}
+        imageSrc="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=80"
+        reverse={false}
+      />
+
+      {/* CHAPTER 5: Innovation */}
+      <Chapter 
+        title="Chapter Five"
+        heading="Innovation"
+        subheading="Robots move. Circuits glow. Students begin programming the AI of tomorrow. Technology emerges naturally from imagination."
+        icon={Cpu}
+        imageSrc="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80"
+        reverse={true}
+      />
+
+      {/* CHAPTER 6: Sports */}
+      <Chapter 
+        title="Chapter Six"
+        heading="Sports"
+        subheading="A football rolls, and the drawing becomes a field. Students run, play, and learn the true meaning of teamwork and resilience."
+        icon={Trophy}
+        imageSrc="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1000&q=80"
+        reverse={false}
+      />
+
+      {/* CHAPTER 7: Arts */}
+      <Chapter 
+        title="Chapter Seven"
+        heading="Arts"
+        subheading="Watercolor slowly spreads. The artwork transforms into actual student performances, where every note and stroke tells a story."
+        icon={Palette}
+        imageSrc="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80"
+        reverse={true}
+      />
+
+      {/* CHAPTER 8: Campus Life */}
+      <Chapter 
+        title="Chapter Eight"
+        heading="Campus Life"
+        subheading="Gardens grow. Friendships form. Assemblies and celebrations fill the air with joy. Every day feels vibrant and alive."
+        icon={Users}
+        imageSrc="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80"
+        reverse={false}
+      />
+
+      {/* CHAPTER 9: Achievements */}
+      <Chapter 
+        title="Chapter Nine"
+        heading="Achievements"
+        subheading="Thousands of stars. Every star becomes a success story—Olympiads, leadership, arts. Each one expanding into brilliant reality."
+        icon={Star}
+        imageSrc="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80"
+        reverse={true}
+      />
+
+      {/* CHAPTER 10 & FINAL SCENE */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-48 text-center px-4">
+        
+        {/* The Final Chapter Content */}
+        <div className="mb-24 flex flex-col items-center max-w-4xl">
+          <GraduationCap strokeWidth={1} className="w-32 h-32 text-slate-400 mb-8" />
+          <span className="font-sans text-sm font-bold tracking-[0.3em] text-slate-400 uppercase mb-4">Chapter Ten</span>
+          <h2 className="text-4xl md:text-6xl font-playfair font-bold text-slate-800 mb-8">Graduation</h2>
+          <p className="text-xl text-slate-600 font-inter font-light leading-relaxed">
+            The sketchbook reaches its final page. Students, parents, and certificates. The illustration slowly becomes the real graduation ceremony. The sketchbook gently closes.
+          </p>
+        </div>
+
+        {/* The Final Scene */}
+        <div className="max-w-3xl border-t border-slate-300 pt-24 flex flex-col items-center">
+          <div className="w-full flex items-center justify-center gap-8 mb-12">
+            <div className="h-px bg-slate-300 w-full flex-1"></div>
+            <PenTool className="w-6 h-6 text-slate-400 transform -rotate-45" />
+            <div className="h-px bg-slate-300 w-full flex-1"></div>
+          </div>
+          
+          <blockquote className="text-2xl md:text-4xl font-playfair italic text-slate-700 leading-relaxed mb-16 px-4">
+            "Every masterpiece begins with a single line.<br/><br/>
+            Every future begins with a single day."
+          </blockquote>
+          
+          <Link href="/admissions" className="bg-slate-800 text-[#FFFCF2] font-poppins font-medium px-12 py-5 rounded-full hover:bg-slate-700 transition-colors shadow-xl hover:shadow-2xl hover:-translate-y-1 cursor-none border border-slate-700">
+            Admissions
+          </Link>
+        </div>
+
+      </section>
+
+    </StoryLayout>
+  );
+}
+---- FOUND MATCH ----
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
+import StoryLayout from "@/components/StoryLayout";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* ===================================
+   HERO — Opening Scene
+   =================================== */
+function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const pencilRef = useRef<HTMLDivElement>(null);
+  const sketchRef = useRef<SVGSVGElement>(null);
+  const headlineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!pencilRef.current || !sketchRef.current || !headlineRef.current) return;
+
+    const tl = gsap.timeline({ delay: 0.5 });
+
+    // 1. Pencil appears and moves to starting position
+    tl.fromTo(pencilRef.current,
+      { opacity: 0, x: "30%", y: "-20%", rotation: -30 },
+      { opacity: 1, x: "0%", y: "0%", rotation: 10, duration: 1.2, ease: "power3.out" }
+    );
+
+    // 2. SVG paths draw themselves
+    const paths = sketchRef.current.querySelectorAll("path, line, circle, rect, polyline");
+    paths.forEach((path) => {
+      const len = (path as SVGPathElement).getTotalLength?.() || 300;
+      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+    });
+
+    tl.to(paths, {
+      strokeDashoffset: 0,
+      duration: 2.5,
+      ease: "power1.inOut",
+      stagger: 0.15,
+    }, "-=0.3");
+
+    // 3. Pencil lifts away
+    tl.to(pencilRef.current, {
+      x: "40%", y: "-60%", opacity: 0, rotation: 45, duration: 0.8, ease: "power2.in"
+    }, "-=0.5");
+
+    // 4. Watercolor washes over sketch (saturation change)
+    tl.to(sketchRef.current, {
+      filter: "sepia(0.8) hue-rotate(20deg) saturate(2)",
+      duration: 1.5,
+      ease: "power2.inOut"
+    });
+
+    // 5. Headline words write in
+    const words = headlineRef.current.querySelectorAll(".word");
+    tl.fromTo(words,
+      { opacity: 0, y: 30, skewY: 2 },
+      { opacity: 1, y: 0, skewY: 0, duration: 0.8, stagger: 0.12, ease: "power3.out" },
+      "-=0.5"
+    );
+
+  }, []);
+
+  return (
+    <section
+      ref={containerRef}
+      className="relative min-h-[100vh] flex items-center overflow-hidden pt-24"
+      style={{ background: "transparent" }}
+    >
+      {/* Sketchbook left-margin red line */}
+      <div className="absolute left-[7%] top-0 bottom-0 w-px bg-[#e8b4b0] opacity-40 hidden lg:block" />
+
+      <div className="max-w-7xl mx-auto px-8 w-full grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+
+        {/* LEFT: Typography */}
+        <div className="flex flex-col justify-center relative">
+          {/* Caveat annotation */}
+          <div className="font-caveat text-[#c17b5a] text-xl mb-8 -rotate-1">
+            Chapter One ↗
+          </div>
+
+          <div ref={headlineRef} className="overflow-hidden">
+            <h1 className="font-cormorant text-[clamp(3.5rem,8vw,7rem)] font-light text-[#1a1a2e] leading-[1.05] tracking-tight">
+              {["Every", "Great", "Future"].map((w, i) => (
+                <span key={i} className="word inline-block mr-[0.2em] opacity-0">{w}</span>
+              ))}
+              <br />
+              {["Begins", "With", "A"].map((w, i) => (
+                <span key={i} className="word inline-block mr-[0.2em] opacity-0">{w}</span>
+              ))}
+              <br />
+              <em className="word inline-block opacity-0 text-[#d4a017] not-italic">Single Sketch.</em>
+            </h1>
+          </div>
+
+          <p className="font-inter text-lg text-[#4a4a5e] font-light mt-8 mb-12 leading-relaxed max-w-md opacity-0"
+            style={{ animation: "ink-dry 1s ease-out 4.5s forwards" }}>
+            Every child begins with a blank page. Through curiosity, creativity, and confidence,<br />
+            those pages become a story worth telling.
+          </p>
+
+          <div className="flex gap-4 flex-wrap opacity-0" style={{ animation: "ink-dry 0.8s ease-out 5s forwards" }}>
+            <Link
+              href="/admissions"
+              className="relative font-poppins text-sm font-medium text-[#1a1a2e] px-8 py-4 border border-[#1a1a2e] hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-500 sketch-border group overflow-hidden"
+            >
+              <span className="relative z-10">Begin the Story</span>
+            </Link>
+            <button className="font-poppins text-sm font-medium text-[#4a4a5e] px-8 py-4 hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/50">
+              Watch Campus Film ↗
+            </button>
+          </div>
+        </div>
+
+        {/* RIGHT: Hand-drawn SVG Illustration → transforms to real */}
+        <div className="relative h-[70vh] flex items-center justify-center">
+          
+          {/* The Pencil */}
+          <div ref={pencilRef} className="absolute top-8 right-8 z-20 pointer-events-none" style={{ opacity: 0 }}>
+            <svg width="24" height="80" viewBox="0 0 24 80" fill="none">
+              <rect x="6" y="0" width="12" height="7" rx="1" fill="#f4c2b0" stroke="#c09080" strokeWidth="0.7"/>
+              <rect x="5" y="7" width="14" height="3" fill="#b0b0b0"/>
+              <rect x="5" y="10" width="14" height="55" fill="#f5e642" stroke="#c4aa00" strokeWidth="0.5"/>
+              <rect x="7" y="10" width="4" height="55" fill="rgba(255,255,255,0.18)"/>
+              <polygon points="5,65 19,65 12,79" fill="#d4a46a" stroke="#b07840" strokeWidth="0.6"/>
+              <polygon points="9,74 15,74 12,79" fill="#2a2840"/>
+            </svg>
+          </div>
+
+          {/* SVG Sketch of school scene */}
+          <svg
+            ref={sketchRef}
+            viewBox="0 0 500 400"
+            className="w-full h-full max-w-lg"
+            fill="none"
+            style={{ filter: "none" }}
+          >
+            {/* Ground horizon */}
+            <line x1="30" y1="300" x2="470" y2="300" stroke="#2a2840" strokeWidth="1.5" strokeLinecap="round" />
+
+            {/* Trees */}
+            <path d="M60 300 Q62 260 65 240 Q68 220 70 200" stroke="#2d5a27" strokeWidth="1.5" strokeLinecap="round"/>
+            <path d="M70 200 Q55 220 40 230 Q60 215 70 200 Q80 220 90 235 Q75 215 70 200Z" stroke="#2d5a27" strokeWidth="1.2" fill="none"/>
+            <path d="M400 300 Q402 255 406 235 Q409 215 412 195" stroke="#2d5a27" strokeWidth="1.5" strokeLinecap="round"/>
+            <path d="M412 195 Q395 218 380 228 Q400 212 412 195 Q425 215 440 230 Q422 212 412 195Z" stroke="#2d5a27" strokeWidth="1.2" fill="none"/>
+
+            {/* School building */}
+            <rect x="140" y="180" width="220" height="120" stroke="#1a1a2e" strokeWidth="1.8" strokeLinecap="round"/>
+            {/* Roof */}
+            <polyline points="130,180 250,110 370,180" stroke="#1a1a2e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            {/* Windows */}
+            <rect x="160" y="210" width="35" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <line x1="177" y1="210" x2="177" y2="240" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <line x1="160" y1="225" x2="195" y2="225" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <rect x="232" y="210" width="35" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <line x1="249" y1="210" x2="249" y2="240" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <line x1="232" y1="225" x2="267" y2="225" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <rect x="305" y="210" width="35" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <line x1="322" y1="210" x2="322" y2="240" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <line x1="305" y1="225" x2="340" y2="225" stroke="#1a1a2e" strokeWidth="0.8"/>
+            {/* Door */}
+            <rect x="228" y="255" width="45" height="45" rx="3" stroke="#1a1a2e" strokeWidth="1.5"/>
+            {/* Flag */}
+            <line x1="250" y1="110" x2="250" y2="80" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <polyline points="250,80 280,90 250,100" stroke="#d4a017" strokeWidth="1.2" fill="none"/>
+
+            {/* Gate */}
+            <line x1="100" y1="300" x2="100" y2="260" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="150" y1="300" x2="150" y2="260" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="100" y1="265" x2="150" y2="265" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <line x1="350" y1="300" x2="350" y2="260" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="400" y1="300" x2="400" y2="260" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="350" y1="265" x2="400" y2="265" stroke="#1a1a2e" strokeWidth="1.2"/>
+
+            {/* Students (silhouettes) */}
+            <circle cx="180" cy="292" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <path d="M180 300 L175 320 M180 300 L185 320 M175 310 L185 310" stroke="#1a1a2e" strokeWidth="1.2" strokeLinecap="round"/>
+            <circle cx="210" cy="290" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <path d="M210 298 L205 318 M210 298 L215 318 M205 308 L215 308" stroke="#1a1a2e" strokeWidth="1.2" strokeLinecap="round"/>
+            <circle cx="310" cy="291" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <path d="M310 299 L305 319 M310 299 L315 319 M305 309 L315 309" stroke="#1a1a2e" strokeWidth="1.2" strokeLinecap="round"/>
+
+            {/* Clouds */}
+            <path d="M80 70 Q90 55 105 58 Q108 45 122 46 Q136 34 150 47 Q165 42 170 55 Q180 52 185 65 Q185 75 170 75 L90 75 Q75 78 80 70Z" stroke="#4a4a5e" strokeWidth="1" strokeLinecap="round" fill="none"/>
+            <path d="M300 45 Q310 33 324 35 Q326 24 338 25 Q350 15 362 26 Q374 22 378 33 Q386 31 390 42 Q390 50 378 50 L310 50 Q297 52 300 45Z" stroke="#4a4a5e" strokeWidth="1" strokeLinecap="round" fill="none"/>
+
+            {/* Birds */}
+            <path d="M200 35 Q205 28 210 35" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+            <path d="M220 25 Q226 18 232 25" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+            <path d="M240 38 Q246 31 252 38" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+          </svg>
+
+          {/* Handwritten annotation in margin */}
+          <div className="absolute -left-6 top-1/3 font-caveat text-[#c17b5a] text-base -rotate-90 whitespace-nowrap opacity-60">
+            Faith Model School — Est. 1989
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0"
+        style={{ animation: "ink-dry 1s ease-out 5.5s forwards" }}>
+        <span className="font-caveat text-[#4a4a5e] text-sm">scroll to turn the page</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-px h-10 bg-gradient-to-b from-[#4a4a5e] to-transparent"
+        />
+      </div>
+    </section>
+  );
+}
+
+/* ===================================
+   REUSABLE CHAPTER SECTION
+   =================================== */
+interface ChapterProps {
+  id: string;
+  chapterNum: string;
+  title: string;
+  body: string;
+  annotation?: string;
+  imageSrc: string;
+  imageAlt: string;
+  reverse?: boolean;
+  SketchSVG?: React.ReactNode;
+}
+
+function ChapterSection({
+  id, chapterNum, title, body, annotation, imageSrc, imageAlt, reverse = false, SketchSVG
+}: ChapterProps) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const sketchRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-15%" });
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax for image
+  const imageY = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
+
+  // Sketch opacity fades as image appears
+  const sketchOpacity = useTransform(scrollYProgress, [0.1, 0.35, 0.5], [1, 1, 0]);
+  const imageOpacity = useTransform(scrollYProgress, [0.3, 0.55], [0, 1]);
+  const imageFilter = useTransform(
+    scrollYProgress,
+    [0.3, 0.7],
+    ["grayscale(100%) sepia(80%)", "grayscale(0%) sepia(0%)"]
+  );
+
+  return (
+    <section
+      id={id}
+      ref={sectionRef}
+      className="relative min-h-[100vh] flex items-center py-24 overflow-hidden"
+    >
+      {/* Large chapter number watermark */}
+      <span className="chapter-number" style={{ top: "5%", [reverse ? "left" : "right"]: "2%" }}>
+        {chapterNum}
+      </span>
+
+      {/* Left margin line */}
+      <div className="absolute left-[7%] top-0 bottom-0 w-px bg-[#e8b4b0] opacity-30 hidden lg:block" />
+
+      <div className={`max-w-7xl mx-auto px-8 w-full grid lg:grid-cols-2 gap-16 lg:gap-24 items-center ${reverse ? "direction-rtl" : ""}`}>
+
+        {/* Visual Column */}
+        <div className={`relative h-[55vh] md:h-[65vh] ${reverse ? "lg:order-2" : ""}`}>
+
+          {/* Phase 1: Sketch */}
+          {SketchSVG && (
+            <motion.div
+              ref={sketchRef}
+              style={{ opacity: sketchOpacity }}
+              className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
+            >
+              {SketchSVG}
+            </motion.div>
+          )}
+
+          {/* Phase 2 & 3: Watercolor → Reality */}
+          <motion.div
+            ref={imageRef}
+            style={{ opacity: imageOpacity, y: imageY, filter: imageFilter as unknown as string }}
+            className="absolute inset-0 z-20 overflow-hidden"
+          >
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            {/* Rough paper mask on image edge */}
+            <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(254,252,243,0.5)]" />
+          </motion.div>
+
+          {/* Corner annotation */}
+          {annotation && (
+            <motion.div
+              initial={{ opacity: 0, rotate: -3 }}
+              animate={isInView ? { opacity: 0.7, rotate: -2 } : {}}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="absolute -bottom-4 -right-2 font-caveat text-[#c17b5a] text-base z-30"
+            >
+              {annotation}
+            </motion.div>
+          )}
+        </div>
+
+        {/* Text Column */}
+        <div ref={textRef} className={reverse ? "lg:order-1" : ""}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1"
+          >
+            Chapter {chapterNum}
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.33, 1, 0.68, 1] }}
+            className="font-cormorant text-[clamp(2.8rem,5.5vw,5rem)] font-light text-[#1a1a2e] leading-tight mb-6 tracking-tight"
+          >
+            {title}
+          </motion.h2>
+
+          <motion.div
+            initial={{ width: 0 }}
+            animate={isInView ? { width: "3rem" } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="h-px bg-[#d4a017] mb-8"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.55 }}
+            className="font-inter text-lg text-[#4a4a5e] font-light leading-relaxed max-w-md"
+          >
+            {body}
+          </motion.p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ===================================
+   CHAPTER SKETCHES
+   =================================== */
+const SketchLibrary = (
+  <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+    <rect x="30" y="40" width="240" height="220" stroke="#1a1a2e" strokeWidth="1.5" rx="2"/>
+    {[0,1,2,3,4].map(i => (
+      <rect key={i} x={50 + i * 42} y="60" width="32" height="180" stroke="#2d5a27" strokeWidth="1.2" rx="1"/>
+    ))}
+    {[0,1,2,3,4].map(i => (
+      <line key={i} x1={66 + i * 42} y1="60" x2={66 + i * 42} y2="240" stroke="#2d5a27" strokeWidth="0.6"/>
+    ))}
+    <circle cx="150" cy="275" r="4" stroke="#d4a017" strokeWidth="1.2"/>
+  </svg>
+);
+
+const SketchMicroscope = (
+  <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+    <line x1="150" y1="60" x2="150" y2="160" stroke="#1a1a2e" strokeWidth="2" strokeLinecap="round"/>
+    <ellipse cx="150" cy="60" rx="20" ry="10" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <ellipse cx="150" cy="110" rx="28" ry="12" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <ellipse cx="150" cy="160" rx="35" ry="14" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <path d="M130 160 L100 240 L200 240 L170 160" stroke="#1a1a2e" strokeWidth="1.5" strokeLinejoin="round"/>
+    <line x1="80" y1="240" x2="220" y2="240" stroke="#1a1a2e" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="210" cy="100" r="24" stroke="#0ea5e9" strokeWidth="1.2"/>
+    <path d="M198 100 a12 12 0 1 1 12 0" stroke="#0ea5e9" strokeWidth="1.2"/>
+  </svg>
+);
+
+const SketchRobot = (
+  <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+    <rect x="95" y="60" width="110" height="90" rx="8" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <circle cx="128" cy="98" r="14" stroke="#0ea5e9" strokeWidth="1.2"/>
+    <circle cx="172" cy="98" r="14" stroke="#0ea5e9" strokeWidth="1.2"/>
+    <path d="M130 118 Q150 128 170 118" stroke="#d4a017" strokeWidth="1.2" strokeLinecap="round"/>
+    <line x1="150" y1="60" x2="150" y2="45" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+    <circle cx="150" cy="40" r="6" stroke="#1a1a2e" strokeWidth="1.2"/>
+    <rect x="105" y="150" width="90" height="80" rx="4" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <line x1="95" y1="170" x2="70" y2="185" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="205" y1="170" x2="230" y2="185" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="125" y1="230" x2="120" y2="265" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="175" y1="230" x2="180" y2="265" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const SketchBall = (
+  <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+    <circle cx="150" cy="120" r="70" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <path d="M90 85 Q150 100 210 85" stroke="#1a1a2e" strokeWidth="1"/>
+    <path d="M85 155 Q150 140 215 155" stroke="#1a1a2e" strokeWidth="1"/>
+    <path d="M110 55 Q130 120 110 185" stroke="#1a1a2e" strokeWidth="1"/>
+    <path d="M190 55 Q170 120 190 185" stroke="#1a1a2e" strokeWidth="1"/>
+    <line x1="60" y1="260" x2="240" y2="260" stroke="#2d5a27" strokeWidth="2" strokeLinecap="round"/>
+    {[0,1,2,3,4,5].map(i => <line key={i} x1={60 + i * 36} y1="254" x2={60 + i * 36} y2="262" stroke="#2d5a27" strokeWidth="1"/>)}
+  </svg>
+);
+
+const SketchPalette = (
+  <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+    <path d="M80 170 Q70 100 150 70 Q230 40 250 120 Q270 190 210 220 Q185 235 175 215 Q165 195 150 200 Q120 210 110 230 Q85 245 80 220 Z" stroke="#1a1a2e" strokeWidth="1.5"/>
+    <circle cx="110" cy="120" r="10" stroke="#d4a017" strokeWidth="1.2"/>
+    <circle cx="155" cy="95" r="10" stroke="#0ea5e9" strokeWidth="1.2"/>
+    <circle cx="200" cy="120" r="10" stroke="#2d5a27" strokeWidth="1.2"/>
+    <circle cx="215" cy="165" r="10" stroke="#c17b5a" strokeWidth="1.2"/>
+    <path d="M85 220 Q90 240 130 245" stroke="#1a1a2e" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const SketchStar = (
+  <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+    {[
+      [150, 40], [200, 80], [230, 150], [200, 220], [150, 260],
+      [100, 220], [70, 150], [100, 80]
+    ].map(([cx, cy], i) => (
+      <circle key={i} cx={cx} cy={cy} r="3" stroke="#d4a017" strokeWidth="1.2" fill="#d4a017" fillOpacity="0.4"/>
+    ))}
+    <polygon points="150,50 163,100 215,100 173,130 188,180 150,152 112,180 127,130 85,100 137,100" stroke="#d4a017" strokeWidth="1.5" fill="none"/>
+    <text x="130" y="230" fontFamily="Caveat" fontSize="18" fill="#c17b5a" stroke="none" opacity="0.8">excellence</text>
+  </svg>
+);
+
+/* ===================================
+   FOOTER — Closing the Sketchbook
+   =================================== */
+function SketchFooter() {
+  return (
+    <footer className="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-8 overflow-hidden border-t border-[rgba(74,74,94,0.12)]">
+      <div className="chapter-number" style={{ bottom: "5%", right: "2%" }}>∞</div>
+
+      {/* Pencil at rest illustration */}
+      <svg width="120" height="40" viewBox="0 0 120 40" fill="none" className="mb-12 opacity-40">
+        <rect x="0" y="14" width="100" height="12" fill="#f5e642" stroke="#c4aa00" strokeWidth="0.6"/>
+        <rect x="0" y="12" width="100" height="4" fill="#b0b0b0"/>
+        <rect x="0" y="12" width="14" height="16" fill="#f4c2b0" stroke="#c09080" strokeWidth="0.5"/>
+        <polygon points="100,14 100,26 115,20" fill="#d4a46a" stroke="#b07840" strokeWidth="0.5"/>
+        <polygon points="109,18 109,22 115,20" fill="#2a2840"/>
+      </svg>
+
+      <blockquote className="font-cormorant text-[clamp(1.8rem,4vw,3.5rem)] font-light text-[#1a1a2e] italic max-w-3xl leading-relaxed mb-4">
+        "Every masterpiece begins with a single line.
+      </blockquote>
+      <blockquote className="font-cormorant text-[clamp(1.8rem,4vw,3.5rem)] font-light text-[#1a1a2e] italic max-w-3xl leading-relaxed mb-16">
+        Every future begins with a single day."
+      </blockquote>
+
+      <div className="font-caveat text-[#c17b5a] text-lg mb-6 -rotate-1">— Begin your child's chapter →</div>
+
+      <Link
+        href="/admissions"
+        className="font-poppins text-sm font-medium text-[#1a1a2e] px-12 py-5 border border-[#1a1a2e] sketch-border hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-500 mb-24"
+      >
+        Apply for Admissions
+      </Link>
+
+      {/* Footer links */}
+      <div className="w-full border-t border-[rgba(74,74,94,0.1)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#4a4a5e] font-inter">
+        <span className="font-cormorant text-[#1a1a2e] text-lg">Faith Model School</span>
+        <div className="flex gap-8">
+          {["About", "Academics", "Facilities", "News", "Contact"].map(item => (
+            <Link key={item} href={`/${item.toLowerCase()}`} className="hover:text-[#d4a017] transition-colors">
+              {item}
+            </Link>
+          ))}
+        </div>
+        <span className="opacity-50">© 2026 Faith Model School</span>
+      </div>
+    </footer>
+  );
+}
+
+/* ===================================
+   PAGE ASSEMBLY
+   =================================== */
+export default function Home() {
+  return (
+    <StoryLayout>
+      <HeroSection />
+
+      <ChapterSection
+        id="welcome"
+        chapterNum="01"
+        title="Welcome to Faith Model"
+        body="Every great journey begins at a gate. Ours is one of warmth, curiosity, and possibility. We welcome families into a community built on strong values, mutual respect, and a shared vision for every child's excellence."
+        annotation="30+ years of trust"
+        imageSrc="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80"
+        imageAlt="School entrance"
+        SketchSVG={
+          <svg viewBox="0 0 300 300" className="w-64 h-64" fill="none">
+            <rect x="40" y="80" width="220" height="180" stroke="#1a1a2e" strokeWidth="1.5"/>
+            <polyline points="30,80 150,20 270,80" stroke="#1a1a2e" strokeWidth="1.5" strokeLinejoin="round"/>
+            <rect x="115" y="195" width="70" height="65" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <rect x="60" y="120" width="40" height="40" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <rect x="200" y="120" width="40" height="40" stroke="#1a1a2e" strokeWidth="1.2"/>
+          </svg>
+        }
+      />
+
+      <ChapterSection
+        id="learning"
+        chapterNum="02"
+        title="Learning Begins"
+        body="Classrooms where equations come to life on blackboards, where handwriting carries the weight of new ideas, and where every question is the beginning of an answer worth finding."
+        annotation="CBSE curriculum"
+        imageSrc="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Classroom"
+        reverse
+        SketchSVG={
+          <svg viewBox="0 0 300 280" className="w-64 h-64" fill="none">
+            <rect x="30" y="20" width="240" height="150" rx="2" stroke="#1a1a2e" strokeWidth="1.5"/>
+            <line x1="50" y1="55" x2="250" y2="55" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <line x1="50" y1="80" x2="200" y2="80" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <line x1="50" y1="105" x2="220" y2="105" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <line x1="50" y1="130" x2="170" y2="130" stroke="#1a1a2e" strokeWidth="0.8"/>
+            <text x="50" y="48" fontFamily="serif" fontSize="14" fill="#1a1a2e" stroke="none">E = mc²</text>
+            <rect x="80" y="185" width="40" height="35" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <rect x="140" y="185" width="40" height="35" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <rect x="200" y="185" width="40" height="35" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <circle cx="100" cy="178" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <circle cx="160" cy="178" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <circle cx="220" cy="178" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+            <line x1="30" y1="240" x2="270" y2="240" stroke="#1a1a2e" strokeWidth="1.2"/>
+          </svg>
+        }
+      />
+
+      <ChapterSection
+        id="library"
+        chapterNum="03"
+        title="The Library"
+        body="Books slowly open, and knowledge flows from the pages. Reading becomes alive, and quiet moments under warm lamplight turn into vast adventures across continents and centuries."
+        annotation="12,000+ volumes"
+        imageSrc="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Library"
+        SketchSVG={SketchLibrary}
+      />
+
+      <ChapterSection
+        id="science"
+        chapterNum="04"
+        title="Science"
+        body="Chemical reactions animate. Planets rotate. The microscope zooms deeper. The pencil sketch of a lab becomes a real space where students discover the laws that govern our universe."
+        annotation="A² STEM certified"
+        imageSrc="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Science Lab"
+        reverse
+        SketchSVG={SketchMicroscope}
+      />
+
+      <ChapterSection
+        id="innovation"
+        chapterNum="05"
+        title="Innovation & Technology"
+        body="Robots move. Circuits glow with data. Students code the AI of tomorrow. The sketched robot on paper breathes life, walks the floor, and solves problems its creators once only imagined."
+        annotation="Microsoft Showcase"
+        imageSrc="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Innovation Lab"
+        SketchSVG={SketchRobot}
+      />
+
+      <ChapterSection
+        id="sports"
+        chapterNum="06"
+        title="Sports & Athletics"
+        body="A football rolls and the drawing becomes a field. Students run, leap, and compete. They learn that failure is simply a sketch that needs another line, and resilience is drawn with every attempt."
+        annotation="15-acre grounds"
+        imageSrc="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Sports Field"
+        reverse
+        SketchSVG={SketchBall}
+      />
+
+      <ChapterSection
+        id="arts"
+        chapterNum="07"
+        title="Arts & Expression"
+        body="Watercolor slowly spreads from the tip of a brush into something transcendent. Music, dance, painting, and theatre — each child's voice finding its unique form of expression on the stage of life."
+        annotation="nurturing every talent"
+        imageSrc="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Arts"
+        SketchSVG={SketchPalette}
+      />
+
+      <ChapterSection
+        id="campus"
+        chapterNum="08"
+        title="Campus Life"
+        body="Gardens grow. Friendships form between chapters. Assemblies, trips, festivals, and quiet lunches beneath old trees — the campus is alive with the rich, unhurried fullness of a childhood well-lived."
+        annotation="a second home"
+        imageSrc="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Campus Life"
+        reverse
+      />
+
+      <ChapterSection
+        id="achievements"
+        chapterNum="09"
+        title="Achievements"
+        body="The pencil sketched one small star, then another. Soon, thousands. Every star became a name, a medal, a milestone. Our students carry their achievements with quiet pride and unshakable confidence."
+        annotation="100% board results"
+        imageSrc="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+        imageAlt="Student Achievements"
+        SketchSVG={SketchStar}
+      />
+
+      <SketchFooter />
+    </StoryLayout>
+  );
+}
+
+---- FOUND MATCH ----
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
+import StoryLayout from "@/components/StoryLayout";
+import SectionHeading from "@/components/SectionHeading";
+import SketchReveal from "@/components/SketchReveal";
+import QuickEnquiryBar from "@/components/QuickEnquiryBar";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* =========================================================
+   SECTION 1 & 2: Hero + Admissions CTA
+   ========================================================= */
+function HeroSection() {
+  const pencilRef = useRef<HTMLDivElement>(null);
+  const sketchRef = useRef<SVGSVGElement>(null);
+  const headlineRef = useRef<HTMLDivElement>(null);
+  const subRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!pencilRef.current || !sketchRef.current) return;
+    const tl = gsap.timeline({ delay: 0.4 });
+
+    tl.fromTo(pencilRef.current,
+      { opacity: 0, x: "30%", y: "-15%", rotation: -25 },
+      { opacity: 1, x: "0%", y: "0%", rotation: 12, duration: 1, ease: "power3.out" }
+    );
+
+    const paths = sketchRef.current.querySelectorAll("path,line,circle,rect,polyline,ellipse");
+    paths.forEach((p) => {
+      const len = (p as SVGGeometryElement).getTotalLength?.() || 200;
+      gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+    });
+    tl.to(paths, { strokeDashoffset: 0, duration: 2.2, stagger: 0.12, ease: "power1.inOut" }, "-=0.2");
+    tl.to(pencilRef.current, { x: "50%", y: "-80%", opacity: 0, rotation: 50, duration: 0.7, ease: "power2.in" }, "-=0.6");
+    const words = headlineRef.current?.querySelectorAll(".w") || [];
+    tl.fromTo(words, { opacity: 0, y: 28, skewY: 1.5 }, { opacity: 1, y: 0, skewY: 0, duration: 0.7, stagger: 0.09, ease: "power3.out" }, "-=0.2");
+    if (subRef.current) tl.fromTo(subRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
+    if (ctaRef.current) tl.fromTo(ctaRef.current, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.2");
+  }, []);
+
+  return (
+    <>
+      {/* Admissions CTA Ribbon */}
+      <div className="relative z-20 bg-[#1a1a2e] py-2.5 text-center overflow-hidden">
+        <div className="absolute inset-0 graph-paper opacity-10" />
+        <p className="font-caveat text-base text-[#fefcf3] relative z-10">
+          ✦ Admissions for 2026–27 are{" "}
+          <span className="text-[#d4a017] font-semibold">now open</span> —{" "}
+          <Link href="/admissions" className="underline underline-offset-2 hover:text-[#d4a017] transition-colors">
+            Apply Today
+          </Link>{" "}
+          ✦
+        </p>
+      </div>
+
+      <section className="relative min-h-[95vh] flex items-center overflow-hidden pt-16">
+        <div className="absolute left-[7%] top-0 bottom-0 w-px bg-[#e8b4b0]/30 hidden lg:block" />
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          <div className="flex flex-col justify-center">
+            <div className="font-caveat text-[#c17b5a] text-xl mb-6 -rotate-1">Faith Model School — Est. 1989</div>
+            <div ref={headlineRef}>
+              <h1 className="font-cormorant text-[clamp(3.2rem,7.5vw,6.5rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight">
+                {["Every", "Great", "Future"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
+                <br />
+                {["Begins", "With", "A"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
+                <br />
+                <em className="w inline-block opacity-0 text-[#d4a017] not-italic">Single Sketch.</em>
+              </h1>
+            </div>
+            <p ref={subRef} className="font-inter text-lg text-[#4a4a5e] font-light mt-7 mb-10 leading-relaxed max-w-md opacity-0">
+              Every child begins with a blank page. Through curiosity, creativity, and confidence, those pages become a story worth telling.
+            </p>
+            <div ref={ctaRef} className="flex gap-4 flex-wrap opacity-0">
+              <Link href="/admissions" className="font-poppins text-sm font-semibold text-[#1a1a2e] px-8 py-4 border border-[#1a1a2e] hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400 sketch-border">
+                Begin the Story
+              </Link>
+              <Link href="/campus" className="font-poppins text-sm font-medium text-[#4a4a5e] px-8 py-4 hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/40">
+                Virtual Tour ↗
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative h-[60vh] flex items-center justify-center">
+            <div ref={pencilRef} className="absolute top-4 right-4 z-20 pointer-events-none opacity-0">
+              <svg width="22" height="72" viewBox="0 0 22 72" fill="none">
+                <rect x="5" y="0" width="12" height="7" rx="1" fill="#f4c2b0" stroke="#c09080" strokeWidth="0.6"/>
+                <rect x="4" y="7" width="14" height="3" fill="#b0b0b0"/>
+                <rect x="4" y="10" width="14" height="50" fill="#f5e642" stroke="#c4aa00" strokeWidth="0.5"/>
+                <rect x="6" y="10" width="4" height="50" fill="rgba(255,255,255,0.18)"/>
+                <polygon points="4,60 18,60 11,72" fill="#d4a46a" stroke="#b07840" strokeWidth="0.5"/>
+                <polygon points="8,68 14,68 11,72" fill="#2a2840"/>
+              </svg>
+            </div>
+
+            <svg ref={sketchRef} viewBox="0 0 500 400" className="w-full h-full max-w-lg" fill="none">
+              <line x1="30" y1="300" x2="470" y2="300" stroke="#2a2840" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 300 Q62 255 68 230 Q72 210 74 190" stroke="#2d5a27" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M74 190 Q58 215 40 228 Q62 210 74 190 Q86 215 100 230 Q80 210 74 190Z" stroke="#2d5a27" strokeWidth="1.2"/>
+              <path d="M400 300 Q402 252 408 228 Q412 210 416 190" stroke="#2d5a27" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M416 190 Q399 214 381 226 Q403 208 416 190 Q430 212 445 228 Q424 208 416 190Z" stroke="#2d5a27" strokeWidth="1.2"/>
+              <rect x="140" y="175" width="220" height="125" stroke="#1a1a2e" strokeWidth="1.8" strokeLinecap="round"/>
+              <polyline points="128,175 250,105 372,175" stroke="#1a1a2e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <rect x="162" y="205" width="34" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <line x1="179" y1="205" x2="179" y2="235" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <line x1="162" y1="220" x2="196" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <rect x="233" y="205" width="34" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <line x1="250" y1="205" x2="250" y2="235" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <line x1="233" y1="220" x2="267" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <rect x="304" y="205" width="34" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <line x1="321" y1="205" x2="321" y2="235" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <line x1="304" y1="220" x2="338" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <rect x="225" y="252" width="50" height="48" rx="2" stroke="#1a1a2e" strokeWidth="1.4"/>
+              <line x1="250" y1="105" x2="250" y2="78" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <polyline points="250,78 282,88 250,99" stroke="#d4a017" strokeWidth="1.2" fill="none"/>
+              <line x1="97" y1="300" x2="97" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="147" y1="300" x2="147" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="97" y1="262" x2="147" y2="262" stroke="#1a1a2e" strokeWidth="1.1"/>
+              <line x1="353" y1="300" x2="353" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="403" y1="300" x2="403" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="353" y1="262" x2="403" y2="262" stroke="#1a1a2e" strokeWidth="1.1"/>
+              <circle cx="185" cy="292" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <circle cx="215" cy="290" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <circle cx="308" cy="291" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <path d="M82 65 Q93 50 108 54 Q112 40 127 41 Q142 30 156 43 Q172 38 177 52 Q188 49 192 62 Q192 72 177 72 L92 72 Q76 74 82 65Z" stroke="#4a4a5e" strokeWidth="1" strokeLinecap="round" fill="none"/>
+              <path d="M298 42 Q309 29 324 31 Q327 20 340 21 Q352 12 364 24 Q377 19 381 31 Q390 28 394 40 Q394 49 381 49 L309 49 Q295 51 298 42Z" stroke="#4a4a5e" strokeWidth="1" strokeLinecap="round" fill="none"/>
+              <path d="M198 32 Q204 25 210 32" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+              <path d="M218 22 Q224 15 230 22" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+              <path d="M238 35 Q244 28 250 35" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+            </svg>
+
+            <div className="absolute -left-4 top-1/2 font-caveat text-[#c17b5a] text-sm -rotate-90 whitespace-nowrap opacity-50">
+              Faith Model School — Nurturing Excellence
+            </div>
+          </div>
+        </div>
+
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4.5 }}
+        >
+          <span className="font-caveat text-[#4a4a5e] text-sm">scroll to turn the page</span>
+          <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}
+            className="w-px h-8 bg-gradient-to-b from-[#4a4a5e] to-transparent" />
+        </motion.div>
+      </section>
+    </>
+  );
+}
+
+/* =========================================================
+   SECTION 3: Welcome Message
+   ========================================================= */
+function WelcomeSection() {
+  return (
+    <section className="relative py-28 overflow-hidden">
+      <div className="absolute left-[7%] top-0 bottom-0 w-px bg-[#e8b4b0]/25 hidden lg:block" />
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+        <SketchReveal>
+          <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">A Message from Our Principal</div>
+          <blockquote className="font-cormorant text-[clamp(1.8rem,3.5vw,3rem)] font-light text-[#1a1a2e] italic leading-relaxed mb-8">
+            "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Every child who walks through our gate carries within them the seeds of something extraordinary."
+          </blockquote>
+          <div className="w-12 h-px bg-[#d4a017] mx-auto mb-6" />
+          <div className="font-poppins text-sm font-medium text-[#1a1a2e]">Prof. Michael Chang</div>
+          <div className="font-caveat text-[#c17b5a] text-base mt-1">Principal, Faith Model School</div>
+        </SketchReveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 4: Stats Counter (School at a Glance)
+   ========================================================= */
+function StatsSection() {
+  const stats = [
+    { num: "35+", label: "Years of Excellence", note: "Est. 1989" },
+    { num: "2,500+", label: "Students Enrolled", note: "Across all grades" },
+    { num: "100%", label: "CBSE Board Results", note: "Consecutive 10 years" },
+    { num: "15 ac", label: "Green Campus", note: "Eco-certified" },
+    { num: "180+", label: "Faculty Members", note: "Qualified & dedicated" },
+    { num: "48+", label: "Awards & Trophies", note: "2024–25 alone" },
+  ];
+  return (
+    <section className="py-20 border-y border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="School at a Glance" title="By the Numbers" center />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mt-16">
+          {stats.map((s, i) => (
+            <SketchReveal key={s.label} delay={i * 0.08} className="text-center">
+              <div className="font-manrope text-[clamp(2rem,4vw,3.2rem)] font-extrabold text-[#1a1a2e] leading-none mb-2">{s.num}</div>
+              <div className="font-poppins text-xs font-semibold text-[#4a4a5e] uppercase tracking-widest mb-1">{s.label}</div>
+              <div className="font-caveat text-[#c17b5a] text-sm">{s.note}</div>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 5: Why Choose Us
+   ========================================================= */
+function WhyChooseUs() {
+  const pillars = [
+    { icon: "✦", title: "Academic Excellence", desc: "Rigorous CBSE curriculum enhanced with global standards, project-based learning, and critical thinking programs." },
+    { icon: "◉", title: "Holistic Development", desc: "Sport, Arts, Music, Drama, Coding, Robotics — every child discovers their unique genius." },
+    { icon: "◈", title: "Expert Faculty", desc: "180+ qualified educators with an industry-leading 1:15 student-teacher ratio for personalised attention." },
+    { icon: "❋", title: "Safe & Nurturing", desc: "CCTV-monitored, RFID-secured, GPS-tracked transport — your child's safety is our first promise." },
+    { icon: "⬡", title: "Future-Ready Skills", desc: "AI Lab, Robotics, IoT, 3D Printing, and a dedicated Innovation Centre for the leaders of tomorrow." },
+    { icon: "◎", title: "15-Acre Green Campus", desc: "Eco-certified campus with gardens, nature trails, and sustainably designed learning spaces." },
+  ];
+  return (
+    <section className="py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="Why Faith Model?" title="Our Educational Promise" subtitle="We go beyond traditional schooling to craft an environment where curiosity leads, creativity flourishes, and every child is celebrated." />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 mt-16 border border-[rgba(74,74,94,0.1)]">
+          {pillars.map((p, i) => (
+            <SketchReveal key={p.title} delay={i * 0.07} className="p-10 border-b border-r border-[rgba(74,74,94,0.08)] group hover:bg-[#1a1a2e] transition-colors duration-500">
+              <div className="font-manrope text-3xl text-[#d4a017] mb-4 group-hover:scale-110 transition-transform duration-300">{p.icon}</div>
+              <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-3">{p.title}</h3>
+              <p className="font-inter text-sm text-[#4a4a5e] group-hover:text-[#fefcf3]/70 transition-colors leading-relaxed">{p.desc}</p>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 6: Educational Philosophy
+   ========================================================= */
+function PhilosophySection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const x = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  return (
+    <section ref={ref} className="py-28 overflow-hidden border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-20 items-center">
+        <div>
+          <SectionHeading annotation="Our Philosophy" title="Where Curiosity Meets Character" subtitle="Faith Model School follows the belief that every child is uniquely talented. Our curriculum is designed not to fill a bucket, but to light a fire — nurturing thinkers, creators, leaders, and compassionate human beings." />
+          <SketchReveal delay={0.3}>
+            <ul className="mt-8 space-y-4">
+              {["Inquiry-Based Learning", "Value Education at Every Level", "Experiential & Project-Based Pedagogy", "Social-Emotional Learning Framework", "Global Mindset with Indian Values"].map((item) => (
+                <li key={item} className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e]">
+                  <span className="text-[#d4a017] mt-0.5">—</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </SketchReveal>
+        </div>
+        <motion.div style={{ x }} className="relative h-[50vh] rounded-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80" alt="Learning" className="w-full h-full object-cover" />
+          <div className="absolute bottom-4 right-4 font-caveat text-[#fefcf3] text-base bg-[#1a1a2e]/60 px-3 py-1 backdrop-blur-sm">igniting curiosity →</div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 7: Academic Excellence
+   ========================================================= */
+function AcademicExcellence() {
+  const programs = [
+    { title: "Pre-Primary", age: "Ages 3–5", desc: "Play-based learning, sensory exploration, and foundational skill building in a joyful, safe environment." },
+    { title: "Primary School", age: "Grades 1–5", desc: "Core academics with integrated arts, sports, and digital literacy. Strong emphasis on reading and mathematical thinking." },
+    { title: "Middle School", age: "Grades 6–8", desc: "Critical thinking, project-based learning, and introduction to STEM, coding, and leadership programs." },
+    { title: "Secondary School", age: "Grades 9–10", desc: "CBSE board preparation with focused academics, life skills, and career orientation programs." },
+    { title: "Senior Secondary", age: "Grades 11–12", desc: "Science and Commerce streams with optional vocational subjects. University counselling and placement guidance." },
+  ];
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="Academics" title="A Journey of Learning" subtitle="From first steps to board exams, every stage of your child's education is thoughtfully crafted for success." />
+        <div className="mt-16 space-y-0">
+          {programs.map((p, i) => (
+            <SketchReveal key={p.title} delay={i * 0.06}>
+              <div className="flex flex-col md:flex-row items-start gap-8 py-8 border-b border-[rgba(74,74,94,0.08)] group">
+                <div className="font-manrope text-[clamp(3rem,6vw,5rem)] font-extrabold text-[rgba(74,74,94,0.06)] leading-none w-20 shrink-0 group-hover:text-[rgba(212,160,23,0.15)] transition-colors">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-2">
+                    <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e]">{p.title}</h3>
+                    <span className="font-caveat text-[#c17b5a] text-base">{p.age}</span>
+                  </div>
+                  <p className="font-inter text-[#4a4a5e] text-sm leading-relaxed max-w-xl">{p.desc}</p>
+                </div>
+                <Link href="/school-levels" className="font-poppins text-xs font-medium text-[#4a4a5e] hover:text-[#d4a017] transition-colors mt-1 shrink-0">
+                  Learn more →
+                </Link>
+              </div>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 8: Student Journey Timeline
+   ========================================================= */
+function StudentJourney() {
+  const stages = [
+    { year: "Age 3", label: "Pre-KG", icon: "🌱" },
+    { year: "Age 5", label: "Primary", icon: "📚" },
+    { year: "Age 11", label: "Middle School", icon: "🔬" },
+    { year: "Age 14", label: "Secondary", icon: "💡" },
+    { year: "Age 16", label: "Senior Secondary", icon: "🎓" },
+    { year: "Age 18", label: "University", icon: "🌍" },
+  ];
+  return (
+    <section className="py-28 overflow-hidden border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="The Journey" title="Your Child's Story at Faith Model" center />
+        <div className="mt-16 relative">
+          <div className="absolute top-8 left-0 right-0 h-px bg-[rgba(74,74,94,0.12)] hidden md:block" />
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+            {stages.map((s, i) => (
+              <SketchReveal key={s.label} delay={i * 0.1} className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full border-2 border-[rgba(74,74,94,0.15)] flex items-center justify-center text-2xl mb-4 bg-[#fefcf3] relative z-10 hover:border-[#d4a017] transition-colors">
+                  {s.icon}
+                </div>
+                <div className="font-caveat text-[#c17b5a] text-base mb-1">{s.year}</div>
+                <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-wider">{s.label}</div>
+              </SketchReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 9: Campus Experience
+   ========================================================= */
+function CampusExperience() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y1 = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
+  const y2 = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  return (
+    <section ref={ref} className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-2 gap-4 h-[60vh]">
+          <motion.img style={{ y: y1 }} src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80" alt="Campus" className="w-full h-full object-cover rounded-sm" />
+          <motion.img style={{ y: y2 }} src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80" alt="Students" className="w-full h-full object-cover rounded-sm mt-8" />
+        </div>
+        <div>
+          <SectionHeading annotation="Campus Life" title="A World of Possibilities" subtitle="Our 15-acre campus is designed as a second home — every corner crafted to inspire exploration, connection, and growth." />
+          <SketchReveal delay={0.3}>
+            <ul className="mt-8 space-y-3">
+              {["Smart Classrooms with interactive technology", "Olympic-standard swimming pool & sports grounds", "Dedicated AI, Robotics & Innovation labs", "Performing arts theatre and music studios", "Cafeteria serving healthy, nutritious meals", "Medical centre with on-campus counsellor"].map((f) => (
+                <li key={f} className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e]">
+                  <span className="text-[#d4a017] shrink-0 mt-0.5">✦</span>{f}
+                </li>
+              ))}
+            </ul>
+            <Link href="/campus" className="inline-block mt-8 font-poppins text-sm font-medium text-[#1a1a2e] border-b border-[#1a1a2e] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
+              Explore the Campus →
+            </Link>
+          </SketchReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 10: Facilities Overview
+   ========================================================= */
+function FacilitiesOverview() {
+  const facs = [
+    { icon: "🔬", label: "Science Labs", sub: "Physics · Chemistry · Biology" },
+    { icon: "🤖", label: "Robotics & AI Lab", sub: "Microsoft Showcase" },
+    { icon: "📚", label: "Digital Library", sub: "12,000+ volumes" },
+    { icon: "🎭", label: "Auditorium", sub: "800-seat capacity" },
+    { icon: "🏊", label: "Swimming Pool", sub: "Olympic standard" },
+    { icon: "🎨", label: "Art Studios", sub: "Fine Arts & Craft" },
+    { icon: "🎵", label: "Music Room", sub: "Vocal & Instrumental" },
+    { icon: "💻", label: "Computer Lab", sub: "100+ workstations" },
+  ];
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="Infrastructure" title="World-Class Facilities" subtitle="Every space is designed to ignite a different kind of spark." />
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(74,74,94,0.08)]">
+          {facs.map((f, i) => (
+            <SketchReveal key={f.label} delay={i * 0.05}>
+              <div className="bg-[#fefcf3] p-8 group hover:bg-[#1a1a2e] transition-colors duration-500 text-center">
+                <div className="text-3xl mb-4 group-hover:scale-125 transition-transform duration-300">{f.icon}</div>
+                <div className="font-poppins text-sm font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-1">{f.label}</div>
+                <div className="font-caveat text-[#c17b5a] text-sm group-hover:text-[#d4a017] transition-colors">{f.sub}</div>
+              </div>
+            </SketchReveal>
+          ))}
+        </div>
+        <SketchReveal className="text-center mt-10">
+          <Link href="/facilities" className="font-poppins text-sm font-medium text-[#4a4a5e] hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/40">
+            View All 28 Facilities →
+          </Link>
+        </SketchReveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 11: Featured Programs
+   ========================================================= */
+function FeaturedPrograms() {
+  const programs = [
+    { title: "STEM Excellence Program", tag: "Academics", desc: "Integrated Science, Technology, Engineering, and Mathematics with hands-on project labs and Olympiad preparation.", href: "/academics#stem" },
+    { title: "Young Leaders Initiative", tag: "Leadership", desc: "Student council, Model UN, public speaking, and structured mentorship programs to build tomorrow's leaders.", href: "/student-life#leadership" },
+    { title: "Performing Arts Academy", tag: "Arts", desc: "Professional training in music, dance, drama, and fine arts from experienced performing artists.", href: "/arts" },
+    { title: "Sports Excellence Track", tag: "Sports", desc: "Professional coaching in cricket, basketball, swimming, athletics, and chess with state-level competition exposure.", href: "/sports" },
+    { title: "AI & Future Skills Lab", tag: "Innovation", desc: "Coding, AI fundamentals, robotics, IoT, and 3D printing — the skills that will define the next decade.", href: "/innovation" },
+    { title: "International Language Program", tag: "Languages", desc: "English, Tamil, Hindi, French, and German language labs with Cambridge and DELF certification pathways.", href: "/academics#languages" },
+  ];
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="Signature Programs" title="Featured Programs" subtitle="Beyond the classroom — programs that discover and develop each child's unique potential." />
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {programs.map((p, i) => (
+            <SketchReveal key={p.title} delay={i * 0.07}>
+              <Link href={p.href} className="block group h-full border border-[rgba(74,74,94,0.1)] p-8 hover:border-[#d4a017] transition-all duration-400 hover:shadow-[0_8px_32px_rgba(212,160,23,0.08)]">
+                <span className="font-caveat text-[#c17b5a] text-base">{p.tag}</span>
+                <h3 className="font-cormorant text-2xl font-light text-[#1a1a2e] mt-2 mb-4 group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
+                <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>
+                <div className="mt-6 font-poppins text-xs font-medium text-[#4a4a5e] group-hover:text-[#d4a017] transition-colors">Learn more →</div>
+              </Link>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 12: Achievements Ticker
+   ========================================================= */
+function AchievementsTicker() {
+  const items = ["🏆 National Science Olympiad Champions 2025", "🥇 CBSE Cluster Athletics Gold Medal", "🎭 State Drama Festival Best Production", "💻 NASSCOM Young Coder Award", "🌿 Green School National Award", "📚 100% Board Pass Rate — 10 consecutive years", "🤖 FIRST Robotics Qualifier 2025", "🎵 National Music Talent Award"];
+  return (
+    <section className="py-6 border-y border-[rgba(74,74,94,0.1)] overflow-hidden bg-[#1a1a2e]/3">
+      <div className="flex gap-12 animate-[drift_30s_linear_infinite] whitespace-nowrap">
+        {[...items, ...items].map((item, i) => (
+          <span key={i} className="font-caveat text-lg text-[#4a4a5e] shrink-0">{item}</span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 13: Upcoming Events
+   ========================================================= */
+function UpcomingEvents() {
+  const events = [
+    { date: "Aug 15", title: "Independence Day Celebration", type: "Celebration", desc: "School-wide flag hoisting, cultural performances, and patriotic programs." },
+    { date: "Sep 5", title: "Teachers' Day Awards", type: "Event", desc: "Honouring our exceptional faculty with student-led performances and awards ceremony." },
+    { date: "Oct 2", title: "Annual Science Exhibition", type: "Academic", desc: "Student projects on display — open to parents and the wider community." },
+    { date: "Nov 14", title: "Children's Day Annual Fest", type: "Festival", desc: "A day of joy, talent, games, and celebration exclusively for our students." },
+  ];
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-end justify-between mb-16">
+          <SectionHeading annotation="Mark the Calendar" title="Upcoming Events" />
+          <Link href="/news#events" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors hidden md:block">
+            View Full Calendar →
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {events.map((e, i) => (
+            <SketchReveal key={e.title} delay={i * 0.08}>
+              <div className="flex gap-6 p-6 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors group">
+                <div className="text-center shrink-0 w-14">
+                  <div className="font-manrope text-xl font-extrabold text-[#1a1a2e] leading-tight">{e.date.split(" ")[1]}</div>
+                  <div className="font-caveat text-[#c17b5a] text-sm">{e.date.split(" ")[0]}</div>
+                </div>
+                <div className="border-l border-[rgba(74,74,94,0.1)] pl-6 flex-1">
+                  <span className="font-caveat text-[#c17b5a] text-sm">{e.type}</span>
+                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors">{e.title}</h3>
+                  <p className="font-inter text-sm text-[#4a4a5e]">{e.desc}</p>
+                </div>
+              </div>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 14-15: Testimonials
+   ========================================================= */
+function Testimonials() {
+  const testimonials = [
+    { name: "Priya & Rajan Sharma", child: "Parent of Arjun, Grade 9", quote: "The transformation we've seen in our son over three years at Faith Model is extraordinary. He's not just performing better academically — he's grown into a thoughtful, confident young man." },
+    { name: "Dr. Anitha Krishnamurthy", child: "Parent of Meera, Grade 11", quote: "As a doctor, I was particularly impressed by the Science labs and the way teachers kindle genuine curiosity. Meera now talks about research as a career — at 16!" },
+    { name: "Mr. & Mrs. Mohammed Ibrahim", child: "Parents of twins, Grades 6 & 8", quote: "The faculty here truly understands that every child is different. Both our children have completely different personalities, and the school nurtures each of them uniquely." },
+    { name: "Sarah & James Peterson", child: "Parent of Emma, Grade 4", quote: "We moved from the UK and were worried about the transition. Faith Model made it seamless. The warmth of the teachers and the quality of the environment exceeded everything we expected." },
+  ];
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setActive(p => (p + 1) % testimonials.length), 4500);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)] bg-[#1a1a2e] relative overflow-hidden">
+      <div className="absolute inset-0 graph-paper opacity-5" />
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
+        <div className="font-caveat text-[#d4a017] text-xl mb-6">What Our Parents Say</div>
+        <AnimatePresence mode="wait">
+          <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5 }}>
+            <blockquote className="font-cormorant text-[clamp(1.4rem,3vw,2.2rem)] font-light text-[#fefcf3] italic leading-relaxed mb-8">
+              "{testimonials[active].quote}"
+            </blockquote>
+            <div className="font-poppins text-sm font-semibold text-[#fefcf3]">{testimonials[active].name}</div>
+            <div className="font-caveat text-[#d4a017] text-base mt-1">{testimonials[active].child}</div>
+          </motion.div>
+        </AnimatePresence>
+        <div className="flex justify-center gap-2 mt-10">
+          {testimonials.map((_, i) => (
+            <button key={i} onClick={() => setActive(i)} className={`w-8 h-px transition-all duration-300 ${i === active ? "bg-[#d4a017] w-12" : "bg-[#fefcf3]/30"}`} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 16: Gallery Grid
+   ========================================================= */
+function GallerySection() {
+  const imgs = [
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=70",
+    "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=70",
+    "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=500&q=70",
+    "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=500&q=70",
+    "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=500&q=70",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=70",
+  ];
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-end justify-between mb-12">
+          <SectionHeading annotation="Campus Gallery" title="Life at Faith Model" />
+          <Link href="/gallery" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors hidden md:block">View Full Gallery →</Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {imgs.map((src, i) => (
+            <SketchReveal key={i} delay={i * 0.06}>
+              <div className="overflow-hidden aspect-square group">
+                <img src={src} alt={`Gallery ${i + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+              </div>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 17: News & Updates
+   ========================================================= */
+function NewsSection() {
+  const news = [
+    { date: "Jul 10, 2026", title: "Faith Model Tops District in CBSE Grade 10 Results", tag: "Achievement", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=70" },
+    { date: "Jul 5, 2026", title: "Robotics Team Qualifies for National FIRST Championship", tag: "Innovation", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=70" },
+    { date: "Jun 28, 2026", title: "New AI Lab Inaugurated by Education Commissioner", tag: "Campus", img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=70" },
+  ];
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-end justify-between mb-12">
+          <SectionHeading annotation="Stay Informed" title="News & Updates" />
+          <Link href="/news" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors hidden md:block">All News →</Link>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {news.map((n, i) => (
+            <SketchReveal key={n.title} delay={i * 0.08}>
+              <Link href="/news" className="group block">
+                <div className="overflow-hidden mb-4 aspect-[4/3]">
+                  <img src={n.img} alt={n.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                </div>
+                <span className="font-caveat text-[#c17b5a] text-base">{n.tag}</span>
+                <h3 className="font-cormorant text-xl font-light text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors leading-snug">{n.title}</h3>
+                <div className="font-inter text-xs text-[#4a4a5e]">{n.date}</div>
+              </Link>
+            </SketchReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 18: Accreditation & Affiliations
+   ========================================================= */
+function AccreditationSection() {
+  const badges = ["CBSE Affiliated", "Microsoft Showcase School", "British Council ISA", "STEM.org Accredited", "Green School India", "ISO 9001:2015"];
+  return (
+    <section className="py-16 border-y border-[rgba(74,74,94,0.1)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <div className="font-caveat text-[#c17b5a] text-lg mb-8 -rotate-1">Recognised & Accredited By</div>
+        <div className="flex flex-wrap justify-center gap-x-16 gap-y-6">
+          {badges.map((b) => (
+            <div key={b} className="font-poppins text-sm font-semibold text-[rgba(74,74,94,0.5)] hover:text-[#1a1a2e] transition-colors">{b}</div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 19: Book a Campus Visit
+   ========================================================= */
+function BookVisitSection() {
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+        <SketchReveal>
+          <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Visit Us</div>
+          <h2 className="font-cormorant text-[clamp(2.4rem,5vw,4rem)] font-light text-[#1a1a2e] leading-tight mb-6">
+            Book a Campus Tour
+          </h2>
+          <div className="w-12 h-px bg-[#d4a017] mb-6" />
+          <p className="font-inter text-lg text-[#4a4a5e] font-light leading-relaxed mb-8">
+            Experience Faith Model School in person. Meet our faculty, explore the facilities, and see exactly why thousands of families have chosen us as the place where their child's story begins.
+          </p>
+          <ul className="space-y-3 mb-8">
+            {["Guided campus walk with a faculty member", "One-on-one session with our Admissions Counsellor", "Meet current parents and students", "Overview of curriculum and assessment approach"].map(f => (
+              <li key={f} className="flex items-start gap-3 font-inter text-sm text-[#4a4a5e]">
+                <span className="text-[#d4a017] shrink-0 mt-0.5">—</span>{f}
+              </li>
+            ))}
+          </ul>
+        </SketchReveal>
+        <SketchReveal delay={0.2}>
+          <form className="space-y-4 p-8 border border-[rgba(74,74,94,0.12)]">
+            <div className="font-caveat text-[#c17b5a] text-lg mb-6">Fill in Your Details</div>
+            {[["Parent's Full Name", "text"], ["Child's Name & Grade", "text"], ["Mobile Number", "tel"], ["Email Address", "email"]].map(([placeholder, type]) => (
+              <input key={placeholder} type={type} placeholder={placeholder}
+                className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#1a1a2e] placeholder-[#4a4a5e]/50 focus:outline-none focus:border-[#d4a017] transition-colors" />
+            ))}
+            <select className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#4a4a5e] focus:outline-none focus:border-[#d4a017] transition-colors">
+              <option>Preferred Visit Date</option>
+              <option>Monday – Friday (Weekday)</option>
+              <option>Saturday (Weekend)</option>
+            </select>
+            <button type="submit" className="w-full mt-4 bg-[#1a1a2e] text-[#fefcf3] font-poppins text-sm font-semibold py-4 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-all duration-400">
+              Request Campus Visit
+            </button>
+          </form>
+        </SketchReveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 20: Download Brochure
+   ========================================================= */
+function DownloadSection() {
+  return (
+    <section className="py-20 bg-[#1a1a2e] border-t border-[rgba(74,74,94,0.08)] relative overflow-hidden">
+      <div className="absolute inset-0 graph-paper opacity-5" />
+      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <SketchReveal>
+          <div className="font-caveat text-[#d4a017] text-xl mb-4">Take It With You</div>
+          <h2 className="font-cormorant text-[clamp(2rem,4vw,3.5rem)] font-light text-[#fefcf3] mb-6">
+            Download Our School Prospectus
+          </h2>
+          <p className="font-inter text-[#fefcf3]/70 font-light leading-relaxed mb-10 max-w-xl mx-auto">
+            Everything you need to know about Faith Model School — curriculum, faculty, fees, programs, and admissions — in one beautifully crafted document.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/downloads/prospectus-2026.pdf" className="font-poppins text-sm font-semibold bg-[#d4a017] text-[#1a1a2e] px-10 py-4 hover:bg-[#fefcf3] transition-colors">
+              Download Prospectus (PDF)
+            </a>
+            <Link href="/downloads" className="font-poppins text-sm font-medium text-[#fefcf3] border border-[#fefcf3]/30 px-10 py-4 hover:bg-[#fefcf3]/10 transition-colors">
+              All Downloads
+            </Link>
+          </div>
+        </SketchReveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 21: FAQ Accordion
+   ========================================================= */
+function FAQSection() {
+  const faqs = [
+    { q: "What is the admission process at Faith Model School?", a: "Admissions involve submitting an online application, appearing for a grade-appropriate assessment, and an interaction with our counselling team. Details vary by grade — visit our Admissions page for a complete step-by-step guide." },
+    { q: "What is the student-teacher ratio?", a: "We maintain a strict 1:15 student-to-teacher ratio across all grades, ensuring every child receives personalised attention, mentorship, and support." },
+    { q: "Is transport available from all parts of the city?", a: "Yes. We operate 22 GPS-tracked, CCTV-monitored buses covering major routes across Chennai. All vehicles are maintained to the highest safety standards." },
+    { q: "Does Faith Model offer scholarships?", a: "We offer merit-based and need-based scholarships for academically exceptional students and those demonstrating outstanding talent in sports or the arts. Contact our admissions office for details." },
+    { q: "What board does the school follow?", a: "Faith Model School is affiliated with the Central Board of Secondary Education (CBSE), New Delhi, for Grades 1 through 12." },
+    { q: "Are there separate streams available in Senior Secondary?", a: "Yes. We offer Science (Physics, Chemistry, Biology / Computer Science) and Commerce (with/without Mathematics) streams in Grades 11 and 12." },
+  ];
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <SectionHeading annotation="Common Questions" title="Frequently Asked Questions" center />
+        <div className="mt-16 space-y-0">
+          {faqs.map((f, i) => (
+            <SketchReveal key={i} delay={i * 0.04}>
+              <div className="border-b border-[rgba(74,74,94,0.1)]">
+                <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-start justify-between py-6 text-left gap-6 group">
+                  <span className="font-poppins text-base font-medium text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors leading-snug">{f.q}</span>
+                  <span className="font-manrope text-[#d4a017] text-xl shrink-0 mt-0.5 transition-transform duration-300" style={{ transform: open === i ? "rotate(45deg)" : "none" }}>+</span>
+                </button>
+                <AnimatePresence>
+                  {open === i && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: "easeInOut" }} className="overflow-hidden">
+                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed pb-6">{f.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </SketchReveal>
+          ))}
+        </div>
+        <SketchReveal className="text-center mt-10">
+          <Link href="/admissions#faq" className="font-poppins text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors underline underline-offset-4 decoration-[#d4a017]/40">
+            View All FAQs →
+          </Link>
+        </SketchReveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SECTION 22: Contact & Map
+   ========================================================= */
+function ContactSection() {
+  return (
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-start">
+        <SketchReveal>
+          <SectionHeading annotation="Find Us" title="Get in Touch" />
+          <div className="mt-8 space-y-6 font-inter text-sm text-[#4a4a5e]">
+            <div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Address</div>
+              <address className="not-italic leading-relaxed">123 Education Lane, Nungambakkam,<br />Chennai, Tamil Nadu 600 034</address>
+            </div>
+            <div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Phone</div>
+              <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors">+91 44 1234 5678</a>
+              <span className="mx-3 opacity-40">|</span>
+              <a href="tel:+914498765432" className="hover:text-[#d4a017] transition-colors">+91 44 9876 5432</a>
+            </div>
+            <div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Email</div>
+              <a href="mailto:admissions@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block">admissions@faithmodelschool.edu.in</a>
+              <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block">info@faithmodelschool.edu.in</a>
+            </div>
+            <div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Office Hours</div>
+              <p>Monday – Friday: 8:00 AM – 4:30 PM</p>
+              <p>Saturday: 9:00 AM – 1:00 PM</p>
+            </div>
+          </div>
+          <Link href="/contact" className="inline-block mt-8 font-poppins text-sm font-medium text-[#1a1a2e] border-b border-[#1a1a2e] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
+            Full Contact Page →
+          </Link>
+        </SketchReveal>
+        <SketchReveal delay={0.2}>
+          <div className="w-full h-[400px] bg-[rgba(74,74,94,0.06)] border border-[rgba(74,74,94,0.1)] flex items-center justify-center overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5!2d80.2!3d13.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzM2LjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%" height="100%" loading="lazy" title="Faith Model School Location"
+              className="border-0 grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+        </SketchReveal>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   SKETCHBOOK FOOTER
+   ========================================================= */
+function SketchFooter() {
+  return (
+    <footer className="relative border-t border-[rgba(74,74,94,0.12)] bg-[#fefcf3]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div>
+          <div className="font-cormorant text-2xl font-semibold text-[#1a1a2e] mb-1">Faith Model</div>
+          <div className="font-caveat text-[#d4a017] text-sm mb-4">— School —</div>
+          <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">Empowering minds, shaping futures since 1989. CBSE Affiliated.</p>
+        </div>
+        <div>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Explore</h4>
+          <ul className="space-y-2">
+            {[["About Us", "/about"], ["Academics", "/academics"], ["Facilities", "/facilities"], ["Student Life", "/student-life"], ["Admissions", "/admissions"]].map(([l, h]) => (
+              <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{l}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Community</h4>
+          <ul className="space-y-2">
+            {[["Parents", "/parents"], ["Students", "/students"], ["Alumni", "/alumni"], ["Careers", "/careers"], ["News", "/news"]].map(([l, h]) => (
+              <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{l}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Contact</h4>
+          <address className="not-italic font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-1">
+            <p>Chennai, Tamil Nadu 600 034</p>
+            <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors block mt-2">+91 44 1234 5678</a>
+            <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block text-xs">info@faithmodelschool.edu.in</a>
+          </address>
+        </div>
+      </div>
+      <div className="border-t border-[rgba(74,74,94,0.08)] py-6 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#4a4a5e]/50 font-inter">
+        <span>© 2026 Faith Model School. All rights reserved.</span>
+        <div className="flex gap-6">
+          <Link href="/mandatory-disclosure" className="hover:text-[#d4a017] transition-colors">CBSE Disclosure</Link>
+          <Link href="/safety#policies" className="hover:text-[#d4a017] transition-colors">Child Protection</Link>
+          <Link href="/contact#grievance" className="hover:text-[#d4a017] transition-colors">Grievance</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* =========================================================
+   PAGE ASSEMBLY
+   ========================================================= */
+export default function Home() {
+  return (
+    <StoryLayout>
+      <HeroSection />
+      <WelcomeSection />
+      <StatsSection />
+      <WhyChooseUs />
+      <PhilosophySection />
+      <AcademicExcellence />
+      <StudentJourney />
+      <CampusExperience />
+      <FacilitiesOverview />
+      <FeaturedPrograms />
+      <AchievementsTicker />
+      <UpcomingEvents />
+      <Testimonials />
+      <GallerySection />
+      <NewsSection />
+      <AccreditationSection />
+      <BookVisitSection />
+      <DownloadSection />
+      <FAQSection />
+      <ContactSection />
+      <SketchFooter />
+      <QuickEnquiryBar />
+    </StoryLayout>
+  );
+}
+
+---- FOUND MATCH ----
+import { prisma } from "@/lib/prisma";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import PageLayout from "@/components/PageLayout";
+import { PageBlock } from "@/components/admin/PageBuilder";
+import SketchReveal from "@/components/SketchReveal";
+import Link from "next/link";
+
+// Dynamic block components
+import TextBlock from "@/components/cms-blocks/TextBlock";
+import ImageGrid from "@/components/cms-blocks/ImageGrid";
+import CtaSection from "@/components/cms-blocks/CtaSection";
+import PhilosophySplit from "@/components/cms-blocks/PhilosophySplit";
+import CurriculumOverview from "@/components/cms-blocks/CurriculumOverview";
+import SignaturePrograms from "@/components/cms-blocks/SignaturePrograms";
+import AssessmentSystem from "@/components/cms-blocks/AssessmentSystem";
+import TimelineBlock from "@/components/cms-blocks/TimelineBlock";
+import IconGridBlock from "@/components/cms-blocks/IconGridBlock";
+import StepsBlock from "@/components/cms-blocks/StepsBlock";
+import TableBlock from "@/components/cms-blocks/TableBlock";
+import ProfileGrid from "@/components/cms-blocks/ProfileGrid";
+import ContactBlock from "@/components/cms-blocks/ContactBlock";
+import AccordionBlock from "@/components/cms-blocks/AccordionBlock";
+import PostsBlock from "@/components/cms-blocks/PostsBlock";
+import GalleryBlock from "@/components/cms-blocks/GalleryBlock";
+import MoodboardHero from "@/components/cms-blocks/MoodboardHero";
+import GoldenHero from "@/components/cms-blocks/GoldenHero";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await prisma.page.findUnique({ where: { slug: "" } });
+  
+  if (!page || !page.isPublished) return { title: "Faith Model School" };
+
+  let seo = { title: page.title, description: "", keywords: "" };
+  try {
+    const content = JSON.parse(page.content);
+    if (content.seo) seo = content.seo;
+  } catch (e) {}
+
+  return {
+    title: `${seo.title} | Faith Model School`,
+    description: seo.description,
+    keywords: seo.keywords
+  };
+}
+
+export default async function HomePage() {
+  const page = await prisma.page.findUnique({
+    where: { slug: "" }
+  });
+
+  if (!page || !page.isPublished) {
+    notFound();
+  }
+
+  let blocks: PageBlock[] = [];
+  try {
+    const payload = JSON.parse(page.content);
+    blocks = Array.isArray(payload) ? payload : (payload.blocks || []);
+  } catch (e) {
+    console.error("Failed to parse page blocks", e);
+  }
+
+  return (
+    <PageLayout>
+      {blocks.map((block, index) => {
+         switch (block.type) {
+            case "HERO":
+               return (
+                  <div key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
+                     <SketchReveal delay={0.1}>
+                        <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">{block.data.subheadline}</div>
+                        <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+                           {block.data.headline}
+                        </h1>
+                     </SketchReveal>
+                  </div>
+               );
+            case "MOODBOARD_HERO":
+               return <MoodboardHero key={block.id} block={block} />;
+            case "GOLDEN_HERO":
+               return <GoldenHero key={block.id} block={block} />;
+            case "TEXT_BLOCK":
+               return (
+                  <section key={block.id} className="max-w-4xl mx-auto px-6 lg:px-12 py-16 font-inter text-[#4a4a5e] leading-relaxed prose prose-lg">
+                     <SketchReveal delay={0.1}>
+                        <div dangerouslySetInnerHTML={{ __html: block.data.content }} />
+                     </SketchReveal>
+                  </section>
+               );
+            case "CTA_SECTION":
+               return (
+                  <section key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)] text-center">
+                     <SketchReveal delay={0.1}>
+                        <h2 className="font-cormorant text-4xl font-light text-[#1a1a2e] mb-8">{block.data.title}</h2>
+                        <Link href={block.data.buttonLink} className="inline-block font-poppins text-sm font-semibold text-[#1a1a2e] border border-[#1a1a2e] px-8 py-4 hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400">
+                           {block.data.buttonText}
+                        </Link>
+                     </SketchReveal>
+                  </section>
+               );
+            case "IMAGE_GRID":
+               return (
+                  <section key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)]">
+                     <div className="grid md:grid-cols-3 gap-4">
+                        {block.data.images?.map((img: string, i: number) => (
+                           <SketchReveal key={i} delay={i * 0.1}>
+                              <div className="h-64 bg-[rgba(74,74,94,0.05)] border border-[rgba(74,74,94,0.1)] rounded-sm overflow-hidden">
+                                 {img ? (
+                                    <img src={img} alt="Grid item" className="w-full h-full object-cover" />
+                                 ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-[#4a4a5e]/40 font-inter text-sm">Image Placeholder</div>
+                                 )}
+                              </div>
+                           </SketchReveal>
+                        ))}
+                     </div>
+                  </section>
+               );
+            case "PHILOSOPHY_SPLIT":
+               return <PhilosophySplit key={block.id} data={block.data} />;
+            case "CURRICULUM_OVERVIEW":
+               return <CurriculumOverview key={block.id} data={block.data} />;
+            case "SIGNATURE_PROGRAMS":
+               return <SignaturePrograms key={block.id} data={block.data} />;
+            case "ASSESSMENT_SYSTEM":
+               return <AssessmentSystem key={block.id} data={block.data} />;
+            case "TIMELINE_BLOCK":
+               return <TimelineBlock key={block.id} data={block.data} />;
+            case "ICON_GRID_BLOCK":
+               return <IconGridBlock key={block.id} data={block.data} />;
+            case "STEPS_BLOCK":
+               return <StepsBlock key={block.id} data={block.data} />;
+            case "TABLE_BLOCK":
+               return <TableBlock key={block.id} data={block.data} />;
+            case "PROFILE_GRID":
+               return <ProfileGrid key={block.id} data={block.data} />;
+            case "CONTACT_BLOCK":
+               return <ContactBlock key={block.id} data={block.data} />;
+            case "ACCORDION_BLOCK":
+               return <AccordionBlock key={block.id} data={block.data} />;
+            case 'POSTS_BLOCK':
+              return <PostsBlock key={block.id} data={block.data} />;
+            case 'GALLERY_BLOCK':
+              return <GalleryBlock key={block.id} block={block} />;
+            default:
+              return null;
+         }
+      })}
+    </PageLayout>
+  );
+}

@@ -11,7 +11,7 @@ export default function CurriculumOverview({ data }: { data: any }) {
             <div className="grid md:grid-cols-3 gap-8 py-10 border-b border-[rgba(74,74,94,0.06)]">
               <div className="md:col-span-2">
                 <div className="flex items-center gap-4 mb-4">
-                  <h3 className="font-poppins text-xl font-semibold text-[#1a1a2e]">{level.level}</h3>
+                  <h3 className="font-poppins text-xl font-semibold text-[#FB7F05]">{level.level}</h3>
                   <span className="font-caveat text-[#c17b5a] text-base">{level.grades}</span>
                 </div>
                 <div className="flex flex-wrap gap-2">

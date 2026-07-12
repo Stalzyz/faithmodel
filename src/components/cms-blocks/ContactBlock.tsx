@@ -9,7 +9,7 @@ export default function ContactBlock({ data }: { data: any }) {
         <div className="mt-8 space-y-6">
           {data.details?.map((detail: any, i: number) => (
             <div key={i}>
-              <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">{detail.label}</h4>
+              <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-2">{detail.label}</h4>
               <p className="font-inter text-[#4a4a5e] whitespace-pre-wrap">{detail.value}</p>
             </div>
           ))}

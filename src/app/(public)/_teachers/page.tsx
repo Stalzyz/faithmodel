@@ -14,7 +14,7 @@ export default function TeachersPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Our Educators</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
             The Heart of<br /><em className="text-[#d4a017] not-italic">Faith Model</em>
           </h1>
         </SketchReveal>
@@ -34,9 +34,9 @@ export default function TeachersPage() {
 
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 text-center">
          <SketchReveal>
-            <h2 className="font-cormorant text-4xl font-light text-[#1a1a2e] mb-6">Join Our Faculty</h2>
+            <h2 className="font-cormorant text-4xl font-light text-[#FB7F05] mb-6">Join Our Faculty</h2>
             <p className="font-inter text-[#4a4a5e] mb-10 max-w-2xl mx-auto">We are always looking for passionate educators who share our vision. Explore open positions or submit your resume for future opportunities.</p>
-            <a href="/careers" className="inline-block font-poppins text-sm font-semibold text-[#1a1a2e] border border-[#1a1a2e] px-8 py-4 hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400">
+            <a href="/careers" className="inline-block font-poppins text-sm font-semibold text-[#FB7F05] border border-[#FB7F05] px-8 py-4 hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400">
                View Open Positions
             </a>
          </SketchReveal>
