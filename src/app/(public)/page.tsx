@@ -66,7 +66,7 @@ function HeroSection() {
           <div className="flex flex-col justify-center">
             <div className="font-caveat text-[#c17b5a] text-xl mb-6 -rotate-1">Faith Model School — Est. 1989</div>
             <div ref={headlineRef}>
-              <h1 className="font-cormorant text-[clamp(3.2rem,7.5vw,6.5rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight">
+              <h1 className="font-cormorant text-[clamp(3.2rem,7.5vw,6.5rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight">
                 {["Every", "Great", "Future"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
                 <br />
                 {["Begins", "With", "A"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
@@ -105,34 +105,34 @@ function HeroSection() {
               <path d="M74 190 Q58 215 40 228 Q62 210 74 190 Q86 215 100 230 Q80 210 74 190Z" stroke="#2d5a27" strokeWidth="1.2"/>
               <path d="M400 300 Q402 252 408 228 Q412 210 416 190" stroke="#2d5a27" strokeWidth="1.5" strokeLinecap="round"/>
               <path d="M416 190 Q399 214 381 226 Q403 208 416 190 Q430 212 445 228 Q424 208 416 190Z" stroke="#2d5a27" strokeWidth="1.2"/>
-              <rect x="140" y="175" width="220" height="125" stroke="#FB7F05" strokeWidth="1.8" strokeLinecap="round"/>
-              <polyline points="128,175 250,105 372,175" stroke="#FB7F05" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <rect x="162" y="205" width="34" height="30" stroke="#FB7F05" strokeWidth="1.2"/>
-              <line x1="179" y1="205" x2="179" y2="235" stroke="#FB7F05" strokeWidth="0.7"/>
-              <line x1="162" y1="220" x2="196" y2="220" stroke="#FB7F05" strokeWidth="0.7"/>
-              <rect x="233" y="205" width="34" height="30" stroke="#FB7F05" strokeWidth="1.2"/>
-              <line x1="250" y1="205" x2="250" y2="235" stroke="#FB7F05" strokeWidth="0.7"/>
-              <line x1="233" y1="220" x2="267" y2="220" stroke="#FB7F05" strokeWidth="0.7"/>
-              <rect x="304" y="205" width="34" height="30" stroke="#FB7F05" strokeWidth="1.2"/>
-              <line x1="321" y1="205" x2="321" y2="235" stroke="#FB7F05" strokeWidth="0.7"/>
-              <line x1="304" y1="220" x2="338" y2="220" stroke="#FB7F05" strokeWidth="0.7"/>
-              <rect x="225" y="252" width="50" height="48" rx="2" stroke="#FB7F05" strokeWidth="1.4"/>
-              <line x1="250" y1="105" x2="250" y2="78" stroke="#FB7F05" strokeWidth="1.2"/>
+              <rect x="140" y="175" width="220" height="125" stroke="#1a1a2e" strokeWidth="1.8" strokeLinecap="round"/>
+              <polyline points="128,175 250,105 372,175" stroke="#1a1a2e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <rect x="162" y="205" width="34" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <line x1="179" y1="205" x2="179" y2="235" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <line x1="162" y1="220" x2="196" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <rect x="233" y="205" width="34" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <line x1="250" y1="205" x2="250" y2="235" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <line x1="233" y1="220" x2="267" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <rect x="304" y="205" width="34" height="30" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <line x1="321" y1="205" x2="321" y2="235" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <line x1="304" y1="220" x2="338" y2="220" stroke="#1a1a2e" strokeWidth="0.7"/>
+              <rect x="225" y="252" width="50" height="48" rx="2" stroke="#1a1a2e" strokeWidth="1.4"/>
+              <line x1="250" y1="105" x2="250" y2="78" stroke="#1a1a2e" strokeWidth="1.2"/>
               <polyline points="250,78 282,88 250,99" stroke="#d4a017" strokeWidth="1.2" fill="none"/>
-              <line x1="97" y1="300" x2="97" y2="258" stroke="#FB7F05" strokeWidth="1.4" strokeLinecap="round"/>
-              <line x1="147" y1="300" x2="147" y2="258" stroke="#FB7F05" strokeWidth="1.4" strokeLinecap="round"/>
-              <line x1="97" y1="262" x2="147" y2="262" stroke="#FB7F05" strokeWidth="1.1"/>
-              <line x1="353" y1="300" x2="353" y2="258" stroke="#FB7F05" strokeWidth="1.4" strokeLinecap="round"/>
-              <line x1="403" y1="300" x2="403" y2="258" stroke="#FB7F05" strokeWidth="1.4" strokeLinecap="round"/>
-              <line x1="353" y1="262" x2="403" y2="262" stroke="#FB7F05" strokeWidth="1.1"/>
-              <circle cx="185" cy="292" r="8" stroke="#FB7F05" strokeWidth="1.2"/>
-              <circle cx="215" cy="290" r="8" stroke="#FB7F05" strokeWidth="1.2"/>
-              <circle cx="308" cy="291" r="8" stroke="#FB7F05" strokeWidth="1.2"/>
+              <line x1="97" y1="300" x2="97" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="147" y1="300" x2="147" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="97" y1="262" x2="147" y2="262" stroke="#1a1a2e" strokeWidth="1.1"/>
+              <line x1="353" y1="300" x2="353" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="403" y1="300" x2="403" y2="258" stroke="#1a1a2e" strokeWidth="1.4" strokeLinecap="round"/>
+              <line x1="353" y1="262" x2="403" y2="262" stroke="#1a1a2e" strokeWidth="1.1"/>
+              <circle cx="185" cy="292" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <circle cx="215" cy="290" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
+              <circle cx="308" cy="291" r="8" stroke="#1a1a2e" strokeWidth="1.2"/>
               <path d="M82 65 Q93 50 108 54 Q112 40 127 41 Q142 30 156 43 Q172 38 177 52 Q188 49 192 62 Q192 72 177 72 L92 72 Q76 74 82 65Z" stroke="#4a4a5e" strokeWidth="1" strokeLinecap="round" fill="none"/>
               <path d="M298 42 Q309 29 324 31 Q327 20 340 21 Q352 12 364 24 Q377 19 381 31 Q390 28 394 40 Q394 49 381 49 L309 49 Q295 51 298 42Z" stroke="#4a4a5e" strokeWidth="1" strokeLinecap="round" fill="none"/>
-              <path d="M198 32 Q204 25 210 32" stroke="#FB7F05" strokeWidth="1" strokeLinecap="round"/>
-              <path d="M218 22 Q224 15 230 22" stroke="#FB7F05" strokeWidth="1" strokeLinecap="round"/>
-              <path d="M238 35 Q244 28 250 35" stroke="#FB7F05" strokeWidth="1" strokeLinecap="round"/>
+              <path d="M198 32 Q204 25 210 32" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+              <path d="M218 22 Q224 15 230 22" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
+              <path d="M238 35 Q244 28 250 35" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
             </svg>
 
             <div className="absolute -left-4 top-1/2 font-caveat text-[#c17b5a] text-sm -rotate-90 whitespace-nowrap opacity-50">
@@ -166,11 +166,11 @@ function WelcomeSection() {
       <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">A Message from Our Principal</div>
-          <blockquote className="font-cormorant text-[clamp(1.8rem,3.5vw,3rem)] font-light text-[#FB7F05] italic leading-relaxed mb-8">
+          <blockquote className="font-cormorant text-[clamp(1.8rem,3.5vw,3rem)] font-light text-[#1a1a2e] italic leading-relaxed mb-8">
             "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Every child who walks through our gate carries within them the seeds of something extraordinary."
           </blockquote>
           <div className="w-12 h-px bg-[#d4a017] mx-auto mb-6" />
-          <div className="font-poppins text-sm font-medium text-[#FB7F05]">Prof. Michael Chang</div>
+          <div className="font-poppins text-sm font-medium text-[#1a1a2e]">Prof. Michael Chang</div>
           <div className="font-caveat text-[#c17b5a] text-base mt-1">Principal, Faith Model School</div>
         </SketchReveal>
       </div>
@@ -197,7 +197,7 @@ function StatsSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mt-16">
           {stats.map((s, i) => (
             <SketchReveal key={s.label} delay={i * 0.08} className="text-center">
-              <div className="font-manrope text-[clamp(2rem,4vw,3.2rem)] font-extrabold text-[#FB7F05] leading-none mb-2">{s.num}</div>
+              <div className="font-manrope text-[clamp(2rem,4vw,3.2rem)] font-extrabold text-[#1a1a2e] leading-none mb-2">{s.num}</div>
               <div className="font-poppins text-xs font-semibold text-[#4a4a5e] uppercase tracking-widest mb-1">{s.label}</div>
               <div className="font-caveat text-[#c17b5a] text-sm">{s.note}</div>
             </SketchReveal>
@@ -226,9 +226,9 @@ function WhyChooseUs() {
         <SectionHeading annotation="Why Faith Model?" title="Our Educational Promise" subtitle="We go beyond traditional schooling to craft an environment where curiosity leads, creativity flourishes, and every child is celebrated." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 mt-16 border border-[rgba(74,74,94,0.1)]">
           {pillars.map((p, i) => (
-            <SketchReveal key={p.title} delay={i * 0.07} className="p-10 border-b border-r border-[rgba(74,74,94,0.08)] group hover:bg-[#FB7F05] transition-colors duration-500">
+            <SketchReveal key={p.title} delay={i * 0.07} className="p-10 border-b border-r border-[rgba(74,74,94,0.08)] group hover:bg-[#1a1a2e] transition-colors duration-500">
               <div className="font-manrope text-3xl text-[#d4a017] mb-4 group-hover:scale-110 transition-transform duration-300">{p.icon}</div>
-              <h3 className="font-poppins text-base font-semibold text-[#FB7F05] group-hover:text-[#fefcf3] transition-colors mb-3">{p.title}</h3>
+              <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-3">{p.title}</h3>
               <p className="font-inter text-sm text-[#4a4a5e] group-hover:text-[#fefcf3]/70 transition-colors leading-relaxed">{p.desc}</p>
             </SketchReveal>
           ))}
@@ -263,7 +263,7 @@ function PhilosophySection() {
         </div>
         <motion.div style={{ x }} className="relative h-[50vh] rounded-sm overflow-hidden">
           <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80" alt="Learning" className="w-full h-full object-cover" />
-          <div className="absolute bottom-4 right-4 font-caveat text-[#fefcf3] text-base bg-[#FB7F05]/60 px-3 py-1 backdrop-blur-sm">igniting curiosity →</div>
+          <div className="absolute bottom-4 right-4 font-caveat text-[#fefcf3] text-base bg-[#1a1a2e]/60 px-3 py-1 backdrop-blur-sm">igniting curiosity →</div>
         </motion.div>
       </div>
     </section>
@@ -294,7 +294,7 @@ function AcademicExcellence() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
-                    <h3 className="font-poppins text-lg font-semibold text-[#FB7F05]">{p.title}</h3>
+                    <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e]">{p.title}</h3>
                     <span className="font-caveat text-[#c17b5a] text-base">{p.age}</span>
                   </div>
                   <p className="font-inter text-[#4a4a5e] text-sm leading-relaxed max-w-xl">{p.desc}</p>
@@ -336,7 +336,7 @@ function StudentJourney() {
                   {s.icon}
                 </div>
                 <div className="font-caveat text-[#c17b5a] text-base mb-1">{s.year}</div>
-                <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-wider">{s.label}</div>
+                <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-wider">{s.label}</div>
               </SketchReveal>
             ))}
           </div>
@@ -402,9 +402,9 @@ function FacilitiesOverview() {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(74,74,94,0.08)]">
           {facs.map((f, i) => (
             <SketchReveal key={f.label} delay={i * 0.05}>
-              <div className="bg-[#fefcf3] p-8 group hover:bg-[#FB7F05] transition-colors duration-500 text-center">
+              <div className="bg-[#fefcf3] p-8 group hover:bg-[#1a1a2e] transition-colors duration-500 text-center">
                 <div className="text-3xl mb-4 group-hover:scale-125 transition-transform duration-300">{f.icon}</div>
-                <div className="font-poppins text-sm font-semibold text-[#FB7F05] group-hover:text-[#fefcf3] transition-colors mb-1">{f.label}</div>
+                <div className="font-poppins text-sm font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-1">{f.label}</div>
                 <div className="font-caveat text-[#c17b5a] text-sm group-hover:text-[#d4a017] transition-colors">{f.sub}</div>
               </div>
             </SketchReveal>
@@ -441,7 +441,7 @@ function FeaturedPrograms() {
             <SketchReveal key={p.title} delay={i * 0.07}>
               <Link href={p.href} className="block group h-full border border-[rgba(74,74,94,0.1)] p-8 hover:border-[#d4a017] transition-all duration-400 hover:shadow-[0_8px_32px_rgba(212,160,23,0.08)]">
                 <span className="font-caveat text-[#c17b5a] text-base">{p.tag}</span>
-                <h3 className="font-cormorant text-2xl font-light text-[#FB7F05] mt-2 mb-4 group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
+                <h3 className="font-cormorant text-2xl font-light text-[#1a1a2e] mt-2 mb-4 group-hover:text-[#d4a017] transition-colors leading-tight">{p.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{p.desc}</p>
                 <div className="mt-6 font-poppins text-xs font-medium text-[#4a4a5e] group-hover:text-[#d4a017] transition-colors">Learn more →</div>
               </Link>
@@ -459,7 +459,7 @@ function FeaturedPrograms() {
 function AchievementsTicker() {
   const items = ["🏆 National Science Olympiad Champions 2025", "🥇 CBSE Cluster Athletics Gold Medal", "🎭 State Drama Festival Best Production", "💻 NASSCOM Young Coder Award", "🌿 Green School National Award", "📚 100% Board Pass Rate — 10 consecutive years", "🤖 FIRST Robotics Qualifier 2025", "🎵 National Music Talent Award"];
   return (
-    <section className="py-6 border-y border-[rgba(74,74,94,0.1)] overflow-hidden bg-[#FB7F05]/3">
+    <section className="py-6 border-y border-[rgba(74,74,94,0.1)] overflow-hidden bg-[#1a1a2e]/3">
       <div className="flex gap-12 animate-[drift_30s_linear_infinite] whitespace-nowrap">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="font-caveat text-lg text-[#4a4a5e] shrink-0">{item}</span>
@@ -493,12 +493,12 @@ function UpcomingEvents() {
             <SketchReveal key={e.title} delay={i * 0.08}>
               <div className="flex gap-6 p-6 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors group">
                 <div className="text-center shrink-0 w-14">
-                  <div className="font-manrope text-xl font-extrabold text-[#FB7F05] leading-tight">{e.date.split(" ")[1]}</div>
+                  <div className="font-manrope text-xl font-extrabold text-[#1a1a2e] leading-tight">{e.date.split(" ")[1]}</div>
                   <div className="font-caveat text-[#c17b5a] text-sm">{e.date.split(" ")[0]}</div>
                 </div>
                 <div className="border-l border-[rgba(74,74,94,0.1)] pl-6 flex-1">
                   <span className="font-caveat text-[#c17b5a] text-sm">{e.type}</span>
-                  <h3 className="font-poppins text-base font-semibold text-[#FB7F05] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors">{e.title}</h3>
+                  <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors">{e.title}</h3>
                   <p className="font-inter text-sm text-[#4a4a5e]">{e.desc}</p>
                 </div>
               </div>
@@ -526,7 +526,7 @@ function Testimonials() {
     return () => clearInterval(t);
   }, []);
   return (
-    <section className="py-28 border-t border-[rgba(74,74,94,0.08)] bg-[#FB7F05] relative overflow-hidden">
+    <section className="py-28 border-t border-[rgba(74,74,94,0.08)] bg-[#1a1a2e] relative overflow-hidden">
       <div className="absolute inset-0 graph-paper opacity-5" />
       <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
         <div className="font-caveat text-[#d4a017] text-xl mb-6">What Our Parents Say</div>
@@ -606,7 +606,7 @@ function NewsSection() {
                   <img src={n.img} alt={n.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </div>
                 <span className="font-caveat text-[#c17b5a] text-base">{n.tag}</span>
-                <h3 className="font-cormorant text-xl font-light text-[#FB7F05] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors leading-snug">{n.title}</h3>
+                <h3 className="font-cormorant text-xl font-light text-[#1a1a2e] mt-1 mb-2 group-hover:text-[#d4a017] transition-colors leading-snug">{n.title}</h3>
                 <div className="font-inter text-xs text-[#4a4a5e]">{n.date}</div>
               </Link>
             </SketchReveal>
@@ -628,7 +628,7 @@ function AccreditationSection() {
         <div className="font-caveat text-[#c17b5a] text-lg mb-8 -rotate-1">Recognised & Accredited By</div>
         <div className="flex flex-wrap justify-center gap-x-16 gap-y-6">
           {badges.map((b) => (
-            <div key={b} className="font-poppins text-sm font-semibold text-[rgba(74,74,94,0.5)] hover:text-[#FB7F05] transition-colors">{b}</div>
+            <div key={b} className="font-poppins text-sm font-semibold text-[rgba(74,74,94,0.5)] hover:text-[#1a1a2e] transition-colors">{b}</div>
           ))}
         </div>
       </div>
@@ -645,7 +645,7 @@ function BookVisitSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Visit Us</div>
-          <h2 className="font-cormorant text-[clamp(2.4rem,5vw,4rem)] font-light text-[#FB7F05] leading-tight mb-6">
+          <h2 className="font-cormorant text-[clamp(2.4rem,5vw,4rem)] font-light text-[#1a1a2e] leading-tight mb-6">
             Book a Campus Tour
           </h2>
           <div className="w-12 h-px bg-[#d4a017] mb-6" />
@@ -665,14 +665,14 @@ function BookVisitSection() {
             <div className="font-caveat text-[#c17b5a] text-lg mb-6">Fill in Your Details</div>
             {[["Parent's Full Name", "text"], ["Child's Name & Grade", "text"], ["Mobile Number", "tel"], ["Email Address", "email"]].map(([placeholder, type]) => (
               <input key={placeholder} type={type} placeholder={placeholder}
-                className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#FB7F05] placeholder-[#4a4a5e]/50 focus:outline-none focus:border-[#d4a017] transition-colors" />
+                className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#1a1a2e] placeholder-[#4a4a5e]/50 focus:outline-none focus:border-[#d4a017] transition-colors" />
             ))}
             <select className="w-full border-b border-[rgba(74,74,94,0.2)] bg-transparent py-3 font-inter text-sm text-[#4a4a5e] focus:outline-none focus:border-[#d4a017] transition-colors">
               <option>Preferred Visit Date</option>
               <option>Monday – Friday (Weekday)</option>
               <option>Saturday (Weekend)</option>
             </select>
-            <button type="submit" className="w-full mt-4 bg-[#FB7F05] text-[#fefcf3] font-poppins text-sm font-semibold py-4 hover:bg-[#d4a017] hover:text-[#FB7F05] transition-all duration-400">
+            <button type="submit" className="w-full mt-4 bg-[#1a1a2e] text-[#fefcf3] font-poppins text-sm font-semibold py-4 hover:bg-[#d4a017] hover:text-[#1a1a2e] transition-all duration-400">
               Request Campus Visit
             </button>
           </form>
@@ -687,7 +687,7 @@ function BookVisitSection() {
    ========================================================= */
 function DownloadSection() {
   return (
-    <section className="py-20 bg-[#FB7F05] border-t border-[rgba(74,74,94,0.08)] relative overflow-hidden">
+    <section className="py-20 bg-[#1a1a2e] border-t border-[rgba(74,74,94,0.08)] relative overflow-hidden">
       <div className="absolute inset-0 graph-paper opacity-5" />
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <SketchReveal>
@@ -699,7 +699,7 @@ function DownloadSection() {
             Everything you need to know about Faith Model School — curriculum, faculty, fees, programs, and admissions — in one beautifully crafted document.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/downloads/prospectus-2026.pdf" className="font-poppins text-sm font-semibold bg-[#d4a017] text-[#FB7F05] px-10 py-4 hover:bg-[#fefcf3] transition-colors">
+            <a href="/downloads/prospectus-2026.pdf" className="font-poppins text-sm font-semibold bg-[#d4a017] text-[#1a1a2e] px-10 py-4 hover:bg-[#fefcf3] transition-colors">
               Download Prospectus (PDF)
             </a>
             <Link href="/downloads" className="font-poppins text-sm font-medium text-[#fefcf3] border border-[#fefcf3]/30 px-10 py-4 hover:bg-[#fefcf3]/10 transition-colors">
@@ -734,7 +734,7 @@ function FAQSection() {
             <SketchReveal key={i} delay={i * 0.04}>
               <div className="border-b border-[rgba(74,74,94,0.1)]">
                 <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-start justify-between py-6 text-left gap-6 group">
-                  <span className="font-poppins text-base font-medium text-[#FB7F05] group-hover:text-[#d4a017] transition-colors leading-snug">{f.q}</span>
+                  <span className="font-poppins text-base font-medium text-[#1a1a2e] group-hover:text-[#d4a017] transition-colors leading-snug">{f.q}</span>
                   <span className="font-manrope text-[#d4a017] text-xl shrink-0 mt-0.5 transition-transform duration-300" style={{ transform: open === i ? "rotate(45deg)" : "none" }}>+</span>
                 </button>
                 <AnimatePresence>
@@ -769,22 +769,22 @@ function ContactSection() {
           <SectionHeading annotation="Find Us" title="Get in Touch" />
           <div className="mt-8 space-y-6 font-inter text-sm text-[#4a4a5e]">
             <div>
-              <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-2">Address</div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Address</div>
               <address className="not-italic leading-relaxed">123 Education Lane, Nungambakkam,<br />Chennai, Tamil Nadu 600 034</address>
             </div>
             <div>
-              <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-2">Phone</div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Phone</div>
               <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors">+91 44 1234 5678</a>
               <span className="mx-3 opacity-40">|</span>
               <a href="tel:+914498765432" className="hover:text-[#d4a017] transition-colors">+91 44 9876 5432</a>
             </div>
             <div>
-              <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-2">Email</div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Email</div>
               <a href="mailto:admissions@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block">admissions@faithmodelschool.edu.in</a>
               <a href="mailto:info@faithmodelschool.edu.in" className="hover:text-[#d4a017] transition-colors block">info@faithmodelschool.edu.in</a>
             </div>
             <div>
-              <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-2">Office Hours</div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-2">Office Hours</div>
               <p>Monday – Friday: 8:00 AM – 4:30 PM</p>
               <p>Saturday: 9:00 AM – 1:00 PM</p>
             </div>
@@ -815,12 +815,12 @@ function SketchFooter() {
     <footer className="relative border-t border-[rgba(74,74,94,0.12)] bg-[#fefcf3]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid grid-cols-2 md:grid-cols-4 gap-12">
         <div>
-          <div className="font-cormorant text-2xl font-semibold text-[#FB7F05] mb-1">Faith Model</div>
+          <div className="font-cormorant text-2xl font-semibold text-[#1a1a2e] mb-1">Faith Model</div>
           <div className="font-caveat text-[#d4a017] text-sm mb-4">— School —</div>
           <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">Empowering minds, shaping futures since 1989. CBSE Affiliated.</p>
         </div>
         <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-4">Explore</h4>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Explore</h4>
           <ul className="space-y-2">
             {[["About Us", "/about"], ["Academics", "/academics"], ["Facilities", "/facilities"], ["Student Life", "/student-life"], ["Admissions", "/admissions"]].map(([l, h]) => (
               <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{l}</Link></li>
@@ -828,7 +828,7 @@ function SketchFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-4">Community</h4>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Community</h4>
           <ul className="space-y-2">
             {[["Parents", "/parents"], ["Students", "/students"], ["Alumni", "/alumni"], ["Careers", "/careers"], ["News", "/news"]].map(([l, h]) => (
               <li key={h}><Link href={h} className="font-inter text-sm text-[#4a4a5e] hover:text-[#d4a017] transition-colors">{l}</Link></li>
@@ -836,7 +836,7 @@ function SketchFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-4">Contact</h4>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Contact</h4>
           <address className="not-italic font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-1">
             <p>Chennai, Tamil Nadu 600 034</p>
             <a href="tel:+914412345678" className="hover:text-[#d4a017] transition-colors block mt-2">+91 44 1234 5678</a>

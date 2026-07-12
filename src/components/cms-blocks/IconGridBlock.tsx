@@ -16,7 +16,7 @@ export default function IconGridBlock({ data }: { data: any }) {
                 <div className="text-[#c17b5a] mb-6">
                   <IconComponent className="w-8 h-8 stroke-1" />
                 </div>
-                <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mb-3">{item.title}</h3>
+                <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{item.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{item.desc}</p>
               </div>
             </SketchReveal>

@@ -33,7 +33,7 @@ export default async function NewsPage() {
             ) : (
                posts.map((post, i) => (
                   <SketchReveal key={post.id} delay={i * 0.1}>
-                     <article className="group h-full flex flex-col border border-[rgba(74,74,94,0.1)] bg-white hover:border-[#FB7F05] transition-colors duration-300">
+                     <article className="group h-full flex flex-col border border-[rgba(74,74,94,0.1)] bg-white hover:border-[#1a1a2e] transition-colors duration-300">
                         {post.coverImage && (
                            <div className="aspect-[16/10] overflow-hidden bg-[rgba(74,74,94,0.05)]">
                               <img 
@@ -53,7 +53,7 @@ export default async function NewsPage() {
                                  {new Date(post.createdAt).toLocaleDateString()}
                               </span>
                            </div>
-                           <h2 className="font-cormorant text-2xl font-medium text-[#FB7F05] mb-4 group-hover:text-[#d4a017] transition-colors leading-snug">
+                           <h2 className="font-cormorant text-2xl font-medium text-[#1a1a2e] mb-4 group-hover:text-[#d4a017] transition-colors leading-snug">
                               {post.title}
                            </h2>
                            <p className="font-inter text-[#4a4a5e] mb-8 text-sm leading-relaxed line-clamp-3">
@@ -61,7 +61,7 @@ export default async function NewsPage() {
                            </p>
                            <Link 
                               href={`/news/${post.slug}`} 
-                              className="mt-auto inline-flex items-center font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest group-hover:gap-2 transition-all"
+                              className="mt-auto inline-flex items-center font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest group-hover:gap-2 transition-all"
                            >
                               Read Full Story <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                            </Link>

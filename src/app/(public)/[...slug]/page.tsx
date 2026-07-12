@@ -77,7 +77,7 @@ export default async function CustomDynamicPage({ params }: { params: Promise<{ 
                   <div key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
                      <SketchReveal delay={0.1}>
                         <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">{block.data.subheadline}</div>
-                        <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
+                        <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
                            {block.data.headline}
                         </h1>
                      </SketchReveal>
@@ -101,8 +101,8 @@ export default async function CustomDynamicPage({ params }: { params: Promise<{ 
                return (
                   <section key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)] text-center">
                      <SketchReveal delay={0.1}>
-                        <h2 className="font-cormorant text-4xl font-light text-[#FB7F05] mb-8">{block.data.title}</h2>
-                        <Link href={block.data.buttonLink} className="inline-block font-poppins text-sm font-semibold text-[#FB7F05] border border-[#FB7F05] px-8 py-4 hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400">
+                        <h2 className="font-cormorant text-4xl font-light text-[#1a1a2e] mb-8">{block.data.title}</h2>
+                        <Link href={block.data.buttonLink} className="inline-block font-poppins text-sm font-semibold text-[#1a1a2e] border border-[#1a1a2e] px-8 py-4 hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400">
                            {block.data.buttonText}
                         </Link>
                      </SketchReveal>

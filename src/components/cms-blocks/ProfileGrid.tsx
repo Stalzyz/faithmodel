@@ -14,7 +14,7 @@ export default function ProfileGrid({ data }: { data: any }) {
                    <img src={profile.image} alt={profile.name} className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" />
                 )}
               </div>
-              <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] group-hover:text-[#c17b5a] transition-colors">{profile.name}</h3>
+              <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] group-hover:text-[#c17b5a] transition-colors">{profile.name}</h3>
               <p className="font-caveat text-[#c17b5a] text-lg mt-1">{profile.role}</p>
               {profile.desc && <p className="font-inter text-xs text-[#4a4a5e] mt-2 leading-relaxed">{profile.desc}</p>}
             </div>

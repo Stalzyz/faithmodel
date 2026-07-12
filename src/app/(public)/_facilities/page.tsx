@@ -43,7 +43,7 @@ export default function FacilitiesPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Infrastructure</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
             Spaces that Inspire<br /><em className="text-[#d4a017] not-italic">Greatness</em>
           </h1>
         </SketchReveal>
@@ -52,7 +52,7 @@ export default function FacilitiesPage() {
       {facilities.map((cat, idx) => (
          <section key={cat.category} className="max-w-7xl mx-auto px-6 lg:px-12 py-24 border-b border-[rgba(74,74,94,0.08)]">
             <SketchReveal>
-               <h2 className="font-cormorant text-4xl font-light text-[#FB7F05] mb-2">{cat.category}</h2>
+               <h2 className="font-cormorant text-4xl font-light text-[#1a1a2e] mb-2">{cat.category}</h2>
                <div className="w-12 h-px bg-[#d4a017] mb-12" />
             </SketchReveal>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -60,7 +60,7 @@ export default function FacilitiesPage() {
                   <SketchReveal key={item.title} delay={i * 0.1}>
                      <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full bg-[#fefcf3] hover:border-[#d4a017] transition-colors group">
                         <div className="text-4xl mb-4 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">{item.icon}</div>
-                        <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mb-3">{item.title}</h3>
+                        <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{item.title}</h3>
                         <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{item.desc}</p>
                      </div>
                   </SketchReveal>

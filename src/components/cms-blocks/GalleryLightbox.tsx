@@ -63,7 +63,7 @@ export default function GalleryLightbox({ albums }: { albums: any[] }) {
                 <FolderOpen className="w-16 h-16 text-gray-300" />
               )}
               
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FB7F05]/90 via-[#FB7F05]/30 to-transparent flex flex-col justify-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/90 via-[#1a1a2e]/30 to-transparent flex flex-col justify-end p-6">
                 <h3 className="text-white font-poppins font-semibold text-xl mb-1 translate-y-2 group-hover:translate-y-0 transition-transform">{album.title}</h3>
                 <p className="text-white/80 font-inter text-sm opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 delay-75">{album.count} Photos</p>
               </div>
@@ -73,7 +73,7 @@ export default function GalleryLightbox({ albums }: { albums: any[] }) {
       </div>
 
       {lightboxOpen && media.length > 0 && (
-        <div className="fixed inset-0 z-50 bg-[#FB7F05]/95 backdrop-blur-md flex items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-[#1a1a2e]/95 backdrop-blur-md flex items-center justify-center">
           <button 
             onClick={closeLightbox}
             className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"

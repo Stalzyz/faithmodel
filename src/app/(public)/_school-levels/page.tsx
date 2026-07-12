@@ -53,7 +53,7 @@ export default function SchoolLevelsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Educational Stages</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
             A Continuum of<br /><em className="text-[#d4a017] not-italic">Learning</em>
           </h1>
         </SketchReveal>
@@ -66,14 +66,14 @@ export default function SchoolLevelsPage() {
                   <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 !== 0 ? "lg:direction-rtl" : ""}`}>
                      <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
                         <div className="flex items-center gap-4 mb-3">
-                           <h2 className="font-cormorant text-4xl font-light text-[#FB7F05]">{level.title}</h2>
+                           <h2 className="font-cormorant text-4xl font-light text-[#1a1a2e]">{level.title}</h2>
                         </div>
                         <div className="flex gap-4 mb-6">
-                           <span className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest bg-[rgba(74,74,94,0.05)] px-3 py-1">{level.grades}</span>
+                           <span className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest bg-[rgba(74,74,94,0.05)] px-3 py-1">{level.grades}</span>
                            <span className="font-caveat text-[#c17b5a] text-base mt-0.5">{level.age}</span>
                         </div>
                         <p className="font-inter text-[#4a4a5e] leading-relaxed mb-6">{level.desc}</p>
-                        <Link href={`/admissions`} className="font-poppins text-sm font-medium text-[#FB7F05] border-b border-[#FB7F05] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
+                        <Link href={`/admissions`} className="font-poppins text-sm font-medium text-[#1a1a2e] border-b border-[#1a1a2e] hover:text-[#d4a017] hover:border-[#d4a017] transition-colors pb-0.5">
                            Apply for {level.title} →
                         </Link>
                      </div>

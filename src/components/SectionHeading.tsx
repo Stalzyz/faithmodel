@@ -26,7 +26,7 @@ export default function SectionHeading({
           {annotation}
         </p>
       )}
-      <h2 className="font-cormorant text-[clamp(2.4rem,5vw,4.5rem)] font-light text-[#FB7F05] leading-tight tracking-tight mb-4">
+      <h2 className="font-cormorant text-[clamp(2.4rem,5vw,4.5rem)] font-light text-[#1a1a2e] leading-tight tracking-tight mb-4">
         {title}
       </h2>
       <div

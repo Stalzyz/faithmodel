@@ -37,7 +37,7 @@ export default function AdmissionsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Admissions 2026–27</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
             Begin Your Child's<br /><em className="text-[#d4a017] not-italic">Greatest Story</em>
           </h1>
           <p className="font-inter text-lg text-[#4a4a5e] font-light mt-6 max-w-2xl leading-relaxed">
@@ -54,7 +54,7 @@ export default function AdmissionsPage() {
             <SketchReveal key={s.num} delay={i * 0.08}>
               <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full hover:border-[#d4a017] transition-colors group">
                 <div className="font-manrope text-4xl font-extrabold text-[rgba(74,74,94,0.07)] mb-4 group-hover:text-[rgba(212,160,23,0.2)] transition-colors">{s.num}</div>
-                <h3 className="font-poppins text-base font-semibold text-[#FB7F05] mb-3">{s.title}</h3>
+                <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] mb-3">{s.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{s.desc}</p>
               </div>
             </SketchReveal>
@@ -69,15 +69,15 @@ export default function AdmissionsPage() {
           <table className="w-full font-inter text-sm text-[#4a4a5e] border-collapse">
             <thead>
               <tr className="border-b border-[rgba(74,74,94,0.1)]">
-                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest">Grade</th>
-                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest">Min. Age</th>
-                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest">Max. Age</th>
+                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest">Grade</th>
+                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest">Min. Age</th>
+                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest">Max. Age</th>
               </tr>
             </thead>
             <tbody>
               {[["Pre-KG", "2 years 6 months", "3 years 6 months"], ["LKG", "3 years 6 months", "4 years 6 months"], ["UKG", "4 years 6 months", "5 years 6 months"], ["Grade 1", "5 years 6 months", "6 years 6 months"], ["Grade 6", "10 years", "12 years"], ["Grade 9", "13 years", "15 years"], ["Grade 11", "15 years", "17 years"]].map(([g, min, max]) => (
                 <tr key={g} className="border-b border-[rgba(74,74,94,0.06)] hover:bg-[rgba(212,160,23,0.04)] transition-colors">
-                  <td className="py-4 font-medium text-[#FB7F05]">{g}</td>
+                  <td className="py-4 font-medium text-[#1a1a2e]">{g}</td>
                   <td className="py-4">{min}</td>
                   <td className="py-4">{max}</td>
                 </tr>
@@ -113,17 +113,17 @@ export default function AdmissionsPage() {
         <div className="mt-12 overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="border-b-2 border-[#FB7F05]">
-                <th className="text-left py-4 pr-8 font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest">Grade</th>
-                <th className="text-left py-4 pr-8 font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest">Annual Fee</th>
-                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest">Monthly Equivalent</th>
+              <tr className="border-b-2 border-[#1a1a2e]">
+                <th className="text-left py-4 pr-8 font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest">Grade</th>
+                <th className="text-left py-4 pr-8 font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest">Annual Fee</th>
+                <th className="text-left py-4 font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest">Monthly Equivalent</th>
               </tr>
             </thead>
             <tbody>
               {fees.map((f, i) => (
                 <tr key={f.grade} className={`border-b border-[rgba(74,74,94,0.06)] hover:bg-[rgba(212,160,23,0.04)] transition-colors ${i % 2 === 0 ? "" : "bg-[rgba(74,74,94,0.02)]"}`}>
-                  <td className="py-5 pr-8 font-poppins text-sm font-medium text-[#FB7F05]">{f.grade}</td>
-                  <td className="py-5 pr-8 font-manrope text-lg font-bold text-[#FB7F05]">{f.annual}</td>
+                  <td className="py-5 pr-8 font-poppins text-sm font-medium text-[#1a1a2e]">{f.grade}</td>
+                  <td className="py-5 pr-8 font-manrope text-lg font-bold text-[#1a1a2e]">{f.annual}</td>
                   <td className="py-5">
                     <span className="font-inter text-sm text-[#4a4a5e]">{f.monthly}</span>
                     {f.note && <span className="ml-3 font-caveat text-[#c17b5a] text-sm">{f.note}</span>}
@@ -148,14 +148,14 @@ export default function AdmissionsPage() {
             <SketchReveal key={s.title} delay={i * 0.1}>
               <div className="border border-[rgba(74,74,94,0.1)] p-8 h-full">
                 <div className="font-manrope text-xl font-extrabold text-[#d4a017] mb-3">{s.value}</div>
-                <h3 className="font-poppins text-sm font-semibold text-[#FB7F05] mb-3">{s.title}</h3>
+                <h3 className="font-poppins text-sm font-semibold text-[#1a1a2e] mb-3">{s.title}</h3>
                 <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{s.desc}</p>
               </div>
             </SketchReveal>
           ))}
         </div>
         <SketchReveal className="mt-12">
-          <Link href="/contact" className="inline-block font-poppins text-sm font-semibold text-[#FB7F05] border border-[#FB7F05] px-8 py-4 hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400">
+          <Link href="/contact" className="inline-block font-poppins text-sm font-semibold text-[#1a1a2e] border border-[#1a1a2e] px-8 py-4 hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400">
             Talk to Our Admissions Counsellor
           </Link>
         </SketchReveal>

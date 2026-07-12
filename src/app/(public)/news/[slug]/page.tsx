@@ -30,7 +30,7 @@ export default async function NewsReaderPage({ params }: { params: Promise<{ slu
             </div>
           )}
           
-          <h1 className="font-cormorant text-5xl md:text-6xl font-light text-[#FB7F05] leading-[1.1] mb-6">
+          <h1 className="font-cormorant text-5xl md:text-6xl font-light text-[#1a1a2e] leading-[1.1] mb-6">
             {post.title}
           </h1>
           
@@ -45,7 +45,7 @@ export default async function NewsReaderPage({ params }: { params: Promise<{ slu
             </div>
           )}
           
-          <div className="font-inter text-[#4a4a5e] leading-relaxed prose prose-lg prose-p:mb-6 prose-headings:font-poppins prose-headings:text-[#FB7F05] prose-a:text-[#d4a017] prose-img:rounded-sm">
+          <div className="font-inter text-[#4a4a5e] leading-relaxed prose prose-lg prose-p:mb-6 prose-headings:font-poppins prose-headings:text-[#1a1a2e] prose-a:text-[#d4a017] prose-img:rounded-sm">
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </SketchReveal>

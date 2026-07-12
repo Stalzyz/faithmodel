@@ -106,7 +106,7 @@ export default function PageBuilder({
                   id="published" 
                   checked={published} 
                   onChange={e => setPublished(e.target.checked)}
-                  className="rounded border-gray-300 text-[#FB7F05] focus:ring-[#FB7F05]"
+                  className="rounded border-gray-300 text-[#1a1a2e] focus:ring-[#1a1a2e]"
                />
                <label htmlFor="published">Publish Page</label>
             </div>
@@ -154,10 +154,10 @@ export default function PageBuilder({
 
       {/* Tabs */}
       <div className="flex border-b border-gray-200 mb-8">
-         <button onClick={() => setActiveTab("blocks")} className={`py-3 px-6 text-sm font-semibold border-b-2 transition-colors ${activeTab === "blocks" ? "border-[#FB7F05] text-[#FB7F05]" : "border-transparent text-gray-500 hover:text-gray-900"}`}>
+         <button onClick={() => setActiveTab("blocks")} className={`py-3 px-6 text-sm font-semibold border-b-2 transition-colors ${activeTab === "blocks" ? "border-[#1a1a2e] text-[#1a1a2e]" : "border-transparent text-gray-500 hover:text-gray-900"}`}>
             Page Blocks
          </button>
-         <button onClick={() => setActiveTab("seo")} className={`py-3 px-6 text-sm font-semibold border-b-2 transition-colors ${activeTab === "seo" ? "border-[#FB7F05] text-[#FB7F05]" : "border-transparent text-gray-500 hover:text-gray-900"}`}>
+         <button onClick={() => setActiveTab("seo")} className={`py-3 px-6 text-sm font-semibold border-b-2 transition-colors ${activeTab === "seo" ? "border-[#1a1a2e] text-[#1a1a2e]" : "border-transparent text-gray-500 hover:text-gray-900"}`}>
             SEO Settings
          </button>
       </div>
@@ -584,7 +584,7 @@ export default function PageBuilder({
                <button 
                   key={type}
                   onClick={() => addBlock(type)}
-                  className="px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-[#FB7F05] hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-[#1a1a2e] hover:bg-gray-50 transition-colors"
                >
                   + {type.replace('_', ' ')}
                </button>

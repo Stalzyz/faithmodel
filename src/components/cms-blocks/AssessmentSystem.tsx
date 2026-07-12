@@ -10,7 +10,7 @@ export default function AssessmentSystem({ data }: { data: any }) {
           <SketchReveal key={a.label} delay={i * 0.08}>
             <div className="text-center">
               <div className="font-manrope text-4xl font-extrabold text-[#d4a017] mb-3">{a.pct}</div>
-              <div className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-3">{a.label}</div>
+              <div className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-3">{a.label}</div>
               <p className="font-inter text-xs text-[#4a4a5e] leading-relaxed">{a.desc}</p>
             </div>
           </SketchReveal>

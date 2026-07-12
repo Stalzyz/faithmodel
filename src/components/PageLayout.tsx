@@ -41,7 +41,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
           </div>
         </div>
         <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-4">{col1.title}</h4>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">{col1.title}</h4>
           <ul className="space-y-2">
             {col1.items?.map((item: any) => (
               <li key={item.href}>
@@ -51,7 +51,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
           </ul>
         </div>
         <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-4">{col2.title}</h4>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">{col2.title}</h4>
           <ul className="space-y-2">
             {col2.items?.map((item: any) => (
               <li key={item.href}>
@@ -61,7 +61,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
           </ul>
         </div>
         <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#FB7F05] uppercase tracking-widest mb-4">Contact</h4>
+          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Contact</h4>
           <address className="not-italic font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-3">
             <div className="flex gap-3">
               <MapPin className="w-5 h-5 text-[#d4a017] shrink-0" />

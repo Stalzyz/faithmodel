@@ -25,7 +25,7 @@ export default function MandatoryDisclosurePage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">CBSE Compliance</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
             Mandatory Public<br /><em className="text-[#d4a017] not-italic">Disclosure</em>
           </h1>
         </SketchReveal>
@@ -40,8 +40,8 @@ export default function MandatoryDisclosurePage() {
             {documents.map((doc, i) => (
                <SketchReveal key={i} delay={i * 0.05}>
                   <div className="flex items-center justify-between p-4 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors group">
-                     <span className="font-inter text-sm text-[#4a4a5e] group-hover:text-[#FB7F05]">{doc}</span>
-                     <a href="#" className="font-poppins text-xs font-semibold text-[#FB7F05] px-4 py-2 bg-[rgba(74,74,94,0.05)] group-hover:bg-[#d4a017] transition-colors shrink-0 ml-4">View PDF</a>
+                     <span className="font-inter text-sm text-[#4a4a5e] group-hover:text-[#1a1a2e]">{doc}</span>
+                     <a href="#" className="font-poppins text-xs font-semibold text-[#1a1a2e] px-4 py-2 bg-[rgba(74,74,94,0.05)] group-hover:bg-[#d4a017] transition-colors shrink-0 ml-4">View PDF</a>
                   </div>
                </SketchReveal>
             ))}

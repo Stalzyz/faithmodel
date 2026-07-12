@@ -14,7 +14,7 @@ export default function AlumniPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
         <SketchReveal>
           <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">Once a Student, Always Family</div>
-          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#FB7F05] leading-[1.08] tracking-tight max-w-4xl">
+          <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
             Alumni<br /><em className="text-[#d4a017] not-italic">Network</em>
           </h1>
         </SketchReveal>
@@ -24,7 +24,7 @@ export default function AlumniPage() {
          <SketchReveal>
             <SectionHeading annotation="Our Legacy" title="A Global Community" subtitle="With over 10,000 alumni spread across the globe, the Faith Model family continues to grow and make an impact in every field imaginable." />
             <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed mt-4">We encourage our alumni to stay connected, mentor current students, and participate in our annual Alumni Meet. Your journey inspires the next generation.</p>
-            <a href="#" className="inline-block mt-8 font-poppins text-sm font-semibold text-[#FB7F05] border border-[#FB7F05] px-8 py-4 hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400">
+            <a href="#" className="inline-block mt-8 font-poppins text-sm font-semibold text-[#1a1a2e] border border-[#1a1a2e] px-8 py-4 hover:bg-[#1a1a2e] hover:text-[#fefcf3] transition-all duration-400">
                Register as Alumni
             </a>
          </SketchReveal>
@@ -43,7 +43,7 @@ export default function AlumniPage() {
                <SketchReveal key={item.title} delay={i * 0.1}>
                   <div className="text-center p-8 border border-[rgba(74,74,94,0.1)] hover:border-[#d4a017] transition-colors h-full">
                      <div className="text-4xl mb-4 grayscale opacity-80">{item.icon}</div>
-                     <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mb-3">{item.title}</h3>
+                     <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mb-3">{item.title}</h3>
                      <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{item.desc}</p>
                   </div>
                </SketchReveal>

@@ -10,7 +10,7 @@ export default function StepsBlock({ data }: { data: any }) {
           <SketchReveal key={i} delay={i * 0.06}>
             <div className="relative border-t border-[rgba(74,74,94,0.1)] pt-6 h-full">
               <div className="absolute -top-4 bg-[#fefcf3] pr-4 font-caveat text-3xl text-[#d4a017]">{step.num}</div>
-              <h3 className="font-poppins text-lg font-semibold text-[#FB7F05] mt-4 mb-3">{step.title}</h3>
+              <h3 className="font-poppins text-lg font-semibold text-[#1a1a2e] mt-4 mb-3">{step.title}</h3>
               <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">{step.desc}</p>
             </div>
           </SketchReveal>
