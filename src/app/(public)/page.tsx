@@ -25,11 +25,11 @@ function HeroSection() {
 
   useEffect(() => {
     if (!pencilRef.current || !sketchRef.current) return;
-    const tl = gsap.timeline({ delay: 0.4 });
+    const tl = gsap.timeline({ delay: 0.1 });
 
     tl.fromTo(pencilRef.current,
       { opacity: 0, x: "30%", y: "-15%", rotation: -25 },
-      { opacity: 1, x: "0%", y: "0%", rotation: 12, duration: 1, ease: "power3.out" }
+      { opacity: 1, x: "0%", y: "0%", rotation: 12, duration: 0.6, ease: "power3.out" }
     );
 
     const paths = sketchRef.current.querySelectorAll("path,line,circle,rect,polyline,ellipse");
@@ -37,12 +37,16 @@ function HeroSection() {
       const len = (p as SVGGeometryElement).getTotalLength?.() || 200;
       gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
     });
-    tl.to(paths, { strokeDashoffset: 0, duration: 2.2, stagger: 0.12, ease: "power1.inOut" }, "-=0.2");
-    tl.to(pencilRef.current, { x: "50%", y: "-80%", opacity: 0, rotation: 50, duration: 0.7, ease: "power2.in" }, "-=0.6");
+
+    tl.add("startAnimation", "-=0.2");
+
+    tl.to(paths, { strokeDashoffset: 0, duration: 1.8, stagger: 0.05, ease: "power1.inOut" }, "startAnimation");
+    tl.to(pencilRef.current, { x: "50%", y: "-80%", opacity: 0, rotation: 50, duration: 0.7, ease: "power2.in" }, "startAnimation+=1.2");
+    
     const words = headlineRef.current?.querySelectorAll(".w") || [];
-    tl.fromTo(words, { opacity: 0, y: 28, skewY: 1.5 }, { opacity: 1, y: 0, skewY: 0, duration: 0.7, stagger: 0.09, ease: "power3.out" }, "-=0.2");
-    if (subRef.current) tl.fromTo(subRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3");
-    if (ctaRef.current) tl.fromTo(ctaRef.current, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.2");
+    tl.fromTo(words, { opacity: 0, y: 28, skewY: 1.5 }, { opacity: 1, y: 0, skewY: 0, duration: 0.7, stagger: 0.05, ease: "power3.out" }, "startAnimation");
+    if (subRef.current) tl.fromTo(subRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, "startAnimation+=0.4");
+    if (ctaRef.current) tl.fromTo(ctaRef.current, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, "startAnimation+=0.6");
   }, []);
 
   return (
