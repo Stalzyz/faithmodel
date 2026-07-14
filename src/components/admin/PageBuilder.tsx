@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save } from "lucide-react";
 import ImageUploader from "./ImageUploader";
 
-export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO";
+export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK";
 
 export interface PageBlock {
   id: string;
@@ -41,7 +41,21 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
   SKETCHBOOK_HERO: { type: "SKETCHBOOK_HERO", data: {} },
   GALLERY_BLOCK: { annotation: "Gallery", title: "Our Media", subtitle: "Glimpses of life on campus" },
   MOODBOARD_HERO: { headline: "Empowering the Next Generation", subheadline: "A legacy of excellence since 1989", primaryCtaLabel: "Apply Now", primaryCtaHref: "/admissions", images: ["", "", "", ""] },
-  GOLDEN_HERO: { headline: "Faith Model School", subheadline: "Empowering minds, shaping futures since 1989.", quote: "Education is the most powerful weapon which you can use to change the world.", primaryCtaLabel: "Admissions", primaryCtaHref: "/admissions", mediaUrl: "", secondaryImageUrl: "" }
+  GOLDEN_HERO: { headline: "Faith Model School", subheadline: "Empowering minds, shaping futures since 1989.", quote: "Education is the most powerful weapon which you can use to change the world.", primaryCtaLabel: "Admissions", primaryCtaHref: "/admissions", mediaUrl: "", secondaryImageUrl: "" },
+  WELCOME_BLOCK: { logoText: "FM", title: "Welcome to Faith Model", quote: "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Every child who walks through our gate carries within them the seeds of something extraordinary.", author: "Amina M., M.A., B.Ed.", role: "Principal, Faith Model School" },
+  STATS_BLOCK: { annotation: "School at a Glance", title: "By the Numbers", stats: [{ num: "35+", label: "Years of Excellence", note: "Est. 1989" }] },
+  WHY_CHOOSE_US_BLOCK: { annotation: "Why Faith Model?", title: "Our Educational Promise", subtitle: "We go beyond traditional schooling...", pillars: [{ icon: "Sparkles", title: "Academic Excellence", desc: "Rigorous curriculum." }] },
+  PHILOSOPHY_SECTION_BLOCK: { annotation: "Our Philosophy", title: "Where Curiosity Meets Character", subtitle: "Faith Model School follows the belief...", items: ["Inquiry-Based Learning"], imageUrl: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80", imageCaption: "igniting curiosity →" },
+  ACADEMIC_EXCELLENCE_BLOCK: { annotation: "Academics", title: "A Journey of Learning", subtitle: "From first steps to board exams...", programs: [{ title: "Primary", age: "Ages 5-10", desc: "Core basics", href: "/primary" }] },
+  STUDENT_JOURNEY_BLOCK: { annotation: "The Journey", title: "Your Child's Story at Faith Model", stages: [{ year: "Age 3", label: "Pre-KG", icon: "BookOpen" }] },
+  CAMPUS_EXPERIENCE_BLOCK: { annotation: "Campus Life", title: "A World of Possibilities", subtitle: "Our 15-acre campus...", image1: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80", image2: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80", features: ["Smart Classrooms"], ctaText: "Explore the Campus →", ctaLink: "/campus" },
+  FACILITIES_OVERVIEW_BLOCK: { annotation: "Infrastructure", title: "World-Class Facilities", subtitle: "Every space is designed...", facilities: [{ icon: "Microscope", label: "Science Labs", sub: "Physics · Chemistry · Biology" }], ctaText: "View All 28 Facilities →", ctaLink: "/facilities" },
+  FEATURED_PROGRAMS_BLOCK: { annotation: "Signature Programs", title: "Featured Programs", subtitle: "Beyond the classroom...", programs: [{ title: "STEM", tag: "Academics", desc: "Science...", href: "#" }] },
+  ACHIEVEMENTS_TICKER_BLOCK: { items: [{ icon: "Trophy", text: "National Champions" }] },
+  UPCOMING_EVENTS_BLOCK: { annotation: "Mark the Calendar", title: "Upcoming Events", ctaText: "View Full Calendar →", ctaLink: "/news#events", events: [{ date: "Aug 15", title: "Independence Day", type: "Celebration", desc: "Flag hoisting." }] },
+  TESTIMONIALS_BLOCK: { annotation: "What Our Parents Say", testimonials: [{ name: "Parent", child: "Grade 1", quote: "Amazing school." }] },
+  CUSTOM_HTML_BLOCK: { html: "<p>Custom HTML goes here...</p>" },
+  HOMEPAGE_HERO_BLOCK: {}
 };
 
 export default function PageBuilder({
