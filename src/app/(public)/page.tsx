@@ -175,7 +175,7 @@ function WelcomeSection() {
             "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Every child who walks through our gate carries within them the seeds of something extraordinary."
           </blockquote>
           <div className="w-12 h-px bg-[#FB7F05] mx-auto mb-6" />
-          <div className="font-poppins text-sm font-medium text-[#1a1a2e]">Prof. Michael Chang</div>
+          <div className="font-poppins text-sm font-medium text-[#1a1a2e]">Amina M., M.A., B.Ed.</div>
           <div className="font-caveat text-[#c17b5a] text-base mt-1">Principal, Faith Model School</div>
         </SketchReveal>
       </div>
