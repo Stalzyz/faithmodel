@@ -1,8 +1,8 @@
-sed -i 's|NEXTAUTH_URL="https://faithmodel.grekam.in"|NEXTAUTH_URL="https://test.faithmodelschool.com"|g' /var/www/faithmodel/.env
+sed -i 's|NEXTAUTH_URL=.*|NEXTAUTH_URL="https://fm.grekam.in"|g' /var/www/faithmodel/.env
 
 cat << 'NGINX' > /etc/nginx/sites-available/faithmodel
 server {
-    server_name test.faithmodelschool.com;
+    server_name fm.grekam.in;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -18,7 +18,7 @@ server {
 NGINX
 
 nginx -t && systemctl restart nginx
-certbot --nginx -d test.faithmodelschool.com --non-interactive --agree-tos -m stalin@grekam.in
+certbot --nginx -d fm.grekam.in --non-interactive --agree-tos -m stalin@grekam.in
 
 cd /var/www/faithmodel
 npm run build

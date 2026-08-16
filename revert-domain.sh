@@ -1,4 +1,4 @@
-sed -i 's|NEXTAUTH_URL="https://test.faithmodelschool.com"|NEXTAUTH_URL="https://faithmodel.grekam.in"|g' /var/www/faithmodel/.env
+sed -i 's|NEXTAUTH_URL=.*|NEXTAUTH_URL="https://faithmodel.grekam.in"|g' /var/www/faithmodel/.env
 
 cat << 'NGINX' > /etc/nginx/sites-available/faithmodel
 server {

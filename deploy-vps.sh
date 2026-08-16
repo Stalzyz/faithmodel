@@ -43,7 +43,7 @@ cd $APP_DIR
 cat > .env << EOL
 DATABASE_URL="postgresql://faithmodel:Photoshop09%40.@localhost:5432/faithmodel?schema=public"
 NEXTAUTH_SECRET="faithmodel_super_secret_production_key_123_456"
-NEXTAUTH_URL="https://faithmodel.grekam.in"
+NEXTAUTH_URL="https://fm.grekam.in"
 EOL
 
 # 7. Install dependencies and build
@@ -62,7 +62,7 @@ pm2 startup systemd -u root --hp /root || true
 cat > /etc/nginx/sites-available/faithmodel << EOL
 server {
     listen 80;
-    server_name faithmodel.grekam.in fmadmin.grekam.in;
+    server_name fm.grekam.in;
 
     location / {
         proxy_pass http://localhost:3000;
