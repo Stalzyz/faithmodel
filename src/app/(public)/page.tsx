@@ -43,16 +43,14 @@ import HomepageHeroBlock from "@/components/cms-blocks/HomepageHeroBlock";
 
 
 export async function generateMetadata(): Promise<Metadata> {
-  const slugPath = "";
-
-  const page = await prisma.page.findUnique({
-    where: { slug: slugPath },
+  const page = await prisma.page.findFirst({
+    where: { slug: { in: ["", "home"] }, isPublished: true },
   });
 
   if (!page) {
     return {
-      title: "Not Found",
-      description: "Page not found",
+      title: "Faith Model School",
+      description: "Empowering minds, shaping futures since 1989.",
     };
   }
 
@@ -72,13 +70,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const slugPath = "";
-
-  const page = await prisma.page.findUnique({
-    where: { slug: slugPath }
+  const page = await prisma.page.findFirst({
+    where: { slug: { in: ["", "home"] }, isPublished: true }
   });
 
-  if (!page || !page.isPublished) {
+  if (!page) {
     notFound();
   }
 
