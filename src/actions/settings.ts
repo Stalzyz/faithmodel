@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
-export async function saveNavSettings(topNav: any, footerNav: any) {
+export async function saveNavSettings(topNav: any, footerNav: any, headerConfig?: any) {
   try {
     await prisma.setting.upsert({
       where: { key: "TOP_NAV" },
@@ -16,6 +16,14 @@ export async function saveNavSettings(topNav: any, footerNav: any) {
       update: { value: JSON.stringify(footerNav) },
       create: { key: "FOOTER_NAV", value: JSON.stringify(footerNav) }
     });
+
+    if (headerConfig) {
+      await prisma.setting.upsert({
+        where: { key: "HEADER_CONFIG" },
+        update: { value: JSON.stringify(headerConfig) },
+        create: { key: "HEADER_CONFIG", value: JSON.stringify(headerConfig) }
+      });
+    }
 
     revalidatePath("/", "layout");
     

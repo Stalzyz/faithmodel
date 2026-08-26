@@ -3,27 +3,23 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { Users, FileText, ImageIcon, Settings } from "lucide-react";
+import Link from "next/link";
 
 export default async function AdminDashboard() {
   const session = await getServerSession(authOptions);
   if (!session) redirect("/admin/login");
 
-  // Fetch some quick stats
-  const leadsCount = await prisma.lead.count();
+  // Fetch quick stats
   const pagesCount = await prisma.page.count();
   const postsCount = await prisma.post.count();
   const mediaCount = await prisma.media.count();
-
-  const recentLeads = await prisma.lead.findMany({
-     take: 5,
-     orderBy: { createdAt: 'desc' }
-  });
+  const usersCount = await prisma.user.count();
 
   const stats = [
-    { name: "Total Enquiries", value: leadsCount, icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
     { name: "Published Pages", value: pagesCount, icon: FileText, color: "text-green-600", bg: "bg-green-50" },
     { name: "Blog Posts", value: postsCount, icon: FileText, color: "text-purple-600", bg: "bg-purple-50" },
     { name: "Media Assets", value: mediaCount, icon: ImageIcon, color: "text-orange-600", bg: "bg-orange-50" },
+    { name: "Admin Users", value: usersCount, icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
   ];
 
   return (
@@ -49,49 +45,37 @@ export default async function AdminDashboard() {
 
       <div className="grid lg:grid-cols-3 gap-8">
          <div className="lg:col-span-2 admin-card">
-            <h2 className="text-lg font-semibold text-gray-900 mb-6 font-poppins border-b border-gray-100 pb-4">Recent Enquiries</h2>
-            
-            {recentLeads.length === 0 ? (
-               <div className="text-center py-8 text-gray-500 text-sm">
-                  No enquiries yet.
+            <h2 className="text-lg font-semibold text-gray-900 mb-6 font-poppins border-b border-gray-100 pb-4">Platform Overview</h2>
+            <div className="space-y-4 text-sm text-gray-600">
+               <p>Welcome to the Faith Model School Management Portal. Use the navigation menu on the left to manage pages, custom content, blog posts, media assets, and header/footer configurations.</p>
+               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                  <div className="p-4 bg-gray-50 rounded border border-gray-100">
+                     <div className="font-semibold text-gray-900">Page Builder</div>
+                     <div className="text-xs text-gray-500 mt-1">Create & edit custom pages using content blocks</div>
+                  </div>
+                  <div className="p-4 bg-gray-50 rounded border border-gray-100">
+                     <div className="font-semibold text-gray-900">Header & Footer Control</div>
+                     <div className="text-xs text-gray-500 mt-1">Configure site navigation, CTA buttons, and footer columns</div>
+                  </div>
                </div>
-            ) : (
-               <div className="divide-y divide-gray-100">
-                  {recentLeads.map((lead) => (
-                     <div key={lead.id} className="py-4 flex justify-between items-center">
-                        <div>
-                           <div className="font-medium text-gray-900 text-sm">{lead.name}</div>
-                           <div className="text-xs text-gray-500 mt-0.5">{lead.email || lead.phone || 'No contact info'}</div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                           <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                              {lead.status}
-                           </span>
-                           <span className="text-xs text-gray-400">
-                              {new Date(lead.createdAt).toLocaleDateString()}
-                           </span>
-                        </div>
-                     </div>
-                  ))}
-               </div>
-            )}
+            </div>
          </div>
 
          <div className="admin-card">
             <h2 className="text-lg font-semibold text-gray-900 mb-6 font-poppins border-b border-gray-100 pb-4">Quick Actions</h2>
             <div className="space-y-3">
-               <button className="w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
+               <Link href="/admin/pages/new" className="block w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
                   + Add New Page
-               </button>
-               <button className="w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
+               </Link>
+               <Link href="/admin/posts/new" className="block w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
                   + Write a Blog Post
-               </button>
-               <button className="w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
+               </Link>
+               <Link href="/admin/media/new" className="block w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
                   + Upload Gallery Images
-               </button>
-               <button className="w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
-                  ⚙️ Update Footer Settings
-               </button>
+               </Link>
+               <Link href="/admin/settings/navigation" className="block w-full text-left px-4 py-3 rounded-md hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors border border-transparent hover:border-gray-200">
+                  ⚙️ Update Navigation Settings
+               </Link>
             </div>
          </div>
       </div>

@@ -12,8 +12,12 @@ const Linkedin = ({ className }: { className?: string }) => <svg className={clas
 const Youtube = ({ className }: { className?: string }) => <svg className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>;
 
 function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any, general?: any, contact?: any, socials?: any }) {
-  const col1 = footerNav?.[0] || { title: "Quick Links", items: [{ label: "About Us", href: "/about" }, { label: "Academics", href: "/academics" }, { label: "Admissions", href: "/admissions" }, { label: "Campus", href: "/campus" }, { label: "Contact", href: "/contact" }] };
-  const col2 = footerNav?.[1] || { title: "Students & Parents", items: [{ label: "Parent Portal", href: "/parents" }, { label: "Student Portal", href: "/students" }, { label: "Fee Payment", href: "/parents#fees" }, { label: "Downloads", href: "/downloads" }, { label: "Mandatory Disclosure", href: "/mandatory-disclosure" }] };
+  const defaultCols = [
+    { title: "Quick Links", items: [{ label: "About Us", href: "/about" }, { label: "Academics", href: "/academics" }, { label: "Admissions", href: "/admissions" }, { label: "Campus", href: "/campus" }, { label: "Contact", href: "/contact" }] },
+    { title: "Students & Parents", items: [{ label: "Parent Portal", href: "/parents" }, { label: "Student Portal", href: "/students" }, { label: "Fee Payment", href: "/parents#fees" }, { label: "Downloads", href: "/downloads" }, { label: "Mandatory Disclosure", href: "/mandatory-disclosure" }] }
+  ];
+
+  const columns = (footerNav && footerNav.length > 0) ? footerNav : defaultCols;
 
   const siteName = general?.name || "Faith Model School";
   const siteDesc = general?.description || "Empowering minds, shaping futures since 1989.";
@@ -40,26 +44,19 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
             {socials?.youtube && <a href={socials.youtube} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Youtube className="w-5 h-5" /></a>}
           </div>
         </div>
-        <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">{col1.title}</h4>
-          <ul className="space-y-2">
-            {col1.items?.map((item: any) => (
-              <li key={item.href}>
-                <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">{col2.title}</h4>
-          <ul className="space-y-2">
-            {col2.items?.map((item: any) => (
-              <li key={item.href}>
-                <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        
+        {columns.slice(0, 2).map((col: any, idx: number) => (
+          <div key={idx}>
+            <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">{col.title}</h4>
+            <ul className="space-y-2">
+              {col.items?.map((item: any) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="font-inter text-sm text-[#4a4a5e] hover:text-[#FB7F05] transition-colors">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
         <div>
           <h4 className="font-poppins text-xs font-semibold text-[#1a1a2e] uppercase tracking-widest mb-4">Contact</h4>
           <address className="not-italic font-inter text-sm text-[#4a4a5e] leading-relaxed space-y-3">
@@ -92,7 +89,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
 
 export default async function PageLayout({ children }: { children: React.ReactNode }) {
   const settings = await prisma.setting.findMany({
-    where: { key: { in: ["TOP_NAV", "FOOTER_NAV", "SITE_GENERAL", "SITE_CONTACT", "SITE_SOCIALS"] } }
+    where: { key: { in: ["TOP_NAV", "FOOTER_NAV", "SITE_GENERAL", "SITE_CONTACT", "SITE_SOCIALS", "HEADER_CONFIG"] } }
   });
   
   const getSetting = (k: string) => {
@@ -105,6 +102,7 @@ export default async function PageLayout({ children }: { children: React.ReactNo
   const general = getSetting("SITE_GENERAL");
   const contact = getSetting("SITE_CONTACT");
   const socials = getSetting("SITE_SOCIALS");
+  const headerConfig = getSetting("HEADER_CONFIG");
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -113,7 +111,7 @@ export default async function PageLayout({ children }: { children: React.ReactNo
       <div className="fixed inset-0 -z-10 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at center, transparent 60%, rgba(210,195,160,0.18) 100%)" }}
       />
-      <SketchNav navCategories={topNav} />
+      <SketchNav navCategories={topNav} headerConfig={headerConfig} />
       <main className="pt-24 pb-24">{children}</main>
       <PageFooter footerNav={footerNav} general={general} contact={contact} socials={socials} />
       <QuickEnquiryBar />

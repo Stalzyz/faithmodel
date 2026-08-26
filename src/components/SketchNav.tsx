@@ -55,7 +55,13 @@ const DEFAULT_NAV_CATEGORIES = [
   }
 ];
 
-export default function SketchNav({ navCategories = DEFAULT_NAV_CATEGORIES }: { navCategories?: any }) {
+export default function SketchNav({ 
+  navCategories = DEFAULT_NAV_CATEGORIES,
+  headerConfig
+}: { 
+  navCategories?: any;
+  headerConfig?: { affiliationText?: string; ctaLabel?: string; ctaHref?: string };
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -115,10 +121,18 @@ export default function SketchNav({ navCategories = DEFAULT_NAV_CATEGORIES }: { 
           ))}
         </nav>
 
-        {/* Affiliation Button */}
-        <div className="hidden lg:block">
-          <div className="bg-black text-white px-5 py-2.5 text-xs font-semibold text-center leading-tight tracking-wide">
-            Affiliation No<br/>1931557
+        {/* Affiliation Button & CTA */}
+        <div className="hidden lg:flex items-center gap-4">
+          {headerConfig?.ctaLabel && (
+            <Link 
+              href={headerConfig.ctaHref || "/admissions"} 
+              className="bg-[#1a1a2e] text-[#fefcf3] text-xs font-semibold px-4 py-2.5 rounded hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-colors shadow-sm"
+            >
+              {headerConfig.ctaLabel}
+            </Link>
+          )}
+          <div className="bg-black text-white px-4 py-2 text-xs font-semibold text-center leading-tight tracking-wide whitespace-pre-line">
+            {headerConfig?.affiliationText || "Affiliation No\n1931557"}
           </div>
         </div>
 

@@ -14,7 +14,6 @@ import {
 
 const navigation = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { name: "CRM Leads", href: "/admin/leads", icon: Users },
   { name: "Page Builder", href: "/admin/pages", icon: PenTool },
   { name: "Blog Posts", href: "/admin/posts", icon: FileText },
   { name: "Gallery Media", href: "/admin/media", icon: ImageIcon },
