@@ -4,6 +4,7 @@ import { useState } from "react";
 import { savePost } from "@/actions/posts";
 import { useRouter } from "next/navigation";
 import { Save } from "lucide-react";
+import ImageUploader from "./ImageUploader";
 
 export default function PostForm({ initialData }: { initialData?: any }) {
   const router = useRouter();
@@ -84,8 +85,8 @@ export default function PostForm({ initialData }: { initialData?: any }) {
                   </div>
                </div>
                <div>
-                  <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Cover Image URL</label>
-                  <input type="url" value={coverImage} onChange={e => setCoverImage(e.target.value)} className="admin-input" placeholder="https://..." />
+                  <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Cover Image</label>
+                  <ImageUploader value={coverImage} onChange={setCoverImage} />
                </div>
                <div>
                   <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Excerpt (Summary)</label>

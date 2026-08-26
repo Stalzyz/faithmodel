@@ -4,6 +4,7 @@ import { useState } from "react";
 import { saveMedia } from "@/actions/media";
 import { useRouter } from "next/navigation";
 import { Save } from "lucide-react";
+import ImageUploader from "./ImageUploader";
 
 export default function MediaForm() {
   const router = useRouter();
@@ -44,9 +45,9 @@ export default function MediaForm() {
 
       <div className="admin-card space-y-4">
          <div>
-            <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Image URL</label>
-            <input type="url" required value={url} onChange={e => setUrl(e.target.value)} className="admin-input" placeholder="https://images.unsplash.com/..." />
-            <p className="text-xs text-gray-400 mt-1">For this demo, please paste a valid image URL (e.g. from Unsplash or an S3 bucket).</p>
+            <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Image</label>
+            <ImageUploader value={url} onChange={setUrl} />
+            <p className="text-xs text-gray-400 mt-1">Paste a valid image URL or click the upload icon to select an image from your device.</p>
          </div>
          <div>
             <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Alt Text (Optional)</label>
@@ -66,7 +67,7 @@ export default function MediaForm() {
             <div className="mt-8 border border-gray-200 p-4 rounded bg-gray-50">
                <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Preview</label>
                <div className="aspect-video w-full max-w-md overflow-hidden rounded bg-gray-200">
-                  <img src={url} alt="Preview" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x450?text=Invalid+Image+URL' }} />
+                  <img src={url} alt="Preview" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%23cccccc"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%23333333">Invalid Image URL</text></svg>' }} />
                </div>
             </div>
          )}
