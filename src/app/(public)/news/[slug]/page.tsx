@@ -1,5 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 import PageLayout from "@/components/PageLayout";
 import SketchReveal from "@/components/SketchReveal";
 import Link from "next/link";

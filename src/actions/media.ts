@@ -19,6 +19,7 @@ export async function saveMedia(data: {
 
     revalidatePath("/admin/media");
     revalidatePath("/gallery");
+    revalidatePath("/", "layout");
     
     return { success: true };
   } catch (error) {
@@ -31,7 +32,9 @@ export async function deleteMedia(id: string) {
   try {
     await prisma.media.delete({ where: { id } });
     revalidatePath("/admin/gallery");
+    revalidatePath("/admin/media");
     revalidatePath("/gallery");
+    revalidatePath("/", "layout");
     return { success: true };
   } catch (error) {
     return { success: false, error: "Failed to delete media asset." };

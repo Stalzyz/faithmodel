@@ -38,7 +38,8 @@ export async function savePage(data: {
     }
 
     revalidatePath("/admin/pages");
-    revalidatePath(`/${data.slug}`);
+    revalidatePath(data.slug === "" ? "/" : `/${data.slug}`);
+    revalidatePath("/", "layout");
     
     return { success: true };
   } catch (error) {

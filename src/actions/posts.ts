@@ -44,6 +44,7 @@ export async function savePost(data: {
     revalidatePath("/admin/posts");
     revalidatePath("/news");
     revalidatePath(`/news/${data.slug}`);
+    revalidatePath("/", "layout");
     
     return { success: true };
   } catch (error) {
