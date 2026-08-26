@@ -3,6 +3,7 @@ sed -i 's|NEXTAUTH_URL=.*|NEXTAUTH_URL="https://fm.grekam.in"|g' /var/www/faithm
 cat << 'NGINX' > /etc/nginx/sites-available/faithmodel
 server {
     server_name fm.grekam.in;
+    client_max_body_size 50M;
 
     location / {
         proxy_pass http://localhost:3000;

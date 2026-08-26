@@ -15,14 +15,18 @@ export default function ImageUploader({ value, onChange }: { value: string, onCh
 
     try {
       const res = await fetch("/api/upload", { method: "POST", body: formData });
+      if (!res.ok) {
+        const errText = await res.text().catch(() => "");
+        throw new Error(res.status === 413 ? "File too large (max 50MB)" : `Upload failed (Status ${res.status})`);
+      }
       const data = await res.json();
       if (data.url) {
         onChange(data.url);
       } else {
         alert(data.error || "Upload failed");
       }
-    } catch (err) {
-      alert("Upload failed");
+    } catch (err: any) {
+      alert(err.message || "Upload failed");
     } finally {
       setUploading(false);
     }
