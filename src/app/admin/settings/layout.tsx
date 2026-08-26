@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Settings, PhoneCall, Navigation } from "lucide-react";
+import { Settings, PhoneCall, Navigation, MessageCircle } from "lucide-react";
 
 export default function SettingsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -11,6 +11,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
     { label: "General", href: "/admin/settings", icon: Settings },
     { label: "Contact & Socials", href: "/admin/settings/contact", icon: PhoneCall },
     { label: "Navigation Menus", href: "/admin/settings/navigation", icon: Navigation },
+    { label: "WhatsApp & Grafty", href: "/admin/settings/whatsapp", icon: MessageCircle },
   ];
 
   return (

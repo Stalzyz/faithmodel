@@ -1,6 +1,7 @@
 import SketchNav from "@/components/SketchNav";
 import PencilCursor from "@/components/PencilCursor";
 import QuickEnquiryBar from "@/components/QuickEnquiryBar";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -89,7 +90,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
 
 export default async function PageLayout({ children }: { children: React.ReactNode }) {
   const settings = await prisma.setting.findMany({
-    where: { key: { in: ["TOP_NAV", "FOOTER_NAV", "SITE_GENERAL", "SITE_CONTACT", "SITE_SOCIALS", "HEADER_CONFIG"] } }
+    where: { key: { in: ["TOP_NAV", "FOOTER_NAV", "SITE_GENERAL", "SITE_CONTACT", "SITE_SOCIALS", "HEADER_CONFIG", "SITE_WHATSAPP"] } }
   });
   
   const getSetting = (k: string) => {
@@ -103,6 +104,7 @@ export default async function PageLayout({ children }: { children: React.ReactNo
   const contact = getSetting("SITE_CONTACT");
   const socials = getSetting("SITE_SOCIALS");
   const headerConfig = getSetting("HEADER_CONFIG");
+  const whatsappSettings = getSetting("SITE_WHATSAPP");
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -115,6 +117,7 @@ export default async function PageLayout({ children }: { children: React.ReactNo
       <main className="pt-24 pb-24">{children}</main>
       <PageFooter footerNav={footerNav} general={general} contact={contact} socials={socials} />
       <QuickEnquiryBar />
+      <WhatsAppWidget settings={whatsappSettings} />
     </div>
   );
 }
