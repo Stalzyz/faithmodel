@@ -2,8 +2,21 @@ sed -i 's|NEXTAUTH_URL=.*|NEXTAUTH_URL="https://fm.grekam.in"|g' /var/www/faithm
 
 cat << 'NGINX' > /etc/nginx/sites-available/faithmodel
 server {
-    server_name fm.grekam.in;
+    listen 80;
+    listen [::]:80;
+    server_name fm.grekam.in www.fm.grekam.in;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name fm.grekam.in www.fm.grekam.in;
+
     client_max_body_size 50M;
+
+    ssl_certificate /etc/letsencrypt/live/fm.grekam.in/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/fm.grekam.in/privkey.pem;
 
     location /uploads/ {
         alias /var/www/faithmodel/public/uploads/;
@@ -23,8 +36,6 @@ server {
         proxy_set_header X-Forwarded-Host $host;
         proxy_cache_bypass $http_upgrade;
     }
-
-    listen 80;
 }
 NGINX
 
