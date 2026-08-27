@@ -88,7 +88,7 @@ export default async function NavigationSettingsPage() {
   const footerNav = (Array.isArray(parsedFooterNav) && parsedFooterNav.length > 0) ? parsedFooterNav : DEFAULT_FOOTER_NAV;
 
   return (
-    <div className="bg-[#f8f9fa] min-h-full pt-8">
+    <div className="w-full">
       <NavigationEditor initialTopNav={topNav} initialFooterNav={footerNav} initialHeaderConfig={headerConfig} />
     </div>
   );

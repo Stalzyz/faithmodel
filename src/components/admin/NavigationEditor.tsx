@@ -83,8 +83,8 @@ export default function NavigationEditor({ initialTopNav, initialFooterNav, init
   };
 
   return (
-    <div className="max-w-5xl mx-auto pb-32 space-y-12">
-      <div className="bg-white border-b border-gray-200 p-4 sticky top-0 z-20 flex justify-between items-center shadow-sm">
+    <div className="w-full pb-20 space-y-10">
+      <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 py-3 px-2 sticky -top-6 z-20 flex justify-between items-center shadow-xs">
         <div>
           <h1 className="font-poppins font-semibold text-gray-900 text-lg">Header & Footer Control Panel</h1>
           <p className="text-gray-500 text-sm">Configure navigation links, header CTA, affiliation badge, and footer columns.</p>

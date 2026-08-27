@@ -15,7 +15,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
   ];
 
   return (
-    <div className="max-w-6xl mx-auto h-full flex flex-col md:flex-row gap-8">
+    <div className="max-w-6xl mx-auto p-6 md:p-8 flex flex-col md:flex-row gap-8">
       {/* Sidebar */}
       <div className="w-full md:w-64 shrink-0">
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Settings</h1>
@@ -27,7 +27,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
               <Link 
                 key={tab.href} 
                 href={tab.href}
-                className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive ? 'bg-gray-100 text-gray-900 font-semibold' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
               >
                 <Icon className={`w-5 h-5 ${isActive ? 'text-gray-900' : 'text-gray-400'}`} />
                 {tab.label}
@@ -38,7 +38,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden min-h-[600px]">
+      <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-6 min-h-[600px]">
         {children}
       </div>
     </div>
