@@ -2,10 +2,61 @@
 
 import { useState } from "react";
 import { saveNavSettings } from "@/actions/settings";
-import { Save, Plus, Trash2 } from "lucide-react";
+import { Save, Plus, Trash2, RotateCcw } from "lucide-react";
+
+const DEFAULT_TOP_NAV = [
+  {
+    title: "About",
+    items: [
+      { label: "Our Story", href: "/about" },
+      { label: "Leadership", href: "/leadership" },
+      { label: "Careers", href: "/careers" },
+      { label: "Disclosures", href: "/mandatory-disclosure" },
+    ]
+  },
+  {
+    title: "Academics",
+    items: [
+      { label: "Approach", href: "/academics" },
+      { label: "School Levels", href: "/school-levels" },
+      { label: "Teachers", href: "/teachers" },
+      { label: "Innovation", href: "/innovation" },
+    ]
+  },
+  {
+    title: "Campus",
+    items: [
+      { label: "The Campus", href: "/campus" },
+      { label: "Facilities", href: "/facilities" },
+      { label: "Sports", href: "/sports" },
+      { label: "Arts", href: "/arts" },
+      { label: "Student Life", href: "/student-life" },
+      { label: "Safety", href: "/safety" },
+    ]
+  },
+  {
+    title: "Community",
+    items: [
+      { label: "News", href: "/news" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Students", href: "/students" },
+      { label: "Parents", href: "/parents" },
+      { label: "Alumni", href: "/alumni" },
+    ]
+  },
+  {
+    title: "Admissions",
+    items: [
+      { label: "Admissions", href: "/admissions" },
+      { label: "Portals", href: "/portals" },
+      { label: "Downloads", href: "/downloads" },
+      { label: "Contact Us", href: "/contact" },
+    ]
+  }
+];
 
 export default function NavigationEditor({ initialTopNav, initialFooterNav, initialHeaderConfig }: { initialTopNav: any, initialFooterNav: any, initialHeaderConfig?: any }) {
-  const [topNav, setTopNav] = useState<any[]>(initialTopNav || []);
+  const [topNav, setTopNav] = useState<any[]>(initialTopNav && initialTopNav.length > 0 ? initialTopNav : DEFAULT_TOP_NAV);
   const [footerNav, setFooterNav] = useState<any[]>(initialFooterNav || []);
   const [headerConfig, setHeaderConfig] = useState<any>(initialHeaderConfig || {
     affiliationText: "Affiliation No\n1931557",
@@ -25,6 +76,12 @@ export default function NavigationEditor({ initialTopNav, initialFooterNav, init
     }
   };
 
+  const handleResetToDefault = () => {
+    if (confirm("Restore full detailed default navigation menus (About, Academics, Campus, Community, Admissions)?")) {
+      setTopNav(DEFAULT_TOP_NAV);
+    }
+  };
+
   return (
     <div className="max-w-5xl mx-auto pb-32 space-y-12">
       <div className="bg-white border-b border-gray-200 p-4 sticky top-0 z-20 flex justify-between items-center shadow-sm">
@@ -32,10 +89,16 @@ export default function NavigationEditor({ initialTopNav, initialFooterNav, init
           <h1 className="font-poppins font-semibold text-gray-900 text-lg">Header & Footer Control Panel</h1>
           <p className="text-gray-500 text-sm">Configure navigation links, header CTA, affiliation badge, and footer columns.</p>
         </div>
-        <button onClick={handleSave} disabled={saving} className="admin-btn-primary flex items-center gap-2">
-          <Save className="w-4 h-4" />
-          {saving ? "Saving..." : "Save Header & Footer"}
-        </button>
+        <div className="flex gap-3">
+          <button onClick={handleResetToDefault} type="button" className="admin-btn-secondary text-xs flex items-center gap-2">
+            <RotateCcw className="w-3.5 h-3.5" />
+            Restore Default Menu
+          </button>
+          <button onClick={handleSave} disabled={saving} className="admin-btn-primary flex items-center gap-2">
+            <Save className="w-4 h-4" />
+            {saving ? "Saving..." : "Save Header & Footer"}
+          </button>
+        </div>
       </div>
 
       {/* Header Options */}
