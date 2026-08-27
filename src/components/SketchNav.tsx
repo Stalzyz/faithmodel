@@ -56,12 +56,13 @@ const DEFAULT_NAV_CATEGORIES = [
 ];
 
 export default function SketchNav({ 
-  navCategories = DEFAULT_NAV_CATEGORIES,
+  navCategories,
   headerConfig
 }: { 
   navCategories?: any;
   headerConfig?: { affiliationText?: string; ctaLabel?: string; ctaHref?: string };
 }) {
+  const categories = (Array.isArray(navCategories) && navCategories.length > 0) ? navCategories : DEFAULT_NAV_CATEGORIES;
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -94,7 +95,7 @@ export default function SketchNav({
             Home
           </Link>
           
-          {navCategories.map((category: any) => (
+          {categories.map((category: any) => (
             <div key={category.title} className="relative group">
               <button className={`flex items-center gap-1 text-sm font-semibold transition-colors py-2 ${isCategoryActive(category.items) ? "text-[#f39c12]" : "text-gray-800 group-hover:text-[#f39c12]"}`}>
                 {category.title}
@@ -160,7 +161,7 @@ export default function SketchNav({
         <div className="px-4 py-3 space-y-4 shadow-inner">
           <Link href="/" className="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-[#f39c12]/10 hover:text-[#f39c12] rounded-md">Home</Link>
           
-          {navCategories.map((category: any) => (
+          {categories.map((category: any) => (
             <div key={category.title} className="px-3">
               <div className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2 mt-2">{category.title}</div>
               <div className="space-y-1 pl-2 border-l-2 border-gray-100">

@@ -120,18 +120,64 @@ async function main() {
   });
   console.log("Home page seeded successfully!");
 
-  // 3. Create Navigation Setting
-  const defaultNav = [
-    { title: "Home", items: [{ label: "Welcome", href: "/" }] },
-    { title: "About", items: [{ label: "Our Story", href: "/about" }] }
+  // 3. Create Navigation Settings
+  const DEFAULT_TOP_NAV = [
+    {
+      title: "About",
+      items: [
+        { label: "Our Story", href: "/about" },
+        { label: "Leadership", href: "/leadership" },
+        { label: "Careers", href: "/careers" },
+        { label: "Disclosures", href: "/mandatory-disclosure" }
+      ]
+    },
+    {
+      title: "Academics",
+      items: [
+        { label: "Approach", href: "/academics" },
+        { label: "School Levels", href: "/school-levels" },
+        { label: "Teachers", href: "/teachers" },
+        { label: "Innovation", href: "/innovation" }
+      ]
+    },
+    {
+      title: "Campus",
+      items: [
+        { label: "The Campus", href: "/campus" },
+        { label: "Facilities", href: "/facilities" },
+        { label: "Sports", href: "/sports" },
+        { label: "Arts", href: "/arts" },
+        { label: "Student Life", href: "/student-life" },
+        { label: "Safety", href: "/safety" }
+      ]
+    },
+    {
+      title: "Community",
+      items: [
+        { label: "News", href: "/news" },
+        { label: "Gallery", href: "/gallery" },
+        { label: "Students", href: "/students" },
+        { label: "Parents", href: "/parents" },
+        { label: "Alumni", href: "/alumni" }
+      ]
+    },
+    {
+      title: "Admissions",
+      items: [
+        { label: "Admissions", href: "/admissions" },
+        { label: "Portals", href: "/portals" },
+        { label: "Downloads", href: "/downloads" },
+        { label: "Contact Us", href: "/contact" }
+      ]
+    }
   ];
   
   await prisma.setting.upsert({
-    where: { key: "NAVIGATION" },
-    update: {},
+    where: { key: "TOP_NAV" },
+    update: { value: JSON.stringify(DEFAULT_TOP_NAV) },
     create: {
-      key: "NAVIGATION",
-      value: JSON.stringify(defaultNav),
+      key: "TOP_NAV",
+      value: JSON.stringify(DEFAULT_TOP_NAV),
     },
   });
   console.log("Navigation settings seeded!");
