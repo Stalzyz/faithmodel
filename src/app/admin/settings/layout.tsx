@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Settings, PhoneCall, Navigation, MessageCircle } from "lucide-react";
+import { Settings, PhoneCall, Navigation, MessageCircle, Palette, Megaphone } from "lucide-react";
 
 export default function SettingsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   const tabs = [
     { label: "General", href: "/admin/settings", icon: Settings },
+    { label: "Theme & Branding", href: "/admin/settings/theme", icon: Palette },
+    { label: "Announcement Popup", href: "/admin/settings/popup", icon: Megaphone },
     { label: "Contact & Socials", href: "/admin/settings/contact", icon: PhoneCall },
     { label: "Navigation Menus", href: "/admin/settings/navigation", icon: Navigation },
     { label: "WhatsApp & Grafty", href: "/admin/settings/whatsapp", icon: MessageCircle },

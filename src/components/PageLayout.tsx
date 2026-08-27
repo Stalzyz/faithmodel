@@ -2,9 +2,10 @@ import SketchNav from "@/components/SketchNav";
 import PencilCursor from "@/components/PencilCursor";
 import QuickEnquiryBar from "@/components/QuickEnquiryBar";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import AnnouncementPopup from "@/components/AnnouncementPopup";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 
 const Facebook = ({ className }: { className?: string }) => <svg className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>;
 const Twitter = ({ className }: { className?: string }) => <svg className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
@@ -12,7 +13,7 @@ const Instagram = ({ className }: { className?: string }) => <svg className={cla
 const Linkedin = ({ className }: { className?: string }) => <svg className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>;
 const Youtube = ({ className }: { className?: string }) => <svg className={className} fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>;
 
-function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any, general?: any, contact?: any, socials?: any }) {
+function PageFooter({ footerNav, general, contact, socials, logoUrl }: { footerNav?: any, general?: any, contact?: any, socials?: any, logoUrl?: string }) {
   const defaultCols = [
     { title: "Quick Links", items: [{ label: "About Us", href: "/about" }, { label: "Academics", href: "/academics" }, { label: "Admissions", href: "/admissions" }, { label: "Campus", href: "/campus" }, { label: "Contact", href: "/contact" }] },
     { title: "Students & Parents", items: [{ label: "Parent Portal", href: "/parents" }, { label: "Student Portal", href: "/students" }, { label: "Fee Payment", href: "/parents#fees" }, { label: "Downloads", href: "/downloads" }, { label: "Mandatory Disclosure", href: "/mandatory-disclosure" }] }
@@ -23,26 +24,26 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
   const siteName = general?.name || "Faith Model School";
   const siteDesc = general?.description || "Empowering minds, shaping futures since 1989.";
   
-  const address = contact?.address || "123 Education Lane,\nChennai, Tamil Nadu 600001";
-  const phone = contact?.phone || "+91 44 1234 5678";
-  const email = contact?.email || "info@faithmodelschool.edu.in";
+  const address = contact?.address || "Faith Model School, Podanur Road, Coimbatore";
+  const phone = contact?.phone || "+91 99432 58199";
+  const email = contact?.email || "Admissions@faithmodelschool.com";
 
   return (
     <footer className="border-t border-[rgba(74,74,94,0.12)] py-16 px-8 bg-[#fefcf3]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div>
           <Link href="/">
-            <img src="/Faith_model_logo.svg" alt={siteName} className="h-14 w-auto mb-4" />
+            <img src={logoUrl || "/Faith_model_logo.svg"} alt={siteName} className="h-14 w-auto mb-4 object-contain" />
           </Link>
           <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed">
             {siteDesc}
           </p>
-          <div className="flex gap-4 mt-6">
-            {socials?.facebook && <a href={socials.facebook} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Facebook className="w-5 h-5" /></a>}
-            {socials?.twitter && <a href={socials.twitter} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Twitter className="w-5 h-5" /></a>}
-            {socials?.instagram && <a href={socials.instagram} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Instagram className="w-5 h-5" /></a>}
-            {socials?.linkedin && <a href={socials.linkedin} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Linkedin className="w-5 h-5" /></a>}
-            {socials?.youtube && <a href={socials.youtube} target="_blank" className="text-[#4a4a5e] hover:text-[#FB7F05] transition-colors"><Youtube className="w-5 h-5" /></a>}
+          <div className="flex flex-wrap gap-3.5 mt-6">
+            {socials?.facebook && <a href={socials.facebook} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 p-2.5 rounded-full text-[#4a4a5e] hover:text-white hover:bg-[#FB7F05] transition-all shadow-xs"><Facebook className="w-4 h-4" /></a>}
+            {socials?.twitter && <a href={socials.twitter} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 p-2.5 rounded-full text-[#4a4a5e] hover:text-white hover:bg-[#FB7F05] transition-all shadow-xs"><Twitter className="w-4 h-4" /></a>}
+            {socials?.instagram && <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 p-2.5 rounded-full text-[#4a4a5e] hover:text-white hover:bg-[#FB7F05] transition-all shadow-xs"><Instagram className="w-4 h-4" /></a>}
+            {socials?.linkedin && <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 p-2.5 rounded-full text-[#4a4a5e] hover:text-white hover:bg-[#FB7F05] transition-all shadow-xs"><Linkedin className="w-4 h-4" /></a>}
+            {socials?.youtube && <a href={socials.youtube} target="_blank" rel="noopener noreferrer" className="bg-white border border-gray-200 p-2.5 rounded-full text-[#4a4a5e] hover:text-white hover:bg-[#FB7F05] transition-all shadow-xs"><Youtube className="w-4 h-4" /></a>}
           </div>
         </div>
         
@@ -90,7 +91,7 @@ function PageFooter({ footerNav, general, contact, socials }: { footerNav?: any,
 
 export default async function PageLayout({ children }: { children: React.ReactNode }) {
   const settings = await prisma.setting.findMany({
-    where: { key: { in: ["TOP_NAV", "FOOTER_NAV", "SITE_GENERAL", "SITE_CONTACT", "SITE_SOCIALS", "HEADER_CONFIG", "SITE_WHATSAPP"] } }
+    where: { key: { in: ["TOP_NAV", "FOOTER_NAV", "SITE_GENERAL", "SITE_CONTACT", "SITE_SOCIALS", "HEADER_CONFIG", "SITE_WHATSAPP", "THEME_CONFIG", "POPUP_CONFIG"] } }
   });
   
   const getSetting = (k: string) => {
@@ -105,9 +106,17 @@ export default async function PageLayout({ children }: { children: React.ReactNo
   const socials = getSetting("SITE_SOCIALS");
   const headerConfig = getSetting("HEADER_CONFIG");
   const whatsappSettings = getSetting("SITE_WHATSAPP");
+  const themeConfig = getSetting("THEME_CONFIG");
+  const popupConfig = getSetting("POPUP_CONFIG");
+
+  const cssVars = {
+    "--color-primary": themeConfig?.primaryColor || "#1a1a2e",
+    "--color-secondary": themeConfig?.secondaryColor || "#FB7F05",
+    "--color-accent": themeConfig?.accentColor || "#f39c12",
+  } as React.CSSProperties;
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden" style={cssVars}>
       {/* Graph paper background */}
       <div className="fixed inset-0 -z-10 bg-[#fefcf3] graph-paper" />
       <div className="fixed inset-0 -z-10 pointer-events-none"
@@ -115,9 +124,10 @@ export default async function PageLayout({ children }: { children: React.ReactNo
       />
       <SketchNav navCategories={topNav} headerConfig={headerConfig} />
       <main className="pt-24 pb-24">{children}</main>
-      <PageFooter footerNav={footerNav} general={general} contact={contact} socials={socials} />
+      <PageFooter footerNav={footerNav} general={general} contact={contact} socials={socials} logoUrl={themeConfig?.logoUrl} />
       <QuickEnquiryBar />
       <WhatsAppWidget settings={whatsappSettings} />
+      <AnnouncementPopup popupConfig={popupConfig} />
     </div>
   );
 }

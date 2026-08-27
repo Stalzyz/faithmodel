@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save } from "lucide-react";
 import ImageUploader from "./ImageUploader";
 
-export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK";
+export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK";
 
 export interface PageBlock {
   id: string;
@@ -55,7 +55,10 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
   UPCOMING_EVENTS_BLOCK: { annotation: "Mark the Calendar", title: "Upcoming Events", ctaText: "View Full Calendar →", ctaLink: "/news#events", events: [{ date: "Aug 15", title: "Independence Day", type: "Celebration", desc: "Flag hoisting." }] },
   TESTIMONIALS_BLOCK: { annotation: "What Our Parents Say", testimonials: [{ name: "Parent", child: "Grade 1", quote: "Amazing school." }] },
   CUSTOM_HTML_BLOCK: { html: "<p>Custom HTML goes here...</p>" },
-  HOMEPAGE_HERO_BLOCK: {}
+  HOMEPAGE_HERO_BLOCK: {},
+  FAQ_BLOCK: { annotation: "Got Questions?", title: "Frequently Asked Questions", subtitle: "Instant answers to common queries.", faqs: [{ question: "What are the school hours?", answer: "8:30 AM to 3:30 PM", category: "General" }] },
+  VIDEO_BLOCK: { annotation: "Campus Video", title: "Experience Faith Model School", subtitle: "Watch our campus walkthrough video.", videoSource: "youtube", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", posterImage: "" },
+  MOSAIC_GALLERY_BLOCK: { annotation: "Photo Gallery", title: "Life at Faith Model School", subtitle: "Explore campus moments.", layoutMode: "mosaic", items: [{ url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80", title: "Campus Architecture", category: "Campus", span: "big" }] }
 };
 
 export default function PageBuilder({

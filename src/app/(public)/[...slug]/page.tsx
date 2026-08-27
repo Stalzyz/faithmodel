@@ -40,6 +40,9 @@ import UpcomingEventsBlock from "@/components/cms-blocks/UpcomingEventsBlock";
 import TestimonialsBlock from "@/components/cms-blocks/TestimonialsBlock";
 import CustomHTMLBlock from "@/components/cms-blocks/CustomHTMLBlock";
 import HomepageHeroBlock from "@/components/cms-blocks/HomepageHeroBlock";
+import FAQBlock from "@/components/cms-blocks/FAQBlock";
+import VideoBlock from "@/components/cms-blocks/VideoBlock";
+import MosaicGalleryBlock from "@/components/cms-blocks/MosaicGalleryBlock";
 
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
@@ -200,6 +203,12 @@ export default async function CustomDynamicPage({ params }: { params: Promise<{ 
                return <HomepageHeroBlock key={block.id} block={block} />;
             case "CUSTOM_HTML_BLOCK":
                return <CustomHTMLBlock key={block.id} block={block} />;
+            case "FAQ_BLOCK":
+               return <FAQBlock key={block.id} data={block.data} />;
+            case "VIDEO_BLOCK":
+               return <VideoBlock key={block.id} data={block.data} />;
+            case "MOSAIC_GALLERY_BLOCK":
+               return <MosaicGalleryBlock key={block.id} data={block.data} />;
 
             default:
               return null;
