@@ -324,23 +324,21 @@ export default function PageBuilder({
                      {block.type === 'SIGNATURE_PROGRAMS' && (
                         <div className="space-y-4">
                            <div className="grid grid-cols-2 gap-4">
-                              <input type="text" value={block.data.annotation} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input" placeholder="Annotation" />
-                              <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
+                              <input type="text" value={block.data.annotation} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input font-medium" placeholder="Annotation" />
+                              <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input font-semibold" placeholder="Title" />
                            </div>
-                           <div className="grid grid-cols-1 gap-2">
+                           <div className="grid grid-cols-1 gap-3">
                               {block.data.programs?.map((p: any, i: number) => (
-                                 <div key={i} className="flex gap-2 items-start border border-gray-200 p-2 rounded">
-                                    <div className="flex-1 space-y-2">
-                                       <div className="flex gap-2">
-                                          <input type="text" value={p.title} onChange={e => { const newP = [...block.data.programs]; newP[i].title = e.target.value; updateBlockData(block.id, { programs: newP }); }} className="admin-input text-xs" placeholder="Program Title" />
-                                          <input type="text" value={p.tag} onChange={e => { const newP = [...block.data.programs]; newP[i].tag = e.target.value; updateBlockData(block.id, { programs: newP }); }} className="admin-input text-xs w-1/3" placeholder="Tag" />
-                                       </div>
-                                       <textarea value={p.desc} onChange={e => { const newP = [...block.data.programs]; newP[i].desc = e.target.value; updateBlockData(block.id, { programs: newP }); }} className="admin-input text-xs h-16" placeholder="Description" />
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg bg-gray-50/50 space-y-3">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={p.title} onChange={e => { const newP = [...block.data.programs]; newP[i].title = e.target.value; updateBlockData(block.id, { programs: newP }); }} className="admin-input font-semibold flex-1" placeholder="Program Title" />
+                                       <input type="text" value={p.tag} onChange={e => { const newP = [...block.data.programs]; newP[i].tag = e.target.value; updateBlockData(block.id, { programs: newP }); }} className="admin-input w-48" placeholder="Tag (e.g. Academics)" />
+                                       <button onClick={() => updateBlockData(block.id, { programs: block.data.programs.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
-                                    <button onClick={() => updateBlockData(block.id, { programs: block.data.programs.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 p-2 mt-1">✕</button>
+                                    <textarea value={p.desc} onChange={e => { const newP = [...block.data.programs]; newP[i].desc = e.target.value; updateBlockData(block.id, { programs: newP }); }} className="admin-input h-24" placeholder="Description" />
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { programs: [...(block.data.programs || []), { title: "New Program", tag: "Grades X-Y", desc: "Desc" }] })} className="text-xs font-semibold text-[#FB7F05] text-left mt-2">+ Add Program</button>
+                              <button onClick={() => updateBlockData(block.id, { programs: [...(block.data.programs || []), { title: "New Program", tag: "Academics", desc: "Description" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs w-fit">+ Add Program</button>
                            </div>
                         </div>
                      )}
@@ -351,19 +349,19 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="grid grid-cols-2 gap-3">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {block.data.assessments?.map((a: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2">
-                                    <div className="flex gap-2">
-                                       <input type="text" value={a.label} onChange={e => { const newA = [...block.data.assessments]; newA[i].label = e.target.value; updateBlockData(block.id, { assessments: newA }); }} className="admin-input text-xs flex-1" placeholder="Label" />
-                                       <input type="text" value={a.pct} onChange={e => { const newA = [...block.data.assessments]; newA[i].pct = e.target.value; updateBlockData(block.id, { assessments: newA }); }} className="admin-input text-xs w-16" placeholder="%" />
-                                       <button onClick={() => updateBlockData(block.id, { assessments: block.data.assessments.filter((_: any, idx: number) => idx !== i) })} className="text-red-400">✕</button>
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg bg-gray-50/50 space-y-3">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={a.label} onChange={e => { const newA = [...block.data.assessments]; newA[i].label = e.target.value; updateBlockData(block.id, { assessments: newA }); }} className="admin-input font-semibold flex-1" placeholder="Label" />
+                                       <input type="text" value={a.pct} onChange={e => { const newA = [...block.data.assessments]; newA[i].pct = e.target.value; updateBlockData(block.id, { assessments: newA }); }} className="admin-input w-24 text-center font-bold text-[#FB7F05]" placeholder="%" />
+                                       <button onClick={() => updateBlockData(block.id, { assessments: block.data.assessments.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
-                                    <textarea value={a.desc} onChange={e => { const newA = [...block.data.assessments]; newA[i].desc = e.target.value; updateBlockData(block.id, { assessments: newA }); }} className="admin-input text-xs h-12" placeholder="Description" />
+                                    <textarea value={a.desc} onChange={e => { const newA = [...block.data.assessments]; newA[i].desc = e.target.value; updateBlockData(block.id, { assessments: newA }); }} className="admin-input h-20" placeholder="Description" />
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { assessments: [...(block.data.assessments || []), { label: "New Assessment", pct: "20%", desc: "Desc" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Assessment</button>
+                           <button onClick={() => updateBlockData(block.id, { assessments: [...(block.data.assessments || []), { label: "New Assessment", pct: "20%", desc: "Description" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Assessment</button>
                         </div>
                      )}
                      {block.type === 'TIMELINE_BLOCK' && (
@@ -373,18 +371,20 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="space-y-2">
+                           <div className="space-y-3">
                               {block.data.events?.map((ev: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2 bg-gray-50/50">
-                                    <div className="flex gap-2 items-center">
-                                       <input type="text" value={ev.year} onChange={e => { const newE = [...block.data.events]; newE[i].year = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-28 text-xs font-semibold" placeholder="Year" />
-                                       <span className="text-xs text-gray-500 font-medium">Milestone Event</span>
-                                       <button onClick={() => updateBlockData(block.id, { events: block.data.events.filter((_: any, idx: number) => idx !== i) })} className="text-red-500 text-xs font-semibold hover:text-red-700 ml-auto px-2 py-1">✕ Delete</button>
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg space-y-3 bg-gray-50/50">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={ev.year} onChange={e => { const newE = [...block.data.events]; newE[i].year = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-36 font-bold text-[#FB7F05]" placeholder="Year (e.g. 2026)" />
+                                       <span className="text-xs text-gray-500 font-semibold uppercase">Milestone Event</span>
+                                       <button onClick={() => updateBlockData(block.id, { events: block.data.events.filter((_: any, idx: number) => idx !== i) })} className="text-red-500 text-xs font-semibold hover:text-red-700 ml-auto px-3 py-1.5 hover:bg-red-50 rounded-md transition-colors flex items-center gap-1">
+                                          <Trash2 className="w-3.5 h-3.5" /> Delete
+                                       </button>
                                     </div>
-                                    <textarea value={ev.event} onChange={e => { const newE = [...block.data.events]; newE[i].event = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-full text-xs h-24" placeholder="Event Description" />
+                                    <textarea value={ev.event} onChange={e => { const newE = [...block.data.events]; newE[i].event = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-full h-24" placeholder="Milestone Description" />
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { events: [...(block.data.events || []), { year: "2026", event: "New Event" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Event</button>
+                              <button onClick={() => updateBlockData(block.id, { events: [...(block.data.events || []), { year: "2026", event: "New Event description" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Event</button>
                            </div>
                         </div>
                      )}
@@ -395,19 +395,19 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="grid grid-cols-2 gap-3">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {block.data.items?.map((item: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2">
-                                    <div className="flex gap-2">
-                                       <input type="text" value={item.icon} onChange={e => { const newI = [...block.data.items]; newI[i].icon = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-xs w-16" placeholder="Icon" />
-                                       <input type="text" value={item.title} onChange={e => { const newI = [...block.data.items]; newI[i].title = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-xs flex-1" placeholder="Title" />
-                                       <button onClick={() => updateBlockData(block.id, { items: block.data.items.filter((_: any, idx: number) => idx !== i) })} className="text-red-400">✕</button>
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg space-y-3 bg-gray-50/50">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={item.icon} onChange={e => { const newI = [...block.data.items]; newI[i].icon = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input w-28 text-center" placeholder="Icon / Emoji" />
+                                       <input type="text" value={item.title} onChange={e => { const newI = [...block.data.items]; newI[i].title = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input font-semibold flex-1" placeholder="Title" />
+                                       <button onClick={() => updateBlockData(block.id, { items: block.data.items.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
-                                    <textarea value={item.desc} onChange={e => { const newI = [...block.data.items]; newI[i].desc = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-xs h-12" placeholder="Description" />
+                                    <textarea value={item.desc} onChange={e => { const newI = [...block.data.items]; newI[i].desc = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input h-20" placeholder="Description" />
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { icon: "★", title: "New Item", desc: "Description" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Item</button>
+                           <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { icon: "Trophy", title: "New Item", desc: "Description" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Item</button>
                         </div>
                      )}
                      {block.type === 'STEPS_BLOCK' && (
@@ -417,19 +417,19 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="grid grid-cols-2 gap-3">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {block.data.steps?.map((step: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2">
-                                    <div className="flex gap-2">
-                                       <input type="text" value={step.num} onChange={e => { const newS = [...block.data.steps]; newS[i].num = e.target.value; updateBlockData(block.id, { steps: newS }); }} className="admin-input text-xs w-16" placeholder="Num" />
-                                       <input type="text" value={step.title} onChange={e => { const newS = [...block.data.steps]; newS[i].title = e.target.value; updateBlockData(block.id, { steps: newS }); }} className="admin-input text-xs flex-1" placeholder="Title" />
-                                       <button onClick={() => updateBlockData(block.id, { steps: block.data.steps.filter((_: any, idx: number) => idx !== i) })} className="text-red-400">✕</button>
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg space-y-3 bg-gray-50/50">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={step.num} onChange={e => { const newS = [...block.data.steps]; newS[i].num = e.target.value; updateBlockData(block.id, { steps: newS }); }} className="admin-input w-24 text-center font-bold text-[#FB7F05]" placeholder="01" />
+                                       <input type="text" value={step.title} onChange={e => { const newS = [...block.data.steps]; newS[i].title = e.target.value; updateBlockData(block.id, { steps: newS }); }} className="admin-input font-semibold flex-1" placeholder="Title" />
+                                       <button onClick={() => updateBlockData(block.id, { steps: block.data.steps.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
-                                    <textarea value={step.desc} onChange={e => { const newS = [...block.data.steps]; newS[i].desc = e.target.value; updateBlockData(block.id, { steps: newS }); }} className="admin-input text-xs h-16" placeholder="Description" />
+                                    <textarea value={step.desc} onChange={e => { const newS = [...block.data.steps]; newS[i].desc = e.target.value; updateBlockData(block.id, { steps: newS }); }} className="admin-input h-20" placeholder="Description" />
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { steps: [...(block.data.steps || []), { num: "01", title: "New Step", desc: "Description" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Step</button>
+                           <button onClick={() => updateBlockData(block.id, { steps: [...(block.data.steps || []), { num: "01", title: "New Step", desc: "Description" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Step</button>
                         </div>
                      )}
                      {block.type === 'TABLE_BLOCK' && (
@@ -439,20 +439,20 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="space-y-2 border border-gray-200 p-4 rounded bg-gray-50">
-                              <p className="text-xs font-semibold text-gray-700">Columns (comma separated)</p>
+                           <div className="space-y-3 border border-gray-200 p-5 rounded-lg bg-gray-50/70">
+                              <p className="text-xs font-bold text-gray-700 uppercase">Columns (comma separated)</p>
                               <input type="text" value={block.data.headers?.join(", ")} onChange={e => updateBlockData(block.id, { headers: e.target.value.split(",").map(s => s.trim()) })} className="admin-input mb-4" />
                               
-                              <p className="text-xs font-semibold text-gray-700 mt-4">Rows</p>
+                              <p className="text-xs font-bold text-gray-700 uppercase mt-4">Rows</p>
                               {block.data.rows?.map((row: string[], i: number) => (
-                                 <div key={i} className="flex gap-2">
+                                 <div key={i} className="flex gap-3 items-center bg-white p-3 rounded-lg border border-gray-200">
                                     {row.map((cell: string, j: number) => (
-                                       <input key={j} type="text" value={cell} onChange={e => { const newR = [...block.data.rows]; newR[i][j] = e.target.value; updateBlockData(block.id, { rows: newR }); }} className="admin-input text-xs flex-1" />
+                                       <input key={j} type="text" value={cell} onChange={e => { const newR = [...block.data.rows]; newR[i][j] = e.target.value; updateBlockData(block.id, { rows: newR }); }} className="admin-input flex-1" />
                                     ))}
-                                    <button onClick={() => updateBlockData(block.id, { rows: block.data.rows.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-2">✕</button>
+                                    <button onClick={() => updateBlockData(block.id, { rows: block.data.rows.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { rows: [...(block.data.rows || []), new Array(block.data.headers?.length || 2).fill("New Data")] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Row</button>
+                              <button onClick={() => updateBlockData(block.id, { rows: [...(block.data.rows || []), new Array(block.data.headers?.length || 2).fill("New Data")] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Row</button>
                            </div>
                         </div>
                      )}
@@ -463,41 +463,65 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="grid grid-cols-2 gap-3">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {block.data.profiles?.map((prof: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2">
-                                    <div className="flex gap-2">
-                                       <input type="text" value={prof.name} onChange={e => { const newP = [...block.data.profiles]; newP[i].name = e.target.value; updateBlockData(block.id, { profiles: newP }); }} className="admin-input text-xs flex-1" placeholder="Name" />
-                                       <input type="text" value={prof.role} onChange={e => { const newP = [...block.data.profiles]; newP[i].role = e.target.value; updateBlockData(block.id, { profiles: newP }); }} className="admin-input text-xs flex-1" placeholder="Role" />
-                                       <button onClick={() => updateBlockData(block.id, { profiles: block.data.profiles.filter((_: any, idx: number) => idx !== i) })} className="text-red-400">✕</button>
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg space-y-3 bg-gray-50/50">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={prof.name} onChange={e => { const newP = [...block.data.profiles]; newP[i].name = e.target.value; updateBlockData(block.id, { profiles: newP }); }} className="admin-input font-semibold flex-1" placeholder="Name" />
+                                       <input type="text" value={prof.role} onChange={e => { const newP = [...block.data.profiles]; newP[i].role = e.target.value; updateBlockData(block.id, { profiles: newP }); }} className="admin-input flex-1" placeholder="Role" />
+                                       <button onClick={() => updateBlockData(block.id, { profiles: block.data.profiles.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
                                     <ImageUploader value={prof.image} onChange={url => { const newP = [...block.data.profiles]; newP[i].image = url; updateBlockData(block.id, { profiles: newP }); }} />
-                                    <textarea value={prof.desc} onChange={e => { const newP = [...block.data.profiles]; newP[i].desc = e.target.value; updateBlockData(block.id, { profiles: newP }); }} className="admin-input text-xs h-12" placeholder="Bio/Description" />
+                                    <textarea value={prof.desc} onChange={e => { const newP = [...block.data.profiles]; newP[i].desc = e.target.value; updateBlockData(block.id, { profiles: newP }); }} className="admin-input h-20" placeholder="Bio/Description" />
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { profiles: [...(block.data.profiles || []), { name: "New Person", role: "Role", image: "", desc: "Bio" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Profile</button>
+                           <button onClick={() => updateBlockData(block.id, { profiles: [...(block.data.profiles || []), { name: "New Person", role: "Role", image: "", desc: "Bio" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Profile</button>
                         </div>
                      )}
                      {block.type === 'CONTACT_BLOCK' && (
                         <div className="space-y-4">
-                           <div className="grid grid-cols-3 gap-4">
-                              <input type="text" value={block.data.annotation} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input" placeholder="Annotation" />
-                              <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
-                              <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
+                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Annotation</label>
+                                 <input type="text" value={block.data.annotation} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input" placeholder="Annotation (e.g. Reach Out)" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Section Title</label>
+                                 <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title (e.g. Get in Touch)" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Subtitle</label>
+                                 <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
+                              </div>
                            </div>
-                           <div className="space-y-2 border border-gray-200 p-4 rounded bg-gray-50">
-                              <p className="text-xs font-semibold text-gray-700">Contact Details</p>
+                           <div className="space-y-3 border border-gray-200 p-5 rounded-lg bg-gray-50/70">
+                              <h4 className="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">Contact Details & Address Info</h4>
                               {block.data.details?.map((det: any, i: number) => (
-                                 <div key={i} className="flex gap-2">
-                                    <input type="text" value={det.label} onChange={e => { const newD = [...block.data.details]; newD[i].label = e.target.value; updateBlockData(block.id, { details: newD }); }} className="admin-input text-xs w-1/3" placeholder="Label (e.g. Phone)" />
-                                    <input type="text" value={det.value} onChange={e => { const newD = [...block.data.details]; newD[i].value = e.target.value; updateBlockData(block.id, { details: newD }); }} className="admin-input text-xs flex-1" placeholder="Value" />
-                                    <button onClick={() => updateBlockData(block.id, { details: block.data.details.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-2">✕</button>
+                                 <div key={i} className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center bg-white p-3 rounded-lg border border-gray-200 shadow-2xs">
+                                    <div className="md:col-span-4">
+                                       <label className="block text-[11px] font-bold text-gray-500 uppercase mb-1">Field Label</label>
+                                       <input type="text" value={det.label} onChange={e => { const newD = [...block.data.details]; newD[i].label = e.target.value; updateBlockData(block.id, { details: newD }); }} className="admin-input font-semibold" placeholder="e.g. Email / Phone / Address" />
+                                    </div>
+                                    <div className="md:col-span-7">
+                                       <label className="block text-[11px] font-bold text-gray-500 uppercase mb-1">Field Value / Content</label>
+                                       <input type="text" value={det.value} onChange={e => { const newD = [...block.data.details]; newD[i].value = e.target.value; updateBlockData(block.id, { details: newD }); }} className="admin-input" placeholder="e.g. info@faithmodelschool.edu" />
+                                    </div>
+                                    <div className="md:col-span-1 flex justify-end pt-5">
+                                       <button onClick={() => updateBlockData(block.id, { details: block.data.details.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md transition-colors" title="Delete Row">
+                                          <Trash2 className="w-4 h-4" />
+                                       </button>
+                                    </div>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { details: [...(block.data.details || []), { label: "New Detail", value: "Information" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Detail</button>
+                              <button onClick={() => updateBlockData(block.id, { details: [...(block.data.details || []), { label: "New Detail", value: "Information text" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">
+                                 + Add Detail Row
+                              </button>
                            </div>
-                           <textarea value={block.data.mapIframe} onChange={e => updateBlockData(block.id, { mapIframe: e.target.value })} className="admin-input font-mono text-xs h-24" placeholder='<iframe src="https://maps.google.com/..." />' />
+                           <div className="space-y-2">
+                              <label className="block text-xs font-bold text-gray-800 uppercase">Google Maps iFrame Embed Code</label>
+                              <textarea value={block.data.mapIframe} onChange={e => updateBlockData(block.id, { mapIframe: e.target.value })} className="admin-input font-mono text-xs h-32 leading-relaxed" placeholder='<iframe src="https://maps.google.com/..." />' />
+                           </div>
                         </div>
                      )}
                      {block.type === 'ACCORDION_BLOCK' && (
@@ -703,19 +727,19 @@ export default function PageBuilder({
                               <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
-                           <div className="grid grid-cols-2 gap-3">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {block.data.pillars?.map((p: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2">
-                                    <div className="flex gap-2">
-                                       <input type="text" value={p.icon} onChange={e => { const newP = [...block.data.pillars]; newP[i].icon = e.target.value; updateBlockData(block.id, { pillars: newP }); }} className="admin-input text-xs w-20" placeholder="Icon" />
-                                       <input type="text" value={p.title} onChange={e => { const newP = [...block.data.pillars]; newP[i].title = e.target.value; updateBlockData(block.id, { pillars: newP }); }} className="admin-input text-xs flex-1" placeholder="Title" />
-                                       <button onClick={() => updateBlockData(block.id, { pillars: block.data.pillars.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-1">✕</button>
+                                 <div key={i} className="border border-gray-200 p-4 rounded-lg space-y-3 bg-gray-50/50">
+                                    <div className="flex gap-3 items-center">
+                                       <input type="text" value={p.icon} onChange={e => { const newP = [...block.data.pillars]; newP[i].icon = e.target.value; updateBlockData(block.id, { pillars: newP }); }} className="admin-input w-28 text-center" placeholder="Icon / Emoji" />
+                                       <input type="text" value={p.title} onChange={e => { const newP = [...block.data.pillars]; newP[i].title = e.target.value; updateBlockData(block.id, { pillars: newP }); }} className="admin-input font-semibold flex-1" placeholder="Title" />
+                                       <button onClick={() => updateBlockData(block.id, { pillars: block.data.pillars.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
-                                    <textarea value={p.desc} onChange={e => { const newP = [...block.data.pillars]; newP[i].desc = e.target.value; updateBlockData(block.id, { pillars: newP }); }} className="admin-input text-xs h-16" placeholder="Description" />
+                                    <textarea value={p.desc} onChange={e => { const newP = [...block.data.pillars]; newP[i].desc = e.target.value; updateBlockData(block.id, { pillars: newP }); }} className="admin-input h-24" placeholder="Description" />
                                  </div>
                               ))}
                            </div>
-                           <button onClick={() => updateBlockData(block.id, { pillars: [...(block.data.pillars || []), { icon: "Star", title: "New Pillar", desc: "Desc" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Pillar</button>
+                           <button onClick={() => updateBlockData(block.id, { pillars: [...(block.data.pillars || []), { icon: "Star", title: "New Pillar", desc: "Description" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Pillar</button>
                         </div>
                      )}
                      {block.type === 'PHILOSOPHY_SECTION_BLOCK' && (
@@ -726,19 +750,19 @@ export default function PageBuilder({
                               <input type="text" value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="Subtitle" />
                            </div>
                            <div className="grid grid-cols-2 gap-4">
-                              <div className="space-y-2 border border-gray-200 p-3 rounded bg-gray-50">
-                                 <p className="text-xs font-semibold">List Items</p>
+                              <div className="space-y-3 border border-gray-200 p-4 rounded-lg bg-gray-50/50">
+                                 <p className="text-xs font-bold uppercase text-gray-700">List Items</p>
                                  {block.data.items?.map((item: string, i: number) => (
-                                    <div key={i} className="flex gap-2">
-                                       <input type="text" value={item} onChange={e => { const newI = [...block.data.items]; newI[i] = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-xs flex-1" placeholder="Item" />
-                                       <button onClick={() => updateBlockData(block.id, { items: block.data.items.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-2">✕</button>
+                                    <div key={i} className="flex gap-3 items-center">
+                                       <input type="text" value={item} onChange={e => { const newI = [...block.data.items]; newI[i] = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input flex-1" placeholder="Item" />
+                                       <button onClick={() => updateBlockData(block.id, { items: block.data.items.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
                                     </div>
                                  ))}
-                                 <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), "New Item"] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Item</button>
+                                 <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), "New Item"] })} className="px-3 py-1.5 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-md text-xs font-semibold">+ Add Item</button>
                               </div>
-                              <div className="space-y-2">
+                              <div className="space-y-3">
                                  <ImageUploader value={block.data.imageUrl} onChange={url => updateBlockData(block.id, { imageUrl: url })} />
-                                 <input type="text" value={block.data.imageCaption} onChange={e => updateBlockData(block.id, { imageCaption: e.target.value })} className="admin-input text-xs" placeholder="Image Caption" />
+                                 <input type="text" value={block.data.imageCaption} onChange={e => updateBlockData(block.id, { imageCaption: e.target.value })} className="admin-input" placeholder="Image Caption" />
                               </div>
                            </div>
                         </div>

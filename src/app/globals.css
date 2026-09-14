@@ -199,7 +199,7 @@
   }
 
   .admin-input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a1a2e] focus:border-transparent text-sm;
+    @apply w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FB7F05]/40 focus:border-[#FB7F05] text-sm font-medium text-gray-900 bg-white shadow-2xs transition-all placeholder:text-gray-400 min-h-[42px];
   }
 
   .admin-btn-primary {
