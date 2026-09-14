@@ -37,7 +37,6 @@ const DEFAULT_TOP_NAV = [
     items: [
       { label: "News", href: "/news" },
       { label: "Gallery", href: "/gallery" },
-      { label: "Students", href: "/students" },
       { label: "Parents", href: "/parents" },
       { label: "Alumni", href: "/alumni" },
     ]
@@ -46,9 +45,6 @@ const DEFAULT_TOP_NAV = [
     title: "Admissions",
     items: [
       { label: "Admissions", href: "/admissions" },
-      { label: "Portals", href: "/portals" },
-      { label: "Downloads", href: "/downloads" },
-      { label: "Contact Us", href: "/contact" },
     ]
   }
 ];

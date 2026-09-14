@@ -59,7 +59,7 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           <div className="flex flex-col justify-center">
-            <div className="font-caveat text-[#c17b5a] text-xl mb-6 -rotate-1">Faith Model School — Est. 1989</div>
+            <div className="font-caveat text-[#c17b5a] text-xl mb-6 -rotate-1">Faith Model School — Est. 2014</div>
             <div ref={headlineRef}>
               <h1 className="font-cormorant text-[clamp(3.2rem,7.5vw,6.5rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight">
                 {["Every", "Great", "Future"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
@@ -130,7 +130,7 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
               <path d="M238 35 Q244 28 250 35" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
             </svg>
 
-            <div className="absolute -left-4 top-1/2 font-caveat text-[#c17b5a] text-sm -rotate-90 whitespace-nowrap opacity-50">
+            <div className="hidden xl:block absolute -left-12 top-1/2 -translate-y-1/2 font-caveat text-[#c17b5a] text-sm -rotate-90 whitespace-nowrap opacity-50 pointer-events-none">
               Faith Model School — Nurturing Excellence
             </div>
           </div>

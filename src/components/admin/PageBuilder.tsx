@@ -363,10 +363,13 @@ export default function PageBuilder({
                            </div>
                            <div className="space-y-2">
                               {block.data.events?.map((ev: any, i: number) => (
-                                 <div key={i} className="flex gap-2 items-start border border-gray-200 p-2 rounded">
-                                    <input type="text" value={ev.year} onChange={e => { const newE = [...block.data.events]; newE[i].year = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-24 text-xs" placeholder="Year" />
-                                    <textarea value={ev.event} onChange={e => { const newE = [...block.data.events]; newE[i].event = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input flex-1 text-xs h-16" placeholder="Event Description" />
-                                    <button onClick={() => updateBlockData(block.id, { events: block.data.events.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 p-2">✕</button>
+                                 <div key={i} className="border border-gray-200 p-3 rounded space-y-2 bg-gray-50/50">
+                                    <div className="flex gap-2 items-center">
+                                       <input type="text" value={ev.year} onChange={e => { const newE = [...block.data.events]; newE[i].year = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-28 text-xs font-semibold" placeholder="Year" />
+                                       <span className="text-xs text-gray-500 font-medium">Milestone Event</span>
+                                       <button onClick={() => updateBlockData(block.id, { events: block.data.events.filter((_: any, idx: number) => idx !== i) })} className="text-red-500 text-xs font-semibold hover:text-red-700 ml-auto px-2 py-1">✕ Delete</button>
+                                    </div>
+                                    <textarea value={ev.event} onChange={e => { const newE = [...block.data.events]; newE[i].event = e.target.value; updateBlockData(block.id, { events: newE }); }} className="admin-input w-full text-xs h-24" placeholder="Event Description" />
                                  </div>
                               ))}
                               <button onClick={() => updateBlockData(block.id, { events: [...(block.data.events || []), { year: "2026", event: "New Event" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Event</button>

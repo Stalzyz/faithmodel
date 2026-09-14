@@ -122,7 +122,7 @@ export default async function PageLayout({ children }: { children: React.ReactNo
       <div className="fixed inset-0 -z-10 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at center, transparent 60%, rgba(210,195,160,0.18) 100%)" }}
       />
-      <SketchNav navCategories={topNav} headerConfig={headerConfig} />
+      <SketchNav navCategories={topNav} headerConfig={headerConfig} logoUrl={themeConfig?.logoUrl} />
       <main className="pt-24 pb-24">{children}</main>
       <PageFooter footerNav={footerNav} general={general} contact={contact} socials={socials} logoUrl={themeConfig?.logoUrl} />
       <QuickEnquiryBar />

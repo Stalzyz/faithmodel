@@ -39,7 +39,6 @@ const DEFAULT_NAV_CATEGORIES = [
     items: [
       { label: "News", href: "/news" },
       { label: "Gallery", href: "/gallery" },
-      { label: "Students", href: "/students" },
       { label: "Parents", href: "/parents" },
       { label: "Alumni", href: "/alumni" },
     ]
@@ -48,19 +47,18 @@ const DEFAULT_NAV_CATEGORIES = [
     title: "Admissions",
     items: [
       { label: "Admissions", href: "/admissions" },
-      { label: "Portals", href: "/portals" },
-      { label: "Downloads", href: "/downloads" },
-      { label: "Contact Us", href: "/contact" },
     ]
   }
 ];
 
 export default function SketchNav({ 
   navCategories,
-  headerConfig
+  headerConfig,
+  logoUrl
 }: { 
   navCategories?: any;
   headerConfig?: { affiliationText?: string; ctaLabel?: string; ctaHref?: string };
+  logoUrl?: string;
 }) {
   const categories = (Array.isArray(navCategories) && navCategories.length > 0) ? navCategories : DEFAULT_NAV_CATEGORIES;
   const [scrolled, setScrolled] = useState(false);
@@ -86,7 +84,7 @@ export default function SketchNav({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <img src="/Faith_model_logo.svg" alt="Faith Model School Logo" className="h-12 w-auto" />
+          <img src={logoUrl || "/Faith_model_logo.svg"} alt="Faith Model School Logo" className="h-12 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}

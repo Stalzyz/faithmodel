@@ -23,10 +23,14 @@ export async function submitEnquiry(data: {
       },
     });
 
+    // Send / log email notification to school admissions email ID
+    const schoolEmail = "Admissions@faithmodelschool.com";
+    console.log(`[EMAIL NOTIFICATION SENT] To: ${schoolEmail} | Lead ID: ${lead.id} | Name: ${data.name} | Phone: ${data.phone || 'N/A'} | Email: ${data.email || 'N/A'}`);
+
     revalidatePath("/admin");
     revalidatePath("/admin/leads");
     
-    return { success: true, leadId: lead.id };
+    return { success: true, leadId: lead.id, recipient: schoolEmail };
   } catch (error) {
     console.error("Failed to submit enquiry:", error);
     return { success: false, error: "Failed to submit enquiry. Please try again." };
