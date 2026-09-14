@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HomepageHeroBlock({ block }: { block?: any }) {
@@ -61,11 +60,10 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
       <div className="relative z-20 bg-[#FB7F05] py-2.5 text-center overflow-hidden">
         <div className="absolute inset-0 graph-paper opacity-10" />
         <p className="font-caveat text-base text-[#fefcf3] relative z-10">
-          <Sparkles className="w-4 h-4 inline-block text-[#fefcf3] mr-2" /> {ribbonText}{" "}
+          {ribbonText}{" "}
           <Link href={primaryCtaHref} className="underline underline-offset-2 hover:text-[#1a1a2e] transition-colors font-semibold ml-1">
             — {ribbonCtaText}
-          </Link>{" "}
-          <Sparkles className="w-4 h-4 inline-block text-[#fefcf3] ml-2" />
+          </Link>
         </p>
       </div>
 

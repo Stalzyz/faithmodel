@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Script from "next/script";
-import { MessageCircle, X, Send, Sparkles, ChevronRight } from "lucide-react";
+import { MessageCircle, X, Send, ChevronRight } from "lucide-react";
 
 export default function WhatsAppWidget({ settings }: { settings?: any }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,7 +85,6 @@ export default function WhatsAppWidget({ settings }: { settings?: any }) {
               {/* Welcome Speech Bubble */}
               <div className="bg-white p-4 rounded-xl rounded-tl-none shadow-sm border border-gray-100/80 text-xs text-gray-700 leading-relaxed font-inter relative">
                 <div className="flex items-center gap-1.5 font-semibold text-[#075e54] mb-1">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                   <span>Welcome to Faith Model School!</span>
                 </div>
                 {subtitle}

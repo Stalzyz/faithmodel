@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShieldCheck, Sparkles } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 const DEFAULT_NAV_CATEGORIES = [
   {
@@ -132,9 +132,8 @@ export default function SketchNav({
           {headerConfig?.ctaLabel && (
             <Link 
               href={headerConfig.ctaHref || "/admissions"} 
-              className="bg-[#FB7F05] hover:bg-[#e06f00] text-[#fefcf3] text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-1.5 group"
+              className="bg-[#FB7F05] hover:bg-[#e06f00] text-[#fefcf3] text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md block text-center"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#fefcf3] group-hover:rotate-12 transition-transform" />
               <span>{headerConfig.ctaLabel}</span>
             </Link>
           )}
@@ -172,9 +171,8 @@ export default function SketchNav({
             {headerConfig?.ctaLabel && (
               <Link 
                 href={headerConfig.ctaHref || "/admissions"} 
-                className="bg-[#FB7F05] text-[#fefcf3] text-sm font-semibold px-5 py-3 rounded-full text-center flex items-center justify-center gap-2 shadow-sm"
+                className="bg-[#FB7F05] text-[#fefcf3] text-sm font-semibold px-5 py-3 rounded-full text-center block shadow-sm"
               >
-                <Sparkles className="w-4 h-4 text-[#fefcf3]" />
                 <span>{headerConfig.ctaLabel}</span>
               </Link>
             )}

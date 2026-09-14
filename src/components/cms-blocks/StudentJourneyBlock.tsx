@@ -3,10 +3,10 @@
 import React from "react";
 import SketchReveal from "@/components/SketchReveal";
 import SectionHeading from "@/components/SectionHeading";
-import { BookOpen, Microscope, Lightbulb, Globe, Sparkles, Trophy, Medal, Theater, Monitor, Leaf, Bot, Music, Palette } from "lucide-react";
+import { BookOpen, Microscope, Lightbulb, Globe, Star, Trophy, Medal, Theater, Monitor, Leaf, Bot, Music, Palette } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  BookOpen, Microscope, Lightbulb, Globe, Sparkles, Trophy, Medal,
+  BookOpen, Microscope, Lightbulb, Globe, Star, Trophy, Medal,
   Theater, Monitor, Leaf, Bot, Music, Palette,
 };
 
@@ -20,7 +20,7 @@ export default function StudentJourneyBlock({ block }: { block: any }) {
           <div className="absolute top-8 left-16 right-16 h-px bg-[rgba(74,74,94,0.12)] hidden md:block z-0" />
           <div className="flex flex-wrap justify-center items-start gap-8 md:gap-16 relative z-10 max-w-5xl mx-auto">
             {(data.stages || []).map((s: any, i: number) => {
-              const IconComp = ICON_MAP[s.icon] || Sparkles;
+              const IconComp = ICON_MAP[s.icon] || Star;
               return (
                 <SketchReveal key={i} delay={i * 0.1} className="flex flex-col items-center text-center min-w-[120px]">
                   <div className="w-16 h-16 rounded-full border-2 border-[rgba(74,74,94,0.15)] flex items-center justify-center text-2xl mb-4 bg-[#fefcf3] shadow-xs relative z-10 hover:border-[#FB7F05] transition-colors">

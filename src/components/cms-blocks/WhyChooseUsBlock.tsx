@@ -3,7 +3,7 @@
 import SketchReveal from "@/components/SketchReveal";
 import SectionHeading from "@/components/SectionHeading";
 import Link from "next/link";
-import { Sparkles, Trophy, Medal, Theater, Monitor, Leaf, Bot, Music, BookOpen, Microscope, Lightbulb, Globe, Palette } from "lucide-react";
+import { Star, Trophy, Medal, Theater, Monitor, Leaf, Bot, Music, BookOpen, Microscope, Lightbulb, Globe, Palette } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
@@ -18,7 +18,7 @@ export default function WhyChooseUsBlock({ block }: { block: any }) {
           {(data.pillars || []).map((p: any, i: number) => (
             <SketchReveal key={i} delay={i * 0.07} className="p-10 border-b border-r border-[rgba(74,74,94,0.08)] group hover:bg-[#1a1a2e] transition-colors duration-500">
               <div className="font-manrope text-3xl text-[#FB7F05] mb-4 group-hover:scale-110 transition-transform duration-300">
-                {p.icon === "Sparkles" ? <Sparkles className="w-6 h-6 text-[#FB7F05]" /> : p.icon}
+                {p.icon === "Sparkles" || p.icon === "Star" ? <Star className="w-6 h-6 text-[#FB7F05]" /> : p.icon}
               </div>
               <h3 className="font-poppins text-base font-semibold text-[#1a1a2e] group-hover:text-[#fefcf3] transition-colors mb-3">{p.title}</h3>
               <p className="font-inter text-sm text-[#4a4a5e] group-hover:text-[#fefcf3]/70 transition-colors leading-relaxed">{p.desc}</p>

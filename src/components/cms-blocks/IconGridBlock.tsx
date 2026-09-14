@@ -6,7 +6,7 @@ const SPORTS_ICON_MAP: Record<string, any> = {
   football: Icons.Trophy,
   cricket: Icons.Target,
   basketball: Icons.CircleDot,
-  athletics: Icons.Zap,
+  athletics: Icons.Activity,
   "rollar skates": Icons.Flame,
   "roller skates": Icons.Flame,
   "table tennis": Icons.Table,
@@ -39,7 +39,7 @@ function renderIcon(iconName?: string, titleName?: string) {
   if (titleStr.includes("football")) return <Icons.Trophy className="w-8 h-8 stroke-[1.5]" />;
   if (titleStr.includes("cricket")) return <Icons.Target className="w-8 h-8 stroke-[1.5]" />;
   if (titleStr.includes("basketball")) return <Icons.CircleDot className="w-8 h-8 stroke-[1.5]" />;
-  if (titleStr.includes("athletic")) return <Icons.Zap className="w-8 h-8 stroke-[1.5]" />;
+  if (titleStr.includes("athletic")) return <Icons.Activity className="w-8 h-8 stroke-[1.5]" />;
   if (titleStr.includes("skate")) return <Icons.Flame className="w-8 h-8 stroke-[1.5]" />;
   if (titleStr.includes("tennis")) return <Icons.Table className="w-8 h-8 stroke-[1.5]" />;
   if (titleStr.includes("chess")) return <Icons.Crown className="w-8 h-8 stroke-[1.5]" />;

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { X, Sparkles } from "lucide-react";
+import { X, Megaphone } from "lucide-react";
 import { PopupConfig } from "@/app/admin/settings/popup/PopupSettingsEditor";
 
 export default function AnnouncementPopup({ popupConfig }: { popupConfig?: PopupConfig }) {
@@ -59,7 +59,7 @@ export default function AnnouncementPopup({ popupConfig }: { popupConfig?: Popup
           </div>
         ) : (
           <div className="bg-gradient-to-r from-[#1a1a2e] to-[#FB7F05] p-6 text-white flex items-center gap-3">
-            <Sparkles className="w-8 h-8 shrink-0 text-amber-300 animate-pulse" />
+            <Megaphone className="w-8 h-8 shrink-0 text-amber-300" />
             <div>
               <span className="text-xs uppercase tracking-widest text-amber-200 font-semibold">Special Announcement</span>
               <h4 className="font-bold text-lg leading-tight">{popupConfig.title}</h4>
