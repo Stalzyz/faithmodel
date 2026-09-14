@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ShieldCheck, Sparkles } from "lucide-react";
 
 const DEFAULT_NAV_CATEGORIES = [
   {
@@ -120,19 +121,23 @@ export default function SketchNav({
           ))}
         </nav>
 
-        {/* Affiliation Button & CTA */}
-        <div className="hidden lg:flex items-center gap-4">
+        {/* Affiliation Badge & Admissions CTA */}
+        <div className="hidden lg:flex items-center gap-3">
+          <div className="bg-[#FB7F05]/10 border border-[#FB7F05]/30 text-[#1a1a2e] px-3.5 py-1.5 rounded-xl flex items-center gap-2.5 shadow-2xs">
+            <ShieldCheck className="w-4 h-4 text-[#FB7F05] flex-shrink-0" />
+            <div className="text-xs font-semibold leading-tight tracking-tight text-[#1a1a2e] whitespace-pre-line text-left">
+              {headerConfig?.affiliationText || "Affiliation No\n1931557"}
+            </div>
+          </div>
           {headerConfig?.ctaLabel && (
             <Link 
               href={headerConfig.ctaHref || "/admissions"} 
-              className="bg-[#1a1a2e] text-[#fefcf3] text-xs font-semibold px-4 py-2.5 rounded hover:bg-[#FB7F05] hover:text-[#1a1a2e] transition-colors shadow-sm"
+              className="bg-[#FB7F05] hover:bg-[#e06f00] text-[#fefcf3] text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-1.5 group"
             >
-              {headerConfig.ctaLabel}
+              <Sparkles className="w-3.5 h-3.5 text-[#fefcf3] group-hover:rotate-12 transition-transform" />
+              <span>{headerConfig.ctaLabel}</span>
             </Link>
           )}
-          <div className="bg-black text-white px-4 py-2 text-xs font-semibold text-center leading-tight tracking-wide whitespace-pre-line">
-            {headerConfig?.affiliationText || "Affiliation No\n1931557"}
-          </div>
         </div>
 
         {/* Mobile menu button */}
@@ -156,7 +161,25 @@ export default function SketchNav({
           isMobileMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-4 py-3 space-y-4 shadow-inner">
+        <div className="px-4 py-4 space-y-4 shadow-inner">
+          <div className="flex flex-col gap-3 pb-3 border-b border-gray-100">
+            <div className="bg-[#FB7F05]/10 border border-[#FB7F05]/30 text-[#1a1a2e] px-4 py-2.5 rounded-xl flex items-center gap-3">
+              <ShieldCheck className="w-5 h-5 text-[#FB7F05] flex-shrink-0" />
+              <div className="text-xs font-semibold leading-tight text-[#1a1a2e] whitespace-pre-line">
+                {headerConfig?.affiliationText || "Affiliation No\n1931557"}
+              </div>
+            </div>
+            {headerConfig?.ctaLabel && (
+              <Link 
+                href={headerConfig.ctaHref || "/admissions"} 
+                className="bg-[#FB7F05] text-[#fefcf3] text-sm font-semibold px-5 py-3 rounded-full text-center flex items-center justify-center gap-2 shadow-sm"
+              >
+                <Sparkles className="w-4 h-4 text-[#fefcf3]" />
+                <span>{headerConfig.ctaLabel}</span>
+              </Link>
+            )}
+          </div>
+
           <Link href="/" className="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-[#f39c12]/10 hover:text-[#f39c12] rounded-md">Home</Link>
           
           {categories.map((category: any) => (
