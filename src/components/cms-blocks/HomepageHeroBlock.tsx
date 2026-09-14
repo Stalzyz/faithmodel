@@ -2,11 +2,24 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { MoveRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HomepageHeroBlock({ block }: { block?: any }) {
-  
+  const data = block?.data || {};
+
+  const ribbonText = data.ribbonText || "Admissions for 2026–27 are now open";
+  const ribbonCtaText = data.ribbonCtaText || "Apply Today";
+  const annotation = data.annotation || "Faith Model School — Est. 2014";
+  const headlineLine1 = data.headlineLine1 || "Every Great Future";
+  const headlineLine2 = data.headlineLine2 || "Begins With A";
+  const highlightWord = data.highlightWord || "Single Sketch.";
+  const subtitle = data.subtitle || "Every child begins with a blank page. Through curiosity, creativity, and confidence, those pages become a story worth telling.";
+  const primaryCtaLabel = data.primaryCtaLabel || "Begin the Story";
+  const primaryCtaHref = data.primaryCtaHref || "/admissions";
+  const secondaryCtaLabel = data.secondaryCtaLabel || "Virtual Tour ↗";
+  const secondaryCtaHref = data.secondaryCtaHref || "/campus";
+
   const pencilRef = useRef<HTMLDivElement>(null);
   const sketchRef = useRef<SVGSVGElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -37,7 +50,10 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
     tl.fromTo(words, { opacity: 0, y: 28, skewY: 1.5 }, { opacity: 1, y: 0, skewY: 0, duration: 0.7, stagger: 0.05, ease: "power3.out" }, "startAnimation");
     if (subRef.current) tl.fromTo(subRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, "startAnimation+=0.4");
     if (ctaRef.current) tl.fromTo(ctaRef.current, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, "startAnimation+=0.6");
-  }, []);
+  }, [headlineLine1, headlineLine2, highlightWord]);
+
+  const line1Words = headlineLine1.split(" ");
+  const line2Words = headlineLine2.split(" ");
 
   return (
     <>
@@ -45,45 +61,54 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
       <div className="relative z-20 bg-[#FB7F05] py-2.5 text-center overflow-hidden">
         <div className="absolute inset-0 graph-paper opacity-10" />
         <p className="font-caveat text-base text-[#fefcf3] relative z-10">
-          <Sparkles className="w-4 h-4 inline-block text-[#FB7F05] mr-2" /> Admissions for 2026–27 are{" "}
-          <span className="text-[#FB7F05] font-semibold">now open</span> —{" "}
-          <Link href="/admissions" className="underline underline-offset-2 hover:text-[#FB7F05] transition-colors">
-            Apply Today
+          <Sparkles className="w-4 h-4 inline-block text-[#fefcf3] mr-2" /> {ribbonText}{" "}
+          <Link href={primaryCtaHref} className="underline underline-offset-2 hover:text-[#1a1a2e] transition-colors font-semibold ml-1">
+            — {ribbonCtaText}
           </Link>{" "}
-          <Sparkles className="w-4 h-4 inline-block text-[#FB7F05] ml-2" />
+          <Sparkles className="w-4 h-4 inline-block text-[#fefcf3] ml-2" />
         </p>
       </div>
 
-      <section className="relative min-h-[95vh] flex items-center overflow-hidden pt-16">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-12 pb-16">
         <div className="absolute left-[7%] top-0 bottom-0 w-px bg-[#e8b4b0]/30 hidden lg:block" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          <div className="flex flex-col justify-center">
-            <div className="font-caveat text-[#c17b5a] text-xl mb-6 -rotate-1">Faith Model School — Est. 2014</div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[75vh]">
+          {/* Left Column: Editable Headlines & CTA */}
+          <div className="flex flex-col justify-center z-10">
+            <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">{annotation}</div>
             <div ref={headlineRef}>
-              <h1 className="font-cormorant text-[clamp(3.2rem,7.5vw,6.5rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight">
-                {["Every", "Great", "Future"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
+              <h1 className="font-cormorant text-[clamp(2.8rem,6vw,5.5rem)] font-light text-[#1a1a2e] leading-[1.12] tracking-tight">
+                {line1Words.map((w: string, i: number) => (
+                  <span key={`l1-${i}`} className="w inline-block mr-[0.22em] opacity-0">{w}</span>
+                ))}
                 <br />
-                {["Begins", "With", "A"].map((w, i) => <span key={i} className="w inline-block mr-[0.18em] opacity-0">{w}</span>)}
+                {line2Words.map((w: string, i: number) => (
+                  <span key={`l2-${i}`} className="w inline-block mr-[0.22em] opacity-0">{w}</span>
+                ))}
                 <br />
-                <em className="w inline-block opacity-0 text-[#FB7F05] not-italic">Single Sketch.</em>
+                <em className="w inline-block opacity-0 text-[#FB7F05] not-italic mt-1">{highlightWord}</em>
               </h1>
             </div>
-            <p ref={subRef} className="font-inter text-lg text-[#4a4a5e] font-light mt-7 mb-10 leading-relaxed max-w-md opacity-0">
-              Every child begins with a blank page. Through curiosity, creativity, and confidence, those pages become a story worth telling.
+            <p ref={subRef} className="font-inter text-base lg:text-lg text-[#4a4a5e] font-light mt-6 mb-8 leading-relaxed max-w-lg opacity-0">
+              {subtitle}
             </p>
             <div ref={ctaRef} className="flex gap-4 flex-wrap opacity-0">
-              <Link href="/admissions" className="font-poppins text-sm font-semibold text-[#FB7F05] px-8 py-4 border border-[#FB7F05] hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-400 sketch-border">
-                Begin the Story
-              </Link>
-              <Link href="/campus" className="font-poppins text-sm font-medium text-[#4a4a5e] px-8 py-4 hover:text-[#FB7F05] transition-colors underline underline-offset-4 decoration-[#FB7F05]/40">
-                Virtual Tour ↗
-              </Link>
+              {primaryCtaLabel && (
+                <Link href={primaryCtaHref} className="font-poppins text-sm font-semibold text-[#FB7F05] px-8 py-4 border border-[#FB7F05] hover:bg-[#FB7F05] hover:text-[#fefcf3] transition-all duration-300 sketch-border shadow-xs">
+                  {primaryCtaLabel}
+                </Link>
+              )}
+              {secondaryCtaLabel && (
+                <Link href={secondaryCtaHref} className="font-poppins text-sm font-medium text-[#4a4a5e] px-8 py-4 hover:text-[#FB7F05] transition-colors underline underline-offset-4 decoration-[#FB7F05]/40">
+                  {secondaryCtaLabel}
+                </Link>
+              )}
             </div>
           </div>
 
-          <div className="relative h-[60vh] flex items-center justify-center">
-            <div ref={pencilRef} className="absolute top-4 right-4 z-20 pointer-events-none opacity-0">
+          {/* Right Column: Sketch Illustration */}
+          <div className="relative flex flex-col items-center justify-center">
+            <div ref={pencilRef} className="absolute top-2 right-6 z-20 pointer-events-none opacity-0">
               <svg width="22" height="72" viewBox="0 0 22 72" fill="none">
                 <rect x="5" y="0" width="12" height="7" rx="1" fill="#f4c2b0" stroke="#c09080" strokeWidth="0.6"/>
                 <rect x="4" y="7" width="14" height="3" fill="#b0b0b0"/>
@@ -94,7 +119,7 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
               </svg>
             </div>
 
-            <svg ref={sketchRef} viewBox="0 0 500 400" className="w-full h-full max-w-lg" fill="none">
+            <svg ref={sketchRef} viewBox="0 0 500 400" className="w-full h-auto max-w-lg" fill="none">
               <line x1="30" y1="300" x2="470" y2="300" stroke="#2a2840" strokeWidth="1.5" strokeLinecap="round"/>
               <path d="M60 300 Q62 255 68 230 Q72 210 74 190" stroke="#2d5a27" strokeWidth="1.5" strokeLinecap="round"/>
               <path d="M74 190 Q58 215 40 228 Q62 210 74 190 Q86 215 100 230 Q80 210 74 190Z" stroke="#2d5a27" strokeWidth="1.2"/>
@@ -130,14 +155,14 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
               <path d="M238 35 Q244 28 250 35" stroke="#1a1a2e" strokeWidth="1" strokeLinecap="round"/>
             </svg>
 
-            <div className="hidden xl:block absolute -left-12 top-1/2 -translate-y-1/2 font-caveat text-[#c17b5a] text-sm -rotate-90 whitespace-nowrap opacity-50 pointer-events-none">
+            <div className="font-caveat text-[#c17b5a] text-sm text-center mt-2 opacity-80">
               Faith Model School — Nurturing Excellence
             </div>
           </div>
         </div>
 
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4.5 }}
@@ -149,5 +174,4 @@ export default function HomepageHeroBlock({ block }: { block?: any }) {
       </section>
     </>
   );
-
 }

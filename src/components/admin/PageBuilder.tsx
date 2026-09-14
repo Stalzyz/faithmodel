@@ -55,7 +55,19 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
   UPCOMING_EVENTS_BLOCK: { annotation: "Mark the Calendar", title: "Upcoming Events", ctaText: "View Full Calendar →", ctaLink: "/news#events", events: [{ date: "Aug 15", title: "Independence Day", type: "Celebration", desc: "Flag hoisting." }] },
   TESTIMONIALS_BLOCK: { annotation: "What Our Parents Say", testimonials: [{ name: "Parent", child: "Grade 1", quote: "Amazing school." }] },
   CUSTOM_HTML_BLOCK: { html: "<p>Custom HTML goes here...</p>" },
-  HOMEPAGE_HERO_BLOCK: {},
+  HOMEPAGE_HERO_BLOCK: {
+    annotation: "Faith Model School — Est. 2014",
+    headlineLine1: "Every Great Future",
+    headlineLine2: "Begins With A",
+    highlightWord: "Single Sketch.",
+    subtitle: "Every child begins with a blank page. Through curiosity, creativity, and confidence, those pages become a story worth telling.",
+    ribbonText: "Admissions for 2026–27 are now open",
+    ribbonCtaText: "Apply Today",
+    primaryCtaLabel: "Begin the Story",
+    primaryCtaHref: "/admissions",
+    secondaryCtaLabel: "Virtual Tour ↗",
+    secondaryCtaHref: "/campus"
+  },
   FAQ_BLOCK: { annotation: "Got Questions?", title: "Frequently Asked Questions", subtitle: "Instant answers to common queries.", faqs: [{ question: "What are the school hours?", answer: "8:30 AM to 3:30 PM", category: "General" }] },
   VIDEO_BLOCK: { annotation: "Campus Video", title: "Experience Faith Model School", subtitle: "Watch our campus walkthrough video.", videoSource: "youtube", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", posterImage: "" },
   MOSAIC_GALLERY_BLOCK: { annotation: "Photo Gallery", title: "Life at Faith Model School", subtitle: "Explore campus moments.", layoutMode: "mosaic", items: [{ url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80", title: "Campus Architecture", category: "Campus", span: "big" }] }
@@ -593,9 +605,61 @@ export default function PageBuilder({
 
                      {block.type === 'HOMEPAGE_HERO_BLOCK' && (
                         <div className="space-y-4">
-                           <p className="text-xs text-gray-500 bg-gray-50 p-4 rounded border border-gray-200">
-                             This block represents the interactive Sketchbook Hero animation. No editable content is required.
-                           </p>
+                           <div className="border border-orange-200 bg-orange-50/30 p-4 rounded space-y-3">
+                              <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">Top Banner Ribbon</h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                 <div>
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Ribbon Text</label>
+                                    <input type="text" value={block.data.ribbonText ?? "Admissions for 2026–27 are now open"} onChange={e => updateBlockData(block.id, { ribbonText: e.target.value })} className="admin-input" placeholder="Ribbon Text" />
+                                 </div>
+                                 <div>
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Ribbon Link Text</label>
+                                    <input type="text" value={block.data.ribbonCtaText ?? "Apply Today"} onChange={e => updateBlockData(block.id, { ribbonCtaText: e.target.value })} className="admin-input" placeholder="Ribbon Link Text" />
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div className="border border-gray-200 p-4 rounded space-y-3 bg-white">
+                              <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">Hero Headline & Subtitle</h4>
+                              <div>
+                                 <label className="block text-xs font-medium text-gray-600 mb-1">Top Annotation / Sub-tag</label>
+                                 <input type="text" value={block.data.annotation ?? "Faith Model School — Est. 2014"} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input font-medium" placeholder="Annotation" />
+                              </div>
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                 <div>
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Headline Line 1</label>
+                                    <input type="text" value={block.data.headlineLine1 ?? "Every Great Future"} onChange={e => updateBlockData(block.id, { headlineLine1: e.target.value })} className="admin-input font-semibold" placeholder="Every Great Future" />
+                                 </div>
+                                 <div>
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Headline Line 2</label>
+                                    <input type="text" value={block.data.headlineLine2 ?? "Begins With A"} onChange={e => updateBlockData(block.id, { headlineLine2: e.target.value })} className="admin-input font-semibold" placeholder="Begins With A" />
+                                 </div>
+                                 <div>
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Highlight Word (Orange)</label>
+                                    <input type="text" value={block.data.highlightWord ?? "Single Sketch."} onChange={e => updateBlockData(block.id, { highlightWord: e.target.value })} className="admin-input font-semibold text-[#FB7F05]" placeholder="Single Sketch." />
+                                 </div>
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-medium text-gray-600 mb-1">Hero Subtitle Paragraph</label>
+                                 <textarea value={block.data.subtitle ?? "Every child begins with a blank page. Through curiosity, creativity, and confidence, those pages become a story worth telling."} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input h-20 text-xs" placeholder="Subtitle Paragraph" />
+                              </div>
+                           </div>
+
+                           <div className="border border-gray-200 p-4 rounded space-y-3 bg-white">
+                              <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">Call To Action Buttons</h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                 <div className="space-y-2 border p-3 rounded bg-gray-50/50">
+                                    <label className="block text-xs font-bold text-gray-700">Primary Button</label>
+                                    <input type="text" value={block.data.primaryCtaLabel ?? "Begin the Story"} onChange={e => updateBlockData(block.id, { primaryCtaLabel: e.target.value })} className="admin-input text-xs mb-1" placeholder="Button Text" />
+                                    <input type="text" value={block.data.primaryCtaHref ?? "/admissions"} onChange={e => updateBlockData(block.id, { primaryCtaHref: e.target.value })} className="admin-input text-xs" placeholder="URL Path (/admissions)" />
+                                 </div>
+                                 <div className="space-y-2 border p-3 rounded bg-gray-50/50">
+                                    <label className="block text-xs font-bold text-gray-700">Secondary Button</label>
+                                    <input type="text" value={block.data.secondaryCtaLabel ?? "Virtual Tour ↗"} onChange={e => updateBlockData(block.id, { secondaryCtaLabel: e.target.value })} className="admin-input text-xs mb-1" placeholder="Button Text" />
+                                    <input type="text" value={block.data.secondaryCtaHref ?? "/campus"} onChange={e => updateBlockData(block.id, { secondaryCtaHref: e.target.value })} className="admin-input text-xs" placeholder="URL Path (/campus)" />
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      )}
                      {block.type === 'WELCOME_BLOCK' && (
