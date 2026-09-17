@@ -23,6 +23,26 @@ async function main() {
   // 2. Create Home Page
   const blocks = [
     { id: 'hero', type: 'HOMEPAGE_HERO_BLOCK', data: {} },
+    {
+      id: 'admissions-spotlight',
+      type: 'ADMISSIONS_SPOTLIGHT_BLOCK',
+      data: {
+        annotation: "A Progressive Learning Village",
+        title: "Admissions Open for Academic Year 2026–27",
+        subtitle: "We nurture young minds through inquiry, play, and conceptual understanding. Join a warm, vibrant community focused on holistic growth.",
+        ctaLabel: "Apply for Admission",
+        ctaHref: "/admissions",
+        bgImage: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+        bannerHeadline: "ADMISSIONS OPEN",
+        bannerText: "Applications for 2026–27 are now being accepted",
+        bannerCta: "Apply",
+        features: [
+          "CBSE Curriculum with Future-Ready Pedagogy",
+          "15-Acre Eco-Friendly Green Campus",
+          "Holistic Arts, Sports & AI STEM Labs"
+        ]
+      }
+    },
     { id: 'welcome', type: 'WELCOME_BLOCK', data: { logoText: "FM", title: "Welcome to Faith Model", quote: "At Faith Model School, we believe that education is not merely the transmission of knowledge, but the ignition of curiosity. Every child who walks through our gate carries within them the seeds of something extraordinary.", author: "Amina M., M.A., B.Ed.", role: "Principal, Faith Model School" } },
     { id: 'stats', type: 'STATS_BLOCK', data: { annotation: "School at a Glance", title: "By the Numbers", stats: [
         { num: "35+", label: "Years of Excellence", note: "Est. 1989" },

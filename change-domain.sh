@@ -44,4 +44,5 @@ certbot --nginx -d fm.grekam.in --non-interactive --agree-tos -m stalin@grekam.i
 
 cd /var/www/faithmodel
 npm run build
+npx tsx inject-admissions-block.ts
 pm2 restart faithmodel

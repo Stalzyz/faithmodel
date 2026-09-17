@@ -49,7 +49,7 @@ export default function AdmissionsSpotlightBlock({ block }: { block?: any }) {
               <ul className="space-y-3 pt-2">
                 {features.map((feat: string, idx: number) => (
                   <li key={idx} className="flex items-center gap-3 font-inter text-sm text-[#2a2840] font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-[#2d5a27] shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#FB7F05] shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -60,14 +60,14 @@ export default function AdmissionsSpotlightBlock({ block }: { block?: any }) {
               <div className="pt-4 flex items-center gap-4 flex-wrap">
                 <Link
                   href={ctaHref}
-                  className="inline-flex items-center gap-2 font-poppins text-sm font-semibold text-[#fefcf3] bg-[#2d5a27] hover:bg-[#1f401b] px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 font-poppins text-sm font-semibold text-[#fefcf3] bg-[#1a1a2e] hover:bg-[#FB7F05] px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <span>{ctaLabel}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/mandatory-disclosure"
-                  className="font-poppins text-sm font-medium text-[#4a4a5e] hover:text-[#2d5a27] transition-colors underline underline-offset-4"
+                  className="font-poppins text-sm font-medium text-[#4a4a5e] hover:text-[#FB7F05] transition-colors underline underline-offset-4"
                 >
                   CBSE Disclosures ↗
                 </Link>
@@ -92,11 +92,11 @@ export default function AdmissionsSpotlightBlock({ block }: { block?: any }) {
                   {/* Floating Admissions Open Pill Box Overlay at bottom */}
                   <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-[#f5f1e6]/95 backdrop-blur-md border border-[#e2d9c5] p-3.5 sm:p-4 rounded-2xl sm:rounded-3xl shadow-xl flex items-center justify-between gap-3 sm:gap-4 transition-transform duration-300 hover:scale-[1.01]">
                     <div className="flex items-center gap-3.5 min-w-0">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 bg-[#2d5a27] rounded-full flex items-center justify-center shrink-0 shadow-sm text-white">
-                        <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 bg-[#1a1a2e] rounded-full flex items-center justify-center shrink-0 shadow-sm text-white">
+                        <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-[#FB7F05]" />
                       </div>
                       <div className="min-w-0">
-                        <div className="font-poppins text-[11px] sm:text-xs font-bold text-[#2d5a27] uppercase tracking-wider">
+                        <div className="font-poppins text-[11px] sm:text-xs font-bold text-[#FB7F05] uppercase tracking-wider">
                           {bannerHeadline}
                         </div>
                         <p className="font-inter text-xs sm:text-sm text-[#2a2840] font-medium truncate mt-0.5">
@@ -107,7 +107,7 @@ export default function AdmissionsSpotlightBlock({ block }: { block?: any }) {
 
                     <Link
                       href={ctaHref}
-                      className="shrink-0 bg-[#2d5a27] hover:bg-[#1f401b] text-white font-poppins text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 rounded-full transition-colors shadow-sm"
+                      className="shrink-0 bg-[#FB7F05] hover:bg-[#1a1a2e] text-white font-poppins text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 rounded-full transition-colors shadow-sm"
                     >
                       {bannerCta}
                     </Link>

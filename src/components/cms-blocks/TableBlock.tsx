@@ -22,7 +22,7 @@ export default function TableBlock({ data }: { data: any }) {
           href={cell.fileUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-poppins bg-[#2d5a27]/10 text-[#2d5a27] hover:bg-[#2d5a27] hover:text-white transition-all shadow-xs"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-poppins bg-[#FB7F05]/10 text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white transition-all shadow-xs"
         >
           <FileText className="w-3.5 h-3.5" />
           <span>{cell.label || "Download PDF"}</span>
@@ -38,7 +38,7 @@ export default function TableBlock({ data }: { data: any }) {
           href={cellStr}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-poppins bg-[#2d5a27]/10 text-[#2d5a27] hover:bg-[#2d5a27] hover:text-white transition-all shadow-xs"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-poppins bg-[#FB7F05]/10 text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white transition-all shadow-xs"
         >
           <FileText className="w-3.5 h-3.5" />
           <span>Download PDF</span>
@@ -53,7 +53,7 @@ export default function TableBlock({ data }: { data: any }) {
           href={cellStr}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 font-poppins text-xs font-semibold text-[#2d5a27] hover:underline"
+          className="inline-flex items-center gap-1 font-poppins text-xs font-semibold text-[#FB7F05] hover:underline"
         >
           <span>View Link</span>
           <ExternalLink className="w-3 h-3" />

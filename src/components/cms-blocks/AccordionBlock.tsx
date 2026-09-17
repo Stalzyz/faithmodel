@@ -29,7 +29,7 @@ export default function AccordionBlock({ data }: { data: any }) {
                       href={item.fileUrl || item.file}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#2d5a27] text-white hover:bg-[#1f401b] rounded-full text-xs font-semibold font-poppins shrink-0 transition-colors shadow-xs"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#1a1a2e] text-white hover:bg-[#FB7F05] rounded-full text-xs font-semibold font-poppins shrink-0 transition-colors shadow-xs"
                     >
                       <FileText className="w-4 h-4" />
                       <span>Download PDF</span>
