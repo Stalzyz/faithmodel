@@ -9,7 +9,7 @@ export default function ProfileGrid({ data }: { data: any }) {
         {data.profiles?.map((profile: any, i: number) => (
           <SketchReveal key={i} delay={i * 0.05}>
             <div className="group cursor-pointer">
-              <div className="relative h-80 overflow-hidden rounded-sm mb-4 bg-gray-100">
+              <div className="relative h-80 overflow-hidden rounded-2xl mb-4 bg-gray-100 shadow-xs border border-[rgba(74,74,94,0.08)]">
                 {profile.image && (
                    <img src={profile.image} alt={profile.name} className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" />
                 )}

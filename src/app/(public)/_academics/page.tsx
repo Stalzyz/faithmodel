@@ -35,7 +35,7 @@ export default function AcademicsPage() {
           <p className="font-inter text-sm text-[#4a4a5e] leading-relaxed mt-4">Our approach is guided by three principles: <strong className="text-[#1a1a2e]">Conceptual Understanding</strong> (not rote memorisation), <strong className="text-[#1a1a2e]">Application Thinking</strong> (connecting learning to real life), and <strong className="text-[#1a1a2e]">Reflective Growth</strong> (continuous self-assessment and improvement).</p>
         </SketchReveal>
         <SketchReveal delay={0.2}>
-          <div className="relative h-[45vh] overflow-hidden rounded-sm">
+          <div className="relative h-[45vh] overflow-hidden rounded-2xl shadow-sm border border-[rgba(74,74,94,0.1)]">
             <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80" alt="Classroom" className="w-full h-full object-cover" />
           </div>
         </SketchReveal>
@@ -63,7 +63,7 @@ export default function AcademicsPage() {
                     ))}
                   </div>
                 </div>
-                <div className="h-36 overflow-hidden rounded-sm">
+                <div className="h-36 overflow-hidden rounded-2xl shadow-xs">
                   <img src={level.img} alt={level.level} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>

@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save } from "lucide-react";
+import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save, FileText } from "lucide-react";
 import ImageUploader from "./ImageUploader";
+import FileUploader from "./FileUploader";
 
-export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK";
+export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK" | "ADMISSIONS_SPOTLIGHT_BLOCK";
 
 export interface PageBlock {
   id: string;
@@ -70,7 +71,18 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
   },
   FAQ_BLOCK: { annotation: "Got Questions?", title: "Frequently Asked Questions", subtitle: "Instant answers to common queries.", faqs: [{ question: "What are the school hours?", answer: "8:30 AM to 3:30 PM", category: "General" }] },
   VIDEO_BLOCK: { annotation: "Campus Video", title: "Experience Faith Model School", subtitle: "Watch our campus walkthrough video.", videoSource: "youtube", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", posterImage: "" },
-  MOSAIC_GALLERY_BLOCK: { annotation: "Photo Gallery", title: "Life at Faith Model School", subtitle: "Explore campus moments.", layoutMode: "mosaic", items: [{ url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80", title: "Campus Architecture", category: "Campus", span: "big" }] }
+  MOSAIC_GALLERY_BLOCK: { annotation: "Photo Gallery", title: "Life at Faith Model School", subtitle: "Explore campus moments.", layoutMode: "mosaic", items: [{ url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80", title: "Campus Architecture", category: "Campus", span: "big" }] },
+  ADMISSIONS_SPOTLIGHT_BLOCK: {
+    annotation: "A Progressive Learning Village",
+    title: "Admissions Open for Academic Year 2026–27",
+    subtitle: "We nurture young minds through inquiry, play, and conceptual understanding. Join a warm, vibrant community focused on holistic growth.",
+    ctaLabel: "Apply for Admission",
+    ctaHref: "/admissions",
+    bgImage: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+    bannerHeadline: "ADMISSIONS OPEN",
+    bannerText: "Applications for 2026–27 are now being accepted",
+    bannerCta: "Apply"
+  }
 };
 
 export default function PageBuilder({
@@ -443,13 +455,28 @@ export default function PageBuilder({
                               <p className="text-xs font-bold text-gray-700 uppercase">Columns (comma separated)</p>
                               <input type="text" value={block.data.headers?.join(", ")} onChange={e => updateBlockData(block.id, { headers: e.target.value.split(",").map(s => s.trim()) })} className="admin-input mb-4" />
                               
-                              <p className="text-xs font-bold text-gray-700 uppercase mt-4">Rows</p>
+                              <p className="text-xs font-bold text-gray-700 uppercase mt-4">Rows (Edit cell values or upload downloadable file/PDF)</p>
                               {block.data.rows?.map((row: string[], i: number) => (
-                                 <div key={i} className="flex gap-3 items-center bg-white p-3 rounded-lg border border-gray-200">
-                                    {row.map((cell: string, j: number) => (
-                                       <input key={j} type="text" value={cell} onChange={e => { const newR = [...block.data.rows]; newR[i][j] = e.target.value; updateBlockData(block.id, { rows: newR }); }} className="admin-input flex-1" />
-                                    ))}
-                                    <button onClick={() => updateBlockData(block.id, { rows: block.data.rows.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
+                                 <div key={i} className="flex flex-col gap-2 bg-white p-3 rounded-lg border border-gray-200 shadow-2xs">
+                                    <div className="flex gap-3 items-center">
+                                       {row.map((cell: string, j: number) => (
+                                          <input key={j} type="text" value={cell} onChange={e => { const newR = [...block.data.rows]; newR[i][j] = e.target.value; updateBlockData(block.id, { rows: newR }); }} className="admin-input flex-1 text-xs" placeholder={`Col ${j + 1}`} />
+                                       ))}
+                                       <button onClick={() => updateBlockData(block.id, { rows: block.data.rows.filter((_: any, idx: number) => idx !== i) })} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 className="w-4 h-4" /></button>
+                                    </div>
+                                    <div className="flex items-center gap-2 pt-1 border-t border-gray-100 text-xs">
+                                       <span className="text-gray-500 font-semibold whitespace-nowrap">Attach PDF/File to last column:</span>
+                                       <FileUploader 
+                                          value={row[row.length - 1] && row[row.length - 1].startsWith('/') ? row[row.length - 1] : ""} 
+                                          onChange={(url) => {
+                                             const newR = [...block.data.rows];
+                                             newR[i][newR[i].length - 1] = url;
+                                             updateBlockData(block.id, { rows: newR });
+                                          }} 
+                                          accept=".pdf,.doc,.docx,image/*" 
+                                          placeholder="Upload document or enter file URL..." 
+                                       />
+                                    </div>
                                  </div>
                               ))}
                               <button onClick={() => updateBlockData(block.id, { rows: [...(block.data.rows || []), new Array(block.data.headers?.length || 2).fill("New Data")] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all shadow-2xs">+ Add Row</button>
@@ -533,15 +560,68 @@ export default function PageBuilder({
                            </div>
                            <div className="space-y-3">
                               {block.data.items?.map((item: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-3 rounded bg-white">
-                                    <div className="flex justify-between mb-2">
-                                       <input type="text" value={item.question} onChange={e => { const newI = [...block.data.items]; newI[i].question = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-sm font-semibold flex-1" placeholder="Question / Heading" />
+                                 <div key={i} className="border border-gray-200 p-3 rounded bg-white space-y-2">
+                                    <div className="flex justify-between mb-1">
+                                       <input type="text" value={item.question} onChange={e => { const newI = [...block.data.items]; newI[i].question = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-sm font-semibold flex-1" placeholder="Question / Document Name" />
                                        <button onClick={() => updateBlockData(block.id, { items: block.data.items.filter((_: any, idx: number) => idx !== i) })} className="text-red-400 px-2 ml-2">✕</button>
                                     </div>
-                                    <textarea value={item.answer} onChange={e => { const newI = [...block.data.items]; newI[i].answer = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-sm h-24" placeholder="Answer / Content" />
+                                    <textarea value={item.answer} onChange={e => { const newI = [...block.data.items]; newI[i].answer = e.target.value; updateBlockData(block.id, { items: newI }); }} className="admin-input text-sm h-16" placeholder="Answer / Document details" />
+                                    <div>
+                                       <label className="block text-[11px] font-bold text-gray-500 uppercase mb-1">Downloadable Document (Optional PDF/Doc)</label>
+                                       <FileUploader 
+                                          value={item.fileUrl || item.file || ""} 
+                                          onChange={(url) => {
+                                             const newI = [...block.data.items];
+                                             newI[i].fileUrl = url;
+                                             updateBlockData(block.id, { items: newI });
+                                          }}
+                                          accept=".pdf,.doc,.docx,image/*"
+                                          placeholder="Upload PDF or file URL..."
+                                       />
+                                    </div>
                                  </div>
                               ))}
                               <button onClick={() => updateBlockData(block.id, { items: [...(block.data.items || []), { question: "New Question", answer: "Answer text" }] })} className="text-xs font-semibold text-[#FB7F05]">+ Add Item</button>
+                           </div>
+                        </div>
+                     )}
+                     {block.type === 'ADMISSIONS_SPOTLIGHT_BLOCK' && (
+                        <div className="space-y-4">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Annotation</label>
+                                 <input type="text" value={block.data.annotation} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input" placeholder="Annotation" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Title</label>
+                                 <input type="text" value={block.data.title} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="Title" />
+                              </div>
+                           </div>
+                           <div>
+                              <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Subtitle</label>
+                              <textarea value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input h-20" placeholder="Subtitle" />
+                           </div>
+                           <div className="grid grid-cols-2 gap-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">CTA Label</label>
+                                 <input type="text" value={block.data.ctaLabel} onChange={e => updateBlockData(block.id, { ctaLabel: e.target.value })} className="admin-input" placeholder="CTA Label" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">CTA Link</label>
+                                 <input type="text" value={block.data.ctaHref} onChange={e => updateBlockData(block.id, { ctaHref: e.target.value })} className="admin-input" placeholder="CTA Link" />
+                              </div>
+                           </div>
+                           <div>
+                              <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Right-Side Campus Image</label>
+                              <ImageUploader value={block.data.bgImage} onChange={url => updateBlockData(block.id, { bgImage: url })} />
+                           </div>
+                           <div className="border-t border-gray-200 pt-3 space-y-3">
+                              <p className="text-xs font-bold text-gray-800 uppercase">Floating Overlay Card Settings</p>
+                              <div className="grid grid-cols-3 gap-3">
+                                 <input type="text" value={block.data.bannerHeadline} onChange={e => updateBlockData(block.id, { bannerHeadline: e.target.value })} className="admin-input text-xs" placeholder="Banner Headline" />
+                                 <input type="text" value={block.data.bannerText} onChange={e => updateBlockData(block.id, { bannerText: e.target.value })} className="admin-input text-xs" placeholder="Banner Text" />
+                                 <input type="text" value={block.data.bannerCta} onChange={e => updateBlockData(block.id, { bannerCta: e.target.value })} className="admin-input text-xs" placeholder="Banner Button Text" />
+                              </div>
                            </div>
                         </div>
                      )}

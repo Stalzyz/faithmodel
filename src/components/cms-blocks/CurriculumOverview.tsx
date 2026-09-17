@@ -21,7 +21,7 @@ export default function CurriculumOverview({ data }: { data: any }) {
                 </div>
               </div>
               {level.img && (
-                <div className="h-36 overflow-hidden rounded-sm">
+                <div className="h-36 sm:h-40 overflow-hidden rounded-2xl shadow-xs border border-[rgba(74,74,94,0.08)]">
                   <img src={level.img} alt={level.level} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               )}

@@ -14,8 +14,8 @@ export default function CampusExperienceBlock({ block }: { block: any }) {
     <section className="py-28 border-t border-[rgba(74,74,94,0.08)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-20 items-center">
         <div className="grid grid-cols-2 gap-4 h-[60vh]">
-          <img src={data.image1 || "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80"} alt="Campus" className="w-full h-full object-cover rounded-sm" />
-          <img src={data.image2 || "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80"} alt="Students" className="w-full h-full object-cover rounded-sm mt-8" />
+          <img src={data.image1 || "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=80"} alt="Campus" className="w-full h-full object-cover rounded-2xl shadow-sm" />
+          <img src={data.image2 || "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80"} alt="Students" className="w-full h-full object-cover rounded-2xl shadow-sm mt-8" />
         </div>
         <div>
           <SectionHeading annotation={data.annotation || "Campus Life"} title={data.title || "A World of Possibilities"} subtitle={data.subtitle || "Our 15-acre campus is designed as a second home..."} />

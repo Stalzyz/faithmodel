@@ -45,7 +45,7 @@ export default function GalleryLightbox({ albums }: { albums: any[] }) {
           <SketchReveal key={album.title} delay={i * 0.1}>
             <div 
               onClick={() => openAlbum(album.title)}
-              className="group cursor-pointer relative rounded-xl overflow-hidden aspect-[4/3] shadow-md border border-[rgba(74,74,94,0.08)] bg-gray-50 flex items-center justify-center"
+              className="group cursor-pointer relative rounded-2xl overflow-hidden aspect-[4/3] shadow-md border border-[rgba(74,74,94,0.08)] bg-gray-50 flex items-center justify-center"
             >
               {loading && activeAlbum === album.title && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/50 backdrop-blur-sm">
@@ -100,7 +100,7 @@ export default function GalleryLightbox({ albums }: { albums: any[] }) {
               <img 
                 src={media[currentIndex].url} 
                 alt={media[currentIndex].altText || activeAlbum || ""}
-                className="max-w-full max-h-[85vh] object-contain rounded shadow-2xl"
+                className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
               />
             </div>
             

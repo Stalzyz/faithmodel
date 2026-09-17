@@ -13,7 +13,7 @@ export default function PhilosophySplit({ data }: { data: any }) {
           />
         </SketchReveal>
         <SketchReveal delay={0.2} className="w-full">
-          <div className="relative h-[400px] lg:h-[450px] w-full overflow-hidden rounded-lg shadow-sm border border-[rgba(74,74,94,0.1)]">
+          <div className="relative h-[400px] lg:h-[450px] w-full overflow-hidden rounded-3xl shadow-sm border border-[rgba(74,74,94,0.1)]">
             <img src={data.imageUrl} alt={data.title || "Philosophy"} className="w-full h-full object-cover" />
           </div>
         </SketchReveal>

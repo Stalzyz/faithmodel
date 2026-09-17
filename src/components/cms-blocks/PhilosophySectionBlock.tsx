@@ -26,9 +26,9 @@ export default function PhilosophySectionBlock({ block }: { block: any }) {
             </ul>
           </SketchReveal>
         </div>
-        <div className="relative h-[50vh] rounded-sm overflow-hidden">
+        <div className="relative h-[50vh] rounded-3xl overflow-hidden shadow-sm border border-[rgba(74,74,94,0.1)]">
           <img src={data.imageUrl || "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80"} alt="Learning" className="w-full h-full object-cover" />
-          <div className="absolute bottom-4 right-4 font-caveat text-[#fefcf3] text-base bg-[#1a1a2e]/60 px-3 py-1 backdrop-blur-sm">{data.imageCaption || "igniting curiosity →"}</div>
+          <div className="absolute bottom-4 right-4 font-caveat text-[#fefcf3] text-base bg-[#1a1a2e]/60 px-3.5 py-1.5 rounded-full backdrop-blur-sm">{data.imageCaption || "igniting curiosity →"}</div>
         </div>
       </div>
     </section>

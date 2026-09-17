@@ -1,3 +1,4 @@
+import React from "react";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -43,6 +44,7 @@ import HomepageHeroBlock from "@/components/cms-blocks/HomepageHeroBlock";
 import FAQBlock from "@/components/cms-blocks/FAQBlock";
 import VideoBlock from "@/components/cms-blocks/VideoBlock";
 import MosaicGalleryBlock from "@/components/cms-blocks/MosaicGalleryBlock";
+import AdmissionsSpotlightBlock from "@/components/cms-blocks/AdmissionsSpotlightBlock";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -89,10 +91,13 @@ export default async function Home() {
     console.error("Failed to parse page blocks", e);
   }
 
+  const hasAdmissionsBlock = blocks.some(b => b.type === "ADMISSIONS_SPOTLIGHT_BLOCK");
+
   return (
     <PageLayout>
       {blocks.map((block, index) => {
-         switch (block.type) {
+         const rendered = (() => {
+           switch (block.type) {
             case "HERO":
                return (
                   <div key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
@@ -135,7 +140,7 @@ export default async function Home() {
                      <div className="grid md:grid-cols-3 gap-4">
                         {block.data.images?.map((img: string, i: number) => (
                            <SketchReveal key={i} delay={i * 0.1}>
-                              <div className="h-64 bg-[rgba(74,74,94,0.05)] border border-[rgba(74,74,94,0.1)] rounded-sm overflow-hidden">
+                              <div className="h-64 bg-[rgba(74,74,94,0.05)] border border-[rgba(74,74,94,0.1)] rounded-2xl overflow-hidden">
                                  {img ? (
                                     <img src={img} alt="Grid item" className="w-full h-full object-cover" />
                                  ) : (
@@ -170,9 +175,9 @@ export default async function Home() {
             case "ACCORDION_BLOCK":
                return <AccordionBlock key={block.id} data={block.data} />;
             case 'POSTS_BLOCK':
-              return <PostsBlock key={block.id} data={block.data} />;
+               return <PostsBlock key={block.id} data={block.data} />;
             case 'GALLERY_BLOCK':
-              return <GalleryBlock key={block.id} block={block} />;
+               return <GalleryBlock key={block.id} block={block} />;
 
             case "WELCOME_BLOCK":
                return <WelcomeBlock key={block.id} block={block} />;
@@ -200,6 +205,8 @@ export default async function Home() {
                return <TestimonialsBlock key={block.id} block={block} />;
             case "HOMEPAGE_HERO_BLOCK":
                return <HomepageHeroBlock key={block.id} block={block} />;
+            case "ADMISSIONS_SPOTLIGHT_BLOCK":
+               return <AdmissionsSpotlightBlock key={block.id} block={block} />;
             case "CUSTOM_HTML_BLOCK":
                return <CustomHTMLBlock key={block.id} block={block} />;
             case "FAQ_BLOCK":
@@ -210,8 +217,20 @@ export default async function Home() {
                return <MosaicGalleryBlock key={block.id} data={block.data} />;
 
             default:
-              return null;
+               return null;
+           }
+         })();
+
+         if (block.type === "HOMEPAGE_HERO_BLOCK" && !hasAdmissionsBlock) {
+           return (
+             <React.Fragment key={block.id}>
+               {rendered}
+               <AdmissionsSpotlightBlock />
+             </React.Fragment>
+           );
          }
+
+         return rendered;
       })}
     </PageLayout>
   );
