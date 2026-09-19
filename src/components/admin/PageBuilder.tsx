@@ -5,7 +5,7 @@ import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save, FileText } fr
 import ImageUploader from "./ImageUploader";
 import FileUploader from "./FileUploader";
 
-export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK" | "ADMISSIONS_SPOTLIGHT_BLOCK";
+export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK" | "ADMISSIONS_SPOTLIGHT_BLOCK" | "SHOWREEL_HERO_BLOCK";
 
 export interface PageBlock {
   id: string;
@@ -81,7 +81,36 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
     bgImage: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
     bannerHeadline: "ADMISSIONS OPEN",
     bannerText: "Applications for 2026–27 are now being accepted",
-    bannerCta: "Apply"
+    bannerCta: "Apply",
+    features: [
+      "CBSE Curriculum with Future-Ready Pedagogy",
+      "15-Acre Eco-Friendly Green Campus",
+      "Holistic Arts, Sports & AI STEM Labs"
+    ]
+  },
+  SHOWREEL_HERO_BLOCK: {
+    headerLogoText: "SHOW REEL",
+    autoPlayInterval: 6000,
+    slides: [
+      {
+        imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1920&q=80",
+        tag: "A PROGRESSIVE LEARNING VILLAGE",
+        titleLine1: "Empowering",
+        titleLine2: "Future Minds",
+        subtitle: "Nurturing young innovators through inquiry-based CBSE curriculum and 15-acre green campus.",
+        ctaLabel: "APPLY FOR ADMISSION",
+        ctaHref: "/admissions"
+      },
+      {
+        imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80",
+        tag: "WORLD-CLASS INFRASTRUCTURE",
+        titleLine1: "Inquiry &",
+        titleLine2: "Discovery",
+        subtitle: "State-of-the-art AI STEM labs, sports arenas, and creative arts studios built for holistic growth.",
+        ctaLabel: "EXPLORE CAMPUS",
+        ctaHref: "/campus"
+      }
+    ]
   }
 };
 
@@ -601,6 +630,65 @@ export default function PageBuilder({
                               <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Subtitle</label>
                               <textarea value={block.data.subtitle} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input h-20" placeholder="Subtitle" />
                            </div>
+                           <div>
+                              <label className="block text-xs font-bold text-gray-700 uppercase mb-2">Key Highlights / Features (Checkmark List)</label>
+                              <div className="space-y-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                 {(block.data.features || [
+                                    "CBSE Curriculum with Future-Ready Pedagogy",
+                                    "15-Acre Eco-Friendly Green Campus",
+                                    "Holistic Arts, Sports & AI STEM Labs"
+                                 ]).map((feat: string, fIdx: number) => (
+                                    <div key={fIdx} className="flex items-center gap-2">
+                                       <span className="text-[#FB7F05] text-sm">✓</span>
+                                       <input 
+                                          type="text" 
+                                          value={feat} 
+                                          onChange={e => {
+                                             const currentFeats = block.data.features || [
+                                                "CBSE Curriculum with Future-Ready Pedagogy",
+                                                "15-Acre Eco-Friendly Green Campus",
+                                                "Holistic Arts, Sports & AI STEM Labs"
+                                             ];
+                                             const updated = [...currentFeats];
+                                             updated[fIdx] = e.target.value;
+                                             updateBlockData(block.id, { features: updated });
+                                          }} 
+                                          className="admin-input text-xs flex-1 bg-white" 
+                                          placeholder="Feature text..." 
+                                       />
+                                       <button 
+                                          type="button"
+                                          onClick={() => {
+                                             const currentFeats = block.data.features || [
+                                                "CBSE Curriculum with Future-Ready Pedagogy",
+                                                "15-Acre Eco-Friendly Green Campus",
+                                                "Holistic Arts, Sports & AI STEM Labs"
+                                             ];
+                                             const updated = currentFeats.filter((_: any, i: number) => i !== fIdx);
+                                             updateBlockData(block.id, { features: updated });
+                                          }}
+                                          className="text-xs text-red-500 hover:text-red-700 font-semibold px-2 py-1"
+                                       >
+                                          Remove
+                                       </button>
+                                    </div>
+                                 ))}
+                                 <button 
+                                    type="button"
+                                    onClick={() => {
+                                       const currentFeats = block.data.features || [
+                                          "CBSE Curriculum with Future-Ready Pedagogy",
+                                          "15-Acre Eco-Friendly Green Campus",
+                                          "Holistic Arts, Sports & AI STEM Labs"
+                                       ];
+                                       updateBlockData(block.id, { features: [...currentFeats, ""] });
+                                    }} 
+                                    className="text-xs font-semibold text-[#FB7F05] hover:underline pt-1 inline-block"
+                                 >
+                                    + Add Feature Bullet
+                                 </button>
+                              </div>
+                           </div>
                            <div className="grid grid-cols-2 gap-4">
                               <div>
                                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">CTA Label</label>
@@ -1040,6 +1128,208 @@ export default function PageBuilder({
                            <textarea value={block.data.html} onChange={e => updateBlockData(block.id, { html: e.target.value })} className="admin-input font-mono text-sm h-64" placeholder="<div class='custom-styles'>
   <p>Your raw HTML goes here...</p>
 </div>" />
+                        </div>
+                     )}
+                     {block.type === 'SHOWREEL_HERO_BLOCK' && (
+                        <div className="space-y-6">
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Top Bar Header Logo / Text</label>
+                                 <input 
+                                    type="text" 
+                                    value={block.data.headerLogoText || "SHOW REEL"} 
+                                    onChange={e => updateBlockData(block.id, { headerLogoText: e.target.value })} 
+                                    className="admin-input text-xs" 
+                                    placeholder="SHOW REEL" 
+                                 />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Autoplay Interval (ms)</label>
+                                 <input 
+                                    type="number" 
+                                    value={block.data.autoPlayInterval || 6000} 
+                                    onChange={e => updateBlockData(block.id, { autoPlayInterval: parseInt(e.target.value) || 6000 })} 
+                                    className="admin-input text-xs" 
+                                    placeholder="6000" 
+                                 />
+                              </div>
+                           </div>
+
+                           <div>
+                              <div className="flex justify-between items-center mb-3">
+                                 <label className="text-xs font-bold text-gray-800 uppercase">Slides List ({(block.data.slides || []).length})</label>
+                                 <button 
+                                    type="button"
+                                    onClick={() => {
+                                       const currentSlides = block.data.slides || [];
+                                       const newSlide = {
+                                          id: Math.random().toString(36).substring(2, 9),
+                                          imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1920&q=80",
+                                          tag: "NEW HIGHLIGHT",
+                                          titleLine1: "New Slide",
+                                          titleLine2: "Headline",
+                                          subtitle: "Add descriptive text for this slide",
+                                          ctaLabel: "EXPLORE NOW",
+                                          ctaHref: "/admissions"
+                                       };
+                                       updateBlockData(block.id, { slides: [...currentSlides, newSlide] });
+                                    }}
+                                    className="text-xs font-bold text-[#FB7F05] hover:underline"
+                                 >
+                                    + Add New Slide
+                                 </button>
+                              </div>
+
+                              <div className="space-y-4">
+                                 {(block.data.slides || []).map((slide: any, sIdx: number) => (
+                                    <div key={slide.id || sIdx} className="bg-gray-50 border border-gray-200 p-4 rounded-lg space-y-3 relative">
+                                       <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                                          <span className="text-xs font-bold text-gray-700 uppercase">Slide #{sIdx + 1}</span>
+                                          <div className="flex items-center gap-2">
+                                             {sIdx > 0 && (
+                                                <button 
+                                                   type="button"
+                                                   onClick={() => {
+                                                      const slides = [...block.data.slides];
+                                                      [slides[sIdx - 1], slides[sIdx]] = [slides[sIdx], slides[sIdx - 1]];
+                                                      updateBlockData(block.id, { slides });
+                                                   }}
+                                                   className="text-xs text-gray-500 hover:text-gray-900"
+                                                >
+                                                   ↑ Move Up
+                                                </button>
+                                             )}
+                                             {sIdx < (block.data.slides.length - 1) && (
+                                                <button 
+                                                   type="button"
+                                                   onClick={() => {
+                                                      const slides = [...block.data.slides];
+                                                      [slides[sIdx + 1], slides[sIdx]] = [slides[sIdx], slides[sIdx + 1]];
+                                                      updateBlockData(block.id, { slides });
+                                                   }}
+                                                   className="text-xs text-gray-500 hover:text-gray-900"
+                                                >
+                                                   ↓ Move Down
+                                                </button>
+                                             )}
+                                             <button 
+                                                type="button"
+                                                onClick={() => {
+                                                   const slides = block.data.slides.filter((_: any, i: number) => i !== sIdx);
+                                                   updateBlockData(block.id, { slides });
+                                                }}
+                                                className="text-xs text-red-500 hover:text-red-700 font-semibold ml-2"
+                                             >
+                                                Remove Slide
+                                             </button>
+                                          </div>
+                                       </div>
+
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Slide Image</label>
+                                          <ImageUploader 
+                                             value={slide.imageUrl} 
+                                             onChange={url => {
+                                                const slides = [...block.data.slides];
+                                                slides[sIdx] = { ...slides[sIdx], imageUrl: url };
+                                                updateBlockData(block.id, { slides });
+                                             }} 
+                                          />
+                                       </div>
+
+                                       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Category / Tag</label>
+                                             <input 
+                                                type="text" 
+                                                value={slide.tag || ""} 
+                                                onChange={e => {
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], tag: e.target.value };
+                                                   updateBlockData(block.id, { slides });
+                                                }} 
+                                                className="admin-input text-xs bg-white" 
+                                                placeholder="e.g. ACADEMIC EXCELLENCE" 
+                                             />
+                                          </div>
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Title Line 1</label>
+                                             <input 
+                                                type="text" 
+                                                value={slide.titleLine1 || ""} 
+                                                onChange={e => {
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], titleLine1: e.target.value };
+                                                   updateBlockData(block.id, { slides });
+                                                }} 
+                                                className="admin-input text-xs bg-white font-semibold" 
+                                                placeholder="e.g. Empowering" 
+                                             />
+                                          </div>
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Title Line 2 (Highlighted)</label>
+                                             <input 
+                                                type="text" 
+                                                value={slide.titleLine2 || ""} 
+                                                onChange={e => {
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], titleLine2: e.target.value };
+                                                   updateBlockData(block.id, { slides });
+                                                }} 
+                                                className="admin-input text-xs bg-white font-semibold text-[#FB7F05]" 
+                                                placeholder="e.g. Future Minds" 
+                                             />
+                                          </div>
+                                       </div>
+
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Subtitle / Description</label>
+                                          <textarea 
+                                             value={slide.subtitle || ""} 
+                                             onChange={e => {
+                                                const slides = [...block.data.slides];
+                                                slides[sIdx] = { ...slides[sIdx], subtitle: e.target.value };
+                                                updateBlockData(block.id, { slides });
+                                             }} 
+                                             className="admin-input text-xs bg-white h-16" 
+                                             placeholder="Brief summary text..." 
+                                          />
+                                       </div>
+
+                                       <div className="grid grid-cols-2 gap-3">
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">CTA Button Text</label>
+                                             <input 
+                                                type="text" 
+                                                value={slide.ctaLabel || ""} 
+                                                onChange={e => {
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], ctaLabel: e.target.value };
+                                                   updateBlockData(block.id, { slides });
+                                                }} 
+                                                className="admin-input text-xs bg-white" 
+                                                placeholder="e.g. APPLY FOR ADMISSION" 
+                                             />
+                                          </div>
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">CTA Button Link</label>
+                                             <input 
+                                                type="text" 
+                                                value={slide.ctaHref || ""} 
+                                                onChange={e => {
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], ctaHref: e.target.value };
+                                                   updateBlockData(block.id, { slides });
+                                                }} 
+                                                className="admin-input text-xs bg-white" 
+                                                placeholder="e.g. /admissions" 
+                                             />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 ))}
+                              </div>
+                           </div>
                         </div>
                      )}
 

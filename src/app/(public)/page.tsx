@@ -45,6 +45,7 @@ import FAQBlock from "@/components/cms-blocks/FAQBlock";
 import VideoBlock from "@/components/cms-blocks/VideoBlock";
 import MosaicGalleryBlock from "@/components/cms-blocks/MosaicGalleryBlock";
 import AdmissionsSpotlightBlock from "@/components/cms-blocks/AdmissionsSpotlightBlock";
+import ShowreelHeroBlock from "@/components/cms-blocks/ShowreelHeroBlock";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -215,6 +216,8 @@ export default async function Home() {
                return <VideoBlock key={block.id} data={block.data} />;
             case "MOSAIC_GALLERY_BLOCK":
                return <MosaicGalleryBlock key={block.id} data={block.data} />;
+            case "SHOWREEL_HERO_BLOCK":
+               return <ShowreelHeroBlock key={block.id} block={block} />;
 
             default:
                return null;
