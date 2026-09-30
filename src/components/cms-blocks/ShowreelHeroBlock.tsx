@@ -14,6 +14,8 @@ export interface ShowreelSlide {
   subtitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  overlayOpacity?: number;
+  imageBrightness?: number;
 }
 
 const DEFAULT_SLIDES: ShowreelSlide[] = [
@@ -81,7 +83,13 @@ export default function ShowreelHeroBlock({ block }: { block?: any }) {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const defaultOverlayOpacity = typeof data.overlayOpacity === "number" ? data.overlayOpacity : 30;
+  const defaultBrightness = typeof data.imageBrightness === "number" ? data.imageBrightness : 100;
+
   const currentSlide = slides[currentIndex] || DEFAULT_SLIDES[0];
+  const slideOverlayOpacity = typeof currentSlide.overlayOpacity === "number" ? currentSlide.overlayOpacity : defaultOverlayOpacity;
+  const slideBrightness = typeof currentSlide.imageBrightness === "number" ? currentSlide.imageBrightness : defaultBrightness;
+
   const formattedIndex = String(currentIndex + 1).padStart(2, "0");
   const formattedTotal = String(slides.length).padStart(2, "0");
 
@@ -126,7 +134,7 @@ export default function ShowreelHeroBlock({ block }: { block?: any }) {
 
   return (
     <section className="relative w-full h-screen min-h-[700px] bg-black text-white overflow-hidden select-none font-sans">
-      {/* Background Image Carousel with Overlay */}
+      {/* Background Image Carousel with Dynamic Visibility & Opacity */}
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           key={currentIndex}
@@ -140,11 +148,21 @@ export default function ShowreelHeroBlock({ block }: { block?: any }) {
           <img
             src={currentSlide.imageUrl}
             alt={currentSlide.titleLine1}
-            className="w-full h-full object-cover filter brightness-[0.72] contrast-[1.08]"
+            style={{
+              filter: `brightness(${slideBrightness / 100}) contrast(1.04)`
+            }}
+            className="w-full h-full object-cover transition-[filter] duration-300"
           />
-          {/* Subtle Dark Vignette & Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/60 pointer-events-none" />
-          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+          {/* Dynamic Dark Gradient Overlay - Controlled via Admin Opacity */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/60 pointer-events-none transition-opacity duration-300" 
+            style={{ opacity: slideOverlayOpacity / 100 }}
+          />
+          {/* Subtle horizontal gradient to ensure text legibility without obscuring the campus architecture */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none transition-opacity duration-300" 
+            style={{ opacity: Math.min(1, Math.max(0.15, (slideOverlayOpacity / 100) * 1.15)) }}
+          />
         </motion.div>
       </AnimatePresence>
 

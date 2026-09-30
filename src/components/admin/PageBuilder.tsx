@@ -91,6 +91,8 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
   SHOWREEL_HERO_BLOCK: {
     headerLogoText: "SHOW REEL",
     autoPlayInterval: 6000,
+    overlayOpacity: 30,
+    imageBrightness: 100,
     slides: [
       {
         imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1920&q=80",
@@ -1436,6 +1438,120 @@ export default function PageBuilder({
                               </div>
                            </div>
 
+                           {/* Hero Image Visibility & Opacity Controls */}
+                           <div className="bg-amber-50/70 border border-amber-200/90 rounded-xl p-4 space-y-4">
+                              <div>
+                                 <div className="flex items-center gap-2">
+                                    <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                                       Hero Image Visibility & Dark Overlay
+                                    </h4>
+                                    <span className="text-[10px] bg-amber-200/80 text-amber-900 px-2 py-0.5 rounded font-mono font-bold">
+                                       Live Setting
+                                    </span>
+                                 </div>
+                                 <p className="text-[11px] text-gray-600 mt-1">
+                                    Fine-tune overlay darkness so your campus photos are vivid and clearly visible instead of dark or shadowy.
+                                 </p>
+                              </div>
+
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                                 {/* Dark Overlay Opacity */}
+                                 <div className="bg-white p-3.5 rounded-lg border border-amber-100 shadow-xs space-y-2">
+                                    <div className="flex justify-between items-center">
+                                       <label className="text-xs font-semibold text-gray-800">
+                                          Dark Overlay Opacity
+                                       </label>
+                                       <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-amber-100/70 text-amber-900 border border-amber-200">
+                                          {typeof block.data.overlayOpacity === 'number' ? block.data.overlayOpacity : 30}%
+                                       </span>
+                                    </div>
+                                    <input 
+                                       type="range" 
+                                       min="0" 
+                                       max="100" 
+                                       step="5" 
+                                       value={typeof block.data.overlayOpacity === 'number' ? block.data.overlayOpacity : 30} 
+                                       onChange={e => updateBlockData(block.id, { overlayOpacity: parseInt(e.target.value) })} 
+                                       className="w-full accent-[#FB7F05] cursor-pointer"
+                                    />
+                                    <div className="flex justify-between items-center text-[10px] text-gray-400 font-mono">
+                                       <span>0% (Raw Image)</span>
+                                       <span className="text-[#FB7F05] font-bold">30% (Recommended)</span>
+                                       <span>100% (Dark)</span>
+                                    </div>
+                                    <div className="flex flex-wrap gap-1.5 pt-1">
+                                       {[
+                                          { label: '15% Crystal Clear', val: 15 },
+                                          { label: '30% Vibrant', val: 30 },
+                                          { label: '50% Medium', val: 50 },
+                                          { label: '75% Deep', val: 75 }
+                                       ].map(preset => (
+                                          <button
+                                             key={preset.val}
+                                             type="button"
+                                             onClick={() => updateBlockData(block.id, { overlayOpacity: preset.val })}
+                                             className={`text-[10px] px-2 py-1 rounded border font-medium transition-colors ${
+                                                (typeof block.data.overlayOpacity === 'number' ? block.data.overlayOpacity : 30) === preset.val
+                                                   ? 'bg-[#FB7F05] text-white border-[#FB7F05]'
+                                                   : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                                             }`}
+                                          >
+                                             {preset.label}
+                                          </button>
+                                       ))}
+                                    </div>
+                                 </div>
+
+                                 {/* Image Brightness */}
+                                 <div className="bg-white p-3.5 rounded-lg border border-amber-100 shadow-xs space-y-2">
+                                    <div className="flex justify-between items-center">
+                                       <label className="text-xs font-semibold text-gray-800">
+                                          Image Brightness
+                                       </label>
+                                       <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-gray-100 text-gray-800 border border-gray-200">
+                                          {typeof block.data.imageBrightness === 'number' ? block.data.imageBrightness : 100}%
+                                       </span>
+                                    </div>
+                                    <input 
+                                       type="range" 
+                                       min="70" 
+                                       max="130" 
+                                       step="5" 
+                                       value={typeof block.data.imageBrightness === 'number' ? block.data.imageBrightness : 100} 
+                                       onChange={e => updateBlockData(block.id, { imageBrightness: parseInt(e.target.value) })} 
+                                       className="w-full accent-[#FB7F05] cursor-pointer"
+                                    />
+                                    <div className="flex justify-between items-center text-[10px] text-gray-400 font-mono">
+                                       <span>70% (Dimmed)</span>
+                                       <span className="text-gray-700 font-bold">100% (Natural)</span>
+                                       <span>130% (Boosted)</span>
+                                    </div>
+                                    <div className="flex flex-wrap gap-1.5 pt-1">
+                                       {[
+                                          { label: '90%', val: 90 },
+                                          { label: '100% Natural', val: 100 },
+                                          { label: '110% Boosted', val: 110 },
+                                          { label: '120% Sunlit', val: 120 }
+                                       ].map(preset => (
+                                          <button
+                                             key={preset.val}
+                                             type="button"
+                                             onClick={() => updateBlockData(block.id, { imageBrightness: preset.val })}
+                                             className={`text-[10px] px-2 py-1 rounded border font-medium transition-colors ${
+                                                (typeof block.data.imageBrightness === 'number' ? block.data.imageBrightness : 100) === preset.val
+                                                   ? 'bg-[#FB7F05] text-white border-[#FB7F05]'
+                                                   : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                                             }`}
+                                          >
+                                             {preset.label}
+                                          </button>
+                                       ))}
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+
                            <div>
                               <div className="flex justify-between items-center mb-3">
                                  <label className="text-xs font-bold text-gray-800 uppercase">Slides List ({(block.data.slides || []).length})</label>
@@ -1604,6 +1720,48 @@ export default function PageBuilder({
                                                 }} 
                                                 className="admin-input text-xs bg-white" 
                                                 placeholder="e.g. /admissions" 
+                                             />
+                                          </div>
+                                       </div>
+
+                                       {/* Optional Slide-specific overrides */}
+                                       <div className="pt-2 border-t border-gray-200/80 grid grid-cols-1 md:grid-cols-2 gap-3">
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">
+                                                Slide Opacity Override (%) <span className="font-normal text-gray-400 font-mono">(Optional)</span>
+                                             </label>
+                                             <input 
+                                                type="number"
+                                                min="0"
+                                                max="100"
+                                                value={typeof slide.overlayOpacity === 'number' ? slide.overlayOpacity : ""}
+                                                onChange={e => {
+                                                   const val = e.target.value === "" ? undefined : parseInt(e.target.value);
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], overlayOpacity: val };
+                                                   updateBlockData(block.id, { slides });
+                                                }}
+                                                className="admin-input text-xs bg-white"
+                                                placeholder={`Inherited (${typeof block.data.overlayOpacity === 'number' ? block.data.overlayOpacity : 30}%)`}
+                                             />
+                                          </div>
+                                          <div>
+                                             <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">
+                                                Slide Brightness Override (%) <span className="font-normal text-gray-400 font-mono">(Optional)</span>
+                                             </label>
+                                             <input 
+                                                type="number"
+                                                min="70"
+                                                max="130"
+                                                value={typeof slide.imageBrightness === 'number' ? slide.imageBrightness : ""}
+                                                onChange={e => {
+                                                   const val = e.target.value === "" ? undefined : parseInt(e.target.value);
+                                                   const slides = [...block.data.slides];
+                                                   slides[sIdx] = { ...slides[sIdx], imageBrightness: val };
+                                                   updateBlockData(block.id, { slides });
+                                                }}
+                                                className="admin-input text-xs bg-white"
+                                                placeholder={`Inherited (${typeof block.data.imageBrightness === 'number' ? block.data.imageBrightness : 100}%)`}
                                              />
                                           </div>
                                        </div>
