@@ -51,17 +51,33 @@ export function parseCcEmails(ccString: string | undefined): string[] {
     .filter((e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));
 }
 
-export function createMailTransporter(settings: EmailSettings) {
+export function createMailTransporter(settings: EmailSettings, forceSecure?: boolean) {
   if (!settings.smtpHost || !settings.smtpUser) {
     return null;
   }
 
+  const port = Number(settings.smtpPort) || 587;
+  
+  // Port 465: Direct SSL/TLS (secure: true)
+  // Port 587 or 25: STARTTLS upgrade (secure: false)
+  // Other ports: fallback to user toggle or port === 465
+  let isSecure = false;
+  if (typeof forceSecure === "boolean") {
+    isSecure = forceSecure;
+  } else if (port === 465) {
+    isSecure = true;
+  } else if (port === 587 || port === 25) {
+    isSecure = false;
+  } else {
+    isSecure = Boolean(settings.smtpSecure);
+  }
+
   return nodemailer.createTransport({
-    host: settings.smtpHost,
-    port: Number(settings.smtpPort) || 587,
-    secure: settings.smtpSecure || Number(settings.smtpPort) === 465,
+    host: settings.smtpHost.trim(),
+    port: port,
+    secure: isSecure,
     auth: {
-      user: settings.smtpUser,
+      user: settings.smtpUser.trim(),
       pass: settings.smtpPass,
     },
     tls: {
@@ -89,7 +105,7 @@ export async function sendLeadNotificationEmail(leadData: {
   }
 
   try {
-    const transporter = createMailTransporter(settings);
+    let transporter = createMailTransporter(settings);
     if (!transporter) {
       return { success: false, reason: "Transporter could not be created" };
     }

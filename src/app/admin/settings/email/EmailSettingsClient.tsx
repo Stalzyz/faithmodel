@@ -210,29 +210,57 @@ export default function EmailSettingsClient({ initialSettings }: { initialSettin
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-gray-700 uppercase mb-1.5">
-                SMTP Port <span className="text-red-500">*</span>
-              </label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="block text-xs font-semibold text-gray-700 uppercase">
+                  SMTP Port <span className="text-red-500">*</span>
+                </label>
+                <div className="flex gap-1 text-[11px]">
+                  <button
+                    type="button"
+                    onClick={() => setSettings({ ...settings, smtpPort: 587, smtpSecure: false })}
+                    className={`px-2 py-0.5 rounded cursor-pointer ${settings.smtpPort === 587 ? 'bg-blue-600 text-white font-bold' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`}
+                  >
+                    587 (TLS)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSettings({ ...settings, smtpPort: 465, smtpSecure: true })}
+                    className={`px-2 py-0.5 rounded cursor-pointer ${settings.smtpPort === 465 ? 'bg-blue-600 text-white font-bold' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`}
+                  >
+                    465 (SSL)
+                  </button>
+                </div>
+              </div>
               <input
                 type="number"
                 value={settings.smtpPort}
-                onChange={(e) => setSettings({ ...settings, smtpPort: parseInt(e.target.value) || 587 })}
+                onChange={(e) => {
+                  const val = parseInt(e.target.value) || 587;
+                  setSettings({ 
+                    ...settings, 
+                    smtpPort: val,
+                    smtpSecure: val === 465
+                  });
+                }}
                 className="admin-input text-sm"
                 placeholder="587 or 465"
               />
             </div>
           </div>
 
-          <div className="mb-5 flex items-center gap-2">
+          <div className="mb-5 p-3.5 bg-gray-50 border border-gray-200 rounded-lg flex items-center gap-3">
             <input
               type="checkbox"
               id="smtpSecure"
               checked={settings.smtpSecure}
               onChange={(e) => setSettings({ ...settings, smtpSecure: e.target.checked })}
-              className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+              className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
             />
-            <label htmlFor="smtpSecure" className="text-xs font-medium text-gray-700">
-              Use SSL / TLS (Enable if using port 465; disable if using port 587 with STARTTLS)
+            <label htmlFor="smtpSecure" className="text-xs text-gray-700 cursor-pointer select-none">
+              <span className="font-semibold text-gray-900">Direct SSL / TLS Encryption</span>
+              <span className="block text-[11px] text-gray-500 mt-0.5">
+                Enable for <strong>Port 465</strong>. For <strong>Port 587</strong> (standard for Gmail, Google Workspace, Outlook, Zoho), keep unchecked (STARTTLS will be used automatically).
+              </span>
             </label>
           </div>
 
