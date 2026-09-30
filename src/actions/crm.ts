@@ -23,14 +23,31 @@ export async function submitEnquiry(data: {
       },
     });
 
-    // Send / log email notification to school admissions email ID
-    const schoolEmail = "Admissions@faithmodelschool.com";
-    console.log(`[EMAIL NOTIFICATION SENT] To: ${schoolEmail} | Lead ID: ${lead.id} | Name: ${data.name} | Phone: ${data.phone || 'N/A'} | Email: ${data.email || 'N/A'}`);
+    // Send email notification to configured admissions and CC emails via SMTP
+    let emailResult = null;
+    try {
+      const { sendLeadNotificationEmail } = await import("@/lib/mail");
+      emailResult = await sendLeadNotificationEmail({
+        leadId: lead.id,
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        courseInterest: data.courseInterest,
+        notes: data.notes,
+      });
+    } catch (mailErr) {
+      console.error("[LEAD EMAIL NOTIFICATION FAILED]:", mailErr);
+    }
 
-    revalidatePath("/admin");
-    revalidatePath("/admin/leads");
+    try {
+      revalidatePath("/admin");
+      revalidatePath("/admin/leads");
+      revalidatePath("/admin/enquiries");
+    } catch {
+      // Revalidation may be skipped outside Next.js request context
+    }
     
-    return { success: true, leadId: lead.id, recipient: schoolEmail };
+    return { success: true, leadId: lead.id, emailResult };
   } catch (error) {
     console.error("Failed to submit enquiry:", error);
     return { success: false, error: "Failed to submit enquiry. Please try again." };

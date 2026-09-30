@@ -37,34 +37,85 @@ export default function AdmissionsEnquiryForm() {
 
   return (
     <SketchReveal delay={0.2}>
-      <div className="bg-[#1a1a2e] p-10 relative overflow-hidden">
-        <div className="absolute inset-0 graph-paper opacity-5" />
+      <div className="bg-white border-2 border-blue-600 rounded-2xl p-8 md:p-10 relative overflow-hidden shadow-xl shadow-blue-600/5">
         <div className="relative z-10">
-          <div className="font-caveat text-[#FB7F05] text-xl mb-2">Quick Enquiry</div>
-          <h3 className="font-cormorant text-3xl font-light text-[#fefcf3] mb-8">We'll call you back.</h3>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            <span className="font-caveat text-blue-600 text-xl font-medium">Quick Enquiry</span>
+          </div>
+          <h3 className="font-cormorant text-3xl md:text-4xl font-light text-[#1a1a2e] mb-2">We&apos;ll call you back.</h3>
+          <p className="font-inter text-xs text-gray-500 mb-6">Leave your contact details and our admissions counsellor will reach out shortly.</p>
           
           {success ? (
-            <div className="bg-[rgba(212,160,23,0.1)] border border-[#FB7F05] p-6 text-center">
-              <div className="text-[#FB7F05] text-3xl mb-2">✓</div>
-              <h4 className="font-poppins text-sm font-semibold text-[#fefcf3] mb-2">Enquiry Received</h4>
-              <p className="font-inter text-sm text-[#fefcf3]/80">Our admissions counsellor will contact you within 24 hours.</p>
+            <div className="bg-blue-50/80 border-2 border-blue-600/30 rounded-xl p-8 text-center">
+              <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto text-xl font-bold mb-3 shadow-md shadow-blue-600/20">✓</div>
+              <h4 className="font-poppins text-base font-semibold text-gray-900 mb-1">Enquiry Received</h4>
+              <p className="font-inter text-sm text-gray-600">Our admissions counsellor will contact you within 24 hours.</p>
               <button 
                 onClick={() => setSuccess(false)}
-                className="mt-6 font-poppins text-xs font-semibold text-[#FB7F05] hover:text-[#fefcf3] transition-colors"
+                className="mt-6 inline-flex items-center gap-1 font-poppins text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors uppercase tracking-wider"
               >
-                Submit another enquiry
+                ← Submit another enquiry
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {error && <div className="text-red-400 text-sm font-inter mb-4">{error}</div>}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {error && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-xs font-inter">
+                  {error}
+                </div>
+              )}
               
-              <input name="parentName" required type="text" placeholder="Parent's Name" className="w-full border-b border-[rgba(254,252,243,0.2)] bg-transparent py-3 font-inter text-sm text-[#fefcf3] placeholder-[#fefcf3]/40 focus:outline-none focus:border-[#FB7F05] transition-colors" />
-              <input name="childName" required type="text" placeholder="Child's Name" className="w-full border-b border-[rgba(254,252,243,0.2)] bg-transparent py-3 font-inter text-sm text-[#fefcf3] placeholder-[#fefcf3]/40 focus:outline-none focus:border-[#FB7F05] transition-colors" />
-              <input name="grade" required type="text" placeholder="Grade Applying For" className="w-full border-b border-[rgba(254,252,243,0.2)] bg-transparent py-3 font-inter text-sm text-[#fefcf3] placeholder-[#fefcf3]/40 focus:outline-none focus:border-[#FB7F05] transition-colors" />
-              <input name="phone" required type="tel" placeholder="Mobile Number" className="w-full border-b border-[rgba(254,252,243,0.2)] bg-transparent py-3 font-inter text-sm text-[#fefcf3] placeholder-[#fefcf3]/40 focus:outline-none focus:border-[#FB7F05] transition-colors" />
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">Parent&apos;s Name <span className="text-red-500">*</span></label>
+                <input 
+                  name="parentName" 
+                  required 
+                  type="text" 
+                  placeholder="e.g. Rajesh Kumar" 
+                  className="w-full bg-gray-50/60 border border-blue-200 rounded-lg px-4 py-3 font-inter text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all" 
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">Child&apos;s Name <span className="text-red-500">*</span></label>
+                <input 
+                  name="childName" 
+                  required 
+                  type="text" 
+                  placeholder="e.g. Aarav Kumar" 
+                  className="w-full bg-gray-50/60 border border-blue-200 rounded-lg px-4 py-3 font-inter text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all" 
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">Grade Applying For <span className="text-red-500">*</span></label>
+                  <input 
+                    name="grade" 
+                    required 
+                    type="text" 
+                    placeholder="e.g. Grade 1 / Pre-KG" 
+                    className="w-full bg-gray-50/60 border border-blue-200 rounded-lg px-4 py-3 font-inter text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">Mobile Number <span className="text-red-500">*</span></label>
+                  <input 
+                    name="phone" 
+                    required 
+                    type="tel" 
+                    placeholder="+91 98765 43210" 
+                    className="w-full bg-gray-50/60 border border-blue-200 rounded-lg px-4 py-3 font-inter text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all" 
+                  />
+                </div>
+              </div>
               
-              <button disabled={loading} type="submit" className="w-full mt-2 bg-[#FB7F05] text-[#1a1a2e] font-poppins text-sm font-semibold py-4 hover:bg-[#fefcf3] transition-colors disabled:opacity-70">
+              <button 
+                disabled={loading} 
+                type="submit" 
+                className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-poppins text-sm font-semibold py-3.5 px-6 rounded-lg shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 transition-all disabled:opacity-60 cursor-pointer"
+              >
                 {loading ? "Submitting..." : "Request a Callback"}
               </button>
             </form>

@@ -45,6 +45,8 @@ import VideoBlock from "@/components/cms-blocks/VideoBlock";
 import MosaicGalleryBlock from "@/components/cms-blocks/MosaicGalleryBlock";
 import AdmissionsSpotlightBlock from "@/components/cms-blocks/AdmissionsSpotlightBlock";
 import ShowreelHeroBlock from "@/components/cms-blocks/ShowreelHeroBlock";
+import InstitutionalQuotesBlock from "@/components/cms-blocks/InstitutionalQuotesBlock";
+import FounderChairmanBlock from "@/components/cms-blocks/FounderChairmanBlock";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -214,6 +216,10 @@ export default async function CustomDynamicPage({ params }: { params: Promise<{ 
                return <MosaicGalleryBlock key={block.id} data={block.data} />;
             case "SHOWREEL_HERO_BLOCK":
                return <ShowreelHeroBlock key={block.id} block={block} />;
+            case "INSTITUTIONAL_QUOTES_BLOCK":
+               return <InstitutionalQuotesBlock key={block.id} data={block.data} />;
+            case "FOUNDER_CHAIRMAN_BLOCK":
+               return <FounderChairmanBlock key={block.id} data={block.data} />;
 
             default:
                return null;

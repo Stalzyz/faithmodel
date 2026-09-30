@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save, FileText } from "lucide-react";
+import { Plus, Trash2, GripVertical, ChevronUp, ChevronDown, Save, FileText, Search, Sparkles, LayoutGrid, Users, Quote as QuoteIcon } from "lucide-react";
 import ImageUploader from "./ImageUploader";
 import FileUploader from "./FileUploader";
 
-export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK" | "ADMISSIONS_SPOTLIGHT_BLOCK" | "SHOWREEL_HERO_BLOCK";
+export type BlockType = "HERO" | "TEXT_BLOCK" | "IMAGE_GRID" | "CTA_SECTION" | "PHILOSOPHY_SPLIT" | "CURRICULUM_OVERVIEW" | "SIGNATURE_PROGRAMS" | "ASSESSMENT_SYSTEM" | "TIMELINE_BLOCK" | "ICON_GRID_BLOCK" | "STEPS_BLOCK" | "TABLE_BLOCK" | "PROFILE_GRID" | "CONTACT_BLOCK" | "ACCORDION_BLOCK" | "POSTS_BLOCK" | "GALLERY_BLOCK" | "SKETCHBOOK_HERO" | "MOODBOARD_HERO" | "GOLDEN_HERO" | "WELCOME_BLOCK" | "STATS_BLOCK" | "WHY_CHOOSE_US_BLOCK" | "PHILOSOPHY_SECTION_BLOCK" | "ACADEMIC_EXCELLENCE_BLOCK" | "STUDENT_JOURNEY_BLOCK" | "CAMPUS_EXPERIENCE_BLOCK" | "FACILITIES_OVERVIEW_BLOCK" | "FEATURED_PROGRAMS_BLOCK" | "ACHIEVEMENTS_TICKER_BLOCK" | "UPCOMING_EVENTS_BLOCK" | "TESTIMONIALS_BLOCK" | "CUSTOM_HTML_BLOCK" | "HOMEPAGE_HERO_BLOCK" | "FAQ_BLOCK" | "VIDEO_BLOCK" | "MOSAIC_GALLERY_BLOCK" | "ADMISSIONS_SPOTLIGHT_BLOCK" | "SHOWREEL_HERO_BLOCK" | "INSTITUTIONAL_QUOTES_BLOCK" | "FOUNDER_CHAIRMAN_BLOCK";
 
 export interface PageBlock {
   id: string;
@@ -111,8 +111,286 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
         ctaHref: "/campus"
       }
     ]
+  },
+  INSTITUTIONAL_QUOTES_BLOCK: {
+    annotation: "Guiding Philosophy",
+    title: "Words That Guide Our Vision",
+    subtitle: "The foundational beliefs that inspire our educational journey every day.",
+    quotes: [
+      {
+        tag: "FOUNDATION BELIEF",
+        quote: "IF FAITH CAN MOVE MOUNTAINS, YOUR CHILD CAN DO WONDERS, AS YOU TAKE THE FIRST STEP IN CHOOSING FAITH MODEL SCHOOL, THE FOUNDATION STONE FOR YOUR CHILD'S GREAT FUTURE",
+        source: "Faith Model School Prospectus",
+        author: "School Creed"
+      },
+      {
+        tag: "OUR COMMITMENT",
+        quote: "WE as an EDUCATIONAL institution, aim to recognize your CHILD'S SKILLS, HARNESS THEIR TALENTS, and nurture them towards positive growth into little individuals capable of brandishing his or her own UNIQUE POTENTIAL OF FAITH.",
+        source: "Institutional Mission",
+        author: "Educational Charter"
+      }
+    ]
+  },
+  FOUNDER_CHAIRMAN_BLOCK: {
+    annotation: "Founding Pillars",
+    title: "Founder & Chairman",
+    subtitle: "The visionary leadership fostering excellence, health, and 21st-century entrepreneurial mindset.",
+    leaders: [
+      {
+        role: "FOUNDER",
+        name: "Dr. S.A. Fazlulla",
+        image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+        bio: "Dr. S.A. Fazlulla is a child specialist with over four decades of experience in the medical field. In his capacity as a doctor, he not only treats children with medical issues but also deals with their psychological aspects such as behavior and development.\n\nFaith Model School (FMS) is his brainchild and Dr. Fazlulla currently mentors children to grow into healthy individuals both mentally and physically.",
+        messageTitle: "Founder's Message:",
+        message: "I believe children should not stop building castles in the air. And with groundwork from Faith Model School, their dreams are bound to come true.",
+        theme: "amber"
+      },
+      {
+        role: "CHAIRMAN",
+        name: "Mr. K.S. Kader Batcha",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+        bio: "Mr. K.S. Kader Batcha, is an industrialist, currently training and running businesses in China. He holds a degree in textile engineering. He owns and runs textiles business and mainly exports the products to US and European markets. The other company in the name of AMD Overseas Impex India Company in Tiruppur manufactures, exports and imports a vast range of Window Frames, UPVC doors and windows. Mr. Batcha is actively involved in children's education and as an entrepreneur, he is looked up to by his peers and subordinates alike.",
+        messageTitle: "Chairman's Message:",
+        message: "No one is born an entrepreneur. But there's no minimum age to begin training to be one. Faith Model School offers 21st century education focusing on entrepreneurship skills from a tender age.",
+        theme: "blue"
+      }
+    ]
   }
 };
+
+export interface SectionMeta {
+  type: BlockType;
+  title: string;
+  category: "Leadership & Quotes" | "Heros & Banners" | "Philosophy & Story" | "Academics" | "Campus & Media" | "Forms & Admissions";
+  desc: string;
+  badge?: string;
+}
+
+export const SECTIONS_CATALOG: SectionMeta[] = [
+  // Leadership & Quotes
+  {
+    type: "FOUNDER_CHAIRMAN_BLOCK",
+    title: "Founder & Chairman Messages",
+    category: "Leadership & Quotes",
+    desc: "Feature founder and chairman bios, profile portraits, and their inspiring message quote boxes.",
+    badge: "Official Prospectus"
+  },
+  {
+    type: "INSTITUTIONAL_QUOTES_BLOCK",
+    title: "Institutional Quotes",
+    category: "Leadership & Quotes",
+    desc: "Clean, professional double/single quote showcases for school motto, creeds, and foundation beliefs.",
+    badge: "Clean Style"
+  },
+  {
+    type: "PROFILE_GRID",
+    title: "Team & Leadership Grid",
+    category: "Leadership & Quotes",
+    desc: "Staff, teachers, or advisory board photo grid with roles and short bios."
+  },
+  {
+    type: "WELCOME_BLOCK",
+    title: "Principal / Welcome Letter",
+    category: "Leadership & Quotes",
+    desc: "Formal welcome message from the head of school with signature & photo."
+  },
+  {
+    type: "TESTIMONIALS_BLOCK",
+    title: "Parent & Student Testimonials",
+    category: "Leadership & Quotes",
+    desc: "Interactive review slider showcasing words from parents and alumni."
+  },
+
+  // Heros & Banners
+  {
+    type: "SHOWREEL_HERO_BLOCK",
+    title: "Showreel Hero Slider",
+    category: "Heros & Banners",
+    desc: "Full-width dynamic image carousel with badge tags, double-line typography, and CTA buttons."
+  },
+  {
+    type: "HOMEPAGE_HERO_BLOCK",
+    title: "Sketchbook Homepage Hero",
+    category: "Heros & Banners",
+    desc: "Editorial homepage hero with ribbon announcement, orange highlight word, and virtual tour link."
+  },
+  {
+    type: "GOLDEN_HERO",
+    title: "Golden Ratio Hero",
+    category: "Heros & Banners",
+    desc: "Artistic asymmetrical grid layout with quote box, primary CTA, and dual media frames."
+  },
+  {
+    type: "MOODBOARD_HERO",
+    title: "Moodboard Hero",
+    category: "Heros & Banners",
+    desc: "Multi-photo collage layout with headline and admission buttons."
+  },
+  {
+    type: "HERO",
+    title: "Classic Clean Hero",
+    category: "Heros & Banners",
+    desc: "Minimalist header with cursive eyebrow text and bold cormorant heading."
+  },
+
+  // Philosophy & Story
+  {
+    type: "PHILOSOPHY_SECTION_BLOCK",
+    title: "Curiosity Meets Character",
+    category: "Philosophy & Story",
+    desc: "Philosophy pillars list paired with a captioned campus photograph."
+  },
+  {
+    type: "PHILOSOPHY_SPLIT",
+    title: "Philosophy Split",
+    category: "Philosophy & Story",
+    desc: "Two-column editorial split with rich HTML text and image."
+  },
+  {
+    type: "WHY_CHOOSE_US_BLOCK",
+    title: "Educational Promise / Pillars",
+    category: "Philosophy & Story",
+    desc: "Three or four core pillars highlighting key school differentiators."
+  },
+  {
+    type: "TIMELINE_BLOCK",
+    title: "Milestones & Journey",
+    category: "Philosophy & Story",
+    desc: "Year-by-year chronological timeline showcasing school history and achievements."
+  },
+  {
+    type: "ICON_GRID_BLOCK",
+    title: "Core Values & Principles",
+    category: "Philosophy & Story",
+    desc: "Grid of icon-backed cards describing institutional values like Integrity and Excellence."
+  },
+  {
+    type: "TEXT_BLOCK",
+    title: "Rich Text / HTML Section",
+    category: "Philosophy & Story",
+    desc: "Standard content section supporting paragraphs, headings, and formatting."
+  },
+
+  // Academics
+  {
+    type: "ACADEMIC_EXCELLENCE_BLOCK",
+    title: "Academic Levels & Journey",
+    category: "Academics",
+    desc: "Multi-grade progression cards (Kindergarten, Primary, Middle, Secondary)."
+  },
+  {
+    type: "CURRICULUM_OVERVIEW",
+    title: "Curriculum Overview",
+    category: "Academics",
+    desc: "Structured breakdown of CBSE syllabus, teaching methodologies, and subjects."
+  },
+  {
+    type: "SIGNATURE_PROGRAMS",
+    title: "Signature Academic Programs",
+    category: "Academics",
+    desc: "Spotlight on specialized offerings like Robotics, Vedic Math, and Language Labs."
+  },
+  {
+    type: "STUDENT_JOURNEY_BLOCK",
+    title: "Student Growth Stages",
+    category: "Academics",
+    desc: "Step-by-step visual path from Pre-KG to higher secondary graduation."
+  },
+  {
+    type: "ASSESSMENT_SYSTEM",
+    title: "Evaluation & Assessment",
+    category: "Academics",
+    desc: "Grading criteria, continuous evaluation methods, and parent reporting schedules."
+  },
+
+  // Campus & Media
+  {
+    type: "CAMPUS_EXPERIENCE_BLOCK",
+    title: "Campus Life & Experience",
+    category: "Campus & Media",
+    desc: "Two-photo presentation with bulleted feature checklist and campus tour link."
+  },
+  {
+    type: "FACILITIES_OVERVIEW_BLOCK",
+    title: "Facilities & Infrastructure",
+    category: "Campus & Media",
+    desc: "Showcase labs, libraries, smart classrooms, and sports arenas."
+  },
+  {
+    type: "MOSAIC_GALLERY_BLOCK",
+    title: "Mosaic Photo Gallery",
+    category: "Campus & Media",
+    desc: "Modern asymmetric grid of student life and campus moments."
+  },
+  {
+    type: "VIDEO_BLOCK",
+    title: "Campus Video Tour",
+    category: "Campus & Media",
+    desc: "Embedded YouTube or video player with custom poster thumbnail."
+  },
+  {
+    type: "IMAGE_GRID",
+    title: "3-Column Photo Grid",
+    category: "Campus & Media",
+    desc: "Simple responsive triple-image showcase."
+  },
+  {
+    type: "GALLERY_BLOCK",
+    title: "Media Album Strip",
+    category: "Campus & Media",
+    desc: "Campus photo gallery with title and subtitle."
+  },
+
+  // Forms & Admissions
+  {
+    type: "ADMISSIONS_SPOTLIGHT_BLOCK",
+    title: "Admissions Spotlight Banner",
+    category: "Forms & Admissions",
+    desc: "Highlighted banner with open academic year, key features, and Apply button."
+  },
+  {
+    type: "STEPS_BLOCK",
+    title: "How to Apply & Admissions Form",
+    category: "Forms & Admissions",
+    desc: "Step-by-step application instructions integrated with the Admissions Callback Form."
+  },
+  {
+    type: "CTA_SECTION",
+    title: "Call-to-Action Banner",
+    category: "Forms & Admissions",
+    desc: "High-contrast action banner prompting visitors to apply or visit."
+  },
+  {
+    type: "CONTACT_BLOCK",
+    title: "Contact Details & Map",
+    category: "Forms & Admissions",
+    desc: "School address, phone numbers, email, visiting hours, and Google Map embed."
+  },
+  {
+    type: "FAQ_BLOCK",
+    title: "Frequently Asked Questions",
+    category: "Forms & Admissions",
+    desc: "Categorized collapsible accordions answering admissions and campus questions."
+  },
+  {
+    type: "ACHIEVEMENTS_TICKER_BLOCK",
+    title: "Achievements Ticker",
+    category: "Forms & Admissions",
+    desc: "Scrolling awards, sports victories, and academic trophies banner."
+  },
+  {
+    type: "UPCOMING_EVENTS_BLOCK",
+    title: "Upcoming Events Calendar",
+    category: "Forms & Admissions",
+    desc: "Date-stamped event listing with descriptions and links."
+  },
+  {
+    type: "TABLE_BLOCK",
+    title: "Fee / Information Table",
+    category: "Forms & Admissions",
+    desc: "Custom tabular data for fee schedules, age criteria, or uniforms."
+  }
+];
 
 export default function PageBuilder({
   initialTitle = "",
@@ -129,6 +407,9 @@ export default function PageBuilder({
   const [seo, setSeo] = useState<{title?: string; description?: string; image?: string}>(initialSeo);
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState<"blocks" | "seo">("blocks");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [sectionSearch, setSectionSearch] = useState<string>("");
+
 
   const addBlock = (type: BlockType) => {
     const newBlock: PageBlock = {
@@ -1333,25 +1614,276 @@ export default function PageBuilder({
                         </div>
                      )}
 
+                     {block.type === 'INSTITUTIONAL_QUOTES_BLOCK' && (
+                        <div className="space-y-4">
+                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Annotation</label>
+                                 <input type="text" value={block.data.annotation || ""} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input" placeholder="e.g. Guiding Philosophy" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Section Title</label>
+                                 <input type="text" value={block.data.title || ""} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="e.g. Words That Guide Our Vision" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Subtitle</label>
+                                 <input type="text" value={block.data.subtitle || ""} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="e.g. The foundational beliefs..." />
+                              </div>
+                           </div>
+
+                           <div className="space-y-4 pt-2">
+                              <label className="block text-xs font-bold text-gray-700 uppercase">Quotes List</label>
+                              {block.data.quotes?.map((q: any, i: number) => (
+                                 <div key={i} className="border border-gray-200 p-4 rounded-xl space-y-3 bg-gray-50/70 relative">
+                                    <div className="flex justify-between items-center">
+                                       <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Quote #{i + 1}</span>
+                                       <button onClick={() => {
+                                          const newQ = block.data.quotes.filter((_: any, idx: number) => idx !== i);
+                                          updateBlockData(block.id, { quotes: newQ });
+                                       }} className="text-red-500 hover:text-red-700 p-1"><Trash2 className="w-4 h-4" /></button>
+                                    </div>
+                                    <div>
+                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Tag / Category Badge</label>
+                                       <input type="text" value={q.tag || ""} onChange={e => {
+                                          const newQ = [...block.data.quotes];
+                                          newQ[i] = { ...newQ[i], tag: e.target.value };
+                                          updateBlockData(block.id, { quotes: newQ });
+                                       }} className="admin-input text-xs" placeholder="e.g. FOUNDATION BELIEF or OUR COMMITMENT" />
+                                    </div>
+                                    <div>
+                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Quote Text</label>
+                                       <textarea value={q.quote || ""} onChange={e => {
+                                          const newQ = [...block.data.quotes];
+                                          newQ[i] = { ...newQ[i], quote: e.target.value };
+                                          updateBlockData(block.id, { quotes: newQ });
+                                       }} className="admin-input text-xs font-medium h-24" placeholder="Quote wording..." />
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-3">
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Author / Credit</label>
+                                          <input type="text" value={q.author || ""} onChange={e => {
+                                             const newQ = [...block.data.quotes];
+                                             newQ[i] = { ...newQ[i], author: e.target.value };
+                                             updateBlockData(block.id, { quotes: newQ });
+                                          }} className="admin-input text-xs" placeholder="e.g. School Creed" />
+                                       </div>
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Source / Publication</label>
+                                          <input type="text" value={q.source || ""} onChange={e => {
+                                             const newQ = [...block.data.quotes];
+                                             newQ[i] = { ...newQ[i], source: e.target.value };
+                                             updateBlockData(block.id, { quotes: newQ });
+                                          }} className="admin-input text-xs" placeholder="e.g. Faith Model School Prospectus" />
+                                       </div>
+                                    </div>
+                                 </div>
+                              ))}
+                              <button onClick={() => updateBlockData(block.id, { quotes: [...(block.data.quotes || []), { tag: "QUOTE", quote: "New inspiring quote...", author: "Author", source: "Faith Model School" }] })} className="px-4 py-2 bg-white border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg text-xs font-semibold transition-all">
+                                 + Add Another Quote
+                              </button>
+                           </div>
+                        </div>
+                     )}
+
+                     {block.type === 'FOUNDER_CHAIRMAN_BLOCK' && (
+                        <div className="space-y-4">
+                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Annotation</label>
+                                 <input type="text" value={block.data.annotation || ""} onChange={e => updateBlockData(block.id, { annotation: e.target.value })} className="admin-input" placeholder="e.g. Founding Pillars" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Section Title</label>
+                                 <input type="text" value={block.data.title || ""} onChange={e => updateBlockData(block.id, { title: e.target.value })} className="admin-input" placeholder="e.g. Founder & Chairman" />
+                              </div>
+                              <div>
+                                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Subtitle</label>
+                                 <input type="text" value={block.data.subtitle || ""} onChange={e => updateBlockData(block.id, { subtitle: e.target.value })} className="admin-input" placeholder="e.g. The visionary leadership..." />
+                              </div>
+                           </div>
+
+                           <div className="space-y-6 pt-2">
+                              <label className="block text-xs font-bold text-gray-700 uppercase">Leadership Profiles & Messages</label>
+                              {block.data.leaders?.map((ldr: any, i: number) => (
+                                 <div key={i} className="border border-gray-200 p-5 rounded-2xl space-y-4 bg-gray-50/70">
+                                    <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+                                       <span className="text-xs font-bold text-gray-800 uppercase tracking-wider">{ldr.role || `Leader #${i+1}`} Details</span>
+                                       <button onClick={() => {
+                                          const newL = block.data.leaders.filter((_: any, idx: number) => idx !== i);
+                                          updateBlockData(block.id, { leaders: newL });
+                                       }} className="text-red-500 hover:text-red-700 p-1"><Trash2 className="w-4 h-4" /></button>
+                                    </div>
+
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Role / Badge</label>
+                                          <input type="text" value={ldr.role || ""} onChange={e => {
+                                             const newL = [...block.data.leaders];
+                                             newL[i] = { ...newL[i], role: e.target.value };
+                                             updateBlockData(block.id, { leaders: newL });
+                                          }} className="admin-input text-xs font-semibold" placeholder="e.g. FOUNDER or CHAIRMAN" />
+                                       </div>
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Full Name & Title</label>
+                                          <input type="text" value={ldr.name || ""} onChange={e => {
+                                             const newL = [...block.data.leaders];
+                                             newL[i] = { ...newL[i], name: e.target.value };
+                                             updateBlockData(block.id, { leaders: newL });
+                                          }} className="admin-input text-xs font-bold" placeholder="e.g. Dr. S.A. Fazlulla" />
+                                       </div>
+                                    </div>
+
+                                    <div>
+                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Profile Picture</label>
+                                       <ImageUploader value={ldr.image || ""} onChange={url => {
+                                          const newL = [...block.data.leaders];
+                                          newL[i] = { ...newL[i], image: url };
+                                          updateBlockData(block.id, { leaders: newL });
+                                       }} />
+                                    </div>
+
+                                    <div>
+                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Biography / Career Background</label>
+                                       <textarea value={ldr.bio || ""} onChange={e => {
+                                          const newL = [...block.data.leaders];
+                                          newL[i] = { ...newL[i], bio: e.target.value };
+                                          updateBlockData(block.id, { leaders: newL });
+                                       }} className="admin-input text-xs h-28" placeholder="Detailed bio describing medical/business background..." />
+                                    </div>
+
+                                    <div className="grid md:grid-cols-3 gap-3">
+                                       <div className="md:col-span-2">
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Message Box Title</label>
+                                          <input type="text" value={ldr.messageTitle || ""} onChange={e => {
+                                             const newL = [...block.data.leaders];
+                                             newL[i] = { ...newL[i], messageTitle: e.target.value };
+                                             updateBlockData(block.id, { leaders: newL });
+                                          }} className="admin-input text-xs" placeholder="e.g. Founder's Message: or Chairman's Message:" />
+                                       </div>
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Theme Accent</label>
+                                          <select value={ldr.theme || "amber"} onChange={e => {
+                                             const newL = [...block.data.leaders];
+                                             newL[i] = { ...newL[i], theme: e.target.value };
+                                             updateBlockData(block.id, { leaders: newL });
+                                          }} className="admin-input text-xs">
+                                             <option value="amber">Warm Amber / Gold</option>
+                                             <option value="blue">Royal Blue</option>
+                                          </select>
+                                       </div>
+                                    </div>
+
+                                    <div>
+                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Message / Quote Text</label>
+                                       <textarea value={ldr.message || ""} onChange={e => {
+                                          const newL = [...block.data.leaders];
+                                          newL[i] = { ...newL[i], message: e.target.value };
+                                          updateBlockData(block.id, { leaders: newL });
+                                       }} className="admin-input text-xs italic font-medium h-24" placeholder="Personal message or advice to children/parents..." />
+                                    </div>
+                                 </div>
+                              ))}
+                              <button onClick={() => updateBlockData(block.id, { leaders: [...(block.data.leaders || []), { role: "LEADERSHIP", name: "Name", image: "", bio: "Bio", messageTitle: "Message:", message: "Message...", theme: "blue" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all">
+                                 + Add Another Leader
+                              </button>
+                           </div>
+                        </div>
+                     )}
+
                   </div>
                </div>
             ))
          )}
       </div>
 
-      {/* Add Block Menu */}
-      <div className="mt-8 bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-         <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider text-center">Add a new block</h3>
-         <div className="flex flex-wrap justify-center gap-3">
-            {(Object.keys(DEFAULT_BLOCKS) as BlockType[]).map(type => (
-               <button 
-                  key={type}
-                  onClick={() => addBlock(type)}
-                  className="px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-[#1a1a2e] hover:bg-gray-50 transition-colors"
+      {/* Sections Library & Add Block Menu */}
+      <div id="add-sections-library" className="mt-12 bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm">
+         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-100">
+            <div>
+               <div className="flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-blue-600" />
+                  <h3 className="text-lg font-bold text-gray-900">Add Page Section</h3>
+               </div>
+               <p className="text-xs text-gray-500 mt-1">Browse categorized components or search by name to insert sections into your page.</p>
+            </div>
+
+            {/* Search Input */}
+            <div className="relative w-full md:w-72">
+               <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+               <input 
+                  type="text" 
+                  value={sectionSearch}
+                  onChange={e => setSectionSearch(e.target.value)}
+                  placeholder="Search sections (e.g. quote, founder, hero)..."
+                  className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs text-gray-900 focus:outline-none focus:border-blue-600 focus:bg-white"
+               />
+               {sectionSearch && (
+                  <button onClick={() => setSectionSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs">✕</button>
+               )}
+            </div>
+         </div>
+
+         {/* Category Tabs */}
+         <div className="flex flex-wrap gap-2 mb-6">
+            {["All", "Leadership & Quotes", "Heros & Banners", "Philosophy & Story", "Academics", "Campus & Media", "Forms & Admissions"].map((cat) => (
+               <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                     selectedCategory === cat 
+                        ? "bg-[#1a1a2e] text-white shadow-xs" 
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900"
+                  }`}
                >
-                  + {type.replace('_', ' ')}
+                  {cat}
                </button>
             ))}
+         </div>
+
+         {/* Filtered Sections Grid */}
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[500px] overflow-y-auto pr-1">
+            {SECTIONS_CATALOG
+               .filter(sec => {
+                  const matchesCat = selectedCategory === "All" || sec.category === selectedCategory;
+                  const matchesQuery = !sectionSearch || 
+                     sec.title.toLowerCase().includes(sectionSearch.toLowerCase()) || 
+                     sec.desc.toLowerCase().includes(sectionSearch.toLowerCase()) ||
+                     sec.type.toLowerCase().includes(sectionSearch.toLowerCase());
+                  return matchesCat && matchesQuery;
+               })
+               .map((sec) => (
+                  <div 
+                     key={sec.type}
+                     className="group border border-gray-200 hover:border-blue-500 rounded-xl p-4 bg-gray-50/40 hover:bg-blue-50/20 transition-all flex flex-col justify-between"
+                  >
+                     <div>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                           <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider bg-white px-2 py-0.5 rounded border border-gray-200">
+                              {sec.category}
+                           </span>
+                           {sec.badge && (
+                              <span className="text-[10px] font-bold text-blue-700 bg-blue-100/80 px-2 py-0.5 rounded-full">
+                                 {sec.badge}
+                              </span>
+                           )}
+                        </div>
+                        <h4 className="font-poppins font-semibold text-sm text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                           {sec.title}
+                        </h4>
+                        <p className="font-inter text-xs text-gray-500 leading-relaxed mb-4">
+                           {sec.desc}
+                        </p>
+                     </div>
+
+                     <button
+                        onClick={() => addBlock(sec.type)}
+                        className="w-full mt-auto py-2 px-3 bg-white hover:bg-blue-600 border border-gray-300 hover:border-blue-600 text-gray-800 hover:text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-2xs group-hover:shadow-sm cursor-pointer"
+                     >
+                        <Plus className="w-3.5 h-3.5" />
+                        Add to Page
+                     </button>
+                  </div>
+               ))}
          </div>
       </div>
       </>
