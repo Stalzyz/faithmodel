@@ -99,10 +99,10 @@ export default async function CustomDynamicPage({ params }: { params: Promise<{ 
          switch (block.type) {
             case "HERO":
                return (
-                  <div key={block.id} className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)]">
+                  <div key={block.id} className={`max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 border-b border-[rgba(74,74,94,0.08)] ${block.data.center ? "text-center flex flex-col items-center" : ""}`}>
                      <SketchReveal delay={0.1}>
                         <div className="font-caveat text-[#c17b5a] text-xl mb-4 -rotate-1">{block.data.subheadline}</div>
-                        <h1 className="font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl">
+                        <h1 className={`font-cormorant text-[clamp(3rem,7vw,6rem)] font-light text-[#1a1a2e] leading-[1.08] tracking-tight max-w-4xl ${block.data.center ? "mx-auto text-center" : ""}`}>
                            {block.data.headline}
                         </h1>
                      </SketchReveal>
