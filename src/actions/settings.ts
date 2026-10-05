@@ -138,7 +138,22 @@ export async function testSmtpConnectionAction(settings: any, testRecipient: str
     return { success: true };
   } catch (error: unknown) {
     console.error("SMTP test failed:", error);
-    const errorMessage = error instanceof Error ? error.message : "SMTP connection failed";
+    const errorMessage = error instanceof Error ? error.message : String(error);
+
+    if (errorMessage.includes("SmtpClientAuthentication is disabled") || errorMessage.includes("5.7.139")) {
+      return {
+        success: false,
+        error: `Microsoft 365 Tenant Security Notice: Authenticated SMTP (SMTP AUTH) is disabled for mailbox "${settings.smtpUser}". \n\nHow to fix in Microsoft 365 Admin:\n1. Log into admin.microsoft.com\n2. Go to Users > Active users > Click "${settings.smtpUser}"\n3. Click the Mail tab > Manage email apps\n4. Check "Authenticated SMTP" and click Save.`,
+      };
+    }
+
+    if (errorMessage.includes("5.7.8") || errorMessage.includes("Username and Password not accepted")) {
+      return {
+        success: false,
+        error: `Authentication Error: Invalid username or password for ${settings.smtpHost}. If using Gmail or Google Workspace, please generate a 16-character "App Password" under Google Account Security > 2-Step Verification > App Passwords.`,
+      };
+    }
+
     return { success: false, error: errorMessage };
   }
 }

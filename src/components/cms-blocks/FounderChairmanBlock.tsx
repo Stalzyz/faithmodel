@@ -5,8 +5,8 @@ export interface LeaderEntry {
   role: string;
   name: string;
   image?: string;
-  bio: string;
-  messageTitle: string;
+  bio?: string;
+  messageTitle?: string;
   message: string;
   theme?: "amber" | "blue" | "default";
 }
@@ -23,18 +23,12 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
     {
       role: "FOUNDER",
       name: "Dr. S.A. Fazlulla",
-      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
-      bio: "Dr. S.A. Fazlulla is a child specialist with over four decades of experience in the medical field. In his capacity as a doctor, he not only treats children with medical issues but also deals with their psychological aspects such as behavior and development.\n\nFaith Model School (FMS) is his brainchild and Dr. Fazlulla currently mentors children to grow into healthy individuals both mentally and physically.",
-      messageTitle: "Founder's Message:",
       message: "I believe children should not stop building castles in the air. And with groundwork from Faith Model School, their dreams are bound to come true.",
       theme: "amber",
     },
     {
       role: "CHAIRMAN",
       name: "Mr. K.S. Kader Batcha",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-      bio: "Mr. K.S. Kader Batcha, is an industrialist, currently training and running businesses in China. He holds a degree in textile engineering. He owns and runs textiles business and mainly exports the products to US and European markets. The other company in the name of AMD Overseas Impex India Company in Tiruppur manufactures, exports and imports a vast range of Window Frames, UPVC doors and windows. Mr. Batcha is actively involved in children's education and as an entrepreneur, he is looked up to by his peers and subordinates alike.",
-      messageTitle: "Chairman's Message:",
       message: "No one is born an entrepreneur. But there's no minimum age to begin training to be one. Faith Model School offers 21st century education focusing on entrepreneurship skills from a tender age.",
       theme: "blue",
     }
@@ -45,79 +39,51 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
       <SectionHeading 
         annotation={data.annotation || "Founding Pillars"} 
         title={data.title || "Founder & Chairman"} 
-        subtitle={data.subtitle || "The visionary leadership fostering excellence, health, and 21st-century entrepreneurial mindset."}
+        subtitle={data.subtitle || "Visionary leadership nurturing character, mental and physical health, and 21st-century entrepreneurial capabilities."}
         center
       />
 
-      <div className="mt-16 space-y-16">
+      <div className="mt-16 grid lg:grid-cols-2 gap-8 lg:gap-12">
         {leaders.map((leader, idx) => {
           const isAmber = leader.theme === "amber" || idx % 2 === 0;
 
           return (
             <SketchReveal key={idx} delay={idx * 0.15}>
-              <div className="bg-white border border-[rgba(74,74,94,0.1)] rounded-3xl p-8 md:p-12 shadow-sm hover:shadow-md transition-all overflow-hidden">
-                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                  
-                  {/* Profile Picture */}
-                  <div className="lg:col-span-4 flex flex-col items-center">
-                    <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg border-4 border-white ring-1 ring-gray-200">
-                      {leader.image ? (
-                        <img 
-                          src={leader.image} 
-                          alt={leader.name} 
-                          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" 
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400 font-semibold text-lg">
-                          {leader.name}
-                        </div>
-                      )}
-                    </div>
-                    <div className="mt-4 text-center">
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-1.5 ${
-                        isAmber 
-                          ? "bg-amber-100 text-amber-900 border border-amber-200" 
-                          : "bg-blue-100 text-blue-900 border border-blue-200"
-                      }`}>
-                        "{leader.role}"
-                      </span>
-                      <h3 className="font-poppins text-xl font-bold text-gray-900">{leader.name}</h3>
-                    </div>
-                  </div>
+              <div className="h-full bg-white border border-[rgba(74,74,94,0.1)] rounded-3xl p-8 md:p-12 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden relative group">
+                {/* Large Decorative Watermark Quote */}
+                <div className="absolute -top-4 -right-4 text-[130px] font-serif text-slate-100 select-none pointer-events-none group-hover:text-amber-50/60 transition-colors">
+                  “
+                </div>
 
-                  {/* Bio and Message */}
-                  <div className="lg:col-span-8 flex flex-col justify-between space-y-6">
-                    {/* Bio Text */}
-                    <div className="font-inter text-sm md:text-base text-gray-700 leading-relaxed space-y-3">
-                      {leader.bio.split("\n\n").map((para, pIdx) => (
-                        <p key={pIdx}>{para}</p>
-                      ))}
-                    </div>
-
-                    {/* Message Card */}
-                    <div className={`rounded-2xl p-6 md:p-7 relative border ${
-                      isAmber
-                        ? "bg-[#D97706]/10 border-[#D97706]/30 text-amber-950"
-                        : "bg-[#2563EB]/10 border-[#2563EB]/30 text-blue-950"
+                <div className="relative z-10 space-y-6">
+                  {/* Role Tag */}
+                  <div className="flex items-center gap-2">
+                    <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase border ${
+                      isAmber 
+                        ? "bg-amber-50 text-amber-900 border-amber-200" 
+                        : "bg-blue-50 text-blue-900 border-blue-200"
                     }`}>
-                      <div className="flex items-center gap-2 mb-2 font-poppins text-xs font-bold uppercase tracking-wider">
-                        <span className={`w-2 h-2 rounded-full ${isAmber ? "bg-amber-600" : "bg-blue-600"}`} />
-                        {leader.messageTitle || "Message:"}
-                      </div>
-
-                      <div className="relative pl-6">
-                        <span className={`absolute left-0 top-0 font-serif text-3xl leading-none select-none ${
-                          isAmber ? "text-amber-500" : "text-blue-500"
-                        }`}>
-                          “
-                        </span>
-                        <blockquote className="font-cormorant text-xl md:text-2xl font-medium leading-relaxed italic">
-                          {leader.message}
-                        </blockquote>
-                      </div>
-                    </div>
+                      <span className={`w-2 h-2 rounded-full ${isAmber ? "bg-amber-600" : "bg-blue-600"}`} />
+                      {leader.role || (idx === 0 ? "FOUNDER" : "CHAIRMAN")}
+                    </span>
                   </div>
 
+                  {/* Main Quote / Message */}
+                  <blockquote className="font-cormorant text-2xl md:text-3xl text-gray-900 leading-snug tracking-tight font-medium italic">
+                    "{leader.message}"
+                  </blockquote>
+                </div>
+
+                {/* Leader Name */}
+                <div className="pt-8 mt-6 border-t border-gray-100 flex items-center justify-between relative z-10">
+                  <div>
+                    <h3 className="font-poppins text-lg md:text-xl font-bold text-gray-900">
+                      {leader.name}
+                    </h3>
+                    <p className="text-xs font-medium text-gray-500 mt-0.5">
+                      {leader.role === "FOUNDER" || idx === 0 ? "Founder, Faith Model School" : "Chairman, Faith Model School"}
+                    </p>
+                  </div>
                 </div>
               </div>
             </SketchReveal>

@@ -205,7 +205,12 @@ export async function sendLeadNotificationEmail(leadData: {
     return { success: true, messageId: info.messageId };
   } catch (error: unknown) {
     console.error("[SMTP EMAIL ERROR]:", error);
-    const errorMessage = error instanceof Error ? error.message : "Failed to send email";
+    let errorMessage = error instanceof Error ? error.message : String(error);
+
+    if (errorMessage.includes("SmtpClientAuthentication is disabled") || errorMessage.includes("5.7.139")) {
+      errorMessage = `Microsoft 365 Tenant Security: Authenticated SMTP (SMTP AUTH) is disabled for mailbox "${settings.smtpUser}". Enable SMTP AUTH in Microsoft 365 Admin > Users > Active Users > Mail > Manage email apps.`;
+    }
+
     return { success: false, error: errorMessage };
   }
 }
