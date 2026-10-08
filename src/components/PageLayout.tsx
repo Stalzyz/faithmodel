@@ -79,10 +79,16 @@ function PageFooter({ footerNav, general, contact, socials, logoUrl }: { footerN
       </div>
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-[rgba(74,74,94,0.08)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#4a4a5e]/60 font-inter">
         <span>© {new Date().getFullYear()} {siteName}. All rights reserved.</span>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <Link href="/mandatory-disclosure" className="hover:text-[#FB7F05] transition-colors">CBSE Disclosure</Link>
           <Link href="/safety#child-protection" className="hover:text-[#FB7F05] transition-colors">Child Protection Policy</Link>
           <Link href="/contact" className="hover:text-[#FB7F05] transition-colors">Grievance</Link>
+          <span className="text-[11px] text-[#4a4a5e]/50">
+            Web Partners:{" "}
+            <a href="https://Agency.grekam.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#FB7F05] transition-colors underline underline-offset-2">Grekam Agency</a>
+            {" & "}
+            <a href="https://inertiacreation.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#FB7F05] transition-colors underline underline-offset-2">Inertia Creation</a>
+          </span>
         </div>
       </div>
     </footer>

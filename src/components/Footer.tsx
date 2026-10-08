@@ -74,10 +74,16 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>&copy; {new Date().getFullYear()} Faith Model School. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy" className="hover:text-slate-300">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-slate-300">Terms of Service</Link>
             <Link href="/sitemap" className="hover:text-slate-300">Sitemap</Link>
+            <span className="text-slate-500 text-[11px]">
+              Web Partners:{" "}
+              <a href="https://Agency.grekam.in" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline underline-offset-2">Grekam Agency</a>
+              {" & "}
+              <a href="https://inertiacreation.in" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline underline-offset-2">Inertia Creation</a>
+            </span>
           </div>
         </div>
       </div>

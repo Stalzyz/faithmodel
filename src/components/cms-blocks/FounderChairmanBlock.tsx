@@ -4,10 +4,11 @@ import SectionHeading from "@/components/SectionHeading";
 export interface LeaderEntry {
   role: string;
   name: string;
+  degree?: string;
   image?: string;
   bio?: string;
   messageTitle?: string;
-  message: string;
+  message?: string;
   theme?: "amber" | "blue" | "default";
 }
 
@@ -15,6 +16,9 @@ export interface FounderChairmanBlockData {
   annotation?: string;
   title?: string;
   subtitle?: string;
+  nameSize?: "sm" | "base" | "lg" | "xl";
+  bioSize?: "sm" | "base" | "lg";
+  quoteSize?: "sm" | "base" | "lg";
   leaders?: LeaderEntry[];
 }
 
@@ -22,6 +26,7 @@ const DEFAULT_LEADERS: LeaderEntry[] = [
   {
     role: "FOUNDER",
     name: "Dr. S.A. Fazlulla",
+    degree: "M.B.B.S, D.C.H",
     bio: "Dr. S.A. Fazlulla is a child specialist with over four decades of experience in the medical field. In his capacity as a doctor, he not only treats children with medical issues but also deals with their psychological aspects such as behavior and development.\n\nFaith Model School (FMS) is his brainchild and Dr. Fazlulla currently mentors children to grow into healthy individuals both mentally and physically.",
     messageTitle: "FOUNDER'S MESSAGE",
     message: "I believe children should not stop building castles in the air. And with groundwork from Faith Model School, their dreams are bound to come true.",
@@ -30,6 +35,7 @@ const DEFAULT_LEADERS: LeaderEntry[] = [
   {
     role: "CHAIRMAN",
     name: "Mr. K.S. Kader Batcha",
+    degree: "B.Tech",
     bio: "Mr. K.S. Kader Batcha is an industrialist, currently training and running businesses in China. He holds a degree in textile engineering. He owns and runs textiles business and mainly exports the products to US and European markets. The other company in the name of AMD Overseas Impex India Company in Tiruppur manufactures, exports and imports a vast range of Window Frames, UPVC doors and windows. Mr. Batcha is actively involved in children's education and as an entrepreneur, he is looked up to by his peers and subordinates alike.",
     messageTitle: "CHAIRMAN'S MESSAGE",
     message: "No one is born an entrepreneur. But there's no minimum age to begin training to be one. Faith Model School offers 21st century education focusing on entrepreneurship skills from a tender age.",
@@ -38,8 +44,43 @@ const DEFAULT_LEADERS: LeaderEntry[] = [
 ];
 
 export default function FounderChairmanBlock({ data }: { data: FounderChairmanBlockData }) {
-  const rawLeaders = data?.leaders || [];
-  const leaders: LeaderEntry[] = rawLeaders.length > 0 ? rawLeaders : DEFAULT_LEADERS;
+  const hasCustomLeaders = Array.isArray(data?.leaders) && data.leaders.length > 0;
+  const leaders: LeaderEntry[] = hasCustomLeaders ? data.leaders! : DEFAULT_LEADERS;
+
+  const getNameSizeClass = (size?: string) => {
+    switch (size) {
+      case "sm": return "text-xl md:text-2xl";
+      case "lg": return "text-3xl md:text-4xl";
+      case "xl": return "text-4xl md:text-5xl";
+      case "base":
+      default:
+        return "text-2xl md:text-3xl"; // Clean, refined modern size
+    }
+  };
+
+  const getBioSizeClass = (size?: string) => {
+    switch (size) {
+      case "sm": return "text-xs md:text-sm";
+      case "lg": return "text-base md:text-lg";
+      case "base":
+      default:
+        return "text-sm md:text-base";
+    }
+  };
+
+  const getQuoteSizeClass = (size?: string) => {
+    switch (size) {
+      case "sm": return "text-base md:text-lg";
+      case "lg": return "text-2xl md:text-3xl";
+      case "base":
+      default:
+        return "text-lg md:text-xl";
+    }
+  };
+
+  const nameSizeClass = getNameSizeClass(data?.nameSize);
+  const bioSizeClass = getBioSizeClass(data?.bioSize);
+  const quoteSizeClass = getQuoteSizeClass(data?.quoteSize);
 
   return (
     <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 md:py-28 border-b border-[rgba(74,74,94,0.08)]">
@@ -50,41 +91,51 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
         center
       />
 
-      <div className="mt-16 space-y-12 md:space-y-16">
+      <div className="mt-16 space-y-10 md:space-y-14">
         {leaders.map((leader, idx) => {
           const isAmber = leader.theme === "amber" || idx % 2 === 0;
-          const defaultBio = DEFAULT_LEADERS[idx % DEFAULT_LEADERS.length]?.bio || "";
-          const bioText = leader.bio && leader.bio.trim().length > 0 ? leader.bio : defaultBio;
-          const bioParagraphs = bioText.split("\n\n").filter(Boolean);
+          const bioText = typeof leader.bio === "string" ? leader.bio.trim() : "";
+          const bioParagraphs = bioText ? bioText.split("\n\n").filter(Boolean) : [];
+          const messageText = typeof leader.message === "string" ? leader.message.trim() : "";
 
           return (
             <SketchReveal key={idx} delay={idx * 0.15}>
-              <div className="bg-white border border-[rgba(74,74,94,0.1)] rounded-3xl p-8 md:p-12 shadow-sm hover:shadow-md transition-all overflow-hidden relative group">
+              <div className="bg-white border border-[rgba(74,74,94,0.1)] rounded-3xl p-8 md:p-10 shadow-xs hover:shadow-md transition-all overflow-hidden relative group">
                 
                 {/* Header: Highlighted Name & Role Badge at Top */}
-                <div className="border-b border-gray-100 pb-6 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="border-b border-gray-100 pb-5 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold tracking-widest uppercase border mb-3 ${
-                      isAmber 
-                        ? "bg-amber-100/80 text-amber-900 border-amber-200" 
-                        : "bg-blue-100/80 text-blue-900 border-blue-200"
-                    }`}>
-                      <span className={`w-2 h-2 rounded-full ${isAmber ? "bg-amber-600" : "bg-blue-600"}`} />
-                      "{leader.role || (idx === 0 ? "FOUNDER" : "CHAIRMAN")}"
-                    </span>
-                    <h3 className="font-poppins text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
-                      {leader.name}
-                    </h3>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase border ${
+                        isAmber 
+                          ? "bg-amber-50 text-amber-900 border-amber-200" 
+                          : "bg-blue-50 text-blue-900 border-blue-200"
+                      }`}>
+                        <span className={`w-2 h-2 rounded-full ${isAmber ? "bg-amber-600" : "bg-blue-600"}`} />
+                        "{leader.role || (idx === 0 ? "FOUNDER" : "CHAIRMAN")}"
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-baseline gap-2.5">
+                      <h3 className={`font-poppins font-bold text-gray-900 tracking-tight ${nameSizeClass}`}>
+                        {leader.name}
+                      </h3>
+                      {leader.degree && (
+                        <span className="inline-block text-xs md:text-sm font-semibold font-mono tracking-wide px-2.5 py-0.5 rounded-md bg-amber-50 border border-amber-200/80 text-[#FB7F05]">
+                          {leader.degree}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
-                  <div className="h-1 bg-[#FB7F05] w-16 rounded-full self-start md:self-auto hidden md:block" />
+                  <div className="h-1 bg-[#FB7F05] w-12 rounded-full self-start md:self-auto hidden md:block" />
                 </div>
 
-                {/* Body: Biography & Quote */}
-                <div className="space-y-8">
+                {/* Body: Biography & Quote (only render if present) */}
+                <div className="space-y-6">
                   {/* Biography Paragraphs */}
                   {bioParagraphs.length > 0 && (
-                    <div className="font-inter text-base md:text-lg text-gray-700 leading-relaxed space-y-4 font-normal">
+                    <div className={`font-inter text-gray-700 leading-relaxed space-y-3.5 font-normal ${bioSizeClass}`}>
                       {bioParagraphs.map((para, pIdx) => (
                         <p key={pIdx}>{para}</p>
                       ))}
@@ -92,13 +143,13 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
                   )}
 
                   {/* Highlighted Quote Box */}
-                  {leader.message && (
-                    <div className={`rounded-2xl p-6 md:p-8 relative border ${
+                  {messageText && (
+                    <div className={`rounded-2xl p-6 md:p-7 relative border ${
                       isAmber
-                        ? "bg-amber-50/80 border-amber-200/90 text-amber-950"
-                        : "bg-blue-50/80 border-blue-200/90 text-blue-950"
+                        ? "bg-amber-50/70 border-amber-200/80 text-amber-950"
+                        : "bg-blue-50/70 border-blue-200/80 text-blue-950"
                     }`}>
-                      <div className="flex items-center gap-2 mb-3 font-poppins text-xs font-bold uppercase tracking-wider">
+                      <div className="flex items-center gap-2 mb-2.5 font-poppins text-xs font-bold uppercase tracking-wider">
                         <span className={`w-2 h-2 rounded-full ${isAmber ? "bg-amber-600" : "bg-blue-600"}`} />
                         {leader.messageTitle || (idx === 0 ? "FOUNDER'S MESSAGE" : "CHAIRMAN'S MESSAGE")}
                       </div>
@@ -109,8 +160,8 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
                         }`}>
                           “
                         </span>
-                        <blockquote className="font-cormorant text-xl md:text-2xl font-medium leading-relaxed italic">
-                          {leader.message}
+                        <blockquote className={`font-cormorant font-medium leading-relaxed italic ${quoteSizeClass}`}>
+                          {messageText}
                         </blockquote>
                       </div>
                     </div>

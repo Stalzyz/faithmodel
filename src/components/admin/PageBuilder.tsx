@@ -137,22 +137,25 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
     annotation: "Founding Pillars",
     title: "Founder & Chairman",
     subtitle: "The visionary leadership fostering excellence, health, and 21st-century entrepreneurial mindset.",
+    nameSize: "base",
+    bioSize: "base",
+    quoteSize: "base",
     leaders: [
       {
         role: "FOUNDER",
         name: "Dr. S.A. Fazlulla",
-        image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+        degree: "M.B.B.S, D.C.H",
         bio: "Dr. S.A. Fazlulla is a child specialist with over four decades of experience in the medical field. In his capacity as a doctor, he not only treats children with medical issues but also deals with their psychological aspects such as behavior and development.\n\nFaith Model School (FMS) is his brainchild and Dr. Fazlulla currently mentors children to grow into healthy individuals both mentally and physically.",
-        messageTitle: "Founder's Message:",
+        messageTitle: "FOUNDER'S MESSAGE",
         message: "I believe children should not stop building castles in the air. And with groundwork from Faith Model School, their dreams are bound to come true.",
         theme: "amber"
       },
       {
         role: "CHAIRMAN",
         name: "Mr. K.S. Kader Batcha",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-        bio: "Mr. K.S. Kader Batcha, is an industrialist, currently training and running businesses in China. He holds a degree in textile engineering. He owns and runs textiles business and mainly exports the products to US and European markets. The other company in the name of AMD Overseas Impex India Company in Tiruppur manufactures, exports and imports a vast range of Window Frames, UPVC doors and windows. Mr. Batcha is actively involved in children's education and as an entrepreneur, he is looked up to by his peers and subordinates alike.",
-        messageTitle: "Chairman's Message:",
+        degree: "B.Tech",
+        bio: "Mr. K.S. Kader Batcha is an industrialist, currently training and running businesses in China. He holds a degree in textile engineering. He owns and runs textiles business and mainly exports the products to US and European markets. The other company in the name of AMD Overseas Impex India Company in Tiruppur manufactures, exports and imports a vast range of Window Frames, UPVC doors and windows. Mr. Batcha is actively involved in children's education and as an entrepreneur, he is looked up to by his peers and subordinates alike.",
+        messageTitle: "CHAIRMAN'S MESSAGE",
         message: "No one is born an entrepreneur. But there's no minimum age to begin training to be one. Faith Model School offers 21st century education focusing on entrepreneurship skills from a tender age.",
         theme: "blue"
       }
@@ -1843,8 +1846,8 @@ export default function PageBuilder({
                         </div>
                      )}
 
-                     {block.type === 'FOUNDER_CHAIRMAN_BLOCK' && (
-                        <div className="space-y-4">
+                     {block.type === "FOUNDER_CHAIRMAN_BLOCK" && (
+                        <div className="space-y-6">
                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                               <div>
                                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Annotation</label>
@@ -1860,53 +1863,152 @@ export default function PageBuilder({
                               </div>
                            </div>
 
+                           {/* Section Typography & Sizing Controls */}
+                           <div className="bg-amber-50/70 border border-amber-200/80 rounded-xl p-4 space-y-3">
+                              <div className="flex items-center gap-2">
+                                 <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                                    Typography & Text Size Controls
+                                 </h4>
+                                 <span className="text-[10px] bg-amber-200 text-amber-900 font-mono px-2 py-0.5 rounded font-bold">Live Control</span>
+                              </div>
+                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                 <div>
+                                    <label className="block text-[11px] font-semibold text-gray-700 uppercase mb-1">Leader Name Size</label>
+                                    <select 
+                                       value={block.data.nameSize || "base"} 
+                                       onChange={e => updateBlockData(block.id, { nameSize: e.target.value })}
+                                       className="admin-input text-xs bg-white"
+                                    >
+                                       <option value="sm">Small (text-xl)</option>
+                                       <option value="base">Standard / Refined (text-2xl)</option>
+                                       <option value="lg">Medium (text-3xl)</option>
+                                       <option value="xl">Large (text-4xl)</option>
+                                    </select>
+                                 </div>
+                                 <div>
+                                    <label className="block text-[11px] font-semibold text-gray-700 uppercase mb-1">Bio Text Size</label>
+                                    <select 
+                                       value={block.data.bioSize || "base"} 
+                                       onChange={e => updateBlockData(block.id, { bioSize: e.target.value })}
+                                       className="admin-input text-xs bg-white"
+                                    >
+                                       <option value="sm">Small (text-sm)</option>
+                                       <option value="base">Standard (text-base)</option>
+                                       <option value="lg">Large (text-lg)</option>
+                                    </select>
+                                 </div>
+                                 <div>
+                                    <label className="block text-[11px] font-semibold text-gray-700 uppercase mb-1">Quote Text Size</label>
+                                    <select 
+                                       value={block.data.quoteSize || "base"} 
+                                       onChange={e => updateBlockData(block.id, { quoteSize: e.target.value })}
+                                       className="admin-input text-xs bg-white"
+                                    >
+                                       <option value="sm">Small (text-base)</option>
+                                       <option value="base">Standard (text-lg)</option>
+                                       <option value="lg">Large (text-2xl)</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+
                            <div className="space-y-6 pt-2">
-                              <label className="block text-xs font-bold text-gray-700 uppercase">Leadership Profiles & Messages</label>
+                              <div className="flex justify-between items-center">
+                                 <label className="text-xs font-bold text-gray-800 uppercase">Leadership Profiles & Messages ({(block.data.leaders || []).length})</label>
+                                 <button 
+                                    type="button"
+                                    onClick={() => {
+                                       const newL = [...(block.data.leaders || []), { role: "SECRETARY", name: "New Leader", degree: "B.E", bio: "", messageTitle: "Message:", message: "", theme: "amber" }];
+                                       updateBlockData(block.id, { leaders: newL });
+                                    }} 
+                                    className="text-xs font-bold text-[#FB7F05] hover:underline"
+                                 >
+                                    + Add New Leader
+                                 </button>
+                              </div>
+
                               {block.data.leaders?.map((ldr: any, i: number) => (
-                                 <div key={i} className="border border-gray-200 p-5 rounded-2xl space-y-4 bg-gray-50/70">
+                                 <div key={i} className="border border-gray-200 p-5 rounded-2xl space-y-4 bg-gray-50/70 relative">
                                     <div className="flex justify-between items-center border-b border-gray-200 pb-2">
                                        <span className="text-xs font-bold text-gray-800 uppercase tracking-wider">{ldr.role || `Leader #${i+1}`} Details</span>
-                                       <button onClick={() => {
-                                          const newL = block.data.leaders.filter((_: any, idx: number) => idx !== i);
-                                          updateBlockData(block.id, { leaders: newL });
-                                       }} className="text-red-500 hover:text-red-700 p-1"><Trash2 className="w-4 h-4" /></button>
+                                       <div className="flex items-center gap-2">
+                                          {i > 0 && (
+                                             <button 
+                                                type="button"
+                                                onClick={() => {
+                                                   const leaders = [...block.data.leaders];
+                                                   [leaders[i - 1], leaders[i]] = [leaders[i], leaders[i - 1]];
+                                                   updateBlockData(block.id, { leaders });
+                                                }}
+                                                className="text-xs text-gray-500 hover:text-gray-900"
+                                             >
+                                                ↑ Move Up
+                                             </button>
+                                          )}
+                                          {i < (block.data.leaders.length - 1) && (
+                                             <button 
+                                                type="button"
+                                                onClick={() => {
+                                                   const leaders = [...block.data.leaders];
+                                                   [leaders[i + 1], leaders[i]] = [leaders[i], leaders[i + 1]];
+                                                   updateBlockData(block.id, { leaders });
+                                                }}
+                                                className="text-xs text-gray-500 hover:text-gray-900"
+                                             >
+                                                ↓ Move Down
+                                             </button>
+                                          )}
+                                          <button 
+                                             type="button"
+                                             onClick={() => {
+                                                const newL = block.data.leaders.filter((_: any, idx: number) => idx !== i);
+                                                updateBlockData(block.id, { leaders: newL });
+                                             }} 
+                                             className="text-red-500 hover:text-red-700 p-1 ml-2"
+                                             title="Remove Leader"
+                                          >
+                                             <Trash2 className="w-4 h-4" />
+                                          </button>
+                                       </div>
                                     </div>
 
-                                    <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                                        <div>
                                           <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Role / Badge</label>
                                           <input type="text" value={ldr.role || ""} onChange={e => {
                                              const newL = [...block.data.leaders];
                                              newL[i] = { ...newL[i], role: e.target.value };
                                              updateBlockData(block.id, { leaders: newL });
-                                          }} className="admin-input text-xs font-semibold" placeholder="e.g. FOUNDER or CHAIRMAN" />
+                                          }} className="admin-input text-xs font-semibold bg-white" placeholder="e.g. FOUNDER or SECRETARY" />
                                        </div>
                                        <div>
-                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Full Name & Title</label>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Full Name</label>
                                           <input type="text" value={ldr.name || ""} onChange={e => {
                                              const newL = [...block.data.leaders];
                                              newL[i] = { ...newL[i], name: e.target.value };
                                              updateBlockData(block.id, { leaders: newL });
-                                          }} className="admin-input text-xs font-bold" placeholder="e.g. Dr. S.A. Fazlulla" />
+                                          }} className="admin-input text-xs font-bold bg-white" placeholder="e.g. Mr. Faizal F" />
+                                       </div>
+                                       <div>
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Degree / Qualification</label>
+                                          <input type="text" value={ldr.degree || ""} onChange={e => {
+                                             const newL = [...block.data.leaders];
+                                             newL[i] = { ...newL[i], degree: e.target.value };
+                                             updateBlockData(block.id, { leaders: newL });
+                                          }} className="admin-input text-xs bg-white text-[#FB7F05] font-semibold" placeholder="e.g. B.E or M.B.B.S, D.C.H" />
                                        </div>
                                     </div>
 
                                     <div>
-                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Profile Picture</label>
-                                       <ImageUploader value={ldr.image || ""} onChange={url => {
-                                          const newL = [...block.data.leaders];
-                                          newL[i] = { ...newL[i], image: url };
-                                          updateBlockData(block.id, { leaders: newL });
-                                       }} />
-                                    </div>
-
-                                    <div>
-                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Biography / Career Background</label>
+                                       <div className="flex justify-between items-center mb-1">
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase">Biography / Background</label>
+                                          <span className="text-[10px] text-gray-400 font-mono">(Optional - Leave blank to hide bio)</span>
+                                       </div>
                                        <textarea value={ldr.bio || ""} onChange={e => {
                                           const newL = [...block.data.leaders];
                                           newL[i] = { ...newL[i], bio: e.target.value };
                                           updateBlockData(block.id, { leaders: newL });
-                                       }} className="admin-input text-xs h-28" placeholder="Detailed bio describing medical/business background..." />
+                                       }} className="admin-input text-xs h-24 bg-white" placeholder="Detailed bio describing experience and background (leave blank to hide bio)..." />
                                     </div>
 
                                     <div className="grid md:grid-cols-3 gap-3">
@@ -1916,7 +2018,7 @@ export default function PageBuilder({
                                              const newL = [...block.data.leaders];
                                              newL[i] = { ...newL[i], messageTitle: e.target.value };
                                              updateBlockData(block.id, { leaders: newL });
-                                          }} className="admin-input text-xs" placeholder="e.g. Founder's Message: or Chairman's Message:" />
+                                          }} className="admin-input text-xs bg-white" placeholder="e.g. Secretary's Message: (leave blank for default)" />
                                        </div>
                                        <div>
                                           <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Theme Accent</label>
@@ -1924,7 +2026,7 @@ export default function PageBuilder({
                                              const newL = [...block.data.leaders];
                                              newL[i] = { ...newL[i], theme: e.target.value };
                                              updateBlockData(block.id, { leaders: newL });
-                                          }} className="admin-input text-xs">
+                                          }} className="admin-input text-xs bg-white">
                                              <option value="amber">Warm Amber / Gold</option>
                                              <option value="blue">Royal Blue</option>
                                           </select>
@@ -1932,16 +2034,23 @@ export default function PageBuilder({
                                     </div>
 
                                     <div>
-                                       <label className="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Message / Quote Text</label>
+                                       <div className="flex justify-between items-center mb-1">
+                                          <label className="block text-[11px] font-semibold text-gray-600 uppercase">Message / Quote Text</label>
+                                          <span className="text-[10px] text-gray-400 font-mono">(Optional - Leave blank to hide quote box)</span>
+                                       </div>
                                        <textarea value={ldr.message || ""} onChange={e => {
                                           const newL = [...block.data.leaders];
                                           newL[i] = { ...newL[i], message: e.target.value };
                                           updateBlockData(block.id, { leaders: newL });
-                                       }} className="admin-input text-xs italic font-medium h-24" placeholder="Personal message or advice to children/parents..." />
+                                       }} className="admin-input text-xs italic font-medium h-20 bg-white" placeholder="Personal quote or message to parents/students (leave blank to hide quote box)..." />
                                     </div>
                                  </div>
                               ))}
-                              <button onClick={() => updateBlockData(block.id, { leaders: [...(block.data.leaders || []), { role: "LEADERSHIP", name: "Name", image: "", bio: "Bio", messageTitle: "Message:", message: "Message...", theme: "blue" }] })} className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all">
+                              <button 
+                                 type="button"
+                                 onClick={() => updateBlockData(block.id, { leaders: [...(block.data.leaders || []), { role: "SECRETARY", name: "New Leader", degree: "B.E", bio: "", messageTitle: "Message:", message: "", theme: "amber" }] })} 
+                                 className="px-4 py-2 bg-white border border-[#FB7F05] text-[#FB7F05] hover:bg-[#FB7F05] hover:text-white rounded-lg text-xs font-semibold transition-all"
+                              >
                                  + Add Another Leader
                               </button>
                            </div>
