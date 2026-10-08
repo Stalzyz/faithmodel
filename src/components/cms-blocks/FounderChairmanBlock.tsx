@@ -116,16 +116,14 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-baseline gap-2.5">
-                      <h3 className={`font-poppins font-bold text-gray-900 tracking-tight ${nameSizeClass}`}>
-                        {leader.name}
-                      </h3>
+                    <h3 className={`font-poppins font-bold text-gray-900 tracking-tight ${nameSizeClass}`}>
+                      {leader.name}
                       {leader.degree && (
-                        <span className="inline-block text-xs md:text-sm font-semibold font-mono tracking-wide px-2.5 py-0.5 rounded-md bg-amber-50 border border-amber-200/80 text-[#FB7F05]">
+                        <span className="ml-2 font-medium text-[0.85em] text-gray-900 inline">
                           {leader.degree}
                         </span>
                       )}
-                    </div>
+                    </h3>
                   </div>
 
                   <div className="h-1 bg-[#FB7F05] w-12 rounded-full self-start md:self-auto hidden md:block" />
