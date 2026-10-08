@@ -51,11 +51,11 @@ export default function WhatsAppWidget({ settings }: { settings?: any }) {
         />
       )}
 
-      {/* Floating Widget Container */}
-      <div className={`fixed bottom-6 z-50 ${positionClasses}`}>
+      {/* Floating Widget Container (adjusted upwards on mobile so it never obscures the bottom Apply Now bar) */}
+      <div className={`fixed bottom-20 sm:bottom-8 z-40 ${positionClasses}`}>
         {/* Expanded Chat Popup */}
         {isOpen && (
-          <div className={`fixed bottom-24 ${cardPositionClasses} w-[340px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden text-left animate-in fade-in zoom-in-95 duration-200 z-50`}>
+          <div className={`fixed bottom-36 sm:bottom-24 ${cardPositionClasses} w-[calc(100vw-2rem)] max-w-[340px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden text-left animate-in fade-in zoom-in-95 duration-200 z-50`}>
             {/* Header */}
             <div className="bg-[#075e54] text-white p-5 relative">
               <button 

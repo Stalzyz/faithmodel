@@ -17,6 +17,7 @@ export interface FounderChairmanBlockData {
   title?: string;
   subtitle?: string;
   nameSize?: "sm" | "base" | "lg" | "xl";
+  degreeSize?: "xs" | "sm" | "base" | "lg";
   bioSize?: "sm" | "base" | "lg";
   quoteSize?: "sm" | "base" | "lg";
   leaders?: LeaderEntry[];
@@ -58,6 +59,17 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
     }
   };
 
+  const getDegreeSizeClass = (size?: string) => {
+    switch (size) {
+      case "xs": return "text-xs md:text-xs";
+      case "base": return "text-sm md:text-base";
+      case "lg": return "text-base md:text-lg";
+      case "sm":
+      default:
+        return "text-xs md:text-sm"; // Small proportion
+    }
+  };
+
   const getBioSizeClass = (size?: string) => {
     switch (size) {
       case "sm": return "text-xs md:text-sm";
@@ -79,6 +91,7 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
   };
 
   const nameSizeClass = getNameSizeClass(data?.nameSize);
+  const degreeSizeClass = getDegreeSizeClass(data?.degreeSize);
   const bioSizeClass = getBioSizeClass(data?.bioSize);
   const quoteSizeClass = getQuoteSizeClass(data?.quoteSize);
 
@@ -119,7 +132,7 @@ export default function FounderChairmanBlock({ data }: { data: FounderChairmanBl
                     <h3 className={`font-poppins font-bold text-gray-900 tracking-tight ${nameSizeClass}`}>
                       {leader.name}
                       {leader.degree && (
-                        <span className="ml-2 font-medium text-[0.85em] text-gray-900 inline">
+                        <span className={`ml-2 font-medium text-gray-800 inline ${degreeSizeClass}`}>
                           {leader.degree}
                         </span>
                       )}

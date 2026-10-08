@@ -138,6 +138,7 @@ const DEFAULT_BLOCKS: Record<BlockType, any> = {
     title: "Founder & Chairman",
     subtitle: "The visionary leadership fostering excellence, health, and 21st-century entrepreneurial mindset.",
     nameSize: "base",
+    degreeSize: "sm",
     bioSize: "base",
     quoteSize: "base",
     leaders: [
@@ -1871,7 +1872,7 @@ export default function PageBuilder({
                                  </h4>
                                  <span className="text-[10px] bg-amber-200 text-amber-900 font-mono px-2 py-0.5 rounded font-bold">Live Control</span>
                               </div>
-                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                                  <div>
                                     <label className="block text-[11px] font-semibold text-gray-700 uppercase mb-1">Leader Name Size</label>
                                     <select 
@@ -1883,6 +1884,19 @@ export default function PageBuilder({
                                        <option value="base">Standard / Refined (text-2xl)</option>
                                        <option value="lg">Medium (text-3xl)</option>
                                        <option value="xl">Large (text-4xl)</option>
+                                    </select>
+                                 </div>
+                                 <div>
+                                    <label className="block text-[11px] font-semibold text-gray-700 uppercase mb-1">Degree Text Size</label>
+                                    <select 
+                                       value={block.data.degreeSize || "sm"} 
+                                       onChange={e => updateBlockData(block.id, { degreeSize: e.target.value })}
+                                       className="admin-input text-xs bg-white"
+                                    >
+                                       <option value="xs">Extra Small (text-xs)</option>
+                                       <option value="sm">Small / Default (text-sm)</option>
+                                       <option value="base">Medium (text-base)</option>
+                                       <option value="lg">Large (text-lg)</option>
                                     </select>
                                  </div>
                                  <div>
