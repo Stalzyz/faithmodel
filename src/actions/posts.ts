@@ -52,3 +52,22 @@ export async function savePost(data: {
     return { success: false, error: "Failed to save post." };
   }
 }
+
+export async function deletePost(id: string) {
+  try {
+    const post = await prisma.post.findUnique({ where: { id } });
+    await prisma.post.delete({ where: { id } });
+
+    revalidatePath("/admin/posts");
+    revalidatePath("/news");
+    if (post?.slug) {
+      revalidatePath(`/news/${post.slug}`);
+    }
+    revalidatePath("/", "layout");
+
+    return { success: true };
+  } catch (error) {
+    console.error("Failed to delete post:", error);
+    return { success: false, error: "Failed to delete post." };
+  }
+}

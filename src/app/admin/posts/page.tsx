@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { Plus, Edit2, Trash2 } from "lucide-react";
+import { Plus, Edit2 } from "lucide-react";
+import DeletePostButton from "./DeletePostButton";
 
 export default async function AdminPostsList() {
   const posts = await prisma.post.findMany({
@@ -53,13 +54,11 @@ export default async function AdminPostsList() {
                   <td className="p-4 text-gray-500 text-sm">
                     {new Date(post.createdAt).toLocaleDateString()}
                   </td>
-                  <td className="p-4 pr-6 flex justify-end gap-3">
-                    <Link href={`/admin/posts/${post.id}`} className="text-gray-400 hover:text-blue-600 transition-colors">
+                  <td className="p-4 pr-6 flex justify-end items-center gap-3">
+                    <Link href={`/admin/posts/${post.id}`} className="text-gray-400 hover:text-blue-600 transition-colors p-1 rounded hover:bg-blue-50" title="Edit Post">
                       <Edit2 className="w-4 h-4" />
                     </Link>
-                    <button className="text-gray-400 hover:text-red-600 transition-colors">
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                    <DeletePostButton id={post.id} title={post.title} />
                   </td>
                 </tr>
               ))
